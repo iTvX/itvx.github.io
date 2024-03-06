@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Rime输入法折腾记</title>
+    <url>/2024/02/29/Hobbies/Rime/</url>
+    <content><![CDATA[<p>早就听闻了Rime输入法的大名，但一直看教程觉得太麻烦，终于花时间好好折腾了一下，其实比想象中简单太多了。</p>
+<h1 id="Rime介绍"><a href="#Rime介绍" class="headerlink" title="Rime介绍"></a>Rime介绍</h1><p>没深入研究过，但给我的个人感觉Rime应该是以开源的输入法框架，任何系统如果想要使用，必须先自己开发一套工具。于是macOS上叫作鼠须管，Windows上叫作小狼毫，iOS上也有叫作仓输入法</p>
+<h1 id="使用Rime的好处"><a href="#使用Rime的好处" class="headerlink" title="使用Rime的好处"></a>使用Rime的好处</h1><p>不用联网，不用担心隐私问题，自己维护词库，很有成就感。</p>
+<h1 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h1><p>这里建议直接使用雾凇输入法：<a href="https://github.com/iDvel/rime-ice">https://github.com/iDvel/rime-ice</a></p>
+<p>作者文档写的清晰易懂，简单来说就是download整个repo，然后把整个文件拖到Rime的配置文件夹就行了。整个rime包括设置词库表等一切东西，都是由<code>.yaml</code>所控制的，所以用整个repo的文件，替换掉原本的就可以完美使用雾凇输入法了。</p>
+<p>目前看来，只要使用简体字，使用雾凇输入法配置是最佳捷径。</p>
+]]></content>
+      <categories>
+        <category>Hobbies</category>
+      </categories>
+      <tags>
+        <tag>rime</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>The first day of the new blog</title>
     <url>/2024/02/27/Hobbies/New%20Blog/</url>
     <content><![CDATA[<p>In the past, I built my website using WordPress. However, I found its complexity and the multitude of distractions—like figuring out backups and managing SSL certificates for enhanced security—prevented me from focusing on writing. I’m hopeful that this new endeavor will allow me to concentrate more on the content itself. </p>
@@ -70,23 +87,6 @@
       <tags>
         <tag>hexo</tag>
         <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Rime输入法折腾记</title>
-    <url>/2024/02/29/Hobbies/Rime/</url>
-    <content><![CDATA[<p>早就听闻了Rime输入法的大名，但一直看教程觉得太麻烦，终于花时间好好折腾了一下，其实比想象中简单太多了。</p>
-<h1 id="Rime介绍"><a href="#Rime介绍" class="headerlink" title="Rime介绍"></a>Rime介绍</h1><p>没深入研究过，但给我的个人感觉Rime应该是以开源的输入法框架，任何系统如果想要使用，必须先自己开发一套工具。于是macOS上叫作鼠须管，Windows上叫作小狼毫，iOS上也有叫作仓输入法</p>
-<h1 id="使用Rime的好处"><a href="#使用Rime的好处" class="headerlink" title="使用Rime的好处"></a>使用Rime的好处</h1><p>不用联网，不用担心隐私问题，自己维护词库，很有成就感。</p>
-<h1 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h1><p>这里建议直接使用雾凇输入法：<a href="https://github.com/iDvel/rime-ice">https://github.com/iDvel/rime-ice</a></p>
-<p>作者文档写的清晰易懂，简单来说就是download整个repo，然后把整个文件拖到Rime的配置文件夹就行了。整个rime包括设置词库表等一切东西，都是由<code>.yaml</code>所控制的，所以用整个repo的文件，替换掉原本的就可以完美使用雾凇输入法了。</p>
-<p>目前看来，只要使用简体字，使用雾凇输入法配置是最佳捷径。</p>
-]]></content>
-      <categories>
-        <category>Hobbies</category>
-      </categories>
-      <tags>
-        <tag>rime</tag>
       </tags>
   </entry>
   <entry>
@@ -503,8 +503,8 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>[[#What is Final key word?| 1]]</td>
-<td>What is the Final keyword?</td>
+<td><a href="##What&is&Final&key&word&?">1</a></td>
+<td><a href="#What-is-Final-key-word">What is Final key word?</a></td>
 <td>0</td>
 <td>0</td>
 </tr>
@@ -1376,7 +1376,7 @@
 
 
 
-<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p>![[CleanShot 2024-02-22 at <a href="mailto:&#x31;&#53;&#46;&#x33;&#x32;&#x2e;&#48;&#x33;&#64;&#x32;&#x78;&#x2e;&#106;&#x70;&#x67;">&#x31;&#53;&#46;&#x33;&#x32;&#x2e;&#48;&#x33;&#64;&#x32;&#x78;&#x2e;&#106;&#x70;&#x67;</a>]]</p>
+<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p>![[CleanShot 2024-02-22 at <a href="mailto:&#x31;&#53;&#x2e;&#51;&#50;&#x2e;&#x30;&#51;&#x40;&#x32;&#120;&#46;&#106;&#112;&#x67;">&#x31;&#53;&#x2e;&#51;&#50;&#x2e;&#x30;&#51;&#x40;&#x32;&#120;&#46;&#106;&#112;&#x67;</a>]]</p>
 <ul>
 <li><p><strong>Errors:</strong> Indicate critical problems, usually outside the application’s control (e.g., <code>OutOfMemoryError</code>). Recovery is typically not possible.</p>
 </li>
