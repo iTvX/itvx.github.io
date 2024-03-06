@@ -1,6 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>The first day of the new blog</title>
+    <url>/2024/02/27/Hobbies/New%20Blog/</url>
+    <content><![CDATA[<p>In the past, I built my website using WordPress. However, I found its complexity and the multitude of distractions—like figuring out backups and managing SSL certificates for enhanced security—prevented me from focusing on writing. I’m hopeful that this new endeavor will allow me to concentrate more on the content itself. </p>
+<p>Let’s dive into the process of setting up this new platform: </p>
+<h1 id="Pre-install"><a href="#Pre-install" class="headerlink" title="Pre-install"></a>Pre-install</h1><h2 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><h3 id="Using-HomeBrew"><a href="#Using-HomeBrew" class="headerlink" title="Using HomeBrew"></a>Using HomeBrew</h3><p>On macOS, you can easily install <code>node.js</code> by using Homebrew:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+
+<p>But if you want to use a more dedicated approach since you want to constantly switch between different versions of Node, you can choose <code>nvm</code>.</p>
+<h3 id="Using-NVM-Preferred-way"><a href="#Using-NVM-Preferred-way" class="headerlink" title="Using NVM (Preferred way)"></a>Using NVM (Preferred way)</h3><p>Before using <code>nvm</code>, uninstall the node you have installed(optional). </p>
+<p><code>nvm</code> is a tool that allows you to easily manage different versions of Node. Therefore, on Mac, it is recommended to first install <code>nvm</code>. However, this step is optional if you do not frequently need to switch between different versions of Node.js.</p>
+<p>Check this website to install nvm:<br><a href="https://github.com/nvm-sh/nvm">https://github.com/nvm-sh/nvm</a></p>
+<p>After installing the <code>nvm</code>, install the latest LTS node version. </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvm install --lts</span><br></pre></td></tr></table></figure>
+
+<p>This command automatically installs the most recent LTS version of Node.js. </p>
+<p>Check the <code>nvm</code> list:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvm list</span><br></pre></td></tr></table></figure>
+
+<p>Look for the LTS version you’ve installed, which is marked with “default” or “lts&#x2F;*” (e.g., “lts&#x2F;Fermium” for version 14.x.x). Then, set this version as the default for new shells:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvm alias default &lt;version&gt;</span><br></pre></td></tr></table></figure>
+
+<p>This command tells <code>nvm</code> to always use the latest LTS version as the default.</p>
+<p> <code>nvm</code> makes handling Node and <code>npm</code> versions easy. When you switch Node versions, <code>nvm</code> <strong>also switches</strong> <code>npm</code> to the right version. If you upgrade <code>npm</code>, it only changes for that Node version. Removing a Node version with <code>nvm</code> also clears out its <code>npm</code> and packages, keeping things simple and neat.</p>
+<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>Open your terminal or command prompt and run the following command to install Hexo globally:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Install-Process"><a href="#Install-Process" class="headerlink" title="Install Process"></a>Install Process</h1><h2 id="Initialize-Your-Blog"><a href="#Initialize-Your-Blog" class="headerlink" title="Initialize Your Blog"></a>Initialize Your Blog</h2><p>Create a new directory for your blog and initialize it with Hexo (make sure that <strong>myBlog is empty</strong>):</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd myblog</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h2 id="Add-git"><a href="#Add-git" class="headerlink" title="Add git"></a>Add git</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;initial commit&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Install-the-NexT-Theme"><a href="#Install-the-NexT-Theme" class="headerlink" title="Install the NexT Theme"></a>Install the NexT Theme</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> hexo-site</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install hexo-theme-next</span></span><br></pre></td></tr></table></figure>
+
+<p>Copy the config to the root of hexo:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp node_modules/hexo-theme-next/_config.yml _config.next.yml</span><br></pre></td></tr></table></figure>
+
+<h2 id="Deploy-Your-Blog-to-GitHub-Pages"><a href="#Deploy-Your-Blog-to-GitHub-Pages" class="headerlink" title="Deploy Your Blog to GitHub Pages"></a>Deploy Your Blog to GitHub Pages</h2><ol>
+<li>Create a new repository on GitHub named <code>&lt;yourusername&gt;.github.io</code>.</li>
+<li>Install the <code>hexo-deployer-git</code> plugin:</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>Configure deployment in your blog’s <code>_config.yml</code>:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+
+<p>Replace <code>&lt;username&gt;</code> with your GitHub username.</p>
+<ol>
+<li><p>Deploy your blog:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="After-Install"><a href="#After-Install" class="headerlink" title="After Install"></a>After Install</h1><h2 id="Use-Archive-Page-as-Home-Page"><a href="#Use-Archive-Page-as-Home-Page" class="headerlink" title="Use Archive Page as Home Page"></a>Use Archive Page as Home Page</h2><p>You can configure the path of archive and index generator in &#x3D;&#x3D;Hexo config file&#x3D;&#x3D;, e.g.</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">archive_dir:</span> <span class="string">/</span></span><br><span class="line"></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">archives</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span></span><br></pre></td></tr></table></figure>
+
+<p>Reference: <a href="https://theme-next.js.org/docs/theme-settings/custom-pages#Use-Archive-Page-as-Home-Page">https://theme-next.js.org/docs/theme-settings/custom-pages#Use-Archive-Page-as-Home-Page</a></p>
+<h2 id="Hide-“Keep-on-posting”-in-Archive-Page"><a href="#Hide-“Keep-on-posting”-in-Archive-Page" class="headerlink" title="Hide “Keep on posting” in Archive Page"></a>Hide “Keep on posting” in Archive Page</h2><p>Create and edit <code>source/_data/styles.styl</code> in &#x3D;&#x3D;site root directory&#x3D;&#x3D; and add styles:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">.archive</span> <span class="string">.collection-title</span> &#123;</span><br><span class="line">  <span class="attr">display:</span> <span class="string">none</span> <span class="type">!important;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Then uncomment <code>style</code> under the <code>custom_file_path</code> section in &#x3D;&#x3D;NexT config file&#x3D;&#x3D;.</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Reference: <a href="https://theme-next.js.org/docs/advanced-settings/custom-files.html#Hide-Keep-on-posting-in-Archive-Page">https://theme-next.js.org/docs/advanced-settings/custom-files.html#Hide-Keep-on-posting-in-Archive-Page</a></p>
+<h2 id="How-to-make-the-Archieve-page-not-paginated"><a href="#How-to-make-the-Archieve-page-not-paginated" class="headerlink" title="How to make the Archieve page not paginated"></a>How to make the Archieve page not paginated</h2><p>Find the root <code>_config.yml</code>，change the pagination to 0.</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hobbies</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Rime输入法折腾记</title>
+    <url>/2024/02/29/Hobbies/Rime/</url>
+    <content><![CDATA[<p>早就听闻了Rime输入法的大名，但一直看教程觉得太麻烦，终于花时间好好折腾了一下，其实比想象中简单太多了。</p>
+<h1 id="Rime介绍"><a href="#Rime介绍" class="headerlink" title="Rime介绍"></a>Rime介绍</h1><p>没深入研究过，但给我的个人感觉Rime应该是以开源的输入法框架，任何系统如果想要使用，必须先自己开发一套工具。于是macOS上叫作鼠须管，Windows上叫作小狼毫，iOS上也有叫作仓输入法</p>
+<h1 id="使用Rime的好处"><a href="#使用Rime的好处" class="headerlink" title="使用Rime的好处"></a>使用Rime的好处</h1><p>不用联网，不用担心隐私问题，自己维护词库，很有成就感。</p>
+<h1 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h1><p>这里建议直接使用雾凇输入法：<a href="https://github.com/iDvel/rime-ice">https://github.com/iDvel/rime-ice</a></p>
+<p>作者文档写的清晰易懂，简单来说就是download整个repo，然后把整个文件拖到Rime的配置文件夹就行了。整个rime包括设置词库表等一切东西，都是由<code>.yaml</code>所控制的，所以用整个repo的文件，替换掉原本的就可以完美使用雾凇输入法了。</p>
+<p>目前看来，只要使用简体字，使用雾凇输入法配置是最佳捷径。</p>
+]]></content>
+      <categories>
+        <category>Hobbies</category>
+      </categories>
+      <tags>
+        <tag>rime</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java Interview——BQ</title>
     <url>//java-interview/bq/</url>
     <content><![CDATA[]]></content>
@@ -399,78 +488,6 @@
       </categories>
       <tags>
         <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>The first day of the new blog</title>
-    <url>/2024/02/27/Hobbies/New%20Blog/</url>
-    <content><![CDATA[<p>In the past, I built my website using WordPress. However, I found its complexity and the multitude of distractions—like figuring out backups and managing SSL certificates for enhanced security—prevented me from focusing on writing. I’m hopeful that this new endeavor will allow me to concentrate more on the content itself. </p>
-<p>Let’s dive into the process of setting up this new platform: </p>
-<h1 id="Pre-install"><a href="#Pre-install" class="headerlink" title="Pre-install"></a>Pre-install</h1><h2 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><h3 id="Using-HomeBrew"><a href="#Using-HomeBrew" class="headerlink" title="Using HomeBrew"></a>Using HomeBrew</h3><p>On macOS, you can easily install <code>node.js</code> by using Homebrew:</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-
-<p>But if you want to use a more dedicated approach since you want to constantly switch between different versions of Node, you can choose <code>nvm</code>.</p>
-<h3 id="Using-NVM-Preferred-way"><a href="#Using-NVM-Preferred-way" class="headerlink" title="Using NVM (Preferred way)"></a>Using NVM (Preferred way)</h3><p>Before using <code>nvm</code>, uninstall the node you have installed(optional). </p>
-<p><code>nvm</code> is a tool that allows you to easily manage different versions of Node. Therefore, on Mac, it is recommended to first install <code>nvm</code>. However, this step is optional if you do not frequently need to switch between different versions of Node.js.</p>
-<p>Check this website to install nvm:<br><a href="https://github.com/nvm-sh/nvm">https://github.com/nvm-sh/nvm</a></p>
-<p>After installing the <code>nvm</code>, install the latest LTS node version. </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvm install --lts</span><br></pre></td></tr></table></figure>
-
-<p>This command automatically installs the most recent LTS version of Node.js. </p>
-<p>Check the <code>nvm</code> list:</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvm list</span><br></pre></td></tr></table></figure>
-
-<p>Look for the LTS version you’ve installed, which is marked with “default” or “lts&#x2F;*” (e.g., “lts&#x2F;Fermium” for version 14.x.x). Then, set this version as the default for new shells:</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvm alias default &lt;version&gt;</span><br></pre></td></tr></table></figure>
-
-<p>This command tells <code>nvm</code> to always use the latest LTS version as the default.</p>
-<p> <code>nvm</code> makes handling Node and <code>npm</code> versions easy. When you switch Node versions, <code>nvm</code> <strong>also switches</strong> <code>npm</code> to the right version. If you upgrade <code>npm</code>, it only changes for that Node version. Removing a Node version with <code>nvm</code> also clears out its <code>npm</code> and packages, keeping things simple and neat.</p>
-<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>Open your terminal or command prompt and run the following command to install Hexo globally:</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="Install-Process"><a href="#Install-Process" class="headerlink" title="Install Process"></a>Install Process</h1><h2 id="Initialize-Your-Blog"><a href="#Initialize-Your-Blog" class="headerlink" title="Initialize Your Blog"></a>Initialize Your Blog</h2><p>Create a new directory for your blog and initialize it with Hexo (make sure that <strong>myBlog is empty</strong>):</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd myblog</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<h2 id="Add-git"><a href="#Add-git" class="headerlink" title="Add git"></a>Add git</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;initial commit&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Install-the-NexT-Theme"><a href="#Install-the-NexT-Theme" class="headerlink" title="Install the NexT Theme"></a>Install the NexT Theme</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> hexo-site</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install hexo-theme-next</span></span><br></pre></td></tr></table></figure>
-
-<p>Copy the config to the root of hexo:</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp node_modules/hexo-theme-next/_config.yml _config.next.yml</span><br></pre></td></tr></table></figure>
-
-<h2 id="Deploy-Your-Blog-to-GitHub-Pages"><a href="#Deploy-Your-Blog-to-GitHub-Pages" class="headerlink" title="Deploy Your Blog to GitHub Pages"></a>Deploy Your Blog to GitHub Pages</h2><ol>
-<li>Create a new repository on GitHub named <code>&lt;yourusername&gt;.github.io</code>.</li>
-<li>Install the <code>hexo-deployer-git</code> plugin:</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>Configure deployment in your blog’s <code>_config.yml</code>:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
-
-<p>Replace <code>&lt;username&gt;</code> with your GitHub username.</p>
-<ol>
-<li><p>Deploy your blog:</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="After-Install"><a href="#After-Install" class="headerlink" title="After Install"></a>After Install</h1><h2 id="Use-Archive-Page-as-Home-Page"><a href="#Use-Archive-Page-as-Home-Page" class="headerlink" title="Use Archive Page as Home Page"></a>Use Archive Page as Home Page</h2><p>You can configure the path of archive and index generator in &#x3D;&#x3D;Hexo config file&#x3D;&#x3D;, e.g.</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">archive_dir:</span> <span class="string">/</span></span><br><span class="line"></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">archives</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span></span><br></pre></td></tr></table></figure>
-
-<p>Reference: <a href="https://theme-next.js.org/docs/theme-settings/custom-pages#Use-Archive-Page-as-Home-Page">https://theme-next.js.org/docs/theme-settings/custom-pages#Use-Archive-Page-as-Home-Page</a></p>
-<h2 id="Hide-“Keep-on-posting”-in-Archive-Page"><a href="#Hide-“Keep-on-posting”-in-Archive-Page" class="headerlink" title="Hide “Keep on posting” in Archive Page"></a>Hide “Keep on posting” in Archive Page</h2><p>Create and edit <code>source/_data/styles.styl</code> in &#x3D;&#x3D;site root directory&#x3D;&#x3D; and add styles:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">.archive</span> <span class="string">.collection-title</span> &#123;</span><br><span class="line">  <span class="attr">display:</span> <span class="string">none</span> <span class="type">!important;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Then uncomment <code>style</code> under the <code>custom_file_path</code> section in &#x3D;&#x3D;NexT config file&#x3D;&#x3D;.</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>Reference: <a href="https://theme-next.js.org/docs/advanced-settings/custom-files.html#Hide-Keep-on-posting-in-Archive-Page">https://theme-next.js.org/docs/advanced-settings/custom-files.html#Hide-Keep-on-posting-in-Archive-Page</a></p>
-<h2 id="How-to-make-the-Archieve-page-not-paginated"><a href="#How-to-make-the-Archieve-page-not-paginated" class="headerlink" title="How to make the Archieve page not paginated"></a>How to make the Archieve page not paginated</h2><p>Find the root <code>_config.yml</code>，change the pagination to 0.</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Hobbies</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -1359,7 +1376,7 @@
 
 
 
-<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p>![[CleanShot 2024-02-22 at <a href="mailto:&#49;&#53;&#46;&#x33;&#50;&#46;&#x30;&#51;&#64;&#x32;&#x78;&#x2e;&#x6a;&#x70;&#103;">&#49;&#53;&#46;&#x33;&#50;&#46;&#x30;&#51;&#64;&#x32;&#x78;&#x2e;&#x6a;&#x70;&#103;</a>]]</p>
+<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p>![[CleanShot 2024-02-22 at <a href="mailto:&#x31;&#53;&#46;&#x33;&#x32;&#x2e;&#48;&#x33;&#64;&#x32;&#x78;&#x2e;&#106;&#x70;&#x67;">&#x31;&#53;&#46;&#x33;&#x32;&#x2e;&#48;&#x33;&#64;&#x32;&#x78;&#x2e;&#106;&#x70;&#x67;</a>]]</p>
 <ul>
 <li><p><strong>Errors:</strong> Indicate critical problems, usually outside the application’s control (e.g., <code>OutOfMemoryError</code>). Recovery is typically not possible.</p>
 </li>
@@ -1588,23 +1605,6 @@
       </categories>
       <tags>
         <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Rime输入法折腾记</title>
-    <url>/2024/02/29/Hobbies/Rime/</url>
-    <content><![CDATA[<p>早就听闻了Rime输入法的大名，但一直看教程觉得太麻烦，终于花时间好好折腾了一下，其实比想象中简单太多了。</p>
-<h1 id="Rime介绍"><a href="#Rime介绍" class="headerlink" title="Rime介绍"></a>Rime介绍</h1><p>没深入研究过，但给我的个人感觉Rime应该是以开源的输入法框架，任何系统如果想要使用，必须先自己开发一套工具。于是macOS上叫作鼠须管，Windows上叫作小狼毫，iOS上也有叫作仓输入法</p>
-<h1 id="使用Rime的好处"><a href="#使用Rime的好处" class="headerlink" title="使用Rime的好处"></a>使用Rime的好处</h1><p>不用联网，不用担心隐私问题，自己维护词库，很有成就感。</p>
-<h1 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h1><p>这里建议直接使用雾凇输入法：<a href="https://github.com/iDvel/rime-ice">https://github.com/iDvel/rime-ice</a></p>
-<p>作者文档写的清晰易懂，简单来说就是download整个repo，然后把整个文件拖到Rime的配置文件夹就行了。整个rime包括设置词库表等一切东西，都是由<code>.yaml</code>所控制的，所以用整个repo的文件，替换掉原本的就可以完美使用雾凇输入法了。</p>
-<p>目前看来，只要使用简体字，使用雾凇输入法配置是最佳捷径。</p>
-]]></content>
-      <categories>
-        <category>Hobbies</category>
-      </categories>
-      <tags>
-        <tag>rime</tag>
       </tags>
   </entry>
   <entry>
