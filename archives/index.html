@@ -654,7 +654,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-05 18:33:47" itemprop="dateModified" datetime="2024-03-05T18:33:47-08:00">2024-03-05</time>
+      <time title="Modified: 2024-03-05 21:09:52" itemprop="dateModified" datetime="2024-03-05T21:09:52-08:00">2024-03-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -688,31 +688,31 @@
 <tbody><tr>
 <td><a href="#What&is&the&Final&keyword">1</a></td>
 <td><a href="#What-is-the-Final-keyword">What is the Final keyword?</a></td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 </tr>
 <tr>
 <td><a href="#What&is&a&static&field&static&method&and&static&class">2</a></td>
 <td><a href="#What-is-a-static-field-static-method-and-static-class">What is a static field, static method, and static class?</a></td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 </tr>
 <tr>
 <td><a href="#What&are&Primitive&data&types&in&Java">3</a></td>
 <td><a href="#What-are-Primitive-data-types-in-Java">What are Primitive data types in Java?</a></td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 </tr>
 <tr>
 <td><a href="#What&are&the&differences&between&passing&by&value&and&passing&by&reference">4</a></td>
 <td><a href="#What-are-the-differences-between-passing-by-value-and-passing-by-reference">What are the differences between passing by value and passing by reference?</a></td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 </tr>
 <tr>
 <td><a href="#Difference&between&int&and&Integer">5</a></td>
 <td><a href="#Difference-between-int-and-Integer">Difference between int and Integer</a></td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 </tr>
 <tr>
@@ -1375,11 +1375,13 @@
 <p><strong>Static nested classes</strong>: Static nested classes are a type of inner class in java where the inner class is static. It can only access the static members of the outer class. It will make the code more readable and maintainable.</p>
 <p>For the normal inner class, you cannot create an inner class object without first creating the outer class object. But for the static inner class, we can create a static inner class object without creating the outer class object.</p>
 <p>A static field is a class-level variable shared among all instances.<br>A static method belongs to the class and doesn’t need an instance to be invoked.<br>A static class, specifically an inner class, doesn’t hold a reference to an outer class instance and is used for grouping related classes.</p>
-<h1 id="What-are-Primitive-data-types-in-Java"><a href="#What-are-Primitive-data-types-in-Java" class="headerlink" title="What are Primitive data types in Java?"></a>What are Primitive data types in Java?</h1><p>Primitive data are predefined in Java and named by a reserved keyword. They represent the most basic data types you can work with. Java programming language supports eight different primitive types - byte, short, int, long, float, double, boolean and char.</p>
+<h1 id="What-are-Primitive-data-types-in-Java"><a href="#What-are-Primitive-data-types-in-Java" class="headerlink" title="What are Primitive data types in Java?"></a>What are Primitive data types in Java?</h1><p>Primitive data are predefined in Java and named by a reserved keyword. They represent the most basic data types you can work with. They are stored on the stack which make them more efficient. Java programming language supports eight different primitive types - byte, short, int, long, float, double, boolean and char.</p>
 <h1 id="What-are-the-differences-between-passing-by-value-and-passing-by-reference"><a href="#What-are-the-differences-between-passing-by-value-and-passing-by-reference" class="headerlink" title="What are the differences between passing by value and passing by reference?"></a>What are the differences between passing by value and passing by reference?</h1><p>Passing by value means that a copy of the actual value is passed to the function. Any changes made to this value in the function do not affect the original value outside the function.</p>
 <p>Passing by reference means that a reference (or pointer) to the actual data is passed to the function, allowing the function to modify the original data. Changes made to this data within the function affect the original data outside the function.</p>
+<p>In Java, modifications to the object inside the method affect the original because when the object is passed into the method, it actually passes it with the reference, not the object itself. That means the original reference and the method’s parameter reference point to the same object. Therefore, any modification made to the object through this reference is reflected outside the method as well.</p>
 <h1 id="Difference-between-int-and-Integer"><a href="#Difference-between-int-and-Integer" class="headerlink" title="Difference between int and Integer"></a>Difference between int and Integer</h1><p><code>int</code> is a primitive data type in Java that represents an integer value. It is not an object and thus cannot be null. Its default value is 0. Being a primitive, it is stored on the stack, which makes it more efficient in terms of memory and processing speed.</p>
 <p><code>Integer</code>, on the other hand, is a wrapper class in the <code>java.lang</code> package that encapsulates an <code>int</code> value. It is an object, which means it can be null. It provides several methods for converting, comparing, and manipulating integer values. Since it is an object, it is stored on the heap, which makes it less efficient than <code>int</code> in terms of memory and processing speed. However, it is necessary when working with collections that only store objects, such as <code>ArrayList</code>, or when needing to represent the absence of a value with null.</p>
+<h1 id="Time-complexity-of-LinkedList"><a href="#Time-complexity-of-LinkedList" class="headerlink" title="Time complexity of LinkedList"></a>Time complexity of LinkedList</h1><p>For LinkedLists, head&#x2F;tail operations are O(1); others are O(n).<br>O(1): <code>offerFirst()</code>, <code>offerLast()</code>, <code>pollFirst()</code>, <code>pollLast()</code><br>O(n): <code>contains()</code>, <code>get()</code>,<code>set(int index, E element)</code></p>
 <h1 id="Difference-between-ArrayList-and-LinkedList"><a href="#Difference-between-ArrayList-and-LinkedList" class="headerlink" title="Difference between ArrayList and LinkedList"></a>Difference between ArrayList and LinkedList</h1><p>ArrayList is based on a dynamic array, offering fast access to elements (O(1) for get and set), but slower insertions and deletions (O(n) in the worst case) due to the need to resize and shift elements.</p>
 <p>LinkedList, a doubly linked list, offers quick insertions and deletions (O(1) if you directly access the node) but slower element access (O(n)), since it must traverse the list. ArrayList is suited for scenarios with frequent reads, while LinkedList is better for frequent writes.</p>
 <h1 id="Difference-between-vector-and-arraylist"><a href="#Difference-between-vector-and-arraylist" class="headerlink" title="Difference between vector and arraylist"></a>Difference between vector and arraylist</h1><p>Vector is synchronized and thread-safe but slower, while ArrayList is not synchronized, faster, and is the preferred choice unless thread safety is needed. Vector increases its size by a specified percentage or doubles, whereas ArrayList grows by half of its size. Vector is a legacy class, whereas ArrayList is part of the modern Collections Framework.</p>
@@ -1562,7 +1564,7 @@
 
 
 
-<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p>![[CleanShot 2024-02-22 at <a href="mailto:&#49;&#53;&#x2e;&#51;&#50;&#46;&#x30;&#51;&#x40;&#50;&#x78;&#x2e;&#x6a;&#112;&#103;">&#49;&#53;&#x2e;&#51;&#50;&#46;&#x30;&#51;&#x40;&#50;&#x78;&#x2e;&#x6a;&#112;&#103;</a>]]</p>
+<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p>![[CleanShot 2024-02-22 at <a href="mailto:&#x31;&#53;&#46;&#x33;&#x32;&#46;&#x30;&#51;&#64;&#50;&#120;&#46;&#x6a;&#x70;&#x67;">&#x31;&#53;&#46;&#x33;&#x32;&#46;&#x30;&#51;&#64;&#50;&#120;&#46;&#x6a;&#x70;&#x67;</a>]]</p>
 <ul>
 <li><p><strong>Errors:</strong> Indicate critical problems, usually outside the application’s control (e.g., <code>OutOfMemoryError</code>). Recovery is typically not possible.</p>
 </li>
@@ -1666,7 +1668,6 @@
 <li><strong>ExecutorService</strong>: Manages concurrent tasks efficiently with thread pools.</li>
 <li><strong>Cache</strong>: Improves performance by storing frequently accessed data.</li>
 </ol>
-<h1 id="Time-complexity-of-LinkedList"><a href="#Time-complexity-of-LinkedList" class="headerlink" title="Time complexity of LinkedList"></a>Time complexity of LinkedList</h1><p>For LinkedLists, head&#x2F;tail operations are O(1); others are O(n).</p>
 <h1 id="How-does-Java-code-compile-and-run-JVM"><a href="#How-does-Java-code-compile-and-run-JVM" class="headerlink" title="How does Java code compile and run? -&gt; JVM"></a>How does Java code compile and run? -&gt; JVM</h1><p>Java code is compiled into bytecode by the Java compiler, which is then run on the JVM. The JVM interprets or compiles the bytecode into machine code, enabling it to run on any platform that has a compatible JVM.</p>
 <h1 id="Intermediate-operation-and-terminal-operation"><a href="#Intermediate-operation-and-terminal-operation" class="headerlink" title="Intermediate operation and terminal operation"></a>Intermediate operation and terminal operation</h1><p>Intermediate operations, like <code>filter</code> and <code>map</code>, transform streams without finalizing results and are lazy. Terminal operations, such as <code>collect</code> and <code>forEach</code>, produce final results, ending the stream’s use.</p>
 <h1 id="Java-8-callable-future"><a href="#Java-8-callable-future" class="headerlink" title="Java 8 callable, future"></a>Java 8 callable, future</h1><p>In Java 8, <code>Callable</code> is an interface that represents a task that returns a result. Unlike <code>Runnable</code>, which does not return a result, <code>Callable</code> can return a value and also throw a checked exception. You use a <code>Callable</code> in situations where you need to perform a task in a separate thread and then return the result of the task to the main thread.</p>
@@ -2310,7 +2311,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-04 22:08:36" itemprop="dateModified" datetime="2024-03-04T22:08:36-08:00">2024-03-04</time>
+      <time title="Modified: 2024-03-05 21:58:40" itemprop="dateModified" datetime="2024-03-05T21:58:40-08:00">2024-03-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -2338,6 +2339,13 @@
 <h1 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h1><p>这里建议直接使用雾凇输入法：<a target="_blank" rel="noopener" href="https://github.com/iDvel/rime-ice">https://github.com/iDvel/rime-ice</a></p>
 <p>作者文档写的清晰易懂，简单来说就是download整个repo，然后把整个文件拖到Rime的配置文件夹就行了。整个rime包括设置词库表等一切东西，都是由<code>.yaml</code>所控制的，所以用整个repo的文件，替换掉原本的就可以完美使用雾凇输入法了。</p>
 <p>目前看来，只要使用简体字，使用雾凇输入法配置是最佳捷径。</p>
+<h1 id="Patch"><a href="#Patch" class="headerlink" title="Patch"></a>Patch</h1><p>在使用了半个月后，发现patch功能相当关键。比方说，我目前用的是雾凇输入法，作者隔一段时间就会更新。但是如果作者更新的文件已经被我更改过了，这就牵扯到了一个很麻烦的问题：合并。</p>
+<p>想要解决合并这个问题，最好的办法就是“<strong>解耦</strong>”，也就是用patch。不管作者更改了什么内容，我只要拥有patch文件，<strong>我的个人设置永远不会和源文件有冲突。</strong> 这样做的好处不仅是合并方便，也可以告诉自己在源文件上更改了什么，就算过了很长一段时间，只要查找patch文件，就可以一目了然。</p>
+<p>下面说一下如何写patch:<br>文件名为 <code>xxx.custom.yaml</code>，内容以 <code>patch:</code> 开头的，是补丁文件，<strong>注意缩进</strong>，可以对原配置进行覆盖和追加。</p>
+<ul>
+<li><strong>方案 <code>xxx.schema.yaml</code> 的补丁文件是 <code>xxx.custom.yaml</code></strong>, 而不是<code>xxx.schema.custom.yaml</code></li>
+<li><code>dict</code>文件不能写patch，目前我自己想到的方法就是通过patch更改schema文件内容，重新写一个自己的custom dict。这样一来也实现了解耦。<strong>但是注意这样做会把原来的数据库更改为你的新的dict所创建的名字</strong>，因此，做好schema的patch之后一定要更改数据库的名字。</li>
+</ul>
 
       
     </div>
@@ -2557,3 +2565,4 @@
 
 </body>
 </html>
+>
