@@ -27,7 +27,7 @@
 <meta property="og:description" content="题号 题名 遍数 熟练度    1 What is the Final keyword? 0 0   2 What is a static field, static method, and static class? 0 0   3 What are Primitive data types in Java? 0 0   4 What are the differences between">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-03-02T20:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-06T02:09:01.361Z">
+<meta property="article:modified_time" content="2024-03-06T02:33:47.401Z">
 <meta property="article:author" content="iTvX">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -220,7 +220,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-05 18:09:01" itemprop="dateModified" datetime="2024-03-05T18:09:01-08:00">2024-03-05</time>
+      <time title="Modified: 2024-03-05 18:33:47" itemprop="dateModified" datetime="2024-03-05T18:33:47-08:00">2024-03-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -923,10 +923,12 @@
 <td>0</td>
 </tr>
 </tbody></table>
-<h1 id="What-is-the-Final-keyword"><a href="#What-is-the-Final-keyword" class="headerlink" title="What is the Final keyword?"></a>What is the Final keyword?</h1><p>1: if we use final with primitive type, then its value cannot be changed after assigned</p>
-<p>2: if use it with an object type, then that object cannot be reference again.</p>
-<p>3: if use it with a method, then we can not override it in the subclass</p>
-<p>4: if use it with class, then that class cannot be extended</p>
+<h1 id="What-is-the-Final-keyword"><a href="#What-is-the-Final-keyword" class="headerlink" title="What is the Final keyword?"></a>What is the Final keyword?</h1><ol>
+<li><code>final</code> primitive: value immutable after assignment.</li>
+<li><code>final</code> object: object cannot be reference again.</li>
+<li><code>final</code> method: cannot be overridden.</li>
+<li><code>final</code> class: cannot be extended.</li>
+</ol>
 <p>(For objective type,</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="type">Person</span> <span class="variable">person1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;John&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// This is allowed: modifying the object that person1 points to.  </span></span><br><span class="line">person1.setName(<span class="string">&quot;Jane&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// This is not allowed and will cause a compilation error:  </span></span><br><span class="line"><span class="comment">// person1 = new Person(&quot;Doe&quot;); )</span></span><br></pre></td></tr></table></figure>
 
@@ -937,7 +939,8 @@
 <p><strong>Static Block</strong>: The static block gets executed exactly once when the class is first loaded. Use the static block to initialize the static variables.</p>
 <p><strong>Static nested classes</strong>: Static nested classes are a type of inner class in java where the inner class is static. It can only access the static members of the outer class. It will make the code more readable and maintainable.</p>
 <p>For the normal inner class, you cannot create an inner class object without first creating the outer class object. But for the static inner class, we can create a static inner class object without creating the outer class object.</p>
-<h1 id="What-are-Primitive-data-types-in-Java"><a href="#What-are-Primitive-data-types-in-Java" class="headerlink" title="What are Primitive data types in Java?"></a>What are Primitive data types in Java?</h1><p>Primitive data types are data types that are predefined in Java and named by a reserved keyword. Java programming language supports eight different primitive types - byte, short, int, long, float, double, boolean and char.</p>
+<p>A static field is a class-level variable shared among all instances.<br>A static method belongs to the class and doesn’t need an instance to be invoked.<br>A static class, specifically an inner class, doesn’t hold a reference to an outer class instance and is used for grouping related classes.</p>
+<h1 id="What-are-Primitive-data-types-in-Java"><a href="#What-are-Primitive-data-types-in-Java" class="headerlink" title="What are Primitive data types in Java?"></a>What are Primitive data types in Java?</h1><p>Primitive data are predefined in Java and named by a reserved keyword. They represent the most basic data types you can work with. Java programming language supports eight different primitive types - byte, short, int, long, float, double, boolean and char.</p>
 <h1 id="What-are-the-differences-between-passing-by-value-and-passing-by-reference"><a href="#What-are-the-differences-between-passing-by-value-and-passing-by-reference" class="headerlink" title="What are the differences between passing by value and passing by reference?"></a>What are the differences between passing by value and passing by reference?</h1><p>Passing by value means that a copy of the actual value is passed to the function. Any changes made to this value in the function do not affect the original value outside the function.</p>
 <p>Passing by reference means that a reference (or pointer) to the actual data is passed to the function, allowing the function to modify the original data. Changes made to this data within the function affect the original data outside the function.</p>
 <h1 id="Difference-between-int-and-Integer"><a href="#Difference-between-int-and-Integer" class="headerlink" title="Difference between int and Integer"></a>Difference between int and Integer</h1><p><code>int</code> is a primitive data type in Java that represents an integer value. It is not an object and thus cannot be null. Its default value is 0. Being a primitive, it is stored on the stack, which makes it more efficient in terms of memory and processing speed.</p>
@@ -1124,7 +1127,7 @@
 
 
 
-<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p>![[CleanShot 2024-02-22 at <a href="mailto:&#49;&#53;&#x2e;&#x33;&#50;&#46;&#48;&#x33;&#64;&#x32;&#x78;&#46;&#x6a;&#112;&#x67;">&#49;&#53;&#x2e;&#x33;&#50;&#46;&#48;&#x33;&#64;&#x32;&#x78;&#46;&#x6a;&#112;&#x67;</a>]]</p>
+<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p>![[CleanShot 2024-02-22 at <a href="mailto:&#49;&#53;&#x2e;&#x33;&#50;&#x2e;&#48;&#51;&#x40;&#x32;&#x78;&#x2e;&#106;&#112;&#103;">&#49;&#53;&#x2e;&#x33;&#50;&#x2e;&#48;&#51;&#x40;&#x32;&#x78;&#x2e;&#106;&#112;&#103;</a>]]</p>
 <ul>
 <li><p><strong>Errors:</strong> Indicate critical problems, usually outside the application’s control (e.g., <code>OutOfMemoryError</code>). Recovery is typically not possible.</p>
 </li>
@@ -1438,4 +1441,3 @@
 
 </body>
 </html>
-ml>
