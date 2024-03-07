@@ -27,7 +27,7 @@
 <meta property="og:description" content="题号 题名 遍数 熟练度    1 What is the Final keyword? 2 1   2 What is a static field, static method, and static class? 2 1   3 What are Primitive data types in Java? 2 1   4 What are the differences between">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-03-02T20:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-06T20:05:09.072Z">
+<meta property="article:modified_time" content="2024-03-07T07:56:27.761Z">
 <meta property="article:author" content="iTvX">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -220,7 +220,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-06 12:05:09" itemprop="dateModified" datetime="2024-03-06T12:05:09-08:00">2024-03-06</time>
+      <time title="Modified: 2024-03-06 23:56:27" itemprop="dateModified" datetime="2024-03-06T23:56:27-08:00">2024-03-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -289,49 +289,49 @@
 <tr>
 <td><a href="#Difference&between&ArrayList&and&LinkedList">7</a></td>
 <td><a href="#Difference-between-ArrayList-and-LinkedList">Difference between ArrayList and LinkedList</a></td>
-<td>1</td>
+<td>2</td>
 <td>1</td>
 </tr>
 <tr>
 <td><a href="#Difference&between&vector&and&arraylist">8</a></td>
 <td><a href="#Difference-between-vector-and-arraylist">Difference between vector and arrayList</a></td>
-<td>1</td>
+<td>2</td>
 <td>1</td>
 </tr>
 <tr>
 <td><a href="#Memory&management&of&Java&8&feature">9</a></td>
 <td><a href="#Memory-management-of-Java-8-feature">Memory management of Java 8 feature?</a></td>
-<td>1</td>
+<td>2</td>
 <td>1</td>
 </tr>
 <tr>
 <td><a href="#Give&me&an&example&of&how&you&use&java&8&feature&in&your&project">10</a></td>
 <td><a href="#Give-me-an-example-of-how-you-use-java-8-feature-in-your-project">Give me an example of how you use java 8 feature in your project</a></td>
-<td>0</td>
-<td>0</td>
+<td>1</td>
+<td>1</td>
 </tr>
 <tr>
 <td><a href="#optional&class">11</a></td>
 <td><a href="#optional-class">Optional class</a></td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 </tr>
 <tr>
 <td><a href="#Functional&Interface">12</a></td>
 <td><a href="#Functional-Interface">Functional Interface</a></td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 </tr>
 <tr>
 <td><a href="#New&features&of&Java&8">13</a></td>
 <td><a href="#New-features-of-Java-8">New features of Java 8</a></td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 </tr>
 <tr>
 <td><a href="#What&is&the&advantage&of&Java&8&compared&to&Java&7">14</a></td>
 <td><a href="#What-is-the-advantage-of-Java-8-compared-to-Java-7">What is the advantage of Java 8 compared to Java 7?</a></td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 </tr>
 <tr>
@@ -950,26 +950,27 @@
 <h1 id="Difference-between-int-and-Integer"><a href="#Difference-between-int-and-Integer" class="headerlink" title="Difference between int and Integer"></a>Difference between int and Integer</h1><p><code>int</code> is a primitive data type in Java that represents an integer value. It is not an object and thus cannot be null. Its default value is 0. Being a primitive, it is stored on the stack, which makes it more efficient in terms of memory and processing speed.</p>
 <p><code>Integer</code>, on the other hand, is a wrapper class in the <code>java.lang</code> package that encapsulates an <code>int</code> value. It is an object, which means it can be null. It provides several methods for converting, comparing, and manipulating integer values. Since it is an object, it is stored on the heap, which makes it less efficient than <code>int</code> in terms of memory and processing speed. However, it is necessary when working with collections that only store objects, such as <code>ArrayList</code>, or when needing to represent the absence of a value with null.</p>
 <h1 id="Time-complexity-of-LinkedList"><a href="#Time-complexity-of-LinkedList" class="headerlink" title="Time complexity of LinkedList"></a>Time complexity of LinkedList</h1><p>For LinkedLists, head&#x2F;tail operations are O(1); others are O(n).<br>O(1): <code>offerFirst()</code>, <code>offerLast()</code>, <code>pollFirst()</code>, <code>pollLast()</code><br>O(n): <code>contains()</code>, <code>get()</code>,<code>set(int index, E element)</code></p>
-<h1 id="Difference-between-ArrayList-and-LinkedList"><a href="#Difference-between-ArrayList-and-LinkedList" class="headerlink" title="Difference between ArrayList and LinkedList"></a>Difference between ArrayList and LinkedList</h1><p>ArrayList is based on a dynamic array, offering fast access to elements (O(1) for get and set), but slower insertions and deletions (O(n) in the worst case) due to the need to resize and shift elements.</p>
-<p>LinkedList, a doubly linked list, offers quick insertions and deletions (O(1) if you directly access the node) but slower element access (O(n)), since it must traverse the list. ArrayList is suited for scenarios with frequent reads, while LinkedList is better for frequent writes.</p>
-<p>ArrayList:</p>
+<h1 id="Difference-between-ArrayList-and-LinkedList"><a href="#Difference-between-ArrayList-and-LinkedList" class="headerlink" title="Difference between ArrayList and LinkedList"></a>Difference between ArrayList and LinkedList</h1><p>ArrayList:</p>
 <ul>
 <li>Uses dynamic array internally</li>
-<li>O(1) random access</li>
+<li>O(1) random access(O(1) for get and set)</li>
 <li>Less memory overhead</li>
 <li>Faster for sequential traversal</li>
 <li>Automatic resizing</li>
+<li>slower insertions and deletions (O(n) in the worst case) due to the need to resize and shift elements.</li>
 </ul>
 <p>LinkedList:</p>
 <ul>
 <li>Uses doubly-linked list internally</li>
 <li>O(1) insertion&#x2F;deletion at ends</li>
+<li>slower element access (O(n)),  since it must traverse the list. </li>
 <li>More memory overhead</li>
 <li>Faster for mid-list insertion&#x2F;deletion</li>
 <li>No resizing needed</li>
 </ul>
+<p>ArrayList is suited for scenarios with frequent reads, while LinkedList is better for frequent writes.</p>
 <h1 id="Difference-between-vector-and-arraylist"><a href="#Difference-between-vector-and-arraylist" class="headerlink" title="Difference between vector and arraylist"></a>Difference between vector and arraylist</h1><p>Vector is synchronized and thread-safe but slower, while ArrayList is not synchronized, faster, and is the preferred choice unless thread safety is needed. Vector increases its size by a specified percentage or doubles, whereas ArrayList grows by half of its size. Vector is a legacy class, whereas ArrayList is part of the modern Collections Framework.</p>
-<h1 id="Memory-management-of-Java-8-feature"><a href="#Memory-management-of-Java-8-feature" class="headerlink" title="Memory management of Java 8 feature?"></a>Memory management of Java 8 feature?</h1><p>In Java 8, memory management improvements include the introduction of Metaspace, replacing the PermGen space to store class metadata in native memory, reducing the likelihood of OutOfMemoryErrors. The Garbage-First Collector (G1 GC) is optimized for better garbage collection in large memory environments with predictable pauses. Java 8 provided enhancements in heap management, allowing for more efficient allocation and management of memory. </p>
+<h1 id="Memory-management-of-Java-8-feature"><a href="#Memory-management-of-Java-8-feature" class="headerlink" title="Memory management of Java 8 feature?"></a>Memory management of Java 8 feature?</h1><p>Java 8 uses Metaspace to replace PermGen for storing class metadata in native memory, reducing OutOfMemoryErrors. The Garbage-First Collector (G1 GC) optimizes garbage collection in large memory environments with predictable pauses. Additionally, improvements in heap management enable more efficient memory allocation and management.</p>
 <h1 id="Give-me-an-example-of-how-you-use-java-8-feature-in-your-project"><a href="#Give-me-an-example-of-how-you-use-java-8-feature-in-your-project" class="headerlink" title="Give me an example of how you use java 8 feature in your project"></a>Give me an example of how you use java 8 feature in your project</h1><p>In our project, we used Java 8’s Stream API for efficiently processing collections and Optional to handle null values more gracefully, enhancing code readability and reducing the chances of NullPointerExceptions.</p>
 <h1 id="optional-class"><a href="#optional-class" class="headerlink" title="optional class"></a>optional class</h1><p>The <code>Optional</code> class in Java is a container for nullable values, introduced in Java 8 to avoid <code>NullPointerException</code> and to provide a clearer way to handle the presence or absence of a value.</p>
 <h1 id="Functional-Interface"><a href="#Functional-Interface" class="headerlink" title="Functional Interface"></a>Functional Interface</h1><p>A functional interface is an interface with exactly one abstract method, allowing lambda expressions. It can include default or static methods.</p>
@@ -979,7 +980,7 @@
 <li><strong>Stream API</strong>: New abstract layer to handle collections and enable functional-style operations on elements.</li>
 <li><strong>Default Methods</strong>: Allow methods in interfaces to have an implementation.</li>
 <li><strong>Method References</strong>: Enable you to refer to methods by their names instead of invoking them directly.</li>
-<li><strong>Optional Class</strong>: A container object which may or may not contain a non-null value, helping to avoid null-related errors.</li>
+<li><strong>Optional Class</strong></li>
 <li><strong>Nashorn JavaScript Engine</strong>: A high-performance JavaScript runtime for Java, replacing Rhino.</li>
 <li><strong>New Date-Time API</strong>: Inspired by Joda-Time, addressing the shortcomings of the old java.util.Date and Calendar.</li>
 <li><strong>Type Annotations</strong>: Enable annotations to be used in more places than before, such as in generics, which helps in improving code analysis.</li>
@@ -1164,7 +1165,7 @@
 
 
 
-<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p>![[CleanShot 2024-02-22 at <a href="mailto:&#49;&#x35;&#x2e;&#x33;&#x32;&#46;&#x30;&#51;&#64;&#50;&#120;&#x2e;&#106;&#x70;&#103;">&#49;&#x35;&#x2e;&#x33;&#x32;&#46;&#x30;&#51;&#64;&#50;&#120;&#x2e;&#106;&#x70;&#103;</a>]]</p>
+<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p>![[CleanShot 2024-02-22 at <a href="mailto:&#49;&#53;&#46;&#51;&#x32;&#46;&#x30;&#x33;&#64;&#50;&#x78;&#46;&#x6a;&#112;&#103;">&#49;&#53;&#46;&#51;&#x32;&#46;&#x30;&#x33;&#64;&#50;&#x78;&#46;&#x6a;&#112;&#103;</a>]]</p>
 <ul>
 <li><p><strong>Errors:</strong> Indicate critical problems, usually outside the application’s control (e.g., <code>OutOfMemoryError</code>). Recovery is typically not possible.</p>
 </li>
@@ -1385,13 +1386,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/02/29/Hobbies/Rime/" rel="prev" title="Rime输入法折腾记">
-                  <i class="fa fa-angle-left"></i> Rime输入法折腾记
+                <a href="/java-interview/spring/" rel="prev" title="Java Interview——Spring Concepts">
+                  <i class="fa fa-angle-left"></i> Java Interview——Spring Concepts
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/java-interview/spring/" rel="next" title="Java Interview——Spring Concepts">
-                  Java Interview——Spring Concepts <i class="fa fa-angle-right"></i>
+                <a href="/java-interview/bq/" rel="next" title="Java Interview——BQ">
+                  Java Interview——BQ <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
