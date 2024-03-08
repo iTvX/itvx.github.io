@@ -177,6 +177,85 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/03/07/Java%20Interview%20Basics/Kotlin%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="iTvX">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Think Less, Do More">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Think Less, Do More">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/03/07/Java%20Interview%20Basics/Kotlin%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-03-07 10:10:26 / Modified: 12:06:18" itemprop="dateCreated datePublished" datetime="2024-03-07T10:10:26-08:00">2024-03-07</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>在构造方法使用<code>var</code>&#x2F;<code>val</code>&#x2F;以及不使用的区别：</p>
+<ul>
+<li><code>var</code> 相当于同时自动生成 getter 和 setter 方法;</li>
+<li><code>val</code> 只自动生成 getter 方法;</li>
+<li>不写的话,就没有自动生成的 getter 和 setter。</li>
+</ul>
+<p>注意，Kotlin的构造方法是直接在class后面写括号，这点和Java不同。也可以给构造函数写default参数，比如下面这样：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>(<span class="keyword">val</span> name: String = <span class="string">&quot;&quot;</span>, <span class="keyword">val</span> age: <span class="built_in">Int</span> = <span class="number">18</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> person = Person()</span><br><span class="line"></span><br><span class="line">    println(person.name)</span><br><span class="line">    println(person.age)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里<code>class Person</code>后面就是构造函数的参数了，只要再写一个<code>=</code>就是设置default参数，这样下次创建对象的时候，即使是空的，也可以get到default的参数。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/mac/hide-skype-dock/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1200,7 +1279,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-06 23:56:27" itemprop="dateModified" datetime="2024-03-06T23:56:27-08:00">2024-03-06</time>
+      <time title="Modified: 2024-03-07 21:48:38" itemprop="dateModified" datetime="2024-03-07T21:48:38-08:00">2024-03-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1372,8 +1451,8 @@
 <tr>
 <td><a href="#What&is&OOP">24</a></td>
 <td><a href="#What-is-OOP">What is OOP?</a></td>
-<td>0</td>
-<td>0</td>
+<td>1</td>
+<td>1</td>
 </tr>
 <tr>
 <td><a href="#What&is&polymorphism">25</a></td>
@@ -1396,8 +1475,8 @@
 <tr>
 <td><a href="#What&is&Interface&and&what&is&abstract&class&What&are&the&differences&between&them">28</a></td>
 <td><a href="#What-is-Interface-and-what-is-abstract-class-What-are-the-differences-between-them">What is Interface and what is abstract class? What are the differences between them?</a></td>
-<td>0</td>
-<td>0</td>
+<td>1</td>
+<td>1</td>
 </tr>
 <tr>
 <td><a href="#Java&hashmap&implementation&hashcode&chain&vs&red&black&tree">29</a></td>
@@ -1982,7 +2061,7 @@
 <ol>
 <li><p><strong>Abstraction</strong>: Abstraction is a process of hiding the implementation details and showing only functionality to the user. For example, a TV remote control hides the complexity of the internal circuitry, focusing only on the buttons needed to operate the TV. In Java, abstraction is implemented through abstract classes and interfaces.</p>
 </li>
-<li><p><strong>Encapsulation</strong>: Encapsulation is a process of Binding data and methods within a class. It uses access modifiers (public, private, protected) to restrict access to the object’s components. </p>
+<li><p><strong>Encapsulation</strong>: Encapsulation is a process of Binding data and methods within a class. It uses access modifiers (public, private, protected, default) to restrict access to the object’s components. </p>
 </li>
 <li><p><strong>Inheritance</strong>: Using inheritance means deﬁning a parent-child relationship between classes, by doing so, you can reuse the code that is already deﬁned in the parent class. Code reusability is the biggest advantage of Inheritance. Java does not allow multiple inheritance through classes but it allows it through interfaces.</p>
 </li>
@@ -2146,7 +2225,7 @@
 
 
 
-<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p>![[CleanShot 2024-02-22 at <a href="mailto:&#x31;&#53;&#46;&#51;&#x32;&#46;&#x30;&#51;&#64;&#x32;&#x78;&#x2e;&#x6a;&#112;&#103;">&#x31;&#53;&#46;&#51;&#x32;&#46;&#x30;&#51;&#64;&#x32;&#x78;&#x2e;&#x6a;&#112;&#103;</a>]]</p>
+<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p><img src="/../../assets/CleanShot%202024-02-22%20at%2015.32.03@2x.jpg"></p>
 <ul>
 <li><p><strong>Errors:</strong> Indicate critical problems, usually outside the application’s control (e.g., <code>OutOfMemoryError</code>). Recovery is typically not possible.</p>
 </li>
