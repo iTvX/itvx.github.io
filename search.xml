@@ -32,83 +32,6 @@
       </tags>
   </entry>
   <entry>
-    <title>macOS检查最近变动文件的方法</title>
-    <url>//mac/track-macos-recent-file-activity/</url>
-    <content><![CDATA[<p>用HoudahSpot或者mac的自带finder（但是测试自带finder查找的文件远远少于HoudahSpot，原因未知），查找项目为<strong>Date Added</strong></p>
-<p>然后在Location区域排除掉不需要查找的文件夹，即可找到最新在mac变动的文件。</p>
-<p>参考配置如下：<br><img src="/../../assets/2024-03-07%20at%2023.59.19@2x.jpg"></p>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-      <tags>
-        <tag>houdahspot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS快照恢复</title>
-    <url>//mac/mac-snapshot-recovery/</url>
-    <content><![CDATA[<p>打快照</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil snapshot</span><br></pre></td></tr></table></figure>
-
-<p>列出所有快照</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil listlocalsnapshots /</span><br></pre></td></tr></table></figure>
-
-<p>删除一个快照的方法</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots 这个地方使用快照的日期</span><br></pre></td></tr></table></figure>
-
-<p>删除所有快照</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots /</span><br></pre></td></tr></table></figure>
-
-<p>恢复快照的方法，就是进入macOS启动设置页面，选择time machine进行恢复，然后选择相应的快照，即可几秒内将系统完整的恢复到上一个快照的状态，其间录入的指纹有可能丢失。</p>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>将Brainwaves（神奇脑波）的音乐提取出来</title>
-    <url>//mac/extract-brainwaves-music/</url>
-    <content><![CDATA[<p>在付费了永久版的神奇脑波之后（付费的是中文版，然后也给了英文版的使用），从App Store下载英文版的神奇脑波，名字叫作Brainwaves。</p>
-<p>他们公司名叫做iMobLife，认真搜索一下就能搜到这个app，然后在下面的文件可以找到音乐源文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/Users/(yourUserName)/Library/Containers/Brainwaves/Data/Documents/DownloadedMusic</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-      <tags>
-        <tag>Brainwaves</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>隐藏Skype在macOS dock栏的显示</title>
-    <url>//mac/hide-skype-dock/</url>
-    <content><![CDATA[<p>Sonoma测试下有效：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write /Applications/Skype.app/Contents/Info LSUIElement 1</span><br></pre></td></tr></table></figure>
-
-<p>经过测试，<strong>发现即使手动修改Info.plist，加上<code>LSUIElement</code>为<code>true</code>也无法起作用</strong>，会显示程序出现错误。原因不明，可能是因为手动修改后，无法取得系统信任。</p>
-<p>推测对于其他软件也可以起到相同的隐藏dock的作用。</p>
-<p><strong>已知问题</strong>：<br>虽然确实可以在dock隐藏，但是每次都需要重新登录skype，原因不明。</p>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-      <tags>
-        <tag>skype</tag>
-        <tag>dock</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决macOS应用程序损坏无法打开</title>
-    <url>//mac/fix-app-damage/</url>
-    <content><![CDATA[<p>在终端输入：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">xattr -cr /Applications/AppName.app</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Java Interview——Java Concepts</title>
     <url>//java-interview/java-general/</url>
     <content><![CDATA[<table>
@@ -1952,6 +1875,83 @@
       </categories>
       <tags>
         <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS快照恢复</title>
+    <url>//mac/mac-snapshot-recovery/</url>
+    <content><![CDATA[<p>打快照</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil snapshot</span><br></pre></td></tr></table></figure>
+
+<p>列出所有快照</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil listlocalsnapshots /</span><br></pre></td></tr></table></figure>
+
+<p>删除一个快照的方法</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots 这个地方使用快照的日期</span><br></pre></td></tr></table></figure>
+
+<p>删除所有快照</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots /</span><br></pre></td></tr></table></figure>
+
+<p>恢复快照的方法，就是进入macOS启动设置页面，选择time machine进行恢复，然后选择相应的快照，即可几秒内将系统完整的恢复到上一个快照的状态，其间录入的指纹有可能丢失。</p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>将Brainwaves（神奇脑波）的音乐提取出来</title>
+    <url>//mac/extract-brainwaves-music/</url>
+    <content><![CDATA[<p>在付费了永久版的神奇脑波之后（付费的是中文版，然后也给了英文版的使用），从App Store下载英文版的神奇脑波，名字叫作Brainwaves。</p>
+<p>他们公司名叫做iMobLife，认真搜索一下就能搜到这个app，然后在下面的文件可以找到音乐源文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/Users/(yourUserName)/Library/Containers/Brainwaves/Data/Documents/DownloadedMusic</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>Brainwaves</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS检查最近变动文件的方法</title>
+    <url>//mac/track-macos-recent-file-activity/</url>
+    <content><![CDATA[<p>用HoudahSpot或者mac的自带finder（但是测试自带finder查找的文件远远少于HoudahSpot，原因未知），查找项目为<strong>Date Added</strong></p>
+<p>然后在Location区域排除掉不需要查找的文件夹，即可找到最新在mac变动的文件。</p>
+<p>参考配置如下：<br><img src="/../../assets/2024-03-07%20at%2023.59.19@2x.jpg"></p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>houdahspot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决macOS应用程序损坏无法打开</title>
+    <url>//mac/fix-app-damage/</url>
+    <content><![CDATA[<p>在终端输入：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">xattr -cr /Applications/AppName.app</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>隐藏Skype在macOS dock栏的显示</title>
+    <url>//mac/hide-skype-dock/</url>
+    <content><![CDATA[<p>Sonoma测试下有效：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write /Applications/Skype.app/Contents/Info LSUIElement 1</span><br></pre></td></tr></table></figure>
+
+<p>经过测试，<strong>发现即使手动修改Info.plist，加上<code>LSUIElement</code>为<code>true</code>也无法起作用</strong>，会显示程序出现错误。原因不明，可能是因为手动修改后，无法取得系统信任。</p>
+<p>推测对于其他软件也可以起到相同的隐藏dock的作用。</p>
+<p><strong>已知问题</strong>：<br>虽然确实可以在dock隐藏，但是每次都需要重新登录skype，原因不明。</p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>skype</tag>
+        <tag>dock</tag>
       </tags>
   </entry>
 </search>
