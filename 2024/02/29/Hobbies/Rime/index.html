@@ -27,7 +27,7 @@
 <meta property="og:description" content="早就听闻了Rime输入法的大名，但一直看教程觉得太麻烦，终于花时间好好折腾了一下，其实比想象中简单太多了。 Rime介绍没深入研究过，但给我的个人感觉Rime应该是以开源的输入法框架，任何系统如果想要使用，必须先自己开发一套工具。于是macOS上叫作鼠须管，Windows上叫作小狼毫，iOS上也有叫作仓输入法 使用Rime的好处不用联网，不用担心隐私问题，自己维护词库，很有成就感。 安装使用这里建">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-02-29T21:15:20.000Z">
-<meta property="article:modified_time" content="2024-03-06T05:58:40.439Z">
+<meta property="article:modified_time" content="2024-03-08T07:51:35.822Z">
 <meta property="article:author" content="iTvX">
 <meta property="article:tag" content="rime">
 <meta name="twitter:card" content="summary">
@@ -157,7 +157,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -220,7 +220,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-05 21:58:40" itemprop="dateModified" datetime="2024-03-05T21:58:40-08:00">2024-03-05</time>
+      <time title="Modified: 2024-03-07 23:51:35" itemprop="dateModified" datetime="2024-03-07T23:51:35-08:00">2024-03-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -251,9 +251,16 @@
 <p>想要解决合并这个问题，最好的办法就是“<strong>解耦</strong>”，也就是用patch。不管作者更改了什么内容，我只要拥有patch文件，<strong>我的个人设置永远不会和源文件有冲突。</strong> 这样做的好处不仅是合并方便，也可以告诉自己在源文件上更改了什么，就算过了很长一段时间，只要查找patch文件，就可以一目了然。</p>
 <p>下面说一下如何写patch:<br>文件名为 <code>xxx.custom.yaml</code>，内容以 <code>patch:</code> 开头的，是补丁文件，<strong>注意缩进</strong>，可以对原配置进行覆盖和追加。</p>
 <ul>
-<li><strong>方案 <code>xxx.schema.yaml</code> 的补丁文件是 <code>xxx.custom.yaml</code></strong>, 而不是<code>xxx.schema.custom.yaml</code></li>
-<li><code>dict</code>文件不能写patch，目前我自己想到的方法就是通过patch更改schema文件内容，重新写一个自己的custom dict。这样一来也实现了解耦。<strong>但是注意这样做会把原来的数据库更改为你的新的dict所创建的名字</strong>，因此，做好schema的patch之后一定要更改数据库的名字。</li>
+<li><p><strong>方案 <code>xxx.schema.yaml</code> 的补丁文件是 <code>xxx.custom.yaml</code></strong>, 而不是<code>xxx.schema.custom.yaml</code></p>
+</li>
+<li><p><code>dict</code>文件不能写patch，目前我自己想到的方法就是通过patch更改schema文件内容，重新写一个自己的custom dict。这样一来也实现了解耦。但是注意这样做会把原来的数据库更改为你的新的dict所创建的名字，因此，<strong>做好schema的patch之后一定要更改数据库的名字。</strong></p>
+</li>
 </ul>
+<p>格式：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">patch:</span></span><br><span class="line">	<span class="attr">a/b:</span></span><br><span class="line">	<span class="string">a/b/+:</span></span><br></pre></td></tr></table></figure>
+
+<p>一般用的多的就是这两种<br>详情参考：<br><a target="_blank" rel="noopener" href="https://dvel.me/posts/rime-ice/#%E4%BB%A5-patch-%E7%9A%84%E6%96%B9%E5%BC%8F%E6%89%93%E8%A1%A5%E4%B8%81">https://dvel.me/posts/rime-ice/#%E4%BB%A5-patch-%E7%9A%84%E6%96%B9%E5%BC%8F%E6%89%93%E8%A1%A5%E4%B8%81</a></p>
+<p>以及官方文档：<br><a target="_blank" rel="noopener" href="https://github.com/rime/home/wiki/CustomizationGuide#%E5%AE%9A%E8%A3%BD%E6%8C%87%E5%8D%97">https://github.com/rime/home/wiki/CustomizationGuide#%E5%AE%9A%E8%A3%BD%E6%8C%87%E5%8D%97</a></p>
 
     </div>
 
@@ -275,8 +282,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/java-interview/java-general/" rel="next" title="Java Interview——Java Concepts">
-                  Java Interview——Java Concepts <i class="fa fa-angle-right"></i>
+                <a href="/java-interview/spring/" rel="next" title="Java Interview——Spring Concepts">
+                  Java Interview——Spring Concepts <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
