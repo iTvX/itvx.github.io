@@ -19,16 +19,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="题号 题名 遍数 熟练度    1 What is the Final keyword? 3 1   2 What is a static field, static method, and static class? 2 1   3 What are Primitive data types in Java? 2 1   4 What are the differences between">
+    <meta name="description" content="2022-01-01 What is the Final keyword? final primitive: value immutable after assignment. final object: object cannot be reference again. final method: cannot be overridden. final class: cannot be exte">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java面试——Java Concepts">
 <meta property="og:url" content="http://example.com/java-interview/java-general/index.html">
 <meta property="og:site_name" content="Think Less, Do More">
-<meta property="og:description" content="题号 题名 遍数 熟练度    1 What is the Final keyword? 3 1   2 What is a static field, static method, and static class? 2 1   3 What are Primitive data types in Java? 2 1   4 What are the differences between">
+<meta property="og:description" content="2022-01-01 What is the Final keyword? final primitive: value immutable after assignment. final object: object cannot be reference again. final method: cannot be overridden. final class: cannot be exte">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/assets/CleanShot%202024-02-22%20at%2015.32.03@2x.jpg">
 <meta property="article:published_time" content="2024-03-02T20:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-08T09:42:34.880Z">
+<meta property="article:modified_time" content="2024-03-13T21:12:42.436Z">
 <meta property="article:author" content="iTvX">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-08 01:42:34" itemprop="dateModified" datetime="2024-03-08T01:42:34-08:00">2024-03-08</time>
+      <time title="Modified: 2024-03-13 14:12:42" itemprop="dateModified" datetime="2024-03-13T14:12:42-07:00">2024-03-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -243,682 +243,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><table>
-<thead>
-<tr>
-<th>题号</th>
-<th>题名</th>
-<th>遍数</th>
-<th>熟练度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="#What&is&the&Final&keyword">1</a></td>
-<td><a href="#What-is-the-Final-keyword">What is the Final keyword?</a></td>
-<td>3</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#What&is&a&static&field&static&method&and&static&class">2</a></td>
-<td><a href="#What-is-a-static-field-static-method-and-static-class">What is a static field, static method, and static class?</a></td>
-<td>2</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#What&are&Primitive&data&types&in&Java">3</a></td>
-<td><a href="#What-are-Primitive-data-types-in-Java">What are Primitive data types in Java?</a></td>
-<td>2</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#What&are&the&differences&between&passing&by&value&and&passing&by&reference">4</a></td>
-<td><a href="#What-are-the-differences-between-passing-by-value-and-passing-by-reference">What are the differences between passing by value and passing by reference?</a></td>
-<td>2</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#Difference&between&int&and&Integer">5</a></td>
-<td><a href="#Difference-between-int-and-Integer">Difference between int and Integer</a></td>
-<td>2</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#Time&complexity&of&LinkedList">6</a></td>
-<td><a href="#Time-complexity-of-LinkedList">Time complexity of LinkedList</a></td>
-<td>2</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#Difference&between&ArrayList&and&LinkedList">7</a></td>
-<td><a href="#Difference-between-ArrayList-and-LinkedList">Difference between ArrayList and LinkedList</a></td>
-<td>2</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#Difference&between&vector&and&arraylist">8</a></td>
-<td><a href="#Difference-between-vector-and-arraylist">Difference between vector and arrayList</a></td>
-<td>2</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#Memory&management&of&Java&8&feature">9</a></td>
-<td><a href="#Memory-management-of-Java-8-feature">Memory management of Java 8 feature?</a></td>
-<td>2</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#Give&me&an&example&of&how&you&use&java&8&feature&in&your&project">10</a></td>
-<td><a href="#Give-me-an-example-of-how-you-use-java-8-feature-in-your-project">Give me an example of how you use java 8 feature in your project</a></td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#optional&class">11</a></td>
-<td><a href="#optional-class">Optional class</a></td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Functional&Interface">12</a></td>
-<td><a href="#Functional-Interface">Functional Interface</a></td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#New&features&of&Java&8">13</a></td>
-<td><a href="#New-features-of-Java-8">New features of Java 8</a></td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&the&advantage&of&Java&8&compared&to&Java&7">14</a></td>
-<td><a href="#What-is-the-advantage-of-Java-8-compared-to-Java-7">What is the advantage of Java 8 compared to Java 7?</a></td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&the&difference&between&collection&and&stream&API">15</a></td>
-<td><a href="#What-is-the-difference-between-collection-and-stream-API">What is the difference between collection and stream API?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Java&8&callable&future">16</a></td>
-<td><a href="#Java-8-callable-future">Java 8 callable, future</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Stream">17</a></td>
-<td><a href="#Stream">Stream</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&Java&Heap&memory">18</a></td>
-<td><a href="#What-is-Java-Heap-memory">What is Java Heap memory?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Do&you&know&memory&leak">19</a></td>
-<td><a href="#Do-you-know-memory-leak">Do you know memory leak?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&garbage&collection&in&java">20</a></td>
-<td><a href="#What-is-garbage-collection-in-java">What is garbage collection in java?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#String&Pool">21</a></td>
-<td><a href="#String-Pool">String Pool</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Difference&between&Equals&and&==">22</a></td>
-<td><a href="#Difference-between-Equals-and-">Difference between Equals and &#x3D;&#x3D;</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&generic">23</a></td>
-<td><a href="#What-is-generic">What is generic?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&OOP">24</a></td>
-<td><a href="#What-is-OOP">What is OOP?</a></td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#What&is&polymorphism">25</a></td>
-<td><a href="#What-is-polymorphism">What is polymorphism?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Overriding&Vs&Overloading">26</a></td>
-<td><a href="#Overriding-Vs-Overloading">Overriding Vs Overloading</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&are&different&access&modifiers&and&what&do&they&do">27</a></td>
-<td><a href="#What-are-different-access-modifiers-and-what-do-they-do">What are different access modifiers and what do they do?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&Interface&and&what&is&abstract&class&What&are&the&differences&between&them">28</a></td>
-<td><a href="#What-is-Interface-and-what-is-abstract-class-What-are-the-differences-between-them">What is Interface and what is abstract class? What are the differences between them?</a></td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#Java&hashmap&implementation&hashcode&chain&vs&red&black&tree">29</a></td>
-<td><a href="#Java-hashmap-implementation-hashcode-chain-vs-red-black-tree">Java hashmap implementation (hashcode chain vs red black tree)</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#why&hashtable&cannot&contain&null&key">30</a></td>
-<td><a href="#why-hashtable-cannot-contain-null-key">Why hashtable cannot contain null key</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#HashMap&and&TreeMap&and&Hashtable">31</a></td>
-<td><a href="#HashMap-and-TreeMap-and-Hashtable">HashMap and TreeMap and Hashtable</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#StringBuilder&and&StringBuffer">32</a></td>
-<td><a href="#StringBuilder-and-StringBuffer">StringBuilder and StringBuffer</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#handle&exception">33</a></td>
-<td><a href="#handle-exception">Handle exception</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Throw&vs&throws">34</a></td>
-<td><a href="#Throw-vs-throws">Throw vs. throws</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#give&me&one&example&of&NullPointerException">35</a></td>
-<td><a href="#give-me-one-example-of-NullPointerException">Give me one example of NullPointerException</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#avoid&NullPointerException">36</a></td>
-<td><a href="#avoid-NullPointerException">Avoid NullPointerException</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Junit&how&to&write&a&test">37</a></td>
-<td><a href="#Junit-how-to-write-a-test">Junit, how to write a test</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#mocking&vs&stubbing">38</a></td>
-<td><a href="#mocking-vs-stubbing">Mocking vs stubbing</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#TestNG&vs&junit">39</a></td>
-<td><a href="#TestNG-vs-junit">TestNG vs junit</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#JSON">40</a></td>
-<td><a href="#JSON">JSON</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&the&purpose&of&serial&version&UID">41</a></td>
-<td><a href="#What-is-the-purpose-of-serial-version-UID">What is the purpose of serial version UID</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#JDBC">42</a></td>
-<td><a href="#JDBC">JDBC</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#SOAP">43</a></td>
-<td><a href="#SOAP">SOAP</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Comparable&vs&Comparator">44</a></td>
-<td><a href="#Comparable-vs-Comparator">Comparable vs. Comparator</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Git&command&you&used&in&the&project">45</a></td>
-<td><a href="#Git-command-you-used-in-the-project">Git command you used in the project</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Do&you&prefer&SVN&or&Git">46</a></td>
-<td><a href="#Do-you-prefer-SVN-or-Git">Do you prefer SVN or Git?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Java&4&principles&and&explain&each&of&them">47</a></td>
-<td><a href="#Java-4-principles-and-explain-each-of-them">Java 4 principles, and explain each of them</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#example&and&advatanges&and&how&do&you&use&generics&in&your&project">48</a></td>
-<td><a href="#example-and-advatanges-and-how-do-you-use-generics-in-your-project">Example and advantages and how do you use generics in your project?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Serialization&explanation&and&example">49</a></td>
-<td><a href="#Serialization-explanation-and-example">Serialization, explanation and example</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Explain&equals&and&hashcode&contract">50</a></td>
-<td><a href="#Explain-equals-and-hashcode-contract">Explain equals and hashcode contract</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Why&need&to&implement&the&hashcode&when&implementing&equals">51</a></td>
-<td><a href="#Why-need-to-implement-the-hashcode-when-implementing-equals">Why need to implement the hashcode() when implementing equals()?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Checked&unchecked&exception">52</a></td>
-<td><a href="#Checked-unchecked-exception">Checked &#x2F; unchecked exception</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&did&you&use&lambda&expression">53</a></td>
-<td><a href="#How-did-you-use-lambda-expression">How did you use lambda expression?</a></td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="#Error&vs&Exception">54</a></td>
-<td><a href="#Error-vs-Exception">Error vs. Exception</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&happens&if&hash&collision&occurs">55</a></td>
-<td><a href="#What-happens-if-hash-collision-occurs">What happens if hash collision occurs?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Have&you&ever&used&any&cache&in&your&project&Explain&how&it&works">56</a></td>
-<td><a href="#Have-you-ever-used-any-cache-in-your-project-Explain-how-it-works">Have you ever used any cache in your project? Explain how it works</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Implement&a&singleton">57</a></td>
-<td><a href="#Implement-a-singleton">Implement a singleton</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Do&you&know&about&the&Future">58</a></td>
-<td><a href="#Do-you-know-about-the-Future">Do you know about the Future?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&design&patterns&did&you&work&on&before">59</a></td>
-<td><a href="#What-design-patterns-did-you-work-on-before">What design patterns did you worked on before?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&to&custom&an&Exception">60</a></td>
-<td><a href="#How-to-custom-an-Exception">How to custom an Exception?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&situation&will&cause&OutOfMemory">61</a></td>
-<td><a href="#What-situation-will-cause-OutOfMemory">What situation will cause OutOfMemory? &#x2F; How to avoid OutOfMemory?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#OutOfMemory&vs&StackOverflow&error">62</a></td>
-<td><a href="#OutOfMemory-vs-StackOverflow-error">OutOfMemory vs. StackOverflow error</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Different&types&of&method&reference">63</a></td>
-<td><a href="#Different-types-of-method-reference">Different types of method reference</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Talk&about&the&stream&api&lambda&optional&interface&and&default&method">64</a></td>
-<td><a href="#Talk-about-the-stream-api-lambda-optional-interface-and-default-method">Talk about the stream api, lambda, optional interface and default method</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&functional&programming&Compile&or&not">65</a></td>
-<td><a href="#What-is-functional-programming-Compile-or-not">What is functional programming? -&gt; Compile or not</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Internal&data&structure&of&HashMap">66</a></td>
-<td><a href="#Internal-data-structure-of-HashMap">Internal data structure of HashMap</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Deep&copy&vs&shallow&copy">67</a></td>
-<td><a href="#Deep-copy-vs-shallow-copy">Deep copy vs. shallow copy</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Talk&about&multithreading&you&used&in&your&project">68</a></td>
-<td><a href="#Talk-about-multithreading-you-used-in-your-project">Talk about multithreading you used in your project</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&do&you&deal&with&the&error">69</a></td>
-<td><a href="#How-do-you-deal-with-the-error">How do you deal with the error?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&do&you&deal&with&large&amount&of&data&works">70</a></td>
-<td><a href="#How-do-you-deal-with-large-amount-of-data-works">How do you deal with large amount of data&#x2F;works? -&gt; Kafka, stored procedure, executor service, cache</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&does&Java&code&compile&and&run">71</a></td>
-<td><a href="#How-does-Java-code-compile-and-run">How does Java code compile and run? -&gt; JVM</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Intermediate&operation&and&terminal&operation">72</a></td>
-<td><a href="#Intermediate-operation-and-terminal-operation">Intermediate operation and terminal operation</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&do&you&create&a&thread&and&How&to&implement&multi-threads">73</a></td>
-<td><a href="#How-do-you-create-a-thread-and-How-to-implement-multi-threads">How do you create a thread? and How to implement multi-threads</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&many&ways&to&traverse&a&list">74</a></td>
-<td><a href="#How-many-ways-to-traverse-a-list">How many ways to traverse a list?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&to&populate&the&cache">75</a></td>
-<td><a href="#How-to-populate-the-cache">How to populate the cache? -&gt; redisTemplate</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#List&some&immutable&objects&in&Java">76</a></td>
-<td><a href="#List-some-immutable-objects-in-Java">List some immutable objects in Java</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Time&complexity&of&HashMap">77</a></td>
-<td><a href="#Time-complexity-of-HashMap">Time complexity of HashMap</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&volatile&keyword&and&where&is&it&used">78</a></td>
-<td><a href="#What-is-volatile-keyword-and-where-is-it-used">What is volatile keyword and where is it used?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&can&volatile&make&sure&the&thread&will&get&the&latest&result">79</a></td>
-<td><a href="#How-can-volatile-make-sure-the-thread-will-get-the-latest-result">How can volatile make sure the thread will get the latest result?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&does&thread&communicate&with&each&other">80</a></td>
-<td><a href="#How-does-thread-communicate-with-each-other">How does thread communicate with each other?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&HashMap&and&how&to&add&an&entry&to&it">81</a></td>
-<td><a href="#What-is-HashMap-and-how-to-add-an-entry-to-it">What is HashMap and how to add an entry to it?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#thread&join">82</a></td>
-<td><a href="#thread-join">Thread join()</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Default&method&vs&static&method">83</a></td>
-<td><a href="#Default-method-vs-static-method">Default method vs. static method</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&Asynchronized&in&multi-threading">84</a></td>
-<td><a href="#What-is-Asynchronized-in-multi-threading">What is Asynchronized in multi-threading?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&the&completablefuture">85</a></td>
-<td><a href="#What-is-the-completablefuture">What is the completablefuture?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Composition&vs&Association">86</a></td>
-<td><a href="#Composition-vs-Association">Composition vs. Association</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&does&ConcurrentHashMap&works">87</a></td>
-<td><a href="#How-does-ConcurrentHashMap-works">How does ConcurrentHashMap works?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&the&size&of&the&segment">88</a></td>
-<td><a href="#What-is-the-size-of-the-segment">What is the size of the segment?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&to&handle&concurrent&modification&exceptions">89</a></td>
-<td><a href="#How-to-handle-concurrent-modification-exceptions">How to handle concurrent modification exceptions?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&to&make&class&immutable">90</a></td>
-<td><a href="#How-to-make-class-immutable">How to make class immutable?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Producer&Consumer&Aysn&Mechanism">91</a></td>
-<td><a href="#Producer-Consumer-Aysn-Mechanism">Producer &amp; Consumer Aysn Mechanism?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&is&the&deadlock">92</a></td>
-<td><a href="#What-is-the-deadlock">What is the deadlock?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#There&is&an&employee&list&of&object&how&to&sort&them&by&employee&name">93</a></td>
-<td><a href="#There-is-an-employee-list-of-object-how-to-sort-them-by-employee-name">There is an employee list of object, how to sort them by employee name?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&does&the&front-end&communicate&with&the&back-end">94</a></td>
-<td><a href="#How-does-the-front-end-communicate-with-the-back-end">How does the front-end communicate with the back-end?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Explain&heap&and&stack">95</a></td>
-<td><a href="#Explain-heap-and-stack">Explain heap and stack</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&does&the&TreeSet&sort&Employee&object">96</a></td>
-<td><a href="#How-does-the-TreeSet-sort-Employee-object">How does the TreeSet sort Employee object?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Talk&about&factory&design&pattern">97</a></td>
-<td><a href="#Talk-about-factory-design-pattern">Talk about factory design pattern</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Talk&about&observer&design&pattern">98</a></td>
-<td><a href="#Talk-about-observer-design-pattern">Talk about observer design pattern</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&if&you&dont&define&the&serialVersionUID&What&if&you&remove&it">99</a></td>
-<td><a href="#What-if-you-dont-define-the-serialVersionUID-What-if-you-remove-it">What if you don’t define the serialVersionUID? What if you remove it?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#When&using&HashMap&in&multi-threading&what&will&happen&How&to&avoid&it">100</a></td>
-<td><a href="#When-using-HashMap-in-multi-threading-what-will-happen-How-to-avoid-it">When using HashMap in multi-threading, what will happen? How to avoid it?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#What&caused&memory&leak&How&to&detect&it">101</a></td>
-<td><a href="#What-caused-memory-leak-How-to-detect-it">What caused memory leak? How to detect it?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#Map&vs&Flat&map">102</a></td>
-<td><a href="#Map-vs-Flat-map">Map vs. Flat map</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#sleep&vs&wait">103</a></td>
-<td><a href="#sleep-vs-wait">Sleep() vs. Wait()</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#HashMap&vs&LinkedHashMap">104</a></td>
-<td><a href="#HashMap-vs-LinkedHashMap">HashMap vs. LinkedHashMap</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#PreparedStatement">105</a></td>
-<td><a href="#PreparedStatement">PreparedStatement</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#How&do&you&handle&JSON">106</a></td>
-<td><a href="#How-do-you-handle-JSON">How do you handle JSON?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#why&string&is&immutable">107</a></td>
-<td><a href="#why-string-is-immutable">Why string is immutable?</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#JDK&and&JVM">108</a></td>
-<td><a href="#JDK-and-JVM">JDK and JVM</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#reactive&programing&webflux">109</a></td>
-<td><a href="#reactive-programing-webflux">Reactive programming - WebFlux</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#security&protocol">110</a></td>
-<td><a href="#security-protocol">Security protocol</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td><a href="#object&lifecycle">111</a></td>
-<td><a href="#object-lifecycle">Object lifecycle</a></td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody></table>
+    <div class="post-body" itemprop="articleBody"><p>2022-01-01</p>
 <h1 id="What-is-the-Final-keyword"><a href="#What-is-the-Final-keyword" class="headerlink" title="What is the Final keyword?"></a>What is the Final keyword?</h1><ol>
 <li><code>final</code> primitive: value immutable after assignment.</li>
 <li><code>final</code> object: object cannot be reference again.</li>
@@ -999,7 +324,7 @@
 <h1 id="String-Pool"><a href="#String-Pool" class="headerlink" title="String Pool"></a>String Pool</h1><p>the String Pool is a special area in the Java heap memory used to store unique string literals. When a string is created using string literals, Java checks the String Pool first. If the string already exists, the same reference is returned, instead of creating a new object. This mechanism reduces memory usage and improves performance by reusing immutable string objects. However, when new strings are created using the <code>new</code> operator, they are not added to the String Pool.</p>
 <h1 id="Difference-between-Equals-and"><a href="#Difference-between-Equals-and" class="headerlink" title="Difference between Equals and &#x3D;&#x3D;"></a>Difference between Equals and &#x3D;&#x3D;</h1><p>In Java, &#x3D;&#x3D; checks reference equality and .equals() checks value equality. For primitive types, &#x3D;&#x3D; directly compares values. For objects, .equals() compares memory locations by default unless .equals() is overridden.</p>
 <h1 id="What-is-generic"><a href="#What-is-generic" class="headerlink" title="What is generic?"></a>What is generic?</h1><p>Generics in Java are a feature that allows classes, interfaces, and methods to operate on types specified by the programmer at compile time. This provides stronger type checks at compile time and eliminates the need for casting, which can make code safer and more readable. Generics also enable programmers to implement generic algorithms that work on collections of different types, while providing compile-time type safety.</p>
-<h1 id="What-is-OOP"><a href="#What-is-OOP" class="headerlink" title="What is OOP?"></a>What is OOP?</h1><p>Object-Oriented Programming (OOP) is a paradigm that uses objects and classes to encapsulate data and behavior. It emphasizes <strong>Abstraction</strong>, <strong>Encapsulation</strong>, <strong>Inheritance</strong>, and<strong>Polymorphism</strong> to promote modular and reusable code.</p>
+<h1 id="What-is-OOP"><a href="#What-is-OOP" class="headerlink" title="What is OOP?"></a>What is OOP?</h1><p>Object-Oriented Programming (OOP) is a paradigm that uses objects and classes to encapsulate data and behavior. It emphasizes <strong>Abstraction</strong>, <strong>Encapsulation</strong>, <strong>Inheritance</strong>, and <strong>Polymorphism</strong> to promote modular and reusable code.</p>
 <ol>
 <li><p><strong>Abstraction</strong>: Abstraction is a process of hiding the implementation details and showing only functionality to the user. For example, a TV remote control hides the complexity of the internal circuitry, focusing only on the buttons needed to operate the TV. In Java, abstraction is implemented through abstract classes and interfaces.</p>
 </li>
@@ -1026,7 +351,7 @@
 <h1 id="What-is-Interface-and-what-is-abstract-class-What-are-the-differences-between-them"><a href="#What-is-Interface-and-what-is-abstract-class-What-are-the-differences-between-them" class="headerlink" title="What is Interface and what is abstract class? What are the differences between them?"></a>What is Interface and what is abstract class? What are the differences between them?</h1><p>An interface in Java defines a contract with abstract methods for classes to implement. An abstract class is a base class that cannot be instantiated, containing both abstract and concrete methods.</p>
 <p>The differences are:</p>
 <ul>
-<li><p>Abstract class can have both abstract and concrete methods but interface can only have abstract methods (Java 8 onwards, it can have default and static methods as well)</p>
+<li><p>Abstract class can have both abstract and concrete methods but interface can only have abstract methods (Java eight onwards, it can have default and static methods as well)</p>
 </li>
 <li><p>Abstract class methods can have access modiﬁers other than public but interface methods are implicitly public and abstract</p>
 </li>
@@ -1035,7 +360,7 @@
 <li><p>An Abstract class can extend one other class and can implement multiple interfaces but an interface can only extend other interfaces </p>
 </li>
 <li></li>
-<li><p>In this question, the interviewer may try to confuse you by saying that from Java 8 onwards, you can have static and default methods in an Interface so now what is the difference between abstract class and interface and the answer you should tell is – <strong>We can still extend only one class but can implement multiple interfaces.</strong></p>
+<li><p>In this question, the interviewer may try to confuse you by saying that from Java eight onwards, you can have static and default methods in an Interface so now what is the difference between abstract class and interface and the answer you should tell is – <strong>We can still extend only one class but can implement multiple interfaces.</strong></p>
 </li>
 </ul>
 <h2 id="What-to-choose-–-interface-or-abstract-class"><a href="#What-to-choose-–-interface-or-abstract-class" class="headerlink" title="What to choose – interface or abstract class"></a>What to choose – interface or abstract class</h2><ul>
@@ -1043,7 +368,7 @@
 <li>If your contract keeps on changing then Interface will create problems because then you will have to provide implementation of those new methods in all the implementing classes, whereas with abstract class you can provide one default implementation to the new methods and only change those implementing classes that are actually going to use these new methods </li>
 <li>Most of the times, interfaces are a good choice. It is also one of the best practices, when you code in terms of interfaces.</li>
 </ul>
-<h1 id="Java-hashmap-implementation-hashcode-chain-vs-red-black-tree"><a href="#Java-hashmap-implementation-hashcode-chain-vs-red-black-tree" class="headerlink" title="Java hashmap implementation (hashcode chain vs red black tree)"></a>Java hashmap implementation (hashcode chain vs red black tree)</h1><p>Java’s <code>HashMap</code> initially handles collisions using linked lists(hashcode chain). From Java 8, for buckets with more than 8 items, it switches to red-black trees, improving search from O(n) to O(log n) for high collision scenarios. </p>
+<h1 id="Java-hashmap-implementation-hashcode-chain-vs-red-black-tree"><a href="#Java-hashmap-implementation-hashcode-chain-vs-red-black-tree" class="headerlink" title="Java hashmap implementation (hashcode chain vs red black tree)"></a>Java hashmap implementation (hashcode chain vs red black tree)</h1><p>Java’s <code>HashMap</code> initially handles collisions using linked lists(hashcode chain). From Java eight, for buckets with more than 8 items, it switches to red-black trees, improving search from O(n) to O(log n) for high collision scenarios. </p>
 <h1 id="why-hashtable-cannot-contain-null-key"><a href="#why-hashtable-cannot-contain-null-key" class="headerlink" title="why hashtable cannot contain null key"></a>why hashtable cannot contain null key</h1><p><code>Hashtable</code> cannot contain null keys because it uses the key’s hash code to store and retrieve entries, and calling <code>hashCode()</code> on a null key would result in a <code>NullPointerException</code>. Additionally, <code>HashMap</code> allows null key.</p>
 <h1 id="HashMap-and-TreeMap-and-Hashtable"><a href="#HashMap-and-TreeMap-and-Hashtable" class="headerlink" title="HashMap and TreeMap and Hashtable"></a>HashMap and TreeMap and Hashtable</h1><ul>
 <li><strong>HashMap</strong>: Unsynchronized, allows one null key and multiple null values, unordered.</li>
@@ -1265,7 +590,7 @@
 <li>For loop</li>
 <li>Enhanced for loop (for-each loop)</li>
 <li>While loop with an iterator</li>
-<li>Stream API (Java 8 and above)</li>
+<li>Stream API (Java eight and above)</li>
 </ol>
 <h1 id="How-to-populate-the-cache-redisTemplate"><a href="#How-to-populate-the-cache-redisTemplate" class="headerlink" title="How to populate the cache? -&gt; redisTemplate"></a>How to populate the cache? -&gt; redisTemplate</h1><p>To populate a cache using <code>redisTemplate</code> in Java, you would typically perform the following steps:</p>
 <ol>
@@ -1305,7 +630,7 @@
 <li><p><strong>Composition</strong>: A specific type of association where one class owns another class, controlling its lifecycle and implying a part-whole relationship.</p>
 </li>
 </ul>
-<h1 id="How-does-ConcurrentHashMap-works"><a href="#How-does-ConcurrentHashMap-works" class="headerlink" title="How does ConcurrentHashMap works?"></a>How does ConcurrentHashMap works?</h1><p>ConcurrentHashMap in Java is a thread-safe implementation of the Map interface, optimized for high concurrency. It achieves thread-safety without locking the entire map by using fine-grained locking on nodes for writes and lock-free reads, ensuring high performance. From Java 8, it uses a node array with chains or trees, improving scalability. It prohibits null keys and values, and its iterators are weakly consistent, avoiding ConcurrentModificationException. This design allows multiple threads to read and write efficiently with minimal contention.</p>
+<h1 id="How-does-ConcurrentHashMap-works"><a href="#How-does-ConcurrentHashMap-works" class="headerlink" title="How does ConcurrentHashMap works?"></a>How does ConcurrentHashMap works?</h1><p>ConcurrentHashMap in Java is a thread-safe implementation of the Map interface, optimized for high concurrency. It achieves thread-safety without locking the entire map by using fine-grained locking on nodes for writes and lock-free reads, ensuring high performance. From Java eight, it uses a node array with chains or trees, improving scalability. It prohibits null keys and values, and its iterators are weakly consistent, avoiding ConcurrentModificationException. This design allows multiple threads to read and write efficiently with minimal contention.</p>
 <h1 id="What-is-the-size-of-the-segment"><a href="#What-is-the-size-of-the-segment" class="headerlink" title="What is the size of the segment?"></a>What is the size of the segment?</h1><p>The size of a segment in Java’s memory model varies by JVM implementation and configuration, typically ranging from 1 to 32 MB in the G1 garbage collector.</p>
 <h1 id="How-to-handle-concurrent-modification-exceptions"><a href="#How-to-handle-concurrent-modification-exceptions" class="headerlink" title="How to handle concurrent modification exceptions?"></a>How to handle concurrent modification exceptions?</h1><ol>
 <li>Use concurrent collections like <code>ConcurrentHashMap</code> or <code>CopyOnWriteArrayList</code>.</li>
@@ -1388,13 +713,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/java-interview/spring/" rel="prev" title="Java面试——Spring Concepts">
-                  <i class="fa fa-angle-left"></i> Java面试——Spring Concepts
+                <a href="/hobbies/rime/" rel="prev" title="Rime输入法折腾记">
+                  <i class="fa fa-angle-left"></i> Rime输入法折腾记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/java-interview/bq/" rel="next" title="Java面试——BQ">
-                  Java面试——BQ <i class="fa fa-angle-right"></i>
+                <a href="/java-interview/spring/" rel="next" title="Java面试——Spring Concepts">
+                  Java面试——Spring Concepts <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
