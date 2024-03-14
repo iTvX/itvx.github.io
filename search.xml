@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java面试——BQ</title>
+    <url>//java-interview/bq/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Java Interview</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Rime输入法折腾记</title>
     <url>//hobbies/rime/</url>
     <content><![CDATA[<p>早就听闻了Rime输入法的大名，但一直看教程觉得太麻烦，终于花时间好好折腾了一下，其实比想象中简单太多了。</p>
@@ -29,17 +40,6 @@
       </categories>
       <tags>
         <tag>rime</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java面试——BQ</title>
-    <url>//java-interview/bq/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Java Interview</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -137,9 +137,6 @@
 </ol>
 <h1 id="What-is-the-advantage-of-Java-8-compared-to-Java-7"><a href="#What-is-the-advantage-of-Java-8-compared-to-Java-7" class="headerlink" title="What is the advantage of Java 8 compared to Java 7?"></a>What is the advantage of Java 8 compared to Java 7?</h1><p>回答java 8的new feature加上：<br>These features improve developer productivity, code readability, and application performance.</p>
 <h1 id="What-is-the-difference-between-collection-and-stream-API"><a href="#What-is-the-difference-between-collection-and-stream-API" class="headerlink" title="What is the difference between collection and stream API?"></a>What is the difference between collection and stream API?</h1><p>The Collection API manages data storage and direct manipulation (like adding, removing, or accessing elements), while the Stream API focuses on functional-style operations (like filter, map, reduce) on collections, without storing data and enabling easy parallel processing.</p>
-<h1 id="Java-8-callable-future"><a href="#Java-8-callable-future" class="headerlink" title="Java 8 callable, future"></a>Java 8 callable, future</h1><p>In Java 8, <code>Callable</code> is an interface that represents a task that returns a result. Unlike <code>Runnable</code>, which does not return a result, <code>Callable</code> can return a value and also throw a checked exception. You use a <code>Callable</code> in situations where you need to perform a task in a separate thread and then return the result of the task to the main thread.</p>
-<p>A <code>Future</code> represents the result of an asynchronous computation. When you submit a <code>Callable</code> task to an ExecutorService, you receive a <code>Future</code> object. With this <code>Future</code> object, you can check if the computation is complete, wait for its completion, and retrieve the result of the computation. The <code>get</code> method of <code>Future</code> blocks until the computation is complete and then returns the result of the computation. If the computation has already completed when <code>get</code> is called, it returns the result immediately.</p>
-<p>Concise:<br><code>Callable</code> is an interface for tasks returning a result, supporting checked exceptions. <code>Future</code> represents the result of an asynchronous computation, allowing to check completion, wait, and retrieve the computation’s outcome.</p>
 <h1 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h1><p>A Stream in Java is an abstraction for processing sequences of elements, supporting operations like filter, map, and reduce, introduced in Java 8 within the <code>java.util.stream</code> package.</p>
 <h1 id="What-is-Java-Heap-memory"><a href="#What-is-Java-Heap-memory" class="headerlink" title="What is Java Heap memory?"></a>What is Java Heap memory?</h1><p>Java Heap memory is a runtime area where all class instances and arrays get their memory. It is created at the JVM start-up. Heap memory is shared among all JVM threads, and the garbage collector reclaims the heap memory for objects that are no longer referenced, making space available for new objects.</p>
 <h1 id="Do-you-know-memory-leak"><a href="#Do-you-know-memory-leak" class="headerlink" title="Do you know memory leak?"></a>Do you know memory leak?</h1><p>A memory leak occurs when objects are no longer being used by the application but cannot be garbage collected because they are still referenced by other objects. This situation leads to unnecessary memory consumption, potentially exhausting the available memory, which can degrade performance or cause the application to crash. Effective memory management practices, such as nullifying references when objects are no longer needed and using weak references when appropriate, can help prevent memory leaks.</p>
@@ -147,7 +144,7 @@
 <h1 id="String-Pool"><a href="#String-Pool" class="headerlink" title="String Pool"></a>String Pool</h1><p>the String Pool is a special area in the Java heap memory used to store unique string literals. When a string is created using string literals, Java checks the String Pool first. If the string already exists, the same reference is returned, instead of creating a new object. This mechanism reduces memory usage and improves performance by reusing immutable string objects. However, when new strings are created using the <code>new</code> operator, they are not added to the String Pool.</p>
 <h1 id="Difference-between-Equals-and"><a href="#Difference-between-Equals-and" class="headerlink" title="Difference between Equals and &#x3D;&#x3D;"></a>Difference between Equals and &#x3D;&#x3D;</h1><p>In Java, &#x3D;&#x3D; checks reference equality and .equals() checks value equality. For primitive types, &#x3D;&#x3D; directly compares values. For objects, .equals() compares memory locations by default unless .equals() is overridden.</p>
 <h1 id="What-is-generic"><a href="#What-is-generic" class="headerlink" title="What is generic?"></a>What is generic?</h1><p>Generics in Java are a feature that allows classes, interfaces, and methods to operate on types specified by the programmer at compile time. This provides stronger type checks at compile time and eliminates the need for casting, which can make code safer and more readable. Generics also enable programmers to implement generic algorithms that work on collections of different types, while providing compile-time type safety.</p>
-<h1 id="What-is-OOP"><a href="#What-is-OOP" class="headerlink" title="What is OOP?"></a>What is OOP?</h1><p>Object-Oriented Programming (OOP) is a paradigm that uses objects and classes to encapsulate data and behavior. It emphasizes <strong>Abstraction</strong>, <strong>Encapsulation</strong>, <strong>Inheritance</strong>, and <strong>Polymorphism</strong> to promote modular and reusable code.</p>
+<h1 id="What-is-OOP"><a href="#What-is-OOP" class="headerlink" title="What is OOP?"></a>What is OOP?</h1><p>Object-Oriented Programming (OOP) is a paradigm that uses objects and classes to encapsulate data and behavior. It emphasizes <strong>Abstraction</strong>, <strong>Encapsulation</strong>, <strong>Inheritance</strong>, and<strong>Polymorphism</strong> to promote modular and reusable code.</p>
 <ol>
 <li><p><strong>Abstraction</strong>: Abstraction is a process of hiding the implementation details and showing only functionality to the user. For example, a TV remote control hides the complexity of the internal circuitry, focusing only on the buttons needed to operate the TV. In Java, abstraction is implemented through abstract classes and interfaces.</p>
 </li>
@@ -158,12 +155,12 @@
 <li><p><strong>Polymorphism</strong>: Poly means many and Morph means forms. Polymorphism is the process in which an object or function takes different forms. In Java, polymorphism is implemented through method overriding (runtime polymorphism) and method overloading (compile-time polymorphism).</p>
 </li>
 </ol>
-<h1 id="What-is-polymorphism"><a href="#What-is-polymorphism" class="headerlink" title="What is polymorphism?"></a>What is polymorphism?</h1><p>Poly means many and Morph means forms. Polymorphism is the process in which an object or function takes different forms. There are 2 types of Polymorphism :</p>
+<h1 id="Polymorphism"><a href="#Polymorphism" class="headerlink" title="Polymorphism"></a>Polymorphism</h1><p>Poly means many and Morph means forms. Polymorphism is the process in which an object or function takes different forms. There are 2 types of Polymorphism :</p>
 <ul>
 <li>Compile Time Polymorphism (Method Overloading)</li>
 <li>Run Time Polymorphism (Method Overriding)</li>
 </ul>
-<h1 id="Overriding-Vs-Overloading"><a href="#Overriding-Vs-Overloading" class="headerlink" title="Overriding Vs Overloading"></a>Overriding Vs Overloading</h1><p><strong>Overloading</strong> is defining multiple methods with the same name but different parameters in the same class for compile-time polymorphism.<br><strong>Overriding</strong> is redefining a parent class method in a subclass with the same signature for runtime polymorphism.</p>
+<h1 id="Polymorphism-Overriding-Vs-Overloading"><a href="#Polymorphism-Overriding-Vs-Overloading" class="headerlink" title="Polymorphism: Overriding Vs Overloading"></a>Polymorphism: Overriding Vs Overloading</h1><p><strong>Overloading</strong> is defining multiple methods with the same name but different parameters in the same class for compile-time polymorphism.<br><strong>Overriding</strong> is redefining a parent class method in a subclass with the same signature for runtime polymorphism.</p>
 <h1 id="What-are-different-access-modifiers-and-what-do-they-do"><a href="#What-are-different-access-modifiers-and-what-do-they-do" class="headerlink" title="What are different access modifiers and what do they do?"></a>What are different access modifiers and what do they do?</h1><p>Access modifiers determine the scope of access for classes, methods, and variables. There are four main types:</p>
 <ul>
 <li><strong><code>private</code></strong>: Accessible only within its own class.</li>
@@ -171,7 +168,8 @@
 <li><strong><code>protected</code></strong>: Accessible within the same package and by subclasses.</li>
 <li><strong><code>public</code></strong>: Accessible from any class.</li>
 </ul>
-<h1 id="What-is-Interface-and-what-is-abstract-class-What-are-the-differences-between-them"><a href="#What-is-Interface-and-what-is-abstract-class-What-are-the-differences-between-them" class="headerlink" title="What is Interface and what is abstract class? What are the differences between them?"></a>What is Interface and what is abstract class? What are the differences between them?</h1><p>An interface in Java defines a contract with abstract methods for classes to implement. An abstract class is a base class that cannot be instantiated, containing both abstract and concrete methods.</p>
+<h1 id="What-is-Interface-and-what-is-abstract-class-What-are-the-differences-between-them"><a href="#What-is-Interface-and-what-is-abstract-class-What-are-the-differences-between-them" class="headerlink" title="What is Interface and what is abstract class? What are the differences between them?"></a>What is Interface and what is abstract class? What are the differences between them?</h1><p>An interface in Java defines a contract with abstract methods for classes to implement. </p>
+<p>An abstract class is a base class that cannot be instantiated, containing both abstract and concrete methods.</p>
 <p>The differences are:</p>
 <ul>
 <li><p>Abstract class can have both abstract and concrete methods but interface can only have abstract methods (Java eight onwards, it can have default and static methods as well)</p>
@@ -183,7 +181,7 @@
 <li><p>An Abstract class can extend one other class and can implement multiple interfaces but an interface can only extend other interfaces </p>
 </li>
 <li></li>
-<li><p>In this question, the interviewer may try to confuse you by saying that from Java eight onwards, you can have static and default methods in an Interface so now what is the difference between abstract class and interface and the answer you should tell is – <strong>We can still extend only one class but can implement multiple interfaces.</strong></p>
+<li><p>the most difference for me I think is <strong>We can still extend only one class but can implement multiple interfaces.</strong></p>
 </li>
 </ul>
 <h2 id="What-to-choose-–-interface-or-abstract-class"><a href="#What-to-choose-–-interface-or-abstract-class" class="headerlink" title="What to choose – interface or abstract class"></a>What to choose – interface or abstract class</h2><ul>
@@ -201,10 +199,36 @@
 <h1 id="StringBuilder-and-StringBuffer"><a href="#StringBuilder-and-StringBuffer" class="headerlink" title="StringBuilder and StringBuffer"></a>StringBuilder and StringBuffer</h1><p><code>StringBuilder</code> is faster and not thread-safe, suitable for single-threaded environments. </p>
 <p><code>StringBuffer</code> is synchronized, making it thread-safe but slower. It is ideal for multi-threaded environments. </p>
 <p>Both <code>StringBuffer</code> and <code>StringBuilder</code> offer similar methods for string manipulation.</p>
+<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p><img src="/../../assets/CleanShot%202024-02-22%20at%2015.32.03@2x.jpg"></p>
+<ul>
+<li><p><strong>Errors:</strong> Indicate critical problems, usually outside the application’s control (e.g., <code>OutOfMemoryError</code>). Recovery is typically not possible.</p>
+</li>
+<li><p><strong>Exceptions:</strong> Represent potentially recoverable conditions.</p>
+<ul>
+<li><strong>Checked(compile time exception):</strong> Require explicit handling via try-catch or method throws declarations (e.g., <code>FileNotFoundException</code>).</li>
+<li><strong>Unchecked (runtime exception):</strong> Occur due to coding issues or unexpected runtime conditions (e.g., <code>NullPointerException</code>).</li>
+</ul>
+</li>
+</ul>
+<h1 id="Checked-unchecked-exception"><a href="#Checked-unchecked-exception" class="headerlink" title="Checked &#x2F; unchecked exception"></a>Checked &#x2F; unchecked exception</h1><ul>
+<li><p><strong>Checked exceptions</strong> are exceptions that must be either caught or declared in the method signature. These are also known as compile-time exceptions because the compiler checks at compile time to ensure that these exceptions are handled by the programmer. They are subclasses of <code>Exception</code> excluding <code>RuntimeException</code> and its subclasses. Examples include <code>IOException</code>, <code>SQLException</code>.</p>
+</li>
+<li><p><strong>Unchecked exceptions</strong> are exceptions that do not need to be explicitly handled or declared in the method signature. They are checked at runtime rather than at compile time. Unchecked exceptions are subclasses of <code>RuntimeException</code>, and the compiler does not enforce handling of these exceptions. Examples include <code>NullPointerException</code>, <code>ArrayIndexOutOfBoundsException</code>.</p>
+</li>
+</ul>
 <h1 id="handle-exception"><a href="#handle-exception" class="headerlink" title="handle exception"></a>handle exception</h1><p>try-catch block is used for exception handling. If you think that certain statements may throw an exception, surround them with try block.</p>
 <p>A try block is always followed by a catch block or ﬁnally or both.</p>
 <p>You cannot use the try block alone</p>
-<h2 id="how-do-you-deal-with-exceptions-in-your-project"><a href="#how-do-you-deal-with-exceptions-in-your-project" class="headerlink" title="how do you deal with exceptions in your project?"></a>how do you deal with exceptions in your project?</h2><p>In my project, we handle exceptions by:</p>
+<h1 id="How-do-you-deal-with-the-error"><a href="#How-do-you-deal-with-the-error" class="headerlink" title="How do you deal with the error?"></a>How do you deal with the error?</h1><ol>
+<li>Understand the error via the message and stack trace.</li>
+<li>Reproduce the error if necessary.</li>
+<li>Consult Java documentation for insights.</li>
+<li>Debug using tools like breakpoints and logging.</li>
+<li>Fix the error by modifying the code.</li>
+<li>Test to ensure the fix resolves the issue.</li>
+<li>Document the issue and solution for future reference.</li>
+</ol>
+<h1 id="how-do-you-deal-with-exceptions-in-your-project"><a href="#how-do-you-deal-with-exceptions-in-your-project" class="headerlink" title="how do you deal with exceptions in your project?"></a>how do you deal with exceptions in your project?</h1><p>In my project, we handle exceptions by:</p>
 <ol>
 <li>Using try-catch blocks for local handling.</li>
 <li>Declaring exceptions with the <code>throws</code> clause for caller-level handling.</li>
@@ -229,6 +253,7 @@
 <li>Use annotations @NotNull and @Nullable. </li>
 <li>Return empty collections instead of null.</li>
 </ol>
+<h1 id="How-to-custom-an-Exception"><a href="#How-to-custom-an-Exception" class="headerlink" title="How to custom an Exception?"></a>How to custom an Exception?</h1><p>To create a custom exception, we extend the <code>Exception</code> class or one of its subclasses.</p>
 <h1 id="Junit-how-to-write-a-test"><a href="#Junit-how-to-write-a-test" class="headerlink" title="Junit, how to write a test"></a>Junit, how to write a test</h1><ol>
 <li><strong>Add JUnit dependency</strong> in Maven</li>
 <li><strong>Create a test class</strong> in <code>src/test/java</code>.</li>
@@ -304,28 +329,12 @@
 </ul>
 <p>这个契约的目的是确保基于哈希的集合的一致性和性能。如果相等的对象有不同的哈希码，那么这将违反哈希集合的基本原则，可能导致无法正确地检索对象。例如，在<code>HashMap</code>中，对象的哈希码用于决定对象存储的位置。如果两个键对象<code>equals()</code>相等但有不同的哈希码，那么它们可能被存储在哈希表的不同位置，这将导致无法通过一个键找到另一个键对应的值。</p>
 <h1 id="Why-need-to-implement-the-hashcode-when-implementing-equals"><a href="#Why-need-to-implement-the-hashcode-when-implementing-equals" class="headerlink" title="Why need to implement the hashcode() when implementing equals()?"></a>Why need to implement the hashcode() when implementing equals()?</h1><p>This is because we must maintain the general contract for the <code>hashCode</code> method, which states that equal objects must have equal hash codes. This ensures consistent behavior when objects are inserted into hash-based collections like <code>HashMap</code>, <code>HashSet</code>, and <code>Hashtable</code>. If <code>hashCode()</code> is not overridden, two equal objects might have different hash codes, which can lead to incorrect behavior in collections.</p>
-<h1 id="Checked-unchecked-exception"><a href="#Checked-unchecked-exception" class="headerlink" title="Checked &#x2F; unchecked exception"></a>Checked &#x2F; unchecked exception</h1><ul>
-<li><p><strong>Checked exceptions</strong> are exceptions that must be either caught or declared in the method signature. These are also known as compile-time exceptions because the compiler checks at compile time to ensure that these exceptions are handled by the programmer. They are subclasses of <code>Exception</code> excluding <code>RuntimeException</code> and its subclasses. Examples include <code>IOException</code>, <code>SQLException</code>.</p>
-</li>
-<li><p><strong>Unchecked exceptions</strong> are exceptions that do not need to be explicitly handled or declared in the method signature. They are checked at runtime rather than at compile time. Unchecked exceptions are subclasses of <code>RuntimeException</code>, and the compiler does not enforce handling of these exceptions. Examples include <code>NullPointerException</code>, <code>ArrayIndexOutOfBoundsException</code>.</p>
-</li>
-</ul>
 <h1 id="How-did-you-use-lambda-expression"><a href="#How-did-you-use-lambda-expression" class="headerlink" title="How did you use lambda expression?"></a>How did you use lambda expression?</h1><p>In my projects, I’ve used lambda expressions to simplify the implementation of Functional interfaces, such as comparators for sorting collections. For example, when sorting a list of custom objects based on a particular field, I used lambda expressions to create a concise and readable comparator without the need for an anonymous class. Here’s how I implemented it:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Person&gt; people = getPeopleList();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Sort people by their age using a lambda expression</span></span><br><span class="line">people.sort((p1, p2) -&gt; p1.getAge() - p2.getAge());</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-<h1 id="Error-vs-Exception"><a href="#Error-vs-Exception" class="headerlink" title="Error vs. Exception"></a>Error vs. Exception</h1><p><img src="/../../assets/CleanShot%202024-02-22%20at%2015.32.03@2x.jpg"></p>
-<ul>
-<li><p><strong>Errors:</strong> Indicate critical problems, usually outside the application’s control (e.g., <code>OutOfMemoryError</code>). Recovery is typically not possible.</p>
-</li>
-<li><p><strong>Exceptions:</strong> Represent potentially recoverable conditions.</p>
-<ul>
-<li><strong>Checked:</strong> Require explicit handling via try-catch or method throws declarations (e.g., <code>FileNotFoundException</code>).</li>
-<li><strong>Unchecked:</strong> Occur due to coding issues or unexpected runtime conditions (e.g., <code>ArrayIndexOutOfBoundsException</code>).</li>
-</ul>
-</li>
-</ul>
+
 <h1 id="What-happens-if-hash-collision-occurs"><a href="#What-happens-if-hash-collision-occurs" class="headerlink" title="What happens if hash collision occurs?"></a>What happens if hash collision occurs?</h1><p>When a hash collision occurs, Java stores all elements with the same hash code in the same bucket but in separate structures (like linked lists or trees) to distinguish them. This way, despite sharing a hash code, each element can still be uniquely identified and accessed.</p>
 <h1 id="Have-you-ever-used-any-cache-in-your-project-Explain-how-it-works"><a href="#Have-you-ever-used-any-cache-in-your-project-Explain-how-it-works" class="headerlink" title="Have you ever used any cache in your project? Explain how it works"></a>Have you ever used any cache in your project? Explain how it works</h1><p>Yes, I’ve used caching. It stores frequently accessed data in memory for faster access. If data is in cache (cache hit), it’s returned from there. If not (cache miss), it’s fetched from the database, stored in cache, and returned.</p>
 <h1 id="Implement-a-singleton"><a href="#Implement-a-singleton" class="headerlink" title="Implement a singleton"></a>Implement a singleton</h1><h2 id="Eager-loaded-恶汉式"><a href="#Eager-loaded-恶汉式" class="headerlink" title="Eager loaded (恶汉式)"></a>Eager loaded (恶汉式)</h2><p>静态方法实现</p>
@@ -338,8 +347,11 @@
 <h2 id="Lazy-Loaded-（懒汉式"><a href="#Lazy-Loaded-（懒汉式" class="headerlink" title="Lazy-Loaded （懒汉式)"></a>Lazy-Loaded （懒汉式)</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span> &#123;&#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">SingletonHolder</span> &#123;  </span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Singleton</span> <span class="variable">INSTANCE</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;  </span><br><span class="line">        <span class="keyword">return</span> SingletonHolder.INSTANCE;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Main</span> &#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">        <span class="type">Singleton</span> <span class="variable">instance1</span> <span class="operator">=</span> Singleton.getInstance();  </span><br><span class="line">        <span class="type">Singleton</span> <span class="variable">instance2</span> <span class="operator">=</span> Singleton.getInstance();  </span><br><span class="line">  </span><br><span class="line">        System.out.println(instance1 == instance2);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="Do-you-know-about-the-Future"><a href="#Do-you-know-about-the-Future" class="headerlink" title="Do you know about the Future?"></a>Do you know about the Future?</h1><p>The <code>Future</code> interface in Java is used for asynchronous computation, offering methods to check completion (<code>isDone()</code>), wait for completion (<code>get()</code>), cancel the task (<code>cancel(boolean mayInterruptIfRunning)</code>), and check if the task was cancelled (<code>isCancelled()</code>). It enables efficient management of concurrent tasks in Java applications.</p>
+<h1 id="callable-future"><a href="#callable-future" class="headerlink" title="callable, future"></a>callable, future</h1><p>In Java 8, <code>Callable</code> is an interface that represents a task that returns a result. Unlike <code>Runnable</code>, which does not return a result, <code>Callable</code> can return a value and also throw a checked exception. You use a <code>Callable</code> in situations where you need to perform a task in a separate thread and then return the result of the task to the main thread.</p>
+<p>A <code>Future</code> represents the result of an asynchronous computation. When you submit a <code>Callable</code> task to an ExecutorService, you receive a <code>Future</code> object. With this <code>Future</code> object, you can check if the computation is complete, wait for its completion, and retrieve the result of the computation. The <code>get</code> method of <code>Future</code> blocks until the computation is complete and then returns the result of the computation. If the computation has already completed when <code>get</code> is called, it returns the result immediately.</p>
+<p>Concise:<br><code>Callable</code> is an interface for tasks returning a result, supporting checked exceptions. <code>Future</code> represents the result of an asynchronous computation, allowing to check completion, wait, and retrieve the computation’s outcome.</p>
+<h1 id="What-is-the-completablefuture"><a href="#What-is-the-completablefuture" class="headerlink" title="What is the completablefuture?"></a>What is the completablefuture?</h1><p><code>CompletableFuture</code> is like a more advanced version of <code>Future</code> that came out with Java 8. It lets you work with the result of asynchronous operations without getting stuck waiting for them. You can set up a chain of things to do once your operation finishes, like processing the result or handling errors, and all of this happens in a non-blocking way. It’s really handy for writing A-sync code.</p>
 <h1 id="What-design-patterns-did-you-worked-on-before"><a href="#What-design-patterns-did-you-worked-on-before" class="headerlink" title="What design patterns did you worked on before?"></a>What design patterns did you worked on before?</h1><p>Singleton</p>
-<h1 id="How-to-custom-an-Exception"><a href="#How-to-custom-an-Exception" class="headerlink" title="How to custom an Exception?"></a>How to custom an Exception?</h1><p>To create a custom exception, we extend the <code>Exception</code> class or one of its subclasses.</p>
 <h1 id="What-situation-will-cause-OutOfMemory-How-to-avoid-OutOfMemory"><a href="#What-situation-will-cause-OutOfMemory-How-to-avoid-OutOfMemory" class="headerlink" title="What situation will cause OutOfMemory? &#x2F; How to avoid OutOfMemory?"></a>What situation will cause OutOfMemory? &#x2F; How to avoid OutOfMemory?</h1><p>OutOfMemoryError can occur due to:</p>
 <ol>
 <li>Creating too many objects.</li>
@@ -389,16 +401,26 @@
 <h1 id="Internal-data-structure-of-HashMap"><a href="#Internal-data-structure-of-HashMap" class="headerlink" title="Internal data structure of HashMap"></a>Internal data structure of HashMap</h1><p>The internal data structure of a <code>HashMap</code> in Java combines an array with linked lists or balanced trees for collision handling. Entries are stored in array slots (buckets) based on their keys’ hash codes. In case of collisions, entries are linked into a list or tree at the same array index. This setup allows efficient storage and retrieval, aiming for O(1) time complexity for <code>get</code> and <code>put</code> operations.</p>
 <h1 id="Deep-copy-vs-shallow-copy"><a href="#Deep-copy-vs-shallow-copy" class="headerlink" title="Deep copy vs. shallow copy"></a>Deep copy vs. shallow copy</h1><p><strong>A shallow copy</strong> creates a new object and inserts a reference to the original object into it.</p>
 <p><strong>A deep copy</strong> duplicates everything, creating fully independent objects, ensuring changes to the copy do not affect the original.</p>
+<h1 id="Create-a-thread-and-implement-multi-threads"><a href="#Create-a-thread-and-implement-multi-threads" class="headerlink" title="Create a thread and implement multi-threads"></a>Create a thread and implement multi-threads</h1><p>方法 1: Extending the <code>Thread</code> class.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ThreadExample</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Thread is running&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ThreadExample</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadExample</span>();</span><br><span class="line">        thread.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法 2: 1. Implementing the <code>Runnable</code> interface.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">RunnableExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Runnable</span> <span class="variable">runnable</span> <span class="operator">=</span> () -&gt; System.out.println(<span class="string">&quot;Thread is running&quot;</span>);</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(runnable);</span><br><span class="line">        thread.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法 3: 1. Implementing the <code>Callable</code> interface and using <code>FutureTask</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CallableExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        Callable&lt;String&gt; callable = () -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Thread is running.&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;result from callable&quot;</span>;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        FutureTask&lt;String&gt; futureTask = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(callable);</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(futureTask);</span><br><span class="line">        thread.start();</span><br><span class="line">        System.out.println(futureTask.get());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法4: Use <code>ExecutorService</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ExecutorService</span> <span class="variable">executorService</span> <span class="operator">=</span> Executors.newSingleThreadExecutor();</span><br><span class="line">        executorService.submit(() -&gt; System.out.println(<span class="string">&quot;Thread created by using ExecutorService.&quot;</span>));</span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <h1 id="Talk-about-multithreading-you-used-in-your-project"><a href="#Talk-about-multithreading-you-used-in-your-project" class="headerlink" title="Talk about multithreading you used in your project"></a>Talk about multithreading you used in your project</h1><p>In a recent project, I implemented a file processing system where multiple threads were used to read, process, and write data concurrently. This was achieved using Java’s <code>ExecutorService</code> and <code>Future</code> for task submission and handling results. The use of multithreading significantly improved the system’s performance by fully utilizing the CPU and reducing the overall processing time.</p>
-<h1 id="How-do-you-deal-with-the-error"><a href="#How-do-you-deal-with-the-error" class="headerlink" title="How do you deal with the error?"></a>How do you deal with the error?</h1><ol>
-<li>Understand the error via the message and stack trace.</li>
-<li>Reproduce the error if necessary.</li>
-<li>Consult Java documentation for insights.</li>
-<li>Debug using tools like breakpoints and logging.</li>
-<li>Fix the error by modifying the code.</li>
-<li>Test to ensure the fix resolves the issue.</li>
-<li>Document the issue and solution for future reference.</li>
-</ol>
+<h1 id="How-can-volatile-make-sure-the-thread-will-get-the-latest-result"><a href="#How-can-volatile-make-sure-the-thread-will-get-the-latest-result" class="headerlink" title="How can volatile make sure the thread will get the latest result?"></a>How can volatile make sure the thread will get the latest result?</h1><p>Because it reading from and writing directly to main memory, bypassing the thread cache.</p>
+<h1 id="How-does-thread-communicate-with-each-other"><a href="#How-does-thread-communicate-with-each-other" class="headerlink" title="How does thread communicate with each other?"></a>How does thread communicate with each other?</h1><p>Threads in Java communicate through wait(), notify(), and notifyAll() methods within synchronized contexts.<br>The <strong>wait()</strong> method causes a thread to pause until another thread calls notify() or notifyAll() on the same object.<br>The <strong>notify()</strong> method wakes up a single waiting thread, while <strong>notifyAll()</strong> wakes up all waiting threads on the object’s monitor. </p>
+<p>This mechanism allows threads to coordinate based on condition changes or resource availability.</p>
+<h1 id="thread-join"><a href="#thread-join" class="headerlink" title="thread join()"></a>thread join()</h1><p>The join() method in Java allows the current thread to wait for another thread’s completion. It has three forms: join(), which waits indefinitely; join(long millis), which waits for specified milliseconds; and join(long millis, int nanos), which adds nanosecond precision. It’s used to synchronize thread execution, ensuring one thread finishes before others proceed.</p>
+<h1 id="What-is-Asynchronized-in-multi-threading"><a href="#What-is-Asynchronized-in-multi-threading" class="headerlink" title="What is Asynchronized in multi-threading?"></a>What is Asynchronized in multi-threading?</h1><p>Asynchronized in multi-threading refers to executing tasks concurrently across multiple threads without one waiting for another, enhancing application performance by parallelizing operations.</p>
+<h1 id="When-using-HashMap-in-multi-threading-what-will-happen-How-to-avoid-it"><a href="#When-using-HashMap-in-multi-threading-what-will-happen-How-to-avoid-it" class="headerlink" title="When using HashMap in multi-threading, what will happen? How to avoid it?"></a>When using HashMap in multi-threading, what will happen? How to avoid it?</h1><p>In a multi-threaded environment, using HashMap can lead to data inconsistency and ConcurrentModificationException. To avoid this, use <code>ConcurrentHashMap</code> for better thread safety and performance.</p>
 <h1 id="How-do-you-deal-with-large-amout-of-data-works-Kafka-stored-procedure-executor-service-cache"><a href="#How-do-you-deal-with-large-amout-of-data-works-Kafka-stored-procedure-executor-service-cache" class="headerlink" title="How do you deal with large amout of data&#x2F;works? -&gt; Kafka, stored procedure, executor service, cache"></a>How do you deal with large amout of data&#x2F;works? -&gt; Kafka, stored procedure, executor service, cache</h1><p>To manage large data&#x2F;workloads:</p>
 <ol>
 <li><strong>Kafka</strong>: Handles high-throughput data streams for real-time processing.</li>
@@ -408,7 +430,6 @@
 </ol>
 <h1 id="How-does-Java-code-compile-and-run-JVM"><a href="#How-does-Java-code-compile-and-run-JVM" class="headerlink" title="How does Java code compile and run? -&gt; JVM"></a>How does Java code compile and run? -&gt; JVM</h1><p>Java code is compiled into bytecode by the Java compiler, which is then run on the JVM. The JVM interprets or compiles the bytecode into machine code, enabling it to run on any platform that has a compatible JVM.</p>
 <h1 id="Intermediate-operation-and-terminal-operation"><a href="#Intermediate-operation-and-terminal-operation" class="headerlink" title="Intermediate operation and terminal operation"></a>Intermediate operation and terminal operation</h1><p>Intermediate operations, like <code>filter</code> and <code>map</code>, transform streams without finalizing results and are lazy. Terminal operations, such as <code>collect</code> and <code>forEach</code>, produce final results, ending the stream’s use.</p>
-<h1 id="How-do-you-create-a-thread-and-How-to-implement-multi-threads"><a href="#How-do-you-create-a-thread-and-How-to-implement-multi-threads" class="headerlink" title="How do you create a thread? and How to implement multi-threads"></a>How do you create a thread? and How to implement multi-threads</h1><p>参见chuwa笔记</p>
 <h1 id="How-many-ways-to-traverse-a-list"><a href="#How-many-ways-to-traverse-a-list" class="headerlink" title="How many ways to traverse a list?"></a>How many ways to traverse a list?</h1><ol>
 <li>For loop</li>
 <li>Enhanced for loop (for-each loop)</li>
@@ -433,20 +454,17 @@
 </ul>
 <h1 id="Time-complexity-of-HashMap"><a href="#Time-complexity-of-HashMap" class="headerlink" title="Time complexity of HashMap"></a>Time complexity of HashMap</h1><p>Average time complexity for HashMap operations like get and put is O(1), but can degrade to O(n) in worst-case scenarios due to hash collisions.</p>
 <h1 id="What-is-volatile-keyword-and-where-is-it-used"><a href="#What-is-volatile-keyword-and-where-is-it-used" class="headerlink" title="What is volatile keyword and where is it used?"></a>What is volatile keyword and where is it used?</h1><p>The <code>volatile</code> keyword in Java ensures a variable is directly read from and written to main memory, ensuring visibility of its changes across threads. It is used for variables that are accessed and modified by multiple threads, like flags, without requiring synchronization for visibility.</p>
-<h1 id="How-can-volatile-make-sure-the-thread-will-get-the-latest-result"><a href="#How-can-volatile-make-sure-the-thread-will-get-the-latest-result" class="headerlink" title="How can volatile make sure the thread will get the latest result?"></a>How can volatile make sure the thread will get the latest result?</h1><p>Because it reading from and writing directly to main memory, bypassing the thread cache.</p>
-<h1 id="How-does-thread-communicate-with-each-other"><a href="#How-does-thread-communicate-with-each-other" class="headerlink" title="How does thread communicate with each other?"></a>How does thread communicate with each other?</h1><p>Threads in Java communicate through wait(), notify(), and notifyAll() methods within synchronized contexts.<br>The <strong>wait()</strong> method causes a thread to pause until another thread calls notify() or notifyAll() on the same object.<br>The <strong>notify()</strong> method wakes up a single waiting thread, while <strong>notifyAll()</strong> wakes up all waiting threads on the object’s monitor. </p>
-<p>This mechanism allows threads to coordinate based on condition changes or resource availability.</p>
 <h1 id="What-is-HashMap-and-how-to-add-an-entry-to-it"><a href="#What-is-HashMap-and-how-to-add-an-entry-to-it" class="headerlink" title="What is HashMap and how to add an entry to it?"></a>What is HashMap and how to add an entry to it?</h1><p><code>HashMap</code> is a key-value pair data structure from Java’s Collections Framework.</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">HashMap&lt;String, Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">map.put(<span class="string">&quot;key&quot;</span>, <span class="number">1</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h1 id="thread-join"><a href="#thread-join" class="headerlink" title="thread join()"></a>thread join()</h1><p>The join() method in Java allows the current thread to wait for another thread’s completion. It has three forms: join(), which waits indefinitely; join(long millis), which waits for specified milliseconds; and join(long millis, int nanos), which adds nanosecond precision. It’s used to synchronize thread execution, ensuring one thread finishes before others proceed.</p>
+
+
+
 <h1 id="Default-method-vs-static-method"><a href="#Default-method-vs-static-method" class="headerlink" title="Default method vs. static method"></a>Default method vs. static method</h1><ul>
 <li>Default methods can be overridden by implementing classes, whereas static methods cannot.</li>
 <li>Default methods are instance methods, static methods are class methods.</li>
 <li>You can call default methods on instances of implementing classes, whereas static methods are called on the interface itself.</li>
 </ul>
-<h1 id="What-is-Asynchronized-in-multi-threading"><a href="#What-is-Asynchronized-in-multi-threading" class="headerlink" title="What is Asynchronized in multi-threading?"></a>What is Asynchronized in multi-threading?</h1><p>Asynchronized in multi-threading refers to executing tasks concurrently across multiple threads without one waiting for another, enhancing application performance by parallelizing operations.</p>
-<h1 id="What-is-the-completablefuture"><a href="#What-is-the-completablefuture" class="headerlink" title="What is the completablefuture?"></a>What is the completablefuture?</h1><p><code>CompletableFuture</code> in Java is a class that implements the <code>Future</code> and <code>CompletionStage</code> interfaces, allowing for asynchronous programming. It represents a future result of an asynchronous computation, providing methods to programmatically complete it, register actions to execute upon its completion, and combine multiple futures in a chain of computation steps. This facilitates writing non-blocking code by applying callback-like operations on the future result.</p>
 <h1 id="Composition-vs-Association"><a href="#Composition-vs-Association" class="headerlink" title="Composition vs. Association"></a>Composition vs. Association</h1><ul>
 <li><p><strong>Association</strong>: A relationship where one class uses or interacts with another, without implying ownership.</p>
 </li>
@@ -490,7 +508,6 @@
 <h1 id="Talk-about-factory-design-pattern"><a href="#Talk-about-factory-design-pattern" class="headerlink" title="Talk about factory design pattern"></a>Talk about factory design pattern</h1><p>The Factory Design Pattern is a creational pattern that encapsulates object creation by allowing objects to be created without specifying the exact class type. It involves a factory method that returns objects of a superclass type but instantiated from one of several subclasses based on input parameters, promoting loose coupling and flexibility in object creation. The pattern includes interfaces or abstract classes as Products, their ConcreteProduct implementations, a Creator interface or abstract class, and ConcreteCreator classes that implement the factory method to instantiate and return specific products.</p>
 <h1 id="Talk-about-observer-design-pattern"><a href="#Talk-about-observer-design-pattern" class="headerlink" title="Talk about observer design pattern"></a>Talk about observer design pattern</h1><p>The Observer design pattern enables an object, known as the subject, to notify other objects, known as observers, of state changes. It is used for creating event-driven systems, allowing for loose coupling between the subject and its observers.</p>
 <h1 id="What-if-you-don’t-define-the-serialVersionUID-What-if-you-remove-it"><a href="#What-if-you-don’t-define-the-serialVersionUID-What-if-you-remove-it" class="headerlink" title="What if you don’t define the serialVersionUID? What if you remove it?"></a>What if you don’t define the serialVersionUID? What if you remove it?</h1><p>If you don’t define <code>serialVersionUID</code>, Java generates one at runtime based on class details. Removing it has the same effect. This can cause deserialization issues if the class changes, leading to <code>InvalidClassException</code>. Defining <code>serialVersionUID</code> explicitly ensures compatibility across class versions.</p>
-<h1 id="When-using-HashMap-in-multi-threading-what-will-happen-How-to-avoid-it"><a href="#When-using-HashMap-in-multi-threading-what-will-happen-How-to-avoid-it" class="headerlink" title="When using HashMap in multi-threading, what will happen? How to avoid it?"></a>When using HashMap in multi-threading, what will happen? How to avoid it?</h1><p>In a multi-threaded environment, using HashMap can lead to data inconsistency and ConcurrentModificationException. To avoid this, use <code>ConcurrentHashMap</code> for better thread safety and performance.</p>
 <h1 id="What-caused-memory-leak-How-to-detect-it"><a href="#What-caused-memory-leak-How-to-detect-it" class="headerlink" title="What caused memory leak? How to detect it?"></a>What caused memory leak? How to detect it?</h1><p>Memory leaks in Java are often caused by unreleased object references. Tools like VisualVM and Eclipse Memory Analyzer can help detect them by analyzing heap dumps and monitoring memory usage.</p>
 <h1 id="Map-vs-Flat-map"><a href="#Map-vs-Flat-map" class="headerlink" title="Map vs. Flat map"></a>Map vs. Flat map</h1><p><code>Map</code> transforms each stream element with a function. <code>Flat map</code> also transforms but then flattens the resulting streams into one.</p>
 <h1 id="sleep-vs-wait"><a href="#sleep-vs-wait" class="headerlink" title="sleep() vs. wait()"></a>sleep() vs. wait()</h1><p><code>sleep()</code> pauses a thread without releasing locks for a time. <code>wait()</code> pauses a thread, releases its locks, and waits for <code>notify()</code> or a timeout.</p>
@@ -526,6 +543,148 @@
       </categories>
       <tags>
         <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git用法总结</title>
+    <url>//tech-stack/git/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>tech-stack</category>
+      </categories>
+      <tags>
+        <tag>WSL2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WSL2备份</title>
+    <url>//windows/wsl2-backup/</url>
+    <content><![CDATA[<p>查看WSL运行状态：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wsl -l -v</span><br></pre></td></tr></table></figure>
+<p>wsl关机的命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wsl --shutdown</span><br></pre></td></tr></table></figure>
+
+<p>卸载wsl:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wsl --unregister Ubuntu</span><br></pre></td></tr></table></figure>
+
+
+<p>导入wsl:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wsl --import Ubuntu D:\WSL D:\WSL\Backup\Ubuntu.tar</span><br></pre></td></tr></table></figure>
+
+<p>导出wsl：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wsl --export Ubuntu D:\WSL\Backup\Ubuntu.tar</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>WSL2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 10 LTSC</title>
+    <url>//windows/ltsc/</url>
+    <content><![CDATA[<p>原帖地址：<br><a href="https://www.reddit.com/r/Piracy/comments/ztd2mr/whats_the_preferred_method_for_getting_windows_10/">https://www.reddit.com/r/Piracy/comments/ztd2mr/whats_the_preferred_method_for_getting_windows_10/</a></p>
+<blockquote>
+<p>Download LTSC from <a href="https://massgrave.dev/genuine-installation-media.html">Here</a><br>Then get latest MAS from <a href="https://github.com/massgravel/Microsoft-Activation-Scripts/releases">Here</a><br>And activate your genuine LTSC.</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>ltsc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS快照恢复</title>
+    <url>//macos/mac-snapshot-recovery/</url>
+    <content><![CDATA[<p>打快照</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil snapshot</span><br></pre></td></tr></table></figure>
+
+<p>列出所有快照</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil listlocalsnapshots /</span><br></pre></td></tr></table></figure>
+
+<p>删除一个快照的方法</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots 这个地方使用快照的日期</span><br></pre></td></tr></table></figure>
+
+<p>删除所有快照</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots /</span><br></pre></td></tr></table></figure>
+
+<p>恢复快照的方法，就是进入macOS启动设置页面，选择time machine进行恢复，然后选择相应的快照，即可几秒内将系统完整的恢复到上一个快照的状态，其间录入的指纹有可能丢失。</p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>macOS检查最近变动文件的方法</title>
+    <url>//macos/track-macos-recent-file-activity/</url>
+    <content><![CDATA[<p>用HoudahSpot或者mac的自带finder（但是测试自带finder查找的文件远远少于HoudahSpot，原因未知），查找项目为<strong>Date Added</strong></p>
+<p>然后在Location区域排除掉不需要查找的文件夹，即可找到最新在mac变动的文件。</p>
+<p>参考配置如下：<br><img src="/../../../assets/2024-03-07%20at%2023.59.19@2x.jpg"></p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>houdahspot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS隐藏Dock栏</title>
+    <url>//macos/hide-mac-dock/</url>
+    <content><![CDATA[<p>通过以下步骤，你可以临时改变Dock的行为和外观，包括隐藏Dock、延长其出现的等待时间，以及减小其图标的尺寸，使其即便是进行手势操作时也难以被看到。</p>
+<h3 id="第一步：隐藏Dock"><a href="#第一步：隐藏Dock" class="headerlink" title="第一步：隐藏Dock"></a>第一步：隐藏Dock</h3><ul>
+<li>快捷键 <code>Option + Command + D</code> 可以切换Dock的自动隐藏和显示。这是一个快速的方式来隐藏Dock，让桌面看起来更整洁。</li>
+</ul>
+<h3 id="第二步：延长Dock显示的等待时间"><a href="#第二步：延长Dock显示的等待时间" class="headerlink" title="第二步：延长Dock显示的等待时间"></a>第二步：延长Dock显示的等待时间</h3><ul>
+<li>为了在极长的时间内鼠标悬停时Dock不出现，你可以设置一个很长的延迟时间。以下命令将Dock的自动显示延迟设置为1000秒。这意味着，在鼠标移至屏幕边缘（根据Dock位置设置，通常是底部）后，需要等待约16分钟40秒，Dock才会显示出来。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.Dock autohide-delay -float 1000 &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure>
+
+<p>要还原Dock显示的延迟时间到默认设置，使用以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults delete com.apple.Dock autohide-delay &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三步：缩小Dock图标的尺寸"><a href="#第三步：缩小Dock图标的尺寸" class="headerlink" title="第三步：缩小Dock图标的尺寸"></a>第三步：缩小Dock图标的尺寸</h3><p>如果你想要让Dock图标变得极其微小，甚至在使用四指上滑手势时也难以察觉其存在，可以通过以下命令设置Dock图标的尺寸为1像素：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock tilesize -float 1; killall Dock</span><br></pre></td></tr></table></figure>
+
+<p>若要撤销图标尺寸的更改，恢复到默认大小，可以使用以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults delete com.apple.dock tilesize; killall Dock</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>解决macOS应用程序损坏无法打开</title>
+    <url>//macos/fix-app-damage/</url>
+    <content><![CDATA[<p>在终端输入：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">xattr -cr /Applications/AppName.app</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>隐藏Skype在macOS dock栏的显示</title>
+    <url>//macos/hide-skype-dock/</url>
+    <content><![CDATA[<p>Sonoma测试下有效：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write /Applications/Skype.app/Contents/Info LSUIElement 1</span><br></pre></td></tr></table></figure>
+
+<p>经过测试，<strong>发现即使手动修改Info.plist，加上<code>LSUIElement</code>为<code>true</code>也无法起作用</strong>，会显示程序出现错误。原因不明，可能是因为手动修改后，无法取得系统信任。</p>
+<p>推测对于其他软件也可以起到相同的隐藏dock的作用。</p>
+<p><strong>已知问题</strong>：<br>虽然确实可以在dock隐藏，但是每次都需要重新登录skype，原因不明。</p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>skype</tag>
+        <tag>dock</tag>
       </tags>
   </entry>
   <entry>
@@ -919,17 +1078,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git用法总结</title>
-    <url>//tech-stack/git/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>tech-stack</category>
-      </categories>
-      <tags>
-        <tag>WSL2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java面试——Leetcode代码库</title>
     <url>//java-interview/leetcode/</url>
     <content><![CDATA[<h1 id="1-1"><a href="#1-1" class="headerlink" title="1.1"></a>1.1</h1><h2 id="3-Longest-Substring-Without-Repeating-Characters"><a href="#3-Longest-Substring-Without-Repeating-Characters" class="headerlink" title="3. Longest Substring Without Repeating Characters"></a><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">3. Longest Substring Without Repeating Characters</a></h2><p>背诵：<code>i</code>每次跳转到出现<strong>上一轮重复字母</strong>的<code>index + 1</code>上去，所以，map存的是出现重复字母上一轮的<code>index + 1</code></p>
@@ -1214,109 +1362,6 @@
       </tags>
   </entry>
   <entry>
-    <title>WSL2备份</title>
-    <url>//windows/wsl2-backup/</url>
-    <content><![CDATA[<p>查看WSL运行状态：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wsl -l -v</span><br></pre></td></tr></table></figure>
-<p>wsl关机的命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wsl --shutdown</span><br></pre></td></tr></table></figure>
-
-<p>卸载wsl:</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wsl --unregister Ubuntu</span><br></pre></td></tr></table></figure>
-
-
-<p>导入wsl:</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wsl --import Ubuntu D:\WSL D:\WSL\Backup\Ubuntu.tar</span><br></pre></td></tr></table></figure>
-
-<p>导出wsl：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wsl --export Ubuntu D:\WSL\Backup\Ubuntu.tar</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>WSL2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 10 LTSC</title>
-    <url>//windows/ltsc/</url>
-    <content><![CDATA[<p>原帖地址：<br><a href="https://www.reddit.com/r/Piracy/comments/ztd2mr/whats_the_preferred_method_for_getting_windows_10/">https://www.reddit.com/r/Piracy/comments/ztd2mr/whats_the_preferred_method_for_getting_windows_10/</a></p>
-<blockquote>
-<p>Download LTSC from <a href="https://massgrave.dev/genuine-installation-media.html">Here</a><br>Then get latest MAS from <a href="https://github.com/massgravel/Microsoft-Activation-Scripts/releases">Here</a><br>And activate your genuine LTSC.</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>ltsc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS快照恢复</title>
-    <url>//macos/mac-snapshot-recovery/</url>
-    <content><![CDATA[<p>打快照</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil snapshot</span><br></pre></td></tr></table></figure>
-
-<p>列出所有快照</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil listlocalsnapshots /</span><br></pre></td></tr></table></figure>
-
-<p>删除一个快照的方法</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots 这个地方使用快照的日期</span><br></pre></td></tr></table></figure>
-
-<p>删除所有快照</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots /</span><br></pre></td></tr></table></figure>
-
-<p>恢复快照的方法，就是进入macOS启动设置页面，选择time machine进行恢复，然后选择相应的快照，即可几秒内将系统完整的恢复到上一个快照的状态，其间录入的指纹有可能丢失。</p>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>macOS检查最近变动文件的方法</title>
-    <url>//macos/track-macos-recent-file-activity/</url>
-    <content><![CDATA[<p>用HoudahSpot或者mac的自带finder（但是测试自带finder查找的文件远远少于HoudahSpot，原因未知），查找项目为<strong>Date Added</strong></p>
-<p>然后在Location区域排除掉不需要查找的文件夹，即可找到最新在mac变动的文件。</p>
-<p>参考配置如下：<br><img src="/../../../assets/2024-03-07%20at%2023.59.19@2x.jpg"></p>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-      <tags>
-        <tag>houdahspot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS隐藏Dock栏</title>
-    <url>//macos/hide-mac-dock/</url>
-    <content><![CDATA[<p>通过以下步骤，你可以临时改变Dock的行为和外观，包括隐藏Dock、延长其出现的等待时间，以及减小其图标的尺寸，使其即便是进行手势操作时也难以被看到。</p>
-<h3 id="第一步：隐藏Dock"><a href="#第一步：隐藏Dock" class="headerlink" title="第一步：隐藏Dock"></a>第一步：隐藏Dock</h3><ul>
-<li>快捷键 <code>Option + Command + D</code> 可以切换Dock的自动隐藏和显示。这是一个快速的方式来隐藏Dock，让桌面看起来更整洁。</li>
-</ul>
-<h3 id="第二步：延长Dock显示的等待时间"><a href="#第二步：延长Dock显示的等待时间" class="headerlink" title="第二步：延长Dock显示的等待时间"></a>第二步：延长Dock显示的等待时间</h3><ul>
-<li>为了在极长的时间内鼠标悬停时Dock不出现，你可以设置一个很长的延迟时间。以下命令将Dock的自动显示延迟设置为1000秒。这意味着，在鼠标移至屏幕边缘（根据Dock位置设置，通常是底部）后，需要等待约16分钟40秒，Dock才会显示出来。</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.Dock autohide-delay -float 1000 &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure>
-
-<p>要还原Dock显示的延迟时间到默认设置，使用以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults delete com.apple.Dock autohide-delay &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure>
-
-<h3 id="第三步：缩小Dock图标的尺寸"><a href="#第三步：缩小Dock图标的尺寸" class="headerlink" title="第三步：缩小Dock图标的尺寸"></a>第三步：缩小Dock图标的尺寸</h3><p>如果你想要让Dock图标变得极其微小，甚至在使用四指上滑手势时也难以察觉其存在，可以通过以下命令设置Dock图标的尺寸为1像素：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock tilesize -float 1; killall Dock</span><br></pre></td></tr></table></figure>
-
-<p>若要撤销图标尺寸的更改，恢复到默认大小，可以使用以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults delete com.apple.dock tilesize; killall Dock</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>将Brainwaves（神奇脑波）的音乐提取出来</title>
     <url>//macos/extract-brainwaves-music/</url>
     <content><![CDATA[<p>在付费了永久版的神奇脑波之后（付费的是中文版，然后也给了英文版的使用），从App Store下载英文版的神奇脑波，名字叫作Brainwaves。</p>
@@ -1328,34 +1373,6 @@
       </categories>
       <tags>
         <tag>Brainwaves</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决macOS应用程序损坏无法打开</title>
-    <url>//macos/fix-app-damage/</url>
-    <content><![CDATA[<p>在终端输入：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">xattr -cr /Applications/AppName.app</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>隐藏Skype在macOS dock栏的显示</title>
-    <url>//macos/hide-skype-dock/</url>
-    <content><![CDATA[<p>Sonoma测试下有效：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write /Applications/Skype.app/Contents/Info LSUIElement 1</span><br></pre></td></tr></table></figure>
-
-<p>经过测试，<strong>发现即使手动修改Info.plist，加上<code>LSUIElement</code>为<code>true</code>也无法起作用</strong>，会显示程序出现错误。原因不明，可能是因为手动修改后，无法取得系统信任。</p>
-<p>推测对于其他软件也可以起到相同的隐藏dock的作用。</p>
-<p><strong>已知问题</strong>：<br>虽然确实可以在dock隐藏，但是每次都需要重新登录skype，原因不明。</p>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-      <tags>
-        <tag>skype</tag>
-        <tag>dock</tag>
       </tags>
   </entry>
 </search>
