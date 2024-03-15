@@ -1002,7 +1002,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-13 17:25:30" itemprop="dateModified" datetime="2024-03-13T17:25:30-07:00">2024-03-13</time>
+      <time title="Modified: 2024-03-14 21:28:39" itemprop="dateModified" datetime="2024-03-14T21:28:39-07:00">2024-03-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1212,21 +1212,6 @@
 <li>Return empty collections instead of null.</li>
 </ol>
 <h1 id="How-to-custom-an-Exception"><a href="#How-to-custom-an-Exception" class="headerlink" title="How to custom an Exception?"></a>How to custom an Exception?</h1><p>To create a custom exception, we extend the <code>Exception</code> class or one of its subclasses.</p>
-<h1 id="Junit-how-to-write-a-test"><a href="#Junit-how-to-write-a-test" class="headerlink" title="Junit, how to write a test"></a>Junit, how to write a test</h1><ol>
-<li><strong>Add JUnit dependency</strong> in Maven</li>
-<li><strong>Create a test class</strong> in <code>src/test/java</code>.</li>
-<li><strong>Import JUnit</strong> with <code>import org.junit.jupiter.api.Test;</code>.</li>
-<li><strong>Write test methods</strong> annotated with <code>@Test</code>, use assertions like <code>assertEquals()</code> for validation.</li>
-<li><strong>Run the test</strong> using IDE or build tool.</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CalculatorTest</span> &#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testAdd</span><span class="params">()</span> &#123;</span><br><span class="line">        assertEquals(<span class="number">5</span>, <span class="keyword">new</span> <span class="title class_">Calculator</span>().add(<span class="number">2</span>, <span class="number">3</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="mocking-vs-stubbing"><a href="#mocking-vs-stubbing" class="headerlink" title="mocking vs stubbing"></a>mocking vs stubbing</h1><p>Stubbing provides fixed responses from dependencies. </p>
-<p>Mocking also verifies interactions with those dependencies.</p>
-<h1 id="TestNG-vs-junit"><a href="#TestNG-vs-junit" class="headerlink" title="TestNG vs junit"></a>TestNG vs junit</h1><p>TestNG offers advanced features like execution order, parallel testing, and grouping, ideal for complex tests. </p>
-<p>JUnit is simpler, great for unit testing, and widely adopted. </p>
-<p>So, use TestNG for detailed control; use JUnit for straightforward scenarios.</p>
 <h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>JSON (JavaScript Object Notation) is a lightweight format for data exchange, easy for humans to read and write, and for machines to parse and generate. It’s widely used in web applications for data interchange between servers and clients.</p>
 <h1 id="What-is-the-purpose-of-serial-version-UID"><a href="#What-is-the-purpose-of-serial-version-UID" class="headerlink" title="What is the purpose of serial version UID"></a>What is the purpose of serial version UID</h1><p>The <code>serialVersionUID</code> is a unique identifier for Serializable classes. It ensures compatibility between versions of a Serializable class during serialization and deserialization, preventing <code>InvalidClassException</code>.</p>
 <h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><p>JDBC is a Java API for database interaction, enabling Java programs to connect, query, and update databases in a database-independent manner.</p>
@@ -1495,6 +1480,28 @@
 <li><strong>Inaccessible</strong>: Objects without references become eligible for garbage collection.</li>
 <li><strong>Destruction</strong>: Garbage collection reclaims memory, destroying the object.</li>
 </ol>
+<h1 id="What-testing-framework-are-you-using-in-your-project"><a href="#What-testing-framework-are-you-using-in-your-project" class="headerlink" title="What testing framework are you using in your project?"></a>What testing framework are you using in your project?</h1><p>We are using JUnit for unit testing, Mockito for mocking dependencies, and TestNG for more complex test scenarios.</p>
+<h1 id="What-is-Mockito"><a href="#What-is-Mockito" class="headerlink" title="What is Mockito"></a>What is Mockito</h1><p>It is for creating and configuring mock objects in unit tests. It is use to simulate the behavior of real-world objects</p>
+<h1 id="What-is-the-limitation-of-Mockito"><a href="#What-is-the-limitation-of-Mockito" class="headerlink" title="What is the limitation of Mockito"></a>What is the limitation of Mockito</h1><p>Mockito cannot mock final classes or methods, private methods, and static methods directly. </p>
+<h1 id="Life-cycle-of-Junit-test"><a href="#Life-cycle-of-Junit-test" class="headerlink" title="Life cycle of Junit test"></a>Life cycle of Junit test</h1><p>@BeforeAll, @BeforeEach, @AfterEach and @AfterAll</p>
+<h1 id="mocking-vs-stubbing"><a href="#mocking-vs-stubbing" class="headerlink" title="mocking vs stubbing"></a>mocking vs stubbing</h1><p>Stubbing provides fixed responses from dependencies. </p>
+<p>Mocking also verifies interactions with those dependencies.</p>
+<h1 id="TestNG-vs-junit"><a href="#TestNG-vs-junit" class="headerlink" title="TestNG vs junit"></a>TestNG vs junit</h1><p>TestNG offers advanced features like execution order, parallel testing, and grouping, ideal for complex tests. </p>
+<p>JUnit is simpler, great for unit testing, and widely adopted. </p>
+<p>So, use TestNG for detailed control; use JUnit for straightforward scenarios.</p>
+<h1 id="Functional-test-Integrtion-test-Unit-test"><a href="#Functional-test-Integrtion-test-Unit-test" class="headerlink" title="Functional test &amp; Integrtion test &amp; Unit test"></a>Functional test &amp; Integrtion test &amp; Unit test</h1><p>Functional testing checks software matches requirements. Integration testing ensures parts work together. Unit testing verifies individual components.</p>
+<h1 id="Junit-how-to-write-a-test"><a href="#Junit-how-to-write-a-test" class="headerlink" title="Junit, how to write a test"></a>Junit, how to write a test</h1><ol>
+<li><strong>Add JUnit dependency</strong> in Maven</li>
+<li><strong>Create a test class</strong> in <code>src/test/java</code>.</li>
+<li><strong>Import JUnit</strong> with <code>import org.junit.jupiter.api.Test;</code>.</li>
+<li><strong>Write test methods</strong> annotated with <code>@Test</code>, use assertions like <code>assertEquals()</code> for validation.</li>
+<li><strong>Run the test</strong> using IDE or build tool.</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CalculatorTest</span> &#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testAdd</span><span class="params">()</span> &#123;</span><br><span class="line">        assertEquals(<span class="number">5</span>, <span class="keyword">new</span> <span class="title class_">Calculator</span>().add(<span class="number">2</span>, <span class="number">3</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Do-you-know-what’s-the-difference-between-a-relational-database-and-a-non-relational-database"><a href="#Do-you-know-what’s-the-difference-between-a-relational-database-and-a-non-relational-database" class="headerlink" title="Do you know what’s the difference between a relational database and a non-relational database?"></a>Do you know what’s the difference between a relational database and a non-relational database?</h1><p>Relational databases are structured and use SQL. Non-relational (NoSQL) databases are flexible and store unstructured data.</p>
+<h2 id="Which-was-better-for-horizontally-scaling"><a href="#Which-was-better-for-horizontally-scaling" class="headerlink" title="Which was better for horizontally scaling?"></a>Which was better for horizontally scaling?</h2><p>nosql database</p>
 
       
     </div>
@@ -1557,7 +1564,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-08 01:42:40" itemprop="dateModified" datetime="2024-03-08T01:42:40-08:00">2024-03-08</time>
+      <time title="Modified: 2024-03-14 13:27:44" itemprop="dateModified" datetime="2024-03-14T13:27:44-07:00">2024-03-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1595,7 +1602,8 @@
 <li><strong>WebSocket</strong>: One per WebSocket.</li>
 </ol>
 <h1 id="Could-you-give-me-the-exmaple-for-singelton-bean-scope"><a href="#Could-you-give-me-the-exmaple-for-singelton-bean-scope" class="headerlink" title="Could you give me the exmaple for singelton bean scope"></a>Could you give me the exmaple for singelton bean scope</h1><p>to be done</p>
-<h1 id="What-are-the-differences-between-RequestParam-and-PathVariable"><a href="#What-are-the-differences-between-RequestParam-and-PathVariable" class="headerlink" title="What are the differences between @RequestParam and @PathVariable?"></a>What are the differences between @RequestParam and @PathVariable?</h1><p><code>@RequestParam</code> extracts query parameters from the URL, while <code>@PathVariable</code> extracts values from the URL path.</p>
+<h1 id="What-are-the-differences-between-RequestParam-and-PathVariable"><a href="#What-are-the-differences-between-RequestParam-and-PathVariable" class="headerlink" title="What are the differences between @RequestParam and @PathVariable?"></a>What are the differences between @RequestParam and @PathVariable?</h1><p><code>@RequestParam</code> extracts query parameters from the URL and are formatted as key-value pairs. It’s commonly used for optional parameters or when dealing with form submissions.</p>
+<p><code>@PathVariable</code> extracts values from the URL path. It’s typically to identify specific resources.</p>
 <h1 id="What-is-JWT-and-why-we-need-it"><a href="#What-is-JWT-and-why-we-need-it" class="headerlink" title="What is JWT and why we need it?"></a>What is JWT and why we need it?</h1><p>JWT (JSON Web Token) is a compact, URL-safe token format used for securely transmitting information between parties as a JSON object. It consists of a header, payload, and signature to ensure data integrity and can be used for authentication and authorization purposes. </p>
 <p>JWTs are efficient, particularly for mobile applications, because they can be easily transmitted through URLs, POST parameters, or HTTP headers.</p>
 <h1 id="What-is-AOP"><a href="#What-is-AOP" class="headerlink" title="What is AOP"></a>What is AOP</h1><p>Aspect-Oriented Programming (AOP) is a programming paradigm that aims to increase modularity by separating cross-cutting concerns like logging and security, using concepts like aspects, advice, join points, and pointcuts.</p>
@@ -1868,7 +1876,6 @@
 <h1 id="How-do-you-create-a-controller"><a href="#How-do-you-create-a-controller" class="headerlink" title="How do you create a controller?"></a>How do you create a controller?</h1><p>Annotate a class with <code>@RestController</code> and define methods with <code>@GetMapping</code>, <code>@PostMapping</code>, etc., for HTTP requests.</p>
 <h1 id="What-is-routing"><a href="#What-is-routing" class="headerlink" title="What is routing?"></a>What is routing?</h1><p>Routing is the process of directing network traffic or web requests to the appropriate destination or handler.</p>
 <h2 id="How-do-you-create-a-rest-controller"><a href="#How-do-you-create-a-rest-controller" class="headerlink" title="How do you create a rest controller?"></a>How do you create a rest controller?</h2><p>Annotate a class with <code>@RestController</code> and define methods with <code>@GetMapping</code>, <code>@PostMapping</code>, etc., for HTTP requests.</p>
-<h1 id="What-is-path-variable"><a href="#What-is-path-variable" class="headerlink" title="What is path variable?"></a>What is path variable?</h1><p>In Spring Boot, a path variable is used to extract URI template variables with <code>@PathVariable</code> annotation in controller methods.</p>
 <h1 id="What-is-service-discovery"><a href="#What-is-service-discovery" class="headerlink" title="What is service discovery?"></a>What is service discovery?</h1><p>Service discovery in Spring Boot is a mechanism for microservices to dynamically find and communicate with each other using a registry like Eureka, enabling scalable and flexible architectures.</p>
 <h1 id="For-Spring-Boot-how-do-I-use-another-server-such-as-WebLogic-instead-of-the-embedded-Tomcat-server"><a href="#For-Spring-Boot-how-do-I-use-another-server-such-as-WebLogic-instead-of-the-embedded-Tomcat-server" class="headerlink" title="For Spring Boot, how do I use another server such as WebLogic instead of the embedded Tomcat server?"></a>For Spring Boot, how do I use another server such as WebLogic instead of the embedded Tomcat server?</h1><p>To use WebLogic instead of the embedded Tomcat server in Spring Boot, follow these steps:</p>
 <ol>
@@ -1942,9 +1949,6 @@
 </li>
 </ol>
 <h1 id="Can-we-make-a-class-like-Student-singleton"><a href="#Can-we-make-a-class-like-Student-singleton" class="headerlink" title="Can we make a class like Student singleton?"></a>Can we make a class like Student singleton?</h1><p>Yes, make the <code>Student</code> class’s constructor private and provide a static method to get the single instance.</p>
-<h1 id="Functional-test-Integrtion-test-Unit-test"><a href="#Functional-test-Integrtion-test-Unit-test" class="headerlink" title="Functional test &amp; Integrtion test &amp; Unit test"></a>Functional test &amp; Integrtion test &amp; Unit test</h1><p>Functional testing checks software matches requirements. Integration testing ensures parts work together. Unit testing verifies individual components.</p>
-<h1 id="What-kind-of-test-experience-do-you-have"><a href="#What-kind-of-test-experience-do-you-have" class="headerlink" title="What kind of test experience do you have?"></a>What kind of test experience do you have?</h1><p>I have experience with JUnit and Mockito for unit testing, TestNG and Spring Test for integration testing, and Selenium for system testing of web applications. I’ve integrated tests into CI&#x2F;CD pipelines using Jenkins for automated builds and testing.</p>
-<h1 id="What’s-the-test-framework-in-your-team"><a href="#What’s-the-test-framework-in-your-team" class="headerlink" title="What’s the test framework in your team?"></a>What’s the test framework in your team?</h1><p>Junit</p>
 <h1 id="Talk-about-Mockito-and-give-an-example"><a href="#Talk-about-Mockito-and-give-an-example" class="headerlink" title="Talk about Mockito and give an example"></a>Talk about Mockito and give an example</h1><p>to be done</p>
 <p>Mockito is a Java framework for mocking dependencies in unit tests. It enables simulating behaviors of dependencies to test classes in isolation.</p>
 <p>Mockito is a Java framework for mocking dependencies in unit tests. It enables simulating behaviors of dependencies to test classes in isolation.</p>
@@ -1952,7 +1956,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Mock creation</span></span><br><span class="line"><span class="type">UserRepository</span> <span class="variable">mockRepository</span> <span class="operator">=</span> mock(UserRepository.class);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Defining mock behavior</span></span><br><span class="line">when(mockRepository.findById(<span class="string">&quot;123&quot;</span>)).thenReturn(<span class="keyword">new</span> <span class="title class_">User</span>(<span class="string">&quot;123&quot;</span>, <span class="string">&quot;Test User&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// Using mock in test</span></span><br><span class="line"><span class="type">UserService</span> <span class="variable">userService</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UserService</span>(mockRepository);</span><br><span class="line"><span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> userService.getUserById(<span class="string">&quot;123&quot;</span>);</span><br><span class="line">assertEquals(<span class="string">&quot;Test User&quot;</span>, user.getName());</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-<h1 id="Talk-about-different-test-you-did-before"><a href="#Talk-about-different-test-you-did-before" class="headerlink" title="Talk about different test you did before"></a>Talk about different test you did before</h1><p>I’ve used JUnit and Mockito for unit testing, TestNG for integration testing, and conducted system testing to ensure software meets requirements. Additionally, I’ve practiced test-driven development (TDD) to improve code quality from the beginning.</p>
 <h1 id="difference-of-spring-and-springboot"><a href="#difference-of-spring-and-springboot" class="headerlink" title="difference of spring and springboot"></a>difference of spring and springboot</h1><p>Spring is a framework for Java development, offering features like dependency injection and aspect-oriented programming. Spring Boot, built on Spring, simplifies application setup and deployment with default configurations and embedded servers, enabling easy creation of standalone applications.</p>
 <h1 id="spring-autoconfiguration"><a href="#spring-autoconfiguration" class="headerlink" title="spring autoconfiguration"></a>spring autoconfiguration</h1><p>Spring AutoConfiguration automatically configures Spring applications based on classpath contents, reducing manual bean configuration.</p>
 <h1 id="actuator"><a href="#actuator" class="headerlink" title="actuator"></a>actuator</h1><p>Spring Boot Actuator is a tool for monitoring and managing Spring Boot applications, providing key operational information through HTTP endpoints or JMX.</p>
