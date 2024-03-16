@@ -882,6 +882,90 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/java-interview/bq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="iTvX">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Think Less, Do More">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Think Less, Do More">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/java-interview/bq/" class="post-title-link" itemprop="url">Java面试——BQ</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-03-02 12:00:00" itemprop="dateCreated datePublished" datetime="2024-03-02T12:00:00-08:00">2024-03-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-03-08 01:42:28" itemprop="dateModified" datetime="2024-03-08T01:42:28-08:00">2024-03-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java-Interview/" itemprop="url" rel="index"><span itemprop="name">Java Interview</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/java-interview/java-general/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -918,7 +1002,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-15 20:16:11" itemprop="dateModified" datetime="2024-03-15T20:16:11-07:00">2024-03-15</time>
+      <time title="Modified: 2024-03-15 23:17:31" itemprop="dateModified" datetime="2024-03-15T23:17:31-07:00">2024-03-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1007,6 +1091,11 @@
 <h1 id="What-is-the-advantage-of-Java-8-compared-to-Java-7"><a href="#What-is-the-advantage-of-Java-8-compared-to-Java-7" class="headerlink" title="What is the advantage of Java 8 compared to Java 7?"></a>What is the advantage of Java 8 compared to Java 7?</h1><p>回答java 8的new feature加上：<br>These features improve developer productivity, code readability, and application performance.</p>
 <h1 id="Give-me-an-example-of-how-you-use-java-8-feature-in-your-project"><a href="#Give-me-an-example-of-how-you-use-java-8-feature-in-your-project" class="headerlink" title="Give me an example of how you use java 8 feature in your project"></a>Give me an example of how you use java 8 feature in your project</h1><p>In our project, we used Java 8’s Stream API for efficiently processing collections and Optional to handle null values more gracefully, enhancing code readability and reducing the chances of NullPointerExceptions.</p>
 <h1 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h1><p>A Stream in Java is an abstraction for processing sequences of elements, supporting operations like filter, map, and reduce, introduced in Java 8 within the <code>java.util.stream</code> package.</p>
+<h1 id="example-use-stream-in-project"><a href="#example-use-stream-in-project" class="headerlink" title="example use stream in project"></a>example use stream in project</h1><p>I used the Stream API to filter out products with low stock, specifically those with quantities less than 10, and collected the result into a list for a quick restock action:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Product&gt; lowStockProducts = products.stream()</span><br><span class="line">    .filter(product -&gt; product.getQuantity() &lt; <span class="number">10</span>)</span><br><span class="line">    .collect(Collectors.toList());</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="What-is-the-difference-between-collection-and-stream-API"><a href="#What-is-the-difference-between-collection-and-stream-API" class="headerlink" title="What is the difference between collection and stream API?"></a>What is the difference between collection and stream API?</h1><p>The Collection API manages data storage and direct manipulation (like adding, removing, or accessing elements), while the Stream API focuses on functional-style operations (like filter, map, reduce) on collections, without storing data and enabling easy parallel processing.</p>
+<p>记忆：<br><strong>Collection API</strong>: Manages data storage, direct manipulation (add, remove, access).<br><strong>Stream API</strong>: Functional-style operations (filter, map, reduce) on collections, no data storage, facilitates parallel processing.</p>
 <h1 id="Intermediate-operation-and-terminal-operation"><a href="#Intermediate-operation-and-terminal-operation" class="headerlink" title="Intermediate operation and terminal operation"></a>Intermediate operation and terminal operation</h1><p>Intermediate operations, like <code>filter</code> and <code>map</code>, transform streams without finalizing results and are lazy. Terminal operations, such as <code>collect</code> and <code>forEach</code>, produce final results, ending the stream’s use.</p>
 <h1 id="optional-class"><a href="#optional-class" class="headerlink" title="optional class"></a>optional class</h1><p>The <code>Optional</code> class in Java is a container for nullable values, introduced in Java 8 to avoid <code>NullPointerException</code> and to provide a clearer way to handle the presence or absence of a value.</p>
 <p>记忆：<br>Optional: a container for nullable values, avoids NullPointerException, manages value presence&#x2F;absence.</p>
@@ -1017,8 +1106,6 @@
 <li>You can call default methods on instances of implementing classes, whereas static methods are called on the interface itself.</li>
 </ul>
 <h1 id="Memory-management-of-Java-8-feature"><a href="#Memory-management-of-Java-8-feature" class="headerlink" title="Memory management of Java 8 feature?"></a>Memory management of Java 8 feature?</h1><p><strong>Metaspace</strong>: replace PermGen, using native memory, reduce OutOfMemoryErrors.<br><strong>Garbage-First Collector (G1 GC)</strong>: optimizes garbage collection using predictable pauses in large memeory environment.<br><strong>Some improvement in heap management</strong>: make it more efficient memory allocation and management.</p>
-<h1 id="What-is-the-difference-between-collection-and-stream-API"><a href="#What-is-the-difference-between-collection-and-stream-API" class="headerlink" title="What is the difference between collection and stream API?"></a>What is the difference between collection and stream API?</h1><p>The Collection API manages data storage and direct manipulation (like adding, removing, or accessing elements), while the Stream API focuses on functional-style operations (like filter, map, reduce) on collections, without storing data and enabling easy parallel processing.</p>
-<p>记忆：<br><strong>Collection API</strong>: Manages data storage, direct manipulation (add, remove, access).<br><strong>Stream API</strong>: Functional-style operations (filter, map, reduce) on collections, no data storage, facilitates parallel processing.</p>
 <h1 id="How-did-you-use-lambda-expression"><a href="#How-did-you-use-lambda-expression" class="headerlink" title="How did you use lambda expression?"></a>How did you use lambda expression?</h1><p>In my projects, I’ve used lambda expressions to simplify the implementation of Functional interfaces, such as comparators for sorting collections. For example, when sorting a list of custom objects based on a particular field, I used lambda expressions to create a concise and readable comparator without the need for an anonymous class. Here’s how I implemented it:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Person&gt; people = getPeopleList();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Sort people by their age using a lambda expression</span></span><br><span class="line">people.sort((p1, p2) -&gt; p1.getAge() - p2.getAge());</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -1287,7 +1374,8 @@
 <h1 id="What-is-the-deadlock"><a href="#What-is-the-deadlock" class="headerlink" title="What is the deadlock?"></a>What is the deadlock?</h1><p>Deadlock is a condition where two or more threads are waiting indefinitely for each other to release resources they need, resulting in none of the threads being able to proceed.</p>
 <h1 id="thread-join"><a href="#thread-join" class="headerlink" title="thread join()"></a>thread join()</h1><p>The join() method in Java allows the current thread to wait for another thread’s completion. </p>
 <h1 id="What-is-Asynchronized-in-multi-threading"><a href="#What-is-Asynchronized-in-multi-threading" class="headerlink" title="What is Asynchronized in multi-threading?"></a>What is Asynchronized in multi-threading?</h1><p>Asynchronized in multi-threading refers to executing tasks concurrently across multiple threads without one waiting for another, enhancing application performance by parallelizing operations.</p>
-<h1 id="Internal-data-structure-of-HashMap"><a href="#Internal-data-structure-of-HashMap" class="headerlink" title="Internal data structure of HashMap"></a>Internal data structure of HashMap</h1><p>The internal data structure of a <code>HashMap</code> in Java combines an array with linked lists or balanced trees for collision handling. Entries are stored in array slots (buckets) based on their keys’ hash codes. In case of collisions, entries are linked into a list or tree at the same array index. This setup allows efficient storage and retrieval, aiming for O(1) time complexity for <code>get</code> and <code>put</code> operations.</p>
+<h1 id="Internal-data-structure-of-HashMap"><a href="#Internal-data-structure-of-HashMap" class="headerlink" title="Internal data structure of HashMap"></a>Internal data structure of HashMap</h1><p>The internal data structure of a <code>HashMap</code> in Java combines an array with linked lists or balanced trees for collision handling. Entries are stored in array slots (buckets) based on their keys’ hash codes. </p>
+<p>In case of collisions, entries are linked into a list or tree at the same array index. This setup allows efficient storage and retrieval, aiming for O(1) time complexity for <code>get</code> and <code>put</code> operations.</p>
 <h1 id="Java-hashmap-implementation-hashcode-chain-vs-red-black-tree"><a href="#Java-hashmap-implementation-hashcode-chain-vs-red-black-tree" class="headerlink" title="Java hashmap implementation (hashcode chain vs red black tree)"></a>Java hashmap implementation (hashcode chain vs red black tree)</h1><p>Java’s <code>HashMap</code> initially handles collisions using linked lists(hashcode chain). From Java 8, for buckets with more than 8 items, it switches to red-black trees, improving search from O(n) to O(log n) for high collision scenarios. </p>
 <h1 id="HashMap-and-TreeMap-and-Hashtable"><a href="#HashMap-and-TreeMap-and-Hashtable" class="headerlink" title="HashMap and TreeMap and Hashtable"></a>HashMap and TreeMap and Hashtable</h1><ul>
 <li><strong>HashMap</strong>: Unsynchronized, allows one null key and multiple null values, unordered.</li>
@@ -1433,90 +1521,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/java-interview/bq/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="iTvX">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Think Less, Do More">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Think Less, Do More">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/java-interview/bq/" class="post-title-link" itemprop="url">Java面试——BQ</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-03-02 12:00:00" itemprop="dateCreated datePublished" datetime="2024-03-02T12:00:00-08:00">2024-03-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-08 01:42:28" itemprop="dateModified" datetime="2024-03-08T01:42:28-08:00">2024-03-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Java-Interview/" itemprop="url" rel="index"><span itemprop="name">Java Interview</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/java-interview/spring/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1553,7 +1557,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-15 22:53:37" itemprop="dateModified" datetime="2024-03-15T22:53:37-07:00">2024-03-15</time>
+      <time title="Modified: 2024-03-16 11:54:54" itemprop="dateModified" datetime="2024-03-16T11:54:54-07:00">2024-03-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1575,7 +1579,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="What-is-the-IOC"><a href="#What-is-the-IOC" class="headerlink" title="What is the IOC?"></a>What is the IOC?</h1><p>Inversion of Control (IOC) is a principle where the control of object creation and lifecycle is transferred to a container or framework, enabling loose coupling and easier management of components.</p>
+          <h1 id="Why-do-you-use-Spring-Boot-Benefits-of-Spring-Boot-diffrenece-of-Spring-and-Spring-boot"><a href="#Why-do-you-use-Spring-Boot-Benefits-of-Spring-Boot-diffrenece-of-Spring-and-Spring-boot" class="headerlink" title="Why do you use Spring Boot? &#x2F; Benefits of Spring Boot&#x2F; diffrenece of Spring and Spring boot"></a>Why do you use Spring Boot? &#x2F; Benefits of Spring Boot&#x2F; diffrenece of Spring and Spring boot</h1><p>Spring is a powerful framework for building Java applications, providing features like dependency injection and aspect-oriented programming. However, it requires more manual configuration to get started.</p>
+<p>Spring Boot, building on Spring, simplifies this process. It basically sets things up for you by guessing what you need based on what you’re trying to do, and it even has its own server ready to go. So, with Spring Boot, you spend less time on setup and more on actually building your app</p>
+<h1 id="What-is-the-IOC"><a href="#What-is-the-IOC" class="headerlink" title="What is the IOC?"></a>What is the IOC?</h1><p>Inversion of Control (IOC) is a principle where the control of object creation and lifecycle is transferred to a container or framework, enabling loose coupling and easier management of components.</p>
 <h1 id="Types-of-dependency-injection"><a href="#Types-of-dependency-injection" class="headerlink" title="Types of dependency injection"></a>Types of dependency injection</h1><p>Dependency injection in Java can be categorized into three main types:</p>
 <ol>
 <li><strong>Constructor Injection</strong>: Dependencies are provided through a class constructor.</li>
@@ -1611,7 +1617,9 @@
 <h1 id="Difference-between-Controller-and-RESTController"><a href="#Difference-between-Controller-and-RESTController" class="headerlink" title="Difference between @Controller and @RESTController"></a>Difference between @Controller and @RESTController</h1><p><code>@Controller</code> is a Spring annotation that indicates the class is a Spring MVC controller. It’s used for traditional web applications where the controller methods return a view.</p>
 <p><code>@RestController</code> combines <code>@Controller</code> and <code>@ResponseBody</code> annotations, indicating that every method returns a domain object instead of a view. It is for RESTful services, returning data directly.</p>
 <h1 id="Component-Scan"><a href="#Component-Scan" class="headerlink" title="Component Scan"></a>Component Scan</h1><p>Component Scan in Spring Boot automatically detects and registers beans marked with annotations like <code>@Component</code>, <code>@Service</code>, <code>@Repository</code>, or <code>@Controller</code>, within the package of the main application class and its subpackages. This feature facilitates automatic dependency injection without manual bean registration.</p>
-<h1 id="How-does-the-RestTemplate-work"><a href="#How-does-the-RestTemplate-work" class="headerlink" title="How does the RestTemplate work?"></a>How does the RestTemplate work?</h1><p><code>RestTemplate</code> is a Spring client for HTTP requests, supporting methods like GET, POST, PUT, and DELETE. It automates connection handling, data conversion using converters, and can be customized with interceptors and error handlers.</p>
+<h1 id="How-does-the-RestTemplate-work"><a href="#How-does-the-RestTemplate-work" class="headerlink" title="How does the RestTemplate work?"></a>How does the RestTemplate work?</h1><p><code>RestTemplate</code> is a tool in Spring for sending HTTP requests easily. You basically set up what you want to send, like the URL and data, and then use methods like <code>getForObject</code> or <code>postForObject</code> to make the call. It automatically turns the response into a Java object for you. It also helps handle errors smoothly and lets you customize it with different settings if needed.</p>
+<h1 id="RestTemplate-vs-Kafka"><a href="#RestTemplate-vs-Kafka" class="headerlink" title="RestTemplate vs. Kafka"></a>RestTemplate vs. Kafka</h1><p>RestTemplate is used for synchronous call while Kafka is used for A-synchronous call</p>
+<p>RestTemplate is used for synchronous HTTP requests in a client-server architecture, while Kafka is used for asynchronous, high-volume message processing and streaming in a distributed system architecture.</p>
 <h1 id="How-do-you-deal-with-the-response-get-from-REST-api-How-to-convert-JSON-Java-Object"><a href="#How-do-you-deal-with-the-response-get-from-REST-api-How-to-convert-JSON-Java-Object" class="headerlink" title="How do you deal with the response get from REST api? &#x2F; How to convert JSON -&gt; Java Object?"></a>How do you deal with the response get from REST api? &#x2F; How to convert JSON -&gt; Java Object?</h1><p>To deal with the response from a REST API and convert JSON to a Java object, you can use libraries such as Jackson or Google Gson. Here’s an example using Jackson:</p>
 <ol>
 <li><p>Add Jackson library dependency to your project. For Maven, include:</p>
@@ -1725,11 +1733,8 @@
 </ol>
 <h1 id="Difference-between-Component-and-Bean"><a href="#Difference-between-Component-and-Bean" class="headerlink" title="Difference between @Component and @Bean"></a>Difference between @Component and @Bean</h1><p><code>@Component</code> is used to auto-detect and auto-configure beans through classpath scanning. </p>
 <p><code>@Bean</code> is used for explicit bean definition and configuration within <code>@Configuration</code> classes.</p>
-<h1 id="RestTemplate-vs-Kafka"><a href="#RestTemplate-vs-Kafka" class="headerlink" title="RestTemplate vs. Kafka"></a>RestTemplate vs. Kafka</h1><p>RestTemplate is used for synchronous call while Kafka is used for A-synchronous call</p>
-<p>RestTemplate is used for synchronous HTTP requests in a client-server architecture, while Kafka is used for asynchronous, high-volume message processing and streaming in a distributed system architecture.</p>
 <h1 id="When-there-is-circular-dependency-use-which-type-of-Injection-Setter-based-Injection-vs-Constructor-based"><a href="#When-there-is-circular-dependency-use-which-type-of-Injection-Setter-based-Injection-vs-Constructor-based" class="headerlink" title="When there is circular dependency, use which type of Injection? &#x2F; Setter based Injection vs. Constructor based"></a>When there is circular dependency, use which type of Injection? &#x2F; Setter based Injection vs. Constructor based</h1><p>Use setter or field injection to handle circular dependencies, as they allow Spring to instantiate beans first and resolve dependencies afterward, avoiding the circular dependency issue that constructor injection faces.</p>
 <h1 id="What-is-race-condition"><a href="#What-is-race-condition" class="headerlink" title="What is race condition?"></a>What is race condition?</h1><p>A race condition occurs when multiple operations access shared data concurrently and the outcome depends on the order of execution, leading to unpredictable results.</p>
-<h1 id="Why-do-you-use-Spring-Boot-Benefits-of-Spring-Boot"><a href="#Why-do-you-use-Spring-Boot-Benefits-of-Spring-Boot" class="headerlink" title="Why do you use Spring Boot? &#x2F; Benefits of Spring Boot"></a>Why do you use Spring Boot? &#x2F; Benefits of Spring Boot</h1><p>Spring Boot simplifies enterprise application development by offering rapid, convention-over-configuration setup, auto-configuration, support for standalone applications, extensive extensions for web, database, and security integration, microservices architecture support, and strong community backing.</p>
 <h1 id="Different-types-of-request-mapping-methods"><a href="#Different-types-of-request-mapping-methods" class="headerlink" title="Different types of request mapping methods"></a>Different types of request mapping methods</h1><ol>
 <li><p><code>@GetMapping</code>: For GET requests.</p>
 </li>
