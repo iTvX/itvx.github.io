@@ -177,7 +177,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/windows/wsl2-backup/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/work/iterator">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -195,7 +195,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/windows/wsl2-backup/" class="post-title-link" itemprop="url">WSL2备份</a>
+          <a href="/work/iterator" class="post-title-link" itemprop="url">Iterator 学习</a>
         </h2>
 
         <div class="post-meta-container">
@@ -207,7 +207,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-05-05 20:19:05 / Modified: 20:19:31" itemprop="dateCreated datePublished" datetime="2024-05-05T20:19:05-07:00">2024-05-05</time>
+      <time title="Created: 2024-05-05 20:19:05 / Modified: 20:31:12" itemprop="dateCreated datePublished" datetime="2024-05-05T20:19:05-07:00">2024-05-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -229,7 +229,25 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Test</p>
+          <h3 id="理解-Java-中的-Iterator"><a href="#理解-Java-中的-Iterator" class="headerlink" title="理解 Java 中的 Iterator"></a>理解 Java 中的 Iterator</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>在 Java 集合框架中，<code>Iterator</code> 是一个基本的接口，用于遍历集合元素，如 <code>List</code> 和 <code>Set</code>。它提供了 <code>next()</code>、<code>hasNext()</code> 和 <code>remove()</code> 等方法，支持单向遍历并安全修改集合。</p>
+<h4 id="Iterator-基础"><a href="#Iterator-基础" class="headerlink" title="Iterator 基础"></a>Iterator 基础</h4><ul>
+<li>**<code>hasNext()</code>**：检查是否还有元素未遍历。</li>
+<li>**<code>next()</code>**：返回当前位置的元素，并移向下一个。</li>
+<li>**<code>remove()</code>**：删除最近通过 <code>next()</code> 方法访问的元素。</li>
+</ul>
+<h4 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>));</span><br><span class="line">Iterator&lt;Integer&gt; it = numbers.iterator();</span><br><span class="line"><span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">current</span> <span class="operator">=</span> it.next();</span><br><span class="line">    <span class="keyword">if</span> (current == <span class="number">3</span>) &#123;</span><br><span class="line">        it.remove(); <span class="comment">// 删除元素</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(numbers); <span class="comment">// 输出: [1, 2, 4, 5]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在此示例中，我们遍历 <code>ArrayList</code> 并在遍历过程中删除了元素 <code>3</code>。</p>
+<h4 id="优势与限制"><a href="#优势与限制" class="headerlink" title="优势与限制"></a>优势与限制</h4><p><strong>优势</strong>：</p>
+<ul>
+<li><strong>安全修改</strong>：允许在遍历时安全删除元素，避免 <code>ConcurrentModificationException</code>。</li>
+</ul>
+<p><strong>限制</strong>：</p>
+<ul>
+<li><strong>单向遍历</strong>：只能向前移动，不能回退。</li>
+<li><strong>有状态</strong>：每次调用 <code>next()</code> 后，无法重新访问先前的元素。</li>
+</ul>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p><code>Iterator</code> 是处理 Java 集合的强大工具，尤其适合在遍历过程中需要修改集合的场景。掌握其使用可以提高程序的健壮性和效率。</p>
 
       
     </div>
