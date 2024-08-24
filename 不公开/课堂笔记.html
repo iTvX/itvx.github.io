@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Class 1Class 2Is Java Pass-by-value?这个问题的中文意思是：java是不是传值的In Java, the mechanism for passing parameters is always pass-by-value.  For Primitive Types (like int, double): When a primitive type variable,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Think Less, Do More">
+<meta property="og:url" content="http://example.com/%E4%B8%8D%E5%85%AC%E5%BC%80/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0.html">
+<meta property="og:site_name" content="Think Less, Do More">
+<meta property="og:description" content="Class 1Class 2Is Java Pass-by-value?这个问题的中文意思是：java是不是传值的In Java, the mechanism for passing parameters is always pass-by-value.  For Primitive Types (like int, double): When a primitive type variable,">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-08-24T19:26:01.752Z">
+<meta property="article:modified_time" content="2024-08-24T19:26:01.752Z">
+<meta property="article:author" content="iTvX">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/%E4%B8%8D%E5%85%AC%E5%BC%80/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":true,"permalink":"http://example.com/%E4%B8%8D%E5%85%AC%E5%BC%80/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0.html","path":"不公开/课堂笔记.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | Think Less, Do More
+</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Think Less, Do More</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Class-1"><span class="nav-number">1.</span> <span class="nav-text">Class 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class-2"><span class="nav-number">2.</span> <span class="nav-text">Class 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Is-Java-Pass-by-value"><span class="nav-number">2.1.</span> <span class="nav-text">Is Java Pass-by-value?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String-a-Cat-and-String-b-new-String-cat-difference"><span class="nav-number">2.2.</span> <span class="nav-text">String a &#x3D; &quot;Cat&quot; and String b &#x3D; new String(&quot;cat&quot;) difference ?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String-pool"><span class="nav-number">2.2.1.</span> <span class="nav-text">String pool</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Final"><span class="nav-number">2.3.</span> <span class="nav-text">Final</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Static"><span class="nav-number">2.4.</span> <span class="nav-text">Static</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Static-Block"><span class="nav-number">2.5.</span> <span class="nav-text">Static Block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Access-Modifiers"><span class="nav-number">2.6.</span> <span class="nav-text">Access Modifiers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.7.</span> <span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Singleton"><span class="nav-number">2.7.1.</span> <span class="nav-text">Singleton</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class-4"><span class="nav-number">3.</span> <span class="nav-text">Class 4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda"><span class="nav-number">3.1.</span> <span class="nav-text">Lambda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84default%E5%92%8Cstatic%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">接口的default和static方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparable%E6%8E%A5%E5%8F%A3%E4%B8%8EComparator%E6%8E%A5%E5%8F%A3"><span class="nav-number">3.3.</span> <span class="nav-text">Comparable接口与Comparator接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparator"><span class="nav-number">3.3.1.</span> <span class="nav-text">Comparator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparable"><span class="nav-number">3.3.2.</span> <span class="nav-text">Comparable</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class-5"><span class="nav-number">4.</span> <span class="nav-text">Class 5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-number">4.1.</span> <span class="nav-text">多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">4.1.1.</span> <span class="nav-text">线程的三种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="nav-number">4.1.1.1.</span> <span class="nav-text">方式一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="nav-number">4.1.1.2.</span> <span class="nav-text">方式二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%89"><span class="nav-number">4.1.1.3.</span> <span class="nav-text">方式三</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="nav-number">4.1.1.4.</span> <span class="nav-text">线程池</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%88%E8%B4%B9%E8%80%85-%E7%94%9F%E4%BA%A7%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.1.2.</span> <span class="nav-text">消费者&#x2F;生产者模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ReadWriteLock-%E6%82%B2%E8%A7%82%E9%94%81"><span class="nav-number">4.1.3.</span> <span class="nav-text">ReadWriteLock 悲观锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%99%E9%94%81%EF%BC%88Write-Lock%EF%BC%89"><span class="nav-number">4.1.3.1.</span> <span class="nav-text">写锁（Write Lock）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%BB%E9%94%81%EF%BC%88Read-Lock%EF%BC%89"><span class="nav-number">4.1.3.2.</span> <span class="nav-text">读锁（Read Lock）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StampedLock-%E4%B9%90%E8%A7%82%E9%94%81"><span class="nav-number">4.1.4.</span> <span class="nav-text">StampedLock 乐观锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%99%E9%94%81%EF%BC%88Write-Lock%EF%BC%89-1"><span class="nav-number">4.1.4.1.</span> <span class="nav-text">写锁（Write Lock）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%BB%E9%94%81%EF%BC%88Read-Lock%EF%BC%89-1"><span class="nav-number">4.1.4.2.</span> <span class="nav-text">读锁（Read Lock）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%90%E8%A7%82%E8%AF%BB%E9%94%81%EF%BC%88Optimistic-Read%EF%BC%89"><span class="nav-number">4.1.4.3.</span> <span class="nav-text">乐观读锁（Optimistic Read）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Future"><span class="nav-number">4.1.5.</span> <span class="nav-text">Future</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring%E6%B3%A8%E8%A7%A3"><span class="nav-number">5.</span> <span class="nav-text">Spring注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-Persistence-API-JPA"><span class="nav-number">5.0.1.</span> <span class="nav-text">Java Persistence API, JPA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Entity"><span class="nav-number">5.0.2.</span> <span class="nav-text">@Entity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Table"><span class="nav-number">5.0.3.</span> <span class="nav-text">Table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Id%E5%92%8C-GeneratedValue"><span class="nav-number">5.0.4.</span> <span class="nav-text">@Id和@GeneratedValue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Column"><span class="nav-number">5.0.5.</span> <span class="nav-text">@Column</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CreationTimestamp%E5%92%8C-UpdateTimestamp"><span class="nav-number">5.0.6.</span> <span class="nav-text">@CreationTimestamp和@UpdateTimestamp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-number">5.0.7.</span> <span class="nav-text">Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RestController"><span class="nav-number">5.0.8.</span> <span class="nav-text">@RestController</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RequestMapping"><span class="nav-number">5.0.9.</span> <span class="nav-text">@RequestMapping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PostMapping"><span class="nav-number">5.0.10.</span> <span class="nav-text">@PostMapping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RequestBody"><span class="nav-number">5.0.11.</span> <span class="nav-text">@RequestBody</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bean"><span class="nav-number">5.0.12.</span> <span class="nav-text">@bean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#configuration"><span class="nav-number">5.0.13.</span> <span class="nav-text">@configuration</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-MVC"><span class="nav-number">6.</span> <span class="nav-text">Spring MVC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GraphQL-HTTP-API"><span class="nav-number">6.1.</span> <span class="nav-text">GraphQL&#x2F;HTTP API</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">iTvX</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner page posts-expand">
+
+
+    
+    
+    
+    <div class="post-block" lang="en"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta-container">
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <h1 id="Class-1"><a href="#Class-1" class="headerlink" title="Class 1"></a>Class 1</h1><h1 id="Class-2"><a href="#Class-2" class="headerlink" title="Class 2"></a>Class 2</h1><h2 id="Is-Java-Pass-by-value"><a href="#Is-Java-Pass-by-value" class="headerlink" title="Is Java Pass-by-value?"></a>Is Java Pass-by-value?</h2><p>这个问题的中文意思是：java是不是<strong>传值的</strong><br>In Java, the mechanism for passing parameters is always <strong>pass-by-value</strong>.</p>
+<ul>
+<li><p><strong>For Primitive Types (like int, double):</strong> When a primitive type variable, such as <code>a</code>, is passed to a function, what actually happens is a copy of <code>a</code>‘s value is made and passed to the method. Therefore, no matter how this copy is changed within the method, the original variable <code>a</code>‘s value remains unchanged outside the method.</p>
+</li>
+<li><p><strong>For Object Types:</strong> Although it might seem like pass-by-reference, it is, in fact, pass-by-value. When an object is passed, what is copied is the reference to the object (i.e., the memory address), not the object itself. This copied reference points to the same object in the heap, so if we change the state of this object internally in the function (like altering its attributes), these changes will be reflected on the original object. However, it’s crucial to understand that even for objects, what is being passed is still a copy of the value of the reference.</p>
+</li>
+</ul>
+<p>In summary, Java employs a pass-by-value approach for both primitive types and objects. This means it always copies and passes a duplicate of the value, whether that value is a primitive data type or a reference to an object.</p>
+<p>基本类型示意图：<br>![[CleanShot 2023-12-10 at <a href="mailto:&#49;&#x31;&#x2e;&#50;&#48;&#x2e;&#50;&#51;&#64;&#x32;&#120;&#x2e;&#x6a;&#x70;&#x67;">&#49;&#x31;&#x2e;&#50;&#48;&#x2e;&#50;&#51;&#64;&#x32;&#120;&#x2e;&#x6a;&#x70;&#x67;</a>]]<br>Object类型示意图：<br>![[CleanShot 2023-12-10 at <a href="mailto:&#x31;&#49;&#x2e;&#x32;&#x32;&#x2e;&#x32;&#53;&#64;&#x32;&#x78;&#46;&#106;&#112;&#x67;">&#x31;&#49;&#x2e;&#x32;&#x32;&#x2e;&#x32;&#53;&#64;&#x32;&#x78;&#46;&#106;&#112;&#x67;</a>]]</p>
+<h2 id="String-a-Cat-and-String-b-new-String-cat-difference"><a href="#String-a-Cat-and-String-b-new-String-cat-difference" class="headerlink" title="String a = &quot;Cat&quot; and String b = new String(&quot;cat&quot;) difference ?"></a><code>String a = &quot;Cat&quot;</code> and <code>String b = new String(&quot;cat&quot;)</code> difference ?</h2><p><code>String a = &quot;Cat&quot;</code></p>
+<ul>
+<li><strong>Efficiency and Memory Usage:</strong> Using <code>String a = &quot;Cat&quot;</code> is more efficient as it stores the value in the string pool, a special memory area in Java. If the same string is created again, Java reuses the existing reference from the string pool instead of creating a new instance.</li>
+<li><strong>Memory Sharing:</strong> This method allows for sharing of the same string literal across the program, thereby saving memory resources.</li>
+</ul>
+<p><code>String b = new String(&quot;Cat&quot;)</code></p>
+<ul>
+<li><strong>New Object Creation:</strong> <code>String b = new String(&quot;Cat&quot;)</code> explicitly creates a new String object in the heap memory, even if an identical string already exists in the string pool. This method is less memory-efficient as it creates a new object each time it’s executed.</li>
+<li><strong>Independence:</strong> This approach is used when a distinct object is needed, separate from the string pool. It’s useful in scenarios like handling sensitive data.</li>
+</ul>
+<p>Summary</p>
+<ul>
+<li><code>String a = &quot;Cat&quot;</code> uses the string pool for storage, potentially reusing an existing object and hence is more memory-efficient.</li>
+<li><code>String b = new String(&quot;Cat&quot;)</code> always creates a new string object in the heap, even if an identical string exists in the pool, offering independence at the cost of increased memory use. This difference significantly impacts memory management and performance.</li>
+</ul>
+<h3 id="String-pool"><a href="#String-pool" class="headerlink" title="String pool"></a>String pool</h3><ol>
+<li><p><strong>Purpose of String Pool</strong>: In Java, the String Pool is indeed a special storage area for string literals. It is used to optimize memory usage and increase efficiency by avoiding the creation of multiple identical string objects.</p>
+</li>
+<li><p><strong>Garbage Collection of String Pool Objects</strong>: Strings in the String Pool can be garbage collected. This typically occurs under certain circumstances, such as when memory is limited. However, it’s important to note that this is not a common occurrence due to the nature of the String Pool.</p>
+</li>
+<li><p><strong>Location of String Pool in Java 7 and Later</strong>: Starting with Java 7, the String Pool was moved to the heap memory. This relocation means that the garbage collector treats strings in the String Pool similarly to other objects in the heap, making them eligible for garbage collection under the same conditions as other heap objects.</p>
+</li>
+<li><p><strong>Conditions for Garbage Collection of Strings</strong>: Strings in the String Pool may become candidates for garbage collection if there are no active references to them in the program. However, their presence in the String Pool can mean they are retained longer than regular objects, particularly if they have been referenced before.</p>
+</li>
+<li><p><strong>Lifecycle of Strings in String Pool</strong>: Strings stored in the String Pool typically have a longer lifecycle compared to ordinary heap objects due to the pooling mechanism.</p>
+</li>
+</ol>
+<p>In summary, while strings in the String Pool can be garbage collected, this happens under specific conditions, such as lack of references and memory constraints. The String Pool generally helps in efficient memory management by reducing the number of duplicate string objects created and maintained in memory.</p>
+<h2 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h2><ul>
+<li><strong>Defining Constants:</strong><ul>
+<li>The <code>final</code> keyword is used to declare a variable as a constant, meaning its value cannot be modified once assigned.</li>
+<li>Example: <code>final int MAX_VALUE = 10;</code> implies that once <code>MAX_VALUE</code> is assigned the value 10, it cannot be changed thereafter.</li>
+</ul>
+</li>
+<li><strong>Preventing Method Override:</strong><ul>
+<li>Using <code>final</code> in a method declaration prevents the method from being overridden in any subclass.</li>
+<li>Example: <code>public final void display() &#123;&#125;</code> ensures that this method cannot be overridden in any subclass.</li>
+</ul>
+</li>
+<li><strong>Preventing Inheritance:</strong><ul>
+<li>For classes, <code>final</code> can be used to prevent other classes from inheriting from it.</li>
+<li>Example: <code>public final class MyImmutableClass &#123;&#125;</code> means this class cannot be inherited by any other class.</li>
+</ul>
+</li>
+<li><strong>Making a Class Immutable:</strong><ul>
+<li>The <code>final</code> keyword is commonly used to create immutable classes, like <code>String</code> and <code>Integer</code>.</li>
+<li>By declaring a class as <code>final</code> and keeping all its member variables private without providing setters, the instances of the class can be made immutable, meaning they cannot be altered once created.</li>
+</ul>
+</li>
+</ul>
+<p>Summary</p>
+<p>The use of the <code>final</code> keyword adds layers of security and stability to the code: it ensures the immutability of variable values, prevents improper modifications of methods and classes, and aids in creating immutable class instances.</p>
+<h2 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h2><h2 id="Static-Block"><a href="#Static-Block" class="headerlink" title="Static Block"></a>Static Block</h2><p>A static block is initialized first, before any constructor of the class. It is executed when the class is loaded into the Java Virtual Machine (JVM) for the first time.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Car</span> &#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">        <span class="type">Car</span> <span class="variable">car</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>();  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Car</span><span class="params">()</span> &#123;  </span><br><span class="line">        System.out.println(<span class="string">&quot;这是构造函数&quot;</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">static</span>&#123;  </span><br><span class="line">        System.out.println(<span class="string">&quot;这是static&quot;</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span> &#123;  </span><br><span class="line">        System.out.println(<span class="string">&quot;这是方法&quot;</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Print answer:<br>这是static<br>这是构造函数</p>
+<h2 id="Access-Modifiers"><a href="#Access-Modifiers" class="headerlink" title="Access Modifiers"></a>Access Modifiers</h2><p>![[CleanShot 2023-12-11 at <a href="mailto:&#48;&#48;&#x2e;&#48;&#x34;&#46;&#49;&#x32;&#64;&#x32;&#120;&#46;&#106;&#x70;&#x67;">&#48;&#48;&#x2e;&#48;&#x34;&#46;&#49;&#x32;&#64;&#x32;&#120;&#46;&#106;&#x70;&#x67;</a>]]</p>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton"></a>Singleton</h3><h1 id="Class-4"><a href="#Class-4" class="headerlink" title="Class 4"></a>Class 4</h1><h2 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h2><p>Lambda can use unchanged variable outside of lambda.<br>注意这里，编译器只会检查有没有赋值操作，就算地址值跟以前一样，也是会报错的。<br>![[CleanShot 2023-12-16 at <a href="mailto:&#50;&#50;&#x2e;&#x35;&#54;&#46;&#x31;&#x35;&#x40;&#50;&#x78;&#x2e;&#x6a;&#x70;&#103;">&#50;&#50;&#x2e;&#x35;&#54;&#46;&#x31;&#x35;&#x40;&#50;&#x78;&#x2e;&#x6a;&#x70;&#103;</a>]]</p>
+<h2 id="接口的default和static方法"><a href="#接口的default和static方法" class="headerlink" title="接口的default和static方法"></a>接口的default和static方法</h2><p>在Java中，传统上接口（Interface）只能包含抽象方法，这意味着它们只能声明方法而不能实现。但是，从Java 8开始，通过使用<code>default</code>和<code>static</code>关键字，我们可以在接口中添加具有实现的方法。</p>
+<ol>
+<li><p><strong>Default方法</strong>：通过在方法签名前加上<code>default</code>关键词，可以在接口中定义具体实现的方法。这使得开发者可以在不影响实现该接口的类的情况下，为接口添加新功能。Default方法可以被实现该接口的类直接使用，或者被这些类覆盖（override）。</p>
+</li>
+<li><p><strong>Static方法</strong>：与类中的静态方法类似，接口中的静态方法属于接口本身而不是它的实例。通过在接口内部使用<code>static</code>关键词，可以创建静态方法。这些方法可以在不实例化接口的情况下直接通过接口名调用。</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">DIML</span> &#123;  </span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">BLOG</span> <span class="operator">=</span> <span class="string">&quot;is CHwa a&quot;</span>;  </span><br><span class="line">  </span><br><span class="line">    <span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span>;  </span><br><span class="line">  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">// 可以增加一个实现了的Default函数  </span></span><br><span class="line">    <span class="keyword">default</span> <span class="type">int</span> <span class="title function_">substract</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;  </span><br><span class="line">        <span class="keyword">return</span> a - b;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">// 可以增加一个实现了的静态函数，直接通过类名进行调用  </span></span><br><span class="line">    <span class="keyword">static</span> String <span class="title function_">blogName</span><span class="params">()</span> &#123;  </span><br><span class="line">        <span class="keyword">return</span> BLOG;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DIMImpl</span> <span class="keyword">implements</span> <span class="title class_">DIML</span>&#123;  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;  </span><br><span class="line">        <span class="keyword">return</span> a + b;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Client</span> &#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">        <span class="type">DIML</span> <span class="variable">dim</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DIMImpl</span>();  </span><br><span class="line">        System.out.println(<span class="string">&quot;Override method: &quot;</span> + dim.add(<span class="number">1</span>, <span class="number">2</span>));  </span><br><span class="line">        System.out.println(<span class="string">&quot;default method: &quot;</span> + dim.substract(<span class="number">1</span>, <span class="number">2</span>));  </span><br><span class="line">        System.out.println(<span class="string">&quot;static method: &quot;</span> + DIML.blogName());  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Comparable接口与Comparator接口"><a href="#Comparable接口与Comparator接口" class="headerlink" title="Comparable接口与Comparator接口"></a>Comparable接口与Comparator接口</h2><p><code>Comparator</code> 和 <code>Comparable</code> 都是函数式接口（Functional Interface）。</p>
+<h3 id="Comparator"><a href="#Comparator" class="headerlink" title="Comparator"></a>Comparator</h3><p>Comparator接口下<strong>只有一个</strong>抽象方法 <code>compare</code>，这是实现自定义比较逻辑的关键所在。它有三个关键特性：</p>
+<ul>
+<li><strong>正数</strong>：表示第一个元素应该排在第二个元素之后。</li>
+<li><strong>零</strong>：表示两个元素相等，它们的顺序可以是任意的。</li>
+<li><strong>负数</strong>：表示第一个元素应该排在第二个元素之前。</li>
+</ul>
+<p>因此，当使用表达式 <code>a - b</code> 进行比较时，如果 <code>a &lt; b</code>，则 <code>a - b</code> 为负数，意味着 <code>a</code> 应该排在 <code>b</code> 之前；如果 <code>a &gt; b</code>，则相反。这样，Lambda 表达式可以被用于定义排序逻辑：</p>
+<ul>
+<li><code>(a, b) -&gt; a - b</code> 用于实现正序排列。</li>
+<li><code>(a, b) -&gt; b - a</code> 用于实现倒序排列。</li>
+</ul>
+<h3 id="Comparable"><a href="#Comparable" class="headerlink" title="Comparable"></a>Comparable</h3><p><code>Comparable</code> 接口下<strong>只有一个</strong> <code>compareTo</code> 抽象方法，它的行为原则与 <code>Comparator</code> 的 <code>compare</code> 方法相似。对于如 <code>Integer</code>、<code>String</code> 等内置类，它们内部已经实现了 <code>compareTo</code> 方法。因此，在使用比较器时，可以这样使用 Lambda 表达式：</p>
+<ul>
+<li><code>(a, b) -&gt; a.compareTo(b)</code> 用于实现正序排列。</li>
+<li><code>(a, b) -&gt; b.compareTo(a)</code> 用于实现倒序排列。</li>
+</ul>
+<p>这两种方法本质上是实现 <code>Comparator</code> 接口中的 <code>compare</code> 方法。</p>
+<h1 id="Class-5"><a href="#Class-5" class="headerlink" title="Class 5"></a>Class 5</h1><h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h3 id="线程的三种方式"><a href="#线程的三种方式" class="headerlink" title="线程的三种方式"></a>线程的三种方式</h3><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><h4 id="方式三"><a href="#方式三" class="headerlink" title="方式三"></a>方式三</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.Callable;  </span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutionException;  </span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.FutureTask;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">myThread</span> <span class="keyword">implements</span> <span class="title class_">Callable</span>&lt;String&gt; &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">int</span> n;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">myThread</span><span class="params">(<span class="type">int</span> n )</span> &#123;  </span><br><span class="line">        <span class="built_in">this</span>.n = n;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">call</span><span class="params">()</span> &#123;  </span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;  </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;=n; i++) &#123;  </span><br><span class="line">            sum += i;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;答案是：&quot;</span> + sum;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException &#123;  </span><br><span class="line">        Callable&lt;String&gt; call = <span class="keyword">new</span> <span class="title class_">myThread</span>(<span class="number">20</span>);  </span><br><span class="line">        Callable&lt;String&gt; call2 = <span class="keyword">new</span> <span class="title class_">myThread</span>(<span class="number">30</span>);  </span><br><span class="line">  </span><br><span class="line">        FutureTask&lt;String&gt; f1 = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(call);  </span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(f1).start();  </span><br><span class="line">  </span><br><span class="line">        FutureTask&lt;String&gt; f2 = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(call2);  </span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(f2).start();  </span><br><span class="line">  </span><br><span class="line">        <span class="type">String</span> <span class="variable">res</span> <span class="operator">=</span> f1.get();  </span><br><span class="line">        System.out.println(res);  </span><br><span class="line">  </span><br><span class="line">        <span class="type">String</span> <span class="variable">res2</span> <span class="operator">=</span> f2.get();  </span><br><span class="line">        System.out.println(res2);  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h4><p>实现runnable接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建一个固定大小的线程池:</span></span><br><span class="line">        <span class="type">ExecutorService</span> <span class="variable">es</span> <span class="operator">=</span> Executors.newFixedThreadPool(<span class="number">4</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">            es.submit(<span class="keyword">new</span> <span class="title class_">Task</span>(<span class="string">&quot;&quot;</span> + i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 关闭线程池:</span></span><br><span class="line">        es.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Task</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Task</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;start task &quot;</span> + name);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            <span class="comment">// nothing</span></span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;end task &quot;</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Lambda实现：</span><br><span class="line">``` Java</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.*;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">        <span class="type">ExecutorService</span> <span class="variable">es</span> <span class="operator">=</span> Executors.newFixedThreadPool(<span class="number">4</span>);  </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;  </span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span> + i;  </span><br><span class="line">            es.submit(() -&gt; &#123;  </span><br><span class="line">                System.out.println(<span class="string">&quot;start task&quot;</span> + name);  </span><br><span class="line">                <span class="keyword">try</span> &#123;  </span><br><span class="line">                    Thread.sleep(<span class="number">1000</span>);  </span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;  </span><br><span class="line">                    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);  </span><br><span class="line">                &#125;  </span><br><span class="line">                System.out.println(<span class="string">&quot;end task&quot;</span> + name);  </span><br><span class="line">            &#125;);  </span><br><span class="line">        &#125;  </span><br><span class="line">        es.shutdown();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="消费者-生产者模式"><a href="#消费者-生产者模式" class="headerlink" title="消费者&#x2F;生产者模式"></a>消费者&#x2F;生产者模式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Box</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> milk;  </span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="variable">state</span> <span class="operator">=</span> <span class="literal">false</span>;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">put</span><span class="params">(<span class="type">int</span> milk)</span> &#123;  </span><br><span class="line">        <span class="keyword">if</span> (state) &#123;  </span><br><span class="line">            <span class="keyword">try</span> &#123;  </span><br><span class="line">                wait();  </span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;  </span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="built_in">this</span>.milk = milk;  </span><br><span class="line">        System.out.println(<span class="string">&quot;送奶工将第&quot;</span> + <span class="built_in">this</span>.milk + <span class="string">&quot;瓶奶放入奶箱&quot;</span>);  </span><br><span class="line">  </span><br><span class="line">        state = <span class="literal">true</span>;  </span><br><span class="line">  </span><br><span class="line">        notify();  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">get</span><span class="params">()</span> &#123;  </span><br><span class="line">        <span class="keyword">if</span> (!state) &#123;  </span><br><span class="line">            <span class="keyword">try</span> &#123;  </span><br><span class="line">                wait();  </span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;  </span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        System.out.println(<span class="string">&quot;用户拿到第&quot;</span> + <span class="built_in">this</span>.milk + <span class="string">&quot;瓶奶&quot;</span>);  </span><br><span class="line">        state = <span class="literal">false</span>;  </span><br><span class="line">        notify();  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">        <span class="type">Box</span> <span class="variable">b</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Box</span>();  </span><br><span class="line">  </span><br><span class="line">        <span class="comment">// 使用 Lambda 表达式创建生产者线程  </span></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;  </span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;  </span><br><span class="line">                b.put(i);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;).start();  </span><br><span class="line">  </span><br><span class="line">        <span class="comment">// 使用 Lambda 表达式创建消费者线程  </span></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;  </span><br><span class="line">            <span class="keyword">while</span> (<span class="literal">true</span>) &#123;  </span><br><span class="line">                b.get();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;).start();  </span><br><span class="line">  </span><br><span class="line">        System.out.println(String.class);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="ReadWriteLock-悲观锁"><a href="#ReadWriteLock-悲观锁" class="headerlink" title="ReadWriteLock 悲观锁"></a>ReadWriteLock 悲观锁</h3><p><code>ReadWriteLock</code> 和其实现 <code>ReentrantReadWriteLock</code> 在 Java 中通常被归类为悲观锁（Pessimistic Locks）。悲观锁这个术语来自于它的设计哲学，即“悲观”地假设最坏的情况：即在任何时候，可能会有多个线程尝试同时修改同一个资源。</p>
+<p>在悲观锁的策略下，为了保证数据的一致性和完整性，它限制了对共享资源的并发访问。换句话说，悲观锁假设冲突是常态，因此在访问共享资源之前，需要先获取对应的锁。</p>
+<p><strong>悲观锁适用于写较多的场景</strong></p>
+<p>在写操作时，不能进行读操作；在读操作时，不能写。</p>
+<p>创建对象：<code>private ReadWriteLock rwLock = new ReentrantReadWriteLock();</code></p>
+<h4 id="写锁（Write-Lock）"><a href="#写锁（Write-Lock）" class="headerlink" title="写锁（Write Lock）"></a>写锁（Write Lock）</h4><ol>
+<li><strong>获取写锁</strong>：<code>writeData</code> 调用时，首先尝试获取写锁 (<code>rwLock.writeLock().lock();</code>)。如果无其他线程持有锁，则获取成功并继续执行；否则等待。</li>
+<li><strong>执行写操作</strong>：在 <code>try</code> 块内更新数据。</li>
+<li><strong>释放写锁</strong>：在 <code>finally</code> 块内释放锁，允许其他线程获取锁。</li>
+</ol>
+<h4 id="读锁（Read-Lock）"><a href="#读锁（Read-Lock）" class="headerlink" title="读锁（Read Lock）"></a>读锁（Read Lock）</h4><ol>
+<li><strong>获取读锁</strong>：<code>readData</code> 调用时，尝试获取读锁 (<code>rwLock.readLock().lock();</code>)。如果无写锁被持有，则可同时获得读锁。</li>
+<li><strong>执行读操作</strong>：在 <code>try</code> 块内进行数据读取。</li>
+<li><strong>释放读锁</strong>：在 <code>finally</code> 块内释放锁，使写操作可以在所有读锁释放后进行。</li>
+</ol>
+<h3 id="StampedLock-乐观锁"><a href="#StampedLock-乐观锁" class="headerlink" title="StampedLock 乐观锁"></a>StampedLock 乐观锁</h3><p><code>StampedLock</code> 是 Java 8 引入的一种锁机制，提供了写锁、读锁和乐观读锁。不同于传统的 <code>ReadWriteLock</code>，<code>StampedLock</code> 通过戳记（Stamp）来控制锁的状态，优化了读写锁的性能，特别适用于<strong>读操作远多于写操作的场景</strong>。</p>
+<p><strong>StampedLock 适用于读多写少的场景</strong></p>
+<p>创建对象：<code>private final StampedLock lock = new StampedLock();</code></p>
+<h4 id="写锁（Write-Lock）-1"><a href="#写锁（Write-Lock）-1" class="headerlink" title="写锁（Write Lock）"></a>写锁（Write Lock）</h4><ol>
+<li><strong>获取写锁</strong>：<code>writeData</code> 调用时，通过 <code>lock.writeLock();</code> 获取写锁。如果无其他线程持有锁，则获取成功并继续执行；否则等待。</li>
+<li><strong>执行写操作</strong>：在 <code>try</code> 块内更新数据。</li>
+<li><strong>释放写锁</strong>：在 <code>finally</code> 块内通过 <code>lock.unlockWrite(stamp);</code> 释放锁，允许其他线程获取锁。</li>
+</ol>
+<h4 id="读锁（Read-Lock）-1"><a href="#读锁（Read-Lock）-1" class="headerlink" title="读锁（Read Lock）"></a>读锁（Read Lock）</h4><ol>
+<li><strong>获取读锁</strong>：<code>readData</code> 调用时，通过 <code>lock.readLock();</code> 获取读锁。如果无写锁被持有，则多个线程可同时获取读锁。</li>
+<li><strong>执行读操作</strong>：在 <code>try</code> 块内进行数据读取。</li>
+<li><strong>释放读锁</strong>：在 <code>finally</code> 块内通过 <code>lock.unlockRead(stamp);</code> 释放锁，允许写操作在所有读锁释放后进行。</li>
+</ol>
+<h4 id="乐观读锁（Optimistic-Read）"><a href="#乐观读锁（Optimistic-Read）" class="headerlink" title="乐观读锁（Optimistic Read）"></a>乐观读锁（Optimistic Read）</h4><ol>
+<li><strong>尝试乐观读</strong>：<code>tryOptimisticRead</code> 调用时，通过 <code>lock.tryOptimisticRead();</code> 尝试获取乐观读锁。</li>
+<li><strong>读取数据</strong>：在不锁定资源的情况下读取数据。</li>
+<li><strong>验证戳记</strong>：通过 <code>lock.validate(stamp);</code> 检查在读取期间是否有写操作。如果有，则需要获取读锁来安全读取。</li>
+</ol>
+<p>乐观读锁是一种非阻塞的读取方式，提高了并发读取时的性能。但需要在使用数据前验证戳记的有效性。</p>
+<p>总结来说，<code>StampedLock</code> 提供了一种更灵活和高效的读写锁机制，适用于读操作频繁而写操作较少的场景，尤其是乐观读锁在提高读取性能方面的优势明显。</p>
+<h3 id="Future"><a href="#Future" class="headerlink" title="Future"></a>Future</h3><p>当在线程池中使用 <code>executor.submit()</code> 提交一个任务，线程池会返回一个 <code>Future</code> 类型的对象。这个 <code>Future</code> 对象就像是在餐厅点餐后收到的号码牌，代表着承诺将来会提供准备好的食物。</p>
+<ul>
+<li><strong>提交任务（点餐）</strong>：<ul>
+<li>提交一个任务后，线程池开始处理这个任务。可以在任务执行的同时，继续做其他事情。</li>
+</ul>
+</li>
+<li><strong>Future对象（号码牌）</strong>：<ul>
+<li><code>Future</code> 对象像是手里的号码牌，与提交的任务相对应。它是一个参考点，用于追踪任务的状态。</li>
+</ul>
+</li>
+<li><strong>检查任务状态（查看号码牌）</strong>：<ul>
+<li>使用 <code>future.get()</code> 类似于查看号码牌以确认食物是否准备好。如果任务已经完成，<code>get()</code> 方法会立刻返回结果。如果任务还没完成，<code>get()</code> 方法会等待直到任务完成。</li>
+</ul>
+</li>
+<li><strong>等待结果（等待食物）</strong>：<ul>
+<li>如果任务尚未完成，<code>get()</code> 方法会让当前线程暂停，就像等待号码被叫到一样。一旦任务完成，<code>get()</code> 会返回结果，然后可以继续下一步操作。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutorService;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Executors;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Future;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FutureExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// 创建一个ExecutorService来运行我们的任务</span></span><br><span class="line">        <span class="type">ExecutorService</span> <span class="variable">executor</span> <span class="operator">=</span> Executors.newSingleThreadExecutor();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 提交一个任务并获得一个Future</span></span><br><span class="line">        Future&lt;Integer&gt; future = executor.submit(() -&gt; &#123;</span><br><span class="line">            <span class="comment">// 假设这是一个耗时的计算</span></span><br><span class="line">            Thread.sleep(<span class="number">1000</span>); <span class="comment">// 模拟耗时操作</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">4</span> * <span class="number">4</span>; <span class="comment">// 返回4的平方</span></span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 可以在这里做其他事情，计算正在异步进行</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 当我们需要这个计算的结果时</span></span><br><span class="line">        <span class="type">Integer</span> <span class="variable">result</span> <span class="operator">=</span> future.get(); <span class="comment">// 这会阻塞，直到计算完成</span></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;计算结果: &quot;</span> + result);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 关闭ExecutorService</span></span><br><span class="line">        executor.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Spring注解"><a href="#Spring注解" class="headerlink" title="Spring注解"></a>Spring注解</h1><h3 id="Java-Persistence-API-JPA"><a href="#Java-Persistence-API-JPA" class="headerlink" title="Java Persistence API, JPA"></a>Java Persistence API, JPA</h3><p>持久化的概念</p>
+<ul>
+<li><p><strong>持久化</strong>是指将程序数据在持久状态（比如数据库）中进行保存和读取的过程。</p>
+</li>
+<li><p>在没有持久化的情况下，程序数据仅在内存中存在，程序结束时数据就会消失。</p>
+</li>
+<li><p>持久化允许数据在程序关闭后依然存在，可在之后被重新读取。</p>
+</li>
+</ul>
+<p>为何需要JPA</p>
+<ul>
+<li><p>在 Java 中，操作数据库通常涉及编写大量的 SQL 语句和处理数据库连接，这既繁琐又易出错。</p>
+</li>
+<li><p>JPA 提供了一种更简洁、对象导向的方式来处理数据库，减少了直接使用 SQL 的需要。</p>
+</li>
+<li><p>它允许开发者以操作 Java 对象的方式来操作数据库表，这种方式称为对象关系映射（Object-Relational Mapping，ORM）。</p>
+</li>
+</ul>
+<h3 id="Entity"><a href="#Entity" class="headerlink" title="@Entity"></a><code>@Entity</code></h3><p>(Java Persistence API, JPA) 通过使用 <code>@Entity</code> 注解，Spring 允许开发者以面向对象的方式来操作数据库，从而简化了数据库编程的复杂性。</p>
+<h3 id="Table"><a href="#Table" class="headerlink" title="Table"></a><code>Table</code></h3><p>(Java Persistence API, JPA) 用于提供实体对应的数据库表的详细信息。这个注解并不是必需的，如果不使用它，JPA 默认使用实体类的名称作为数据库表的名称。但是，如果你想要自定义表的名称或者其他属性，<code>@Table</code> 注解就非常有用。</p>
+<p>代码演示：</p>
+<p>@Table(<br>        name &#x3D; “posts”,<br>        uniqueConstraints &#x3D; {<br>                @UniqueConstraint(columnNames &#x3D; {“title”})<br>        }<br>)</p>
+<p><strong>uniqueConstraints：</strong> 指定表的唯一约束条件。这是用来确保表中的特定列组合是唯一的，例如，不允许有两条记录具有相同的值组合。</p>
+<h3 id="Id和-GeneratedValue"><a href="#Id和-GeneratedValue" class="headerlink" title="@Id和@GeneratedValue"></a><code>@Id</code>和<code>@GeneratedValue</code></h3><p><code>@Id</code> 注解通常与 <code>@GeneratedValue</code> 注解一起使用。<code>@GeneratedValue</code> 注解用于自动生成主键的值，减少手动设置主键的工作。而@Id是标记Primary key。</p>
+<p>代码演示：</p>
+<p>    @Id<br>    @GeneratedValue(strategy &#x3D; GenerationType.IDENTITY)</p>
+<ul>
+<li><p><code>IDENTITY</code> 策略意味着主键的值将由数据库自动生成，通常是通过自增字段实现的。</p>
+</li>
+<li><p>使用 <code>IDENTITY</code> 策略，每当向数据库表中插入新记录时，数据库会自动为主键字段生成一个新的唯一值。这个值通常是一个数字，每插入一条新记录，数字就自增。</p>
+</li>
+</ul>
+<h3 id="Column"><a href="#Column" class="headerlink" title="@Column"></a><code>@Column</code></h3><p>@Column(name &#x3D; “title”, nullable &#x3D; false)</p>
+<ul>
+<li><p><strong>作用：</strong> <code>@Column</code> 注解用于指定实体类属性如何映射到数据库表的列。它可以定义列的名称、是否可以为 null、最大长度等属性。</p>
+</li>
+<li><p><strong>非必需：</strong> 如果不使用 <code>@Column</code> 注解，JPA 默认会将实体类的属性映射到同名的数据库列。使用 <code>@Column</code> 注解是为了提供额外的映射配置。</p>
+</li>
+</ul>
+<h3 id="CreationTimestamp和-UpdateTimestamp"><a href="#CreationTimestamp和-UpdateTimestamp" class="headerlink" title="@CreationTimestamp和@UpdateTimestamp"></a><code>@CreationTimestamp</code>和<code>@UpdateTimestamp</code></h3><p><code>@CreationTimestamp</code></p>
+<ul>
+<li><p><strong>作用：</strong> 自动设置实体的创建时间。</p>
+</li>
+<li><p><strong>应用：</strong> 当实体首次持久化（即保存到数据库）时，<code>@CreationTimestamp</code> 会自动将当前的日期和时间赋值给被注解的字段。</p>
+</li>
+</ul>
+<p><code>@UpdateTimestamp</code></p>
+<ul>
+<li><p><strong>作用：</strong> 自动更新实体的最后修改时间。</p>
+</li>
+<li><p><strong>应用：</strong> 每次实体被更新并保存到数据库时，<code>@UpdateTimestamp</code> 会自动将当前的日期和时间赋值给被注解的字段。</p>
+</li>
+</ul>
+<h3 id="Service"><a href="#Service" class="headerlink" title="Service"></a><code>Service</code></h3><p><code>@Service</code> 是一个用于标记服务层组件的注解，是 Spring 框架提供的一部分。在 Spring 的应用程序中，<code>@Service</code> 通常被用于标记执行业务逻辑的类。</p>
+<h3 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a><code>@RestController</code></h3><ul>
+<li><p><strong>直接对话</strong>：通常在网站后端，我们需要一个能直接和用户“对话”的部分。<code>@RestController</code> 就是告诉 Spring 框架：“嘿，这个类会直接和用户交流，我们不需要额外的HTML页面，只要把信息直接发给用户就行了。”</p>
+</li>
+<li><p><strong>自动转换信息</strong>：比如，当您想告诉网站访问者某些信息时，<code>@RestController</code> 能自动把您的信息（比如 Java 里的一个对象或字符串）转换成网页可以理解的格式（比如 JSON），然后发送出去。</p>
+</li>
+</ul>
+<h3 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a><code>@RequestMapping</code></h3><ul>
+<li><p><strong>指定请求的类型</strong>：您可以指定 <code>@RequestMapping</code> 来处理特定类型的请求，比如 GET, POST, PUT, DELETE 等。</p>
+</li>
+<li><p><strong>定义请求的路径</strong>：它告诉 Spring 框架，当有人访问特定路径（如 <code>/hello</code>）时，应该调用哪个方法。</p>
+</li>
+<li><p><strong>处理请求数据</strong>：<code>@RequestMapping</code> 还可以处理请求中的数据，比如从网页表单中获取数据。</p>
+</li>
+</ul>
+<p>代码演示：</p>
+<p>@RequestMapping(“&#x2F;api&#x2F;v1&#x2F;posts”)</p>
+<h3 id="PostMapping"><a href="#PostMapping" class="headerlink" title="@PostMapping"></a><code>@PostMapping</code></h3><p><code>@PostMapping</code> 是 <code>@RequestMapping(method = RequestMethod.POST)</code> 的简写。它提供了一种更简洁的方式来处理 POST 请求。</p>
+<h3 id="RequestBody"><a href="#RequestBody" class="headerlink" title="@RequestBody"></a><code>@RequestBody</code></h3><p><code>@RequestBody</code> 是 Spring 框架中的一个注解，用于处理 HTTP 请求的正文内容。当您创建一个 RESTful Web 服务时，这个注解非常有用。它告诉 Spring 框架，方法参数应该被绑定到 HTTP 请求体中。我将通过一个简单的例子来解释它的作用。</p>
+<h3 id="bean"><a href="#bean" class="headerlink" title="@bean"></a>@bean</h3><h3 id="configuration"><a href="#configuration" class="headerlink" title="@configuration"></a>@configuration</h3><h1 id="Spring-MVC"><a href="#Spring-MVC" class="headerlink" title="Spring MVC"></a>Spring MVC</h1><h2 id="GraphQL-HTTP-API"><a href="#GraphQL-HTTP-API" class="headerlink" title="GraphQL&#x2F;HTTP API"></a>GraphQL&#x2F;HTTP API</h2><p>参见chuwa&#x2F;coding&#x2F;grpahQL代码</p>
+
+      </div>
+      
+      
+      
+    </div>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">iTvX</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

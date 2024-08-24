@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="CI&#x2F;CD save timeIn a recent project, we improved our CI&#x2F;CD pipeline by implementing Docker layer which make Docker reuses the cached layers instead of rebuilding them, speeding up the build p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面试——Java Concepts">
+<meta property="og:url" content="http://example.com/java-interview/java-general/index.html">
+<meta property="og:site_name" content="Think Less, Do More">
+<meta property="og:description" content="CI&#x2F;CD save timeIn a recent project, we improved our CI&#x2F;CD pipeline by implementing Docker layer which make Docker reuses the cached layers instead of rebuilding them, speeding up the build p">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/CleanShot%202024-02-22%20at%2015.32.03@2x.jpg">
+<meta property="article:published_time" content="2024-03-02T20:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-24T19:26:01.732Z">
+<meta property="article:author" content="iTvX">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/assets/CleanShot%202024-02-22%20at%2015.32.03@2x.jpg">
+
+
+<link rel="canonical" href="http://example.com/java-interview/java-general/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/java-interview/java-general/","path":"/java-interview/java-general/","title":"Java面试——Java Concepts"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Java面试——Java Concepts | Think Less, Do More</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Think Less, Do More</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CI-CD-save-time"><span class="nav-number">1.</span> <span class="nav-text">CI&#x2F;CD save time</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Agile-development"><span class="nav-number">2.</span> <span class="nav-text">Agile development</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#how-do-you-use-git-and-github"><span class="nav-number">3.</span> <span class="nav-text">how do you use git and github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#check-code-coverage"><span class="nav-number">4.</span> <span class="nav-text">check code coverage</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scrum-board-vs-Kanban-board"><span class="nav-number">5.</span> <span class="nav-text">Scrum board vs Kanban board</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-do-you-deploy-your-project"><span class="nav-number">6.</span> <span class="nav-text">How do you deploy your project</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-CICD"><span class="nav-number">7.</span> <span class="nav-text">What is CICD</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-service-are-you-using-in-AWS"><span class="nav-number">8.</span> <span class="nav-text">What service are you using in AWS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Life-cycle-of-the-maven"><span class="nav-number">9.</span> <span class="nav-text">Life cycle of the maven</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-Final-keyword"><span class="nav-number">10.</span> <span class="nav-text">What is the Final keyword?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-a-static-field-static-method-and-static-class"><span class="nav-number">11.</span> <span class="nav-text">What is a static field, static method, and static class?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-are-primitive-data-types-in-Java"><span class="nav-number">12.</span> <span class="nav-text">What are primitive data types in Java?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-are-the-differences-between-passing-by-value-and-passing-by-reference"><span class="nav-number">13.</span> <span class="nav-text">What are the differences between passing by value and passing by reference?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Difference-between-int-and-Integer"><span class="nav-number">14.</span> <span class="nav-text">Difference between int and Integer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Time-complexity-of-linkedList"><span class="nav-number">15.</span> <span class="nav-text">Time complexity of linkedList</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Difference-between-ArrayList-and-LinkedList"><span class="nav-number">16.</span> <span class="nav-text">Difference between ArrayList and LinkedList</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Difference-between-vector-and-arraylist"><span class="nav-number">17.</span> <span class="nav-text">Difference between vector and arraylist</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#New-features-of-Java-8"><span class="nav-number">18.</span> <span class="nav-text">New features of Java 8</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-advantage-of-Java-8-compared-to-Java-7"><span class="nav-number">19.</span> <span class="nav-text">What is the advantage of Java 8 compared to Java 7?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Give-me-an-example-of-how-you-use-java-8-feature-in-your-project"><span class="nav-number">20.</span> <span class="nav-text">Give me an example of how you use java 8 feature in your project</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stream"><span class="nav-number">21.</span> <span class="nav-text">Stream</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-difference-between-collection-and-stream-API"><span class="nav-number">22.</span> <span class="nav-text">What is the difference between collection and stream API?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Intermediate-operation-and-terminal-operation"><span class="nav-number">23.</span> <span class="nav-text">Intermediate operation and terminal operation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#optional-class"><span class="nav-number">24.</span> <span class="nav-text">optional class</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Functional-Interface"><span class="nav-number">25.</span> <span class="nav-text">Functional Interface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Default-method-vs-static-method"><span class="nav-number">26.</span> <span class="nav-text">Default method vs. static method</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Memory-management-of-Java-8-feature"><span class="nav-number">27.</span> <span class="nav-text">Memory management of Java 8 feature?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-did-you-use-lambda-expression"><span class="nav-number">28.</span> <span class="nav-text">How did you use lambda expression?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Different-types-of-method-reference-mf"><span class="nav-number">29.</span> <span class="nav-text">Different types of method reference (mf)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-functional-programming-compile-or-not"><span class="nav-number">30.</span> <span class="nav-text">What is functional programming? -&gt; compile or not</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Explain-heap-and-stack"><span class="nav-number">31.</span> <span class="nav-text">Explain heap and stack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-Java-Heap-memory"><span class="nav-number">32.</span> <span class="nav-text">What is Java Heap memory?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Do-you-know-memory-leak"><span class="nav-number">33.</span> <span class="nav-text">Do you know memory leak?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-garbage-collection-in-java"><span class="nav-number">34.</span> <span class="nav-text">What is garbage collection in java?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String-Pool"><span class="nav-number">35.</span> <span class="nav-text">String Pool</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Difference-between-Equals-and"><span class="nav-number">36.</span> <span class="nav-text">Difference between Equals and &#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-OOP"><span class="nav-number">37.</span> <span class="nav-text">What is OOP?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Polymorphism"><span class="nav-number">38.</span> <span class="nav-text">Polymorphism</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Polymorphism-Overriding-Vs-Overloading"><span class="nav-number">39.</span> <span class="nav-text">Polymorphism: Overriding Vs Overloading</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-are-different-access-modifiers-and-what-do-they-do"><span class="nav-number">40.</span> <span class="nav-text">What are different access modifiers and what do they do?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-Interface-and-what-is-abstract-class-What-are-the-differences-between-them"><span class="nav-number">41.</span> <span class="nav-text">What is Interface and what is abstract class? What are the differences between them?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-to-choose-%E2%80%93-interface-or-abstract-class"><span class="nav-number">41.1.</span> <span class="nav-text">What to choose – interface or abstract class</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#why-hashtable-cannot-contain-null-key"><span class="nav-number">42.</span> <span class="nav-text">why hashtable cannot contain null key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuilder-and-StringBuffer"><span class="nav-number">43.</span> <span class="nav-text">StringBuilder and StringBuffer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Error-vs-Exception-runtime"><span class="nav-number">44.</span> <span class="nav-text">Error vs. Exception (runtime)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Checked-unchecked-exception"><span class="nav-number">45.</span> <span class="nav-text">Checked &#x2F; unchecked exception</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#handle-exception"><span class="nav-number">46.</span> <span class="nav-text">handle exception</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-do-you-deal-with-the-error"><span class="nav-number">47.</span> <span class="nav-text">How do you deal with the error?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#how-do-you-deal-with-exceptions-in-your-project"><span class="nav-number">48.</span> <span class="nav-text">how do you deal with exceptions in your project?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Throw-vs-throws"><span class="nav-number">49.</span> <span class="nav-text">Throw vs. throws</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#give-me-one-example-of-NullPointerException"><span class="nav-number">50.</span> <span class="nav-text">give me one example of NullPointerException</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#avoid-NullPointerException"><span class="nav-number">51.</span> <span class="nav-text">avoid NullPointerException</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-custom-an-Exception"><span class="nav-number">52.</span> <span class="nav-text">How to custom an Exception?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON"><span class="nav-number">53.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-purpose-of-serial-version-UID"><span class="nav-number">54.</span> <span class="nav-text">What is the purpose of serial version UID</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC"><span class="nav-number">55.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Comparable-vs-Comparator"><span class="nav-number">56.</span> <span class="nav-text">Comparable vs. Comparator</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-command-you-used-in-the-project"><span class="nav-number">57.</span> <span class="nav-text">Git command you used in the project</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Do-you-prefer-SVN-or-Git"><span class="nav-number">58.</span> <span class="nav-text">Do you prefer SVN or Git?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-generic"><span class="nav-number">59.</span> <span class="nav-text">What is generic?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#example-and-advatanges-and-how-do-you-use-generics-in-your-project"><span class="nav-number">60.</span> <span class="nav-text">example and advatanges and how do you use generics in your project?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Serialization-explation-and-example"><span class="nav-number">61.</span> <span class="nav-text">Serialization, explation and example</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Explain-equals-and-hashcode-contract"><span class="nav-number">62.</span> <span class="nav-text">Explain equals and hashcode contract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-need-to-implement-the-hashcode-when-implementing-equals"><span class="nav-number">63.</span> <span class="nav-text">Why need to implement the hashcode() when implementing equals()?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-happens-if-hash-collision-occurs"><span class="nav-number">64.</span> <span class="nav-text">What happens if hash collision occurs?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Have-you-ever-used-any-cache-in-your-project-Explain-how-it-works"><span class="nav-number">65.</span> <span class="nav-text">Have you ever used any cache in your project? Explain how it works</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Implement-a-singleton"><span class="nav-number">66.</span> <span class="nav-text">Implement a singleton</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Eager-loaded-%E6%81%B6%E6%B1%89%E5%BC%8F"><span class="nav-number">66.1.</span> <span class="nav-text">Eager loaded (恶汉式)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lazy-Loaded-%EF%BC%88%E6%87%92%E6%B1%89%E5%BC%8F"><span class="nav-number">66.2.</span> <span class="nav-text">Lazy-Loaded （懒汉式)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Do-you-know-about-the-Future"><span class="nav-number">67.</span> <span class="nav-text">Do you know about the Future?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#callable-future"><span class="nav-number">68.</span> <span class="nav-text">callable, future</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-completablefuture"><span class="nav-number">69.</span> <span class="nav-text">What is the completablefuture?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-design-patterns-did-you-worked-on-before"><span class="nav-number">70.</span> <span class="nav-text">What design patterns did you worked on before?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-situation-will-cause-OutOfMemory-How-to-avoid-OutOfMemory"><span class="nav-number">71.</span> <span class="nav-text">What situation will cause OutOfMemory? &#x2F; How to avoid OutOfMemory?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OutOfMemory-vs-StackOverflow-error"><span class="nav-number">72.</span> <span class="nav-text">OutOfMemory vs. StackOverflow error</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deep-copy-vs-shallow-copy"><span class="nav-number">73.</span> <span class="nav-text">Deep copy vs. shallow copy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-a-thread-and-implement-multi-threads"><span class="nav-number">74.</span> <span class="nav-text">Create a thread and implement multi-threads</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#runnable-vs-callable"><span class="nav-number">75.</span> <span class="nav-text">runnable vs callable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#run-and-start"><span class="nav-number">76.</span> <span class="nav-text">run() and start()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Do-you-know-any-lock"><span class="nav-number">77.</span> <span class="nav-text">Do you know any lock</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ReentrantLock"><span class="nav-number">78.</span> <span class="nav-text">ReentrantLock</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Talk-about-multithreading-you-used-in-your-project"><span class="nav-number">79.</span> <span class="nav-text">Talk about multithreading you used in your project</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#difference-between-the-process-and-thread"><span class="nav-number">80.</span> <span class="nav-text">difference between the process and thread</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Have-you-done-any-work-with-atomics"><span class="nav-number">81.</span> <span class="nav-text">Have you done any work with atomics?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-volatile-keyword-and-where-is-it-used"><span class="nav-number">82.</span> <span class="nav-text">What is volatile keyword and where is it used?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-synchronized"><span class="nav-number">83.</span> <span class="nav-text">What is synchronized</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-can-volatile-make-sure-the-thread-will-get-the-latest-result"><span class="nav-number">84.</span> <span class="nav-text">How can volatile make sure the thread will get the latest result?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-does-thread-communicate-with-each-other-wait-and-notify"><span class="nav-number">85.</span> <span class="nav-text">How does thread communicate with each other? (wait and notify)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Producer-Consumer-Aysn-Mechanism"><span class="nav-number">86.</span> <span class="nav-text">Producer &amp; Consumer Aysn Mechanism?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-deadlock"><span class="nav-number">87.</span> <span class="nav-text">What is the deadlock?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#thread-join"><span class="nav-number">88.</span> <span class="nav-text">thread join()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-Asynchronized-in-multi-threading"><span class="nav-number">89.</span> <span class="nav-text">What is Asynchronized in multi-threading?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Internal-data-structure-of-HashMap"><span class="nav-number">90.</span> <span class="nav-text">Internal data structure of HashMap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-hashmap-implementation-hashcode-chain-vs-red-black-tree"><span class="nav-number">91.</span> <span class="nav-text">Java hashmap implementation (hashcode chain vs red black tree)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HashMap-and-TreeMap-and-Hashtable"><span class="nav-number">92.</span> <span class="nav-text">HashMap and TreeMap and Hashtable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#When-using-HashMap-in-multi-threading-what-will-happen-How-to-avoid-it"><span class="nav-number">93.</span> <span class="nav-text">When using HashMap in multi-threading, what will happen? How to avoid it?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-race-condition"><span class="nav-number">94.</span> <span class="nav-text">What is race condition?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Time-complexity-of-HashMap"><span class="nav-number">95.</span> <span class="nav-text">Time complexity of HashMap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-does-ConcurrentHashMap-works"><span class="nav-number">96.</span> <span class="nav-text">How does ConcurrentHashMap works?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HashMap-vs-LinkedHashMap"><span class="nav-number">97.</span> <span class="nav-text">HashMap vs. LinkedHashMap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-handle-concurrent-modification-exceptions"><span class="nav-number">98.</span> <span class="nav-text">How to handle concurrent modification exceptions?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-do-you-deal-with-large-amout-of-data-works"><span class="nav-number">99.</span> <span class="nav-text">How do you deal with large amout of data&#x2F;works?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-does-Java-code-compile-and-run-JVM"><span class="nav-number">100.</span> <span class="nav-text">How does Java code compile and run? -&gt; JVM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-many-ways-to-traverse-a-list"><span class="nav-number">101.</span> <span class="nav-text">How many ways to traverse a list?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#List-some-immutable-objects-in-Java"><span class="nav-number">102.</span> <span class="nav-text">List some immutable objects in Java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Composition-vs-Association"><span class="nav-number">103.</span> <span class="nav-text">Composition vs. Association</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-size-of-the-segment"><span class="nav-number">104.</span> <span class="nav-text">What is the size of the segment?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-make-class-immutable"><span class="nav-number">105.</span> <span class="nav-text">How to make class immutable?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-does-the-front-end-communicate-with-the-back-end"><span class="nav-number">106.</span> <span class="nav-text">How does the front-end communicate with the back-end?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Talk-about-factory-design-pattern"><span class="nav-number">107.</span> <span class="nav-text">Talk about factory design pattern</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Talk-about-observer-design-pattern"><span class="nav-number">108.</span> <span class="nav-text">Talk about observer design pattern</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-if-you-don%E2%80%99t-define-the-serialVersionUID-What-if-you-remove-it"><span class="nav-number">109.</span> <span class="nav-text">What if you don’t define the serialVersionUID? What if you remove it?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-caused-memory-leak-How-to-detect-it"><span class="nav-number">110.</span> <span class="nav-text">What caused memory leak? How to detect it?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Map-vs-Flat-map"><span class="nav-number">111.</span> <span class="nav-text">Map vs. Flat map</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sleep-vs-wait"><span class="nav-number">112.</span> <span class="nav-text">sleep() vs. wait()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PreparedStatement"><span class="nav-number">113.</span> <span class="nav-text">PreparedStatement</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#why-string-is-immutable"><span class="nav-number">114.</span> <span class="nav-text">why string is immutable?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK-and-JVM"><span class="nav-number">115.</span> <span class="nav-text">JDK and JVM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#object-lifecycle"><span class="nav-number">116.</span> <span class="nav-text">object lifecycle</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-testing-framework-are-you-using-in-your-project"><span class="nav-number">117.</span> <span class="nav-text">What testing framework are you using in your project?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-Mockito"><span class="nav-number">118.</span> <span class="nav-text">What is Mockito</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-limitation-of-Mockito"><span class="nav-number">119.</span> <span class="nav-text">What is the limitation of Mockito</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Life-cycle-of-Junit-test"><span class="nav-number">120.</span> <span class="nav-text">Life cycle of Junit test</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mocking-vs-stubbing"><span class="nav-number">121.</span> <span class="nav-text">mocking vs stubbing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TestNG-vs-junit"><span class="nav-number">122.</span> <span class="nav-text">TestNG vs junit</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Functional-test-Integrtion-test-Unit-test"><span class="nav-number">123.</span> <span class="nav-text">Functional test &amp; Integrtion test &amp; Unit test</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Junit-how-to-write-a-test"><span class="nav-number">124.</span> <span class="nav-text">Junit, how to write a test</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#difference-between-a-relational-database-and-a-non-relational-database-nosql-vs-sql"><span class="nav-number">125.</span> <span class="nav-text">difference between a relational database and a non-relational database? nosql vs sql</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-do-you-debug-when-sql-queries-very-slow"><span class="nav-number">126.</span> <span class="nav-text">How do you debug when sql queries very slow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LEFT-JOIN-RIGHT-JOIN"><span class="nav-number">127.</span> <span class="nav-text">LEFT JOIN &amp; RIGHT JOIN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cassandra"><span class="nav-number">128.</span> <span class="nav-text">Cassandra</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Which-was-better-for-horizontally-scaling"><span class="nav-number">128.1.</span> <span class="nav-text">Which was better for horizontally scaling?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-populate-the-cache-redisTemplate"><span class="nav-number">129.</span> <span class="nav-text">How to populate the cache? -&gt; redisTemplate</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">iTvX</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/java-interview/java-general/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="iTvX">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Think Less, Do More">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Java面试——Java Concepts | Think Less, Do More">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java面试——Java Concepts
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-03-02 12:00:00" itemprop="dateCreated datePublished" datetime="2024-03-02T12:00:00-08:00">2024-03-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-08-24 12:26:01" itemprop="dateModified" datetime="2024-08-24T12:26:01-07:00">2024-08-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java-Interview/" itemprop="url" rel="index"><span itemprop="name">Java Interview</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="CI-CD-save-time"><a href="#CI-CD-save-time" class="headerlink" title="CI&#x2F;CD save time"></a>CI&#x2F;CD save time</h1><p>In a recent project, we improved our CI&#x2F;CD pipeline by implementing Docker layer which make Docker reuses the cached layers instead of rebuilding them, speeding up the build process. Also, we optimized our Maven dependencies, like using Maven Dependency Plugin to analyze and identify unused or redundant dependencies in our projects wihch result in less memory usage during the build process.</p>
+<h1 id="Agile-development"><a href="#Agile-development" class="headerlink" title="Agile development"></a>Agile development</h1><p>Yeah, sure. We were following the Agile development process. We have sprint meetings every two weeks. In these meetings, we discuss the previous sprint, including which tasks were completed and which were blocked. We then decide which blocked tasks to move to the next sprint. We also talk about new stories, discuss their points, and assign them to developers. That’s what we do in the sprint planning meetings. Additionally, we have stand-up meetings every morning where we discuss what we did yesterday, what we’re planning to do today, and any obstacles we’re facing. If I’m hitting a roadblock, it’s not just a straight shot to the tech lead. Instead, I bring it up in our stand-up, so everyone gets the heads up and we can brainstorm solutions together. </p>
+<p>(可选)<br>It’s all about keeping things transparent and working as a team.<br>That’s essentially what our meetings entail. There’s also the development process, which includes branching, and the CI&#x2F;CD. I can explain more about these aspects. Would you like me to continue?</p>
+<h1 id="how-do-you-use-git-and-github"><a href="#how-do-you-use-git-and-github" class="headerlink" title="how do you use git and github"></a>how do you use git and github</h1><p>I start with <code>git init</code> for new projects or <code>git clone</code> for existing project. I create feature branches using <code>git checkout -b</code>, make changes, and stage them with <code>git add</code>. I commit using <code>git commit -m</code>, push with <code>git push origin</code>. And I will send the github pull requet, and once the request is approve I use <code>git pull</code>. </p>
+<p><code>git rebase</code> is a command to integrate changes from one branch to another by reapplying commits on top of another base.</p>
+<p>Git squash combines multiple commits into one for a cleaner history, typically done with <code>git rebase -i</code>.</p>
+<ul>
+<li>how did you do the <strong>code review</strong>:<br>we have slack channel called code review, and it will fetch github pull request.</li>
+</ul>
+<ol>
+<li>Open the PR in GitHub.</li>
+<li>Read the PR description for context.</li>
+<li>Review changes in the “Files changed” tab.</li>
+<li>Optionally, run the code locally for complex changes.</li>
+<li>I will leave the comments by either approving or requesting changes based on the review.</li>
+</ol>
+<h1 id="check-code-coverage"><a href="#check-code-coverage" class="headerlink" title="check code coverage"></a>check code coverage</h1><p>We used tool Jacoco. We just need to add the dependency in maven and use cli <code>mvn clean verify</code>. The report will be available in <code>target/site/jacoco/index.html</code></p>
+<p>sonarQube for code coverage</p>
+<ul>
+<li><p>kafka partitions:<br>For our order processing Kafka topic, we configured 12 partitions. This number was chosen based on factors such as expected traffic, consumer throughput, and fault tolerance requirements.</p>
+</li>
+<li><p>kafka topic name:<br>order-created-events, order-payment-events, order-fulfillment-events, order-status-updates, order-shipment-events, order-cancellation-events</p>
+</li>
+<li><p><strong>How many microservices</strong><br>I was directly involved with the integration of approximately 5 to 6 microservices. These included inventory management, order tracking service, and notifications. But for the whole e-commerce system, there are more than 100 microservices.</p>
+</li>
+<li><p><strong>microservices in your project communicate with each other?</strong><br>Microservices in my project communicate through RESTful APIs over HTTP&#x2F;HTTPS, using JSON or XML for data interchange, and sometimes through asynchronous messaging systems like Apache Kafka.</p>
+</li>
+</ul>
+<h1 id="Scrum-board-vs-Kanban-board"><a href="#Scrum-board-vs-Kanban-board" class="headerlink" title="Scrum board vs Kanban board"></a>Scrum board vs Kanban board</h1><p>Scrum board: Sprint-based, resets after each sprint, with defined roles and ceremonies.</p>
+<p>Kanban board: Continuous flow, focuses on WIP limits, no predefined sprints or roles.</p>
+<p>Scrum board is a visual representation of the work to be done, structured around sprints, typically 2-4 weeks long, with defined roles and ceremonies. It resets after each sprint.</p>
+<p>Kanban board is a continuous flow model focusing on visualizing work in progress (WIP) limits, without predefined sprints or roles, aiming to improve efficiency by reducing the time it takes to complete each task.</p>
+<h1 id="How-do-you-deploy-your-project"><a href="#How-do-you-deploy-your-project" class="headerlink" title="How do you deploy your project"></a>How do you deploy your project</h1><ol>
+<li><strong>Package</strong> the application (JAR or WAR).</li>
+<li><strong>Select AWS Service</strong>（三选一）: Elastic Beanstalk for automated deployments, EC2 for server control, or Lambda for serverless.</li>
+<li><strong>Setup CI&#x2F;CD</strong>:<ul>
+<li>Use <strong>AWS CodeBuild</strong> for continuous integration to automatically build and test your code every time there’s a change.</li>
+<li>Use <strong>AWS CodePipeline</strong> for continuous deployment to automate the deployment process to your selected AWS service.</li>
+</ul>
+</li>
+<li><strong>Setup AWS CLI</strong></li>
+<li><strong>Deploy</strong>:<br> （三选一）<ul>
+<li>Elastic Beanstalk: Upload your package via the console or EB CLI.</li>
+<li>EC2: Launch an instance, connect, and deploy your app.</li>
+<li>Lambda: Create a function and upload your package as a ZIP.</li>
+</ul>
+</li>
+<li><strong>Configure</strong> security and roles.</li>
+<li><strong>Test</strong> the deployment.</li>
+<li><strong>Monitor</strong> with AWS CloudWatch.</li>
+</ol>
+<h1 id="What-is-CICD"><a href="#What-is-CICD" class="headerlink" title="What is CICD"></a>What is CICD</h1><p>CI&#x2F;CD is all about making sure any new code gets tested and shipped out automatically, so we can get updates out faster and more reliably.</p>
+<h1 id="What-service-are-you-using-in-AWS"><a href="#What-service-are-you-using-in-AWS" class="headerlink" title="What service are you using in AWS"></a>What service are you using in AWS</h1><ol>
+<li>EC2 for hosting the application</li>
+<li>RDS (MySQL) for structured data</li>
+<li>DynamoDB for high-scale, low-latency NoSQL data</li>
+<li>S3 for static asset storage</li>
+<li>ELB for load balancing and high availability</li>
+<li>ElastiCache (Redis) for distributed caching</li>
+<li>Amazon MSK(Managed Streaming for Apache Kafka)</li>
+</ol>
+<p>Our CI&#x2F;CD pipeline utilizes:</p>
+<ol start="7">
+<li>CodeCommit for version control</li>
+<li>CodeBuild for automated builds and tests</li>
+<li>CodePipeline for release automation</li>
+<li>CodeDeploy for automated deployments to EC2 instances</li>
+</ol>
+<h1 id="Life-cycle-of-the-maven"><a href="#Life-cycle-of-the-maven" class="headerlink" title="Life cycle of the maven"></a>Life cycle of the maven</h1><ol>
+<li><strong>Default Lifecycle</strong>:<ul>
+<li><code>validate</code></li>
+<li><code>compile</code></li>
+<li><code>test</code></li>
+<li><code>package</code></li>
+<li><code>verify</code></li>
+<li><code>install</code></li>
+<li><code>deploy</code></li>
+</ul>
+</li>
+<li><strong>Clean Lifecycle</strong>:<ul>
+<li><code>pre-clean</code></li>
+<li><code>clean</code></li>
+<li><code>post-clean</code></li>
+</ul>
+</li>
+<li><strong>Site Lifecycle</strong>:<ul>
+<li><code>pre-site</code></li>
+<li><code>site</code></li>
+<li><code>post-site</code></li>
+<li><code>site-deploy</code></li>
+</ul>
+</li>
+</ol>
+<h1 id="What-is-the-Final-keyword"><a href="#What-is-the-Final-keyword" class="headerlink" title="What is the Final keyword?"></a>What is the Final keyword?</h1><ol>
+<li><code>final</code> primitive: value immutable after assignment.</li>
+<li><code>final</code> object: object cannot be reference again.</li>
+<li><code>final</code> method: cannot be overridden.</li>
+<li><code>final</code> class: cannot be extended.</li>
+</ol>
+<p>(For objective type,</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="type">Person</span> <span class="variable">person1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;John&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// This is allowed: modifying the object that person1 points to.  </span></span><br><span class="line">person1.setName(<span class="string">&quot;Jane&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// This is not allowed and will cause a compilation error:  </span></span><br><span class="line"><span class="comment">// person1 = new Person(&quot;Doe&quot;); )</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="What-is-a-static-field-static-method-and-static-class"><a href="#What-is-a-static-field-static-method-and-static-class" class="headerlink" title="What is a static field, static method, and static class?"></a>What is a static field, static method, and static class?</h1><p><strong>static field&#x2F;static variable</strong>: A variable is declared as Static, then we called static variable. Static variables are only created once, and they are created when the class is loaded into memory. All instances of the class share the same static variable.</p>
+<p>When to use: should be used to declare common property of all objects.</p>
+<p><strong>static method</strong>: </p>
+<ul>
+<li>Belong to the class, not instances</li>
+<li>Called using the class name without creating an object</li>
+<li>Cannot directly access non-static methods or fields</li>
+<li><code>this</code> and <code>super</code> are not usable within static methods</li>
+</ul>
+<p><strong>Static Block</strong>: The static block gets executed exactly once when the class is first loaded. Use the static block to initialize the static variables.</p>
+<p><strong>Static nested classes</strong>:</p>
+<ul>
+<li>Are a type of inner class that is static</li>
+<li>Can only access static members of the outer class</li>
+<li>Improve code readability and maintainability</li>
+<li>Can be instantiated without creating an outer class object, unlike regular inner classes</li>
+</ul>
+<h1 id="What-are-primitive-data-types-in-Java"><a href="#What-are-primitive-data-types-in-Java" class="headerlink" title="What are primitive data types in Java?"></a>What are primitive data types in Java?</h1><p>Primitive data are predefined in Java and named by a reserved keyword. They represent the most basic data types you can work with. They are stored on the stack which make them more efficient. Java programming language supports eight different primitive types - byte, short, int, long, float, double, boolean and char.</p>
+<h1 id="What-are-the-differences-between-passing-by-value-and-passing-by-reference"><a href="#What-are-the-differences-between-passing-by-value-and-passing-by-reference" class="headerlink" title="What are the differences between passing by value and passing by reference?"></a>What are the differences between passing by value and passing by reference?</h1><p>Passing by value means that a copy of the actual value is passed to the function. Any changes made to this value in the function do not affect the original value outside the function.</p>
+<p>Passing by reference means that a reference (or pointer) to the actual data is passed to the function. Changes made to this data within the function affect the original data outside the function.</p>
+<p>In Java, modifications to the object inside the method affect the original because when the object is passed into the method, it actually passes it with the reference, not the object itself. That means the original reference and the method’s parameter reference point to the same object. Therefore, any modification made to the object through this reference is reflected outside the method as well.</p>
+<h1 id="Difference-between-int-and-Integer"><a href="#Difference-between-int-and-Integer" class="headerlink" title="Difference between int and Integer"></a>Difference between int and Integer</h1><p><code>int</code>: primitive type not an object, default value is 0, can not be null, store in stack, more efficient. <br><code>Integer</code>: It is an object, can be nullable, wrapper class, store in heap. It is necessary when working with collections that only store objects, such as <code>ArrayList</code>,</p>
+<h1 id="Time-complexity-of-linkedList"><a href="#Time-complexity-of-linkedList" class="headerlink" title="Time complexity of linkedList"></a>Time complexity of linkedList</h1><p>For LinkedLists, head&#x2F;tail operations are O(1); others are O(n).<br>O(1): <code>offerFirst()</code>, <code>offerLast()</code>, <code>pollFirst()</code>, <code>pollLast()</code><br>O(n): <code>contains()</code>, <code>get()</code>,<code>set(int index, E element)</code></p>
+<h1 id="Difference-between-ArrayList-and-LinkedList"><a href="#Difference-between-ArrayList-and-LinkedList" class="headerlink" title="Difference between ArrayList and LinkedList"></a>Difference between ArrayList and LinkedList</h1><p>ArrayList:</p>
+<ul>
+<li>Uses dynamic array internally</li>
+<li>O(1) random access(O(1) for get and set)</li>
+<li>Less memory overhead</li>
+<li>Faster for sequential traversal</li>
+<li>Automatic resizing</li>
+<li>slower insertions and deletions (O(n) in the worst case) due to the need to resize and shift elements.</li>
+</ul>
+<p>LinkedList:</p>
+<ul>
+<li>Uses doubly-linked list internally</li>
+<li>O(1) insertion&#x2F;deletion at ends</li>
+<li>slower element access (O(n)),  since it must traverse the list. </li>
+<li>More memory overhead</li>
+<li>Faster for mid-list insertion&#x2F;deletion</li>
+<li>No resizing needed</li>
+</ul>
+<p>ArrayList is suited for scenarios with frequent reads, while LinkedList is better for frequent writes.</p>
+<h1 id="Difference-between-vector-and-arraylist"><a href="#Difference-between-vector-and-arraylist" class="headerlink" title="Difference between vector and arraylist"></a>Difference between vector and arraylist</h1><p><code>Vector</code>: synchronized, thread-safe, slower, size increases by percentage or doubles, legacy.<br><code>ArrayList</code>: not synchronized, faster, preferred without thread safety, grows by half of its size, modern Collections Framework.</p>
+<h1 id="New-features-of-Java-8"><a href="#New-features-of-Java-8" class="headerlink" title="New features of Java 8"></a>New features of Java 8</h1><p>Java 8 introduced several key features:</p>
+<ol>
+<li><strong>Lambda expressions</strong> provide a concise way to implement functional interfaces. </li>
+<li><strong>The Stream API</strong> enables functional-style operations on collections, such as filter, map, and reduce. </li>
+<li><strong>Default Methods</strong>: Allow methods in interfaces to have an implementation.</li>
+<li><strong>Method References</strong>: Method reference is <strong>used to refer method of functional interface</strong>. It is compact and easy form of lambda expression.</li>
+<li><strong>Optional</strong> helps avoid null-related errors by representing optional values. </li>
+<li><strong>Nashorn JavaScript Engine</strong>: A high-performance JavaScript runtime for Java, replacing Rhino.</li>
+<li><strong>New Date-Time API</strong>: Inspired by Joda-Time, addressing the shortcomings of the old java.util.Date and Calendar.</li>
+<li><strong>Type Annotations</strong>: Enable annotations to be used in more places than before, such as in generics, which helps in improving code analysis.</li>
+</ol>
+<h1 id="What-is-the-advantage-of-Java-8-compared-to-Java-7"><a href="#What-is-the-advantage-of-Java-8-compared-to-Java-7" class="headerlink" title="What is the advantage of Java 8 compared to Java 7?"></a>What is the advantage of Java 8 compared to Java 7?</h1><p>回答java 8的new feature加上：<br>These features improve developer productivity, code readability, and application performance.</p>
+<h1 id="Give-me-an-example-of-how-you-use-java-8-feature-in-your-project"><a href="#Give-me-an-example-of-how-you-use-java-8-feature-in-your-project" class="headerlink" title="Give me an example of how you use java 8 feature in your project"></a>Give me an example of how you use java 8 feature in your project</h1><p>Optional:<br>Optional to handle null values more gracefully, enhancing code readability and reducing the chances of NullPointerExceptions.</p>
+<p>Stream:<br>I used the Stream API to filter out products with low stock, specifically those with quantities less than 10, and collected the result into a list for a quick restock action:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Product&gt; lowStockProducts = products.stream()</span><br><span class="line">    .filter(product -&gt; product.getQuantity() &lt; <span class="number">10</span>)</span><br><span class="line">    .collect(Collectors.toList());</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Lambda:<br>Comparator for reverse sort.</p>
+<h1 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h1><p>A Stream in Java is an abstraction for processing sequences of elements, supporting operations like filter, map, and reduce, introduced in Java 8 within the <code>java.util.stream</code> package.</p>
+<h1 id="What-is-the-difference-between-collection-and-stream-API"><a href="#What-is-the-difference-between-collection-and-stream-API" class="headerlink" title="What is the difference between collection and stream API?"></a>What is the difference between collection and stream API?</h1><p>The Collection API manages data storage and direct manipulation (like adding, removing, or accessing elements), while the Stream API focuses on functional-style operations (like filter, map, reduce) on collections, without storing data and enabling easy parallel processing.</p>
+<p>记忆：<br><strong>Collection API</strong>: Manages data storage, direct manipulation (add, remove, access).<br><strong>Stream API</strong>: Functional-style operations (filter, map, reduce) on collections, no data storage, facilitates parallel processing.</p>
+<h1 id="Intermediate-operation-and-terminal-operation"><a href="#Intermediate-operation-and-terminal-operation" class="headerlink" title="Intermediate operation and terminal operation"></a>Intermediate operation and terminal operation</h1><p>Intermediate operations, like <code>filter</code> and <code>map</code>, transform streams without finalizing results and are lazy. Terminal operations, such as <code>collect</code> and <code>forEach</code>, produce final results, ending the stream’s use.</p>
+<h1 id="optional-class"><a href="#optional-class" class="headerlink" title="optional class"></a>optional class</h1><p>The <code>Optional</code> class in Java is a container for nullable values, introduced in Java 8 to avoid <code>NullPointerException</code> and to provide a clearer way to handle the presence or absence of a value.</p>
+<p>记忆：<br>Optional: a container for nullable values, avoids NullPointerException, manages value presence&#x2F;absence.</p>
+<h1 id="Functional-Interface"><a href="#Functional-Interface" class="headerlink" title="Functional Interface"></a>Functional Interface</h1><p>A functional interface is an interface with exactly one abstract method, allowing lambda expressions. It can include default or static methods.</p>
+<h1 id="Default-method-vs-static-method"><a href="#Default-method-vs-static-method" class="headerlink" title="Default method vs. static method"></a>Default method vs. static method</h1><ul>
+<li>Default methods can be overridden by implementing classes, whereas static methods cannot.</li>
+<li>Default methods are instance methods, static methods are class methods.</li>
+<li>You can call default methods on instances of implementing classes, whereas static methods are called on the interface itself.</li>
+</ul>
+<h1 id="Memory-management-of-Java-8-feature"><a href="#Memory-management-of-Java-8-feature" class="headerlink" title="Memory management of Java 8 feature?"></a>Memory management of Java 8 feature?</h1><p><strong>Metaspace</strong>: replace PermGen, using native memory, reduce OutOfMemoryErrors.<br><strong>Garbage-First Collector (G1 GC)</strong>: optimizes garbage collection using predictable pauses in large memeory environment.<br><strong>Some improvement in heap management</strong>: make it more efficient memory allocation and management.</p>
+<h1 id="How-did-you-use-lambda-expression"><a href="#How-did-you-use-lambda-expression" class="headerlink" title="How did you use lambda expression?"></a>How did you use lambda expression?</h1><p>In my projects, I’ve used lambda expressions to simplify the implementation of Functional interfaces, such as comparators for sorting collections. For example, when sorting a list of custom objects based on a particular field, I used lambda expressions to create a concise and readable comparator without the need for an anonymous class. Here’s how I implemented it:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Person&gt; people = getPeopleList();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Sort people by their age using a lambda expression</span></span><br><span class="line">people.sort((p1, p2) -&gt; p1.getAge() - p2.getAge());</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Different-types-of-method-reference-mf"><a href="#Different-types-of-method-reference-mf" class="headerlink" title="Different types of method reference (mf)"></a>Different types of method reference (mf)</h1><p>Method reference is a shorthand notation of a lambda expression to call a method.<br>There are four types of method references in Java:</p>
+<ol>
+<li>Reference to a static method: <code>ClassName::staticMethodName</code></li>
+<li>Reference to an instance method of a particular object: <code>instance::instanceMethodName</code></li>
+<li>Reference to an instance method of an arbitrary object of a particular type: <code>ClassName::instanceMethodName</code></li>
+<li>Reference to a constructor: <code>ClassName::new</code></li>
+</ol>
+<p>四种方法引用形式</p>
+<ol>
+<li><p><strong>静态方法引用（ClassName::staticMethodName）</strong></p>
+<p> 这种形式用于引用类的静态方法。当你需要通过Lambda表达式调用静态方法时，可以使用静态方法引用。例如，<code>Math::max</code> 相当于 <code>(x, y) -&gt; Math.max(x, y)</code>，这里直接引用了<code>Math</code>类的静态方法<code>max</code>。</p>
+</li>
+<li><p><strong>实例方法引用（instance::instanceMethodName）</strong></p>
+<p> 当你已经有一个对象的实例，并希望通过这个实例调用其实例方法时，可以使用这种形式。例如，对于<code>String</code>对象<code>s</code>，<code>s::toLowerCase</code> 相当于 <code>() -&gt; s.toLowerCase()</code>。这里直接通过<code>s</code>这个特定实例调用<code>toLowerCase</code>方法，注意这个方法不接受参数。</p>
+</li>
+<li><p><strong>类的任意对象的实例方法引用（ClassName::instanceMethodName）</strong></p>
+<p> 适用于第一个Lambda参数是方法调用者，其他Lambda参数（如果有的话）是方法的参数。例如，<code>String::toLowerCase</code> 相当于 <code>(str) -&gt; str.toLowerCase()</code>。这表示对于传入的任意<code>String</code>对象<code>str</code>，都调用其<code>toLowerCase</code>方法。</p>
+</li>
+<li><p><strong>构造函数引用（ClassName::new）</strong></p>
+<p> 当你需要通过Lambda表达式调用类的构造函数来创建对象实例时，可以使用这种形式。例如，<code>ArrayList::new</code> 相当于 <code>() -&gt; new ArrayList&lt;&gt;()</code>。这里直接引用<code>ArrayList</code>的默认构造函数来创建一个新的<code>ArrayList</code>实例。</p>
+</li>
+</ol>
+<h1 id="What-is-functional-programming-compile-or-not"><a href="#What-is-functional-programming-compile-or-not" class="headerlink" title="What is functional programming? -&gt; compile or not"></a>What is functional programming? -&gt; compile or not</h1><p>Functional programming is a paradigm that uses pure functions and avoids state changes. Java supports it and compiles it like any other code.</p>
+<h1 id="Explain-heap-and-stack"><a href="#Explain-heap-and-stack" class="headerlink" title="Explain heap and stack"></a>Explain heap and stack</h1><ul>
+<li><p><strong>Heap:</strong> Memory area for object storage, shared across threads, dynamically allocated and deallocated, managed by garbage collection.</p>
+</li>
+<li><p><strong>Stack:</strong> Memory for method execution, including local variables and method call references, unique to each thread, automatically allocated and deallocated as methods are called and return.</p>
+</li>
+</ul>
+<h1 id="What-is-Java-Heap-memory"><a href="#What-is-Java-Heap-memory" class="headerlink" title="What is Java Heap memory?"></a>What is Java Heap memory?</h1><p>Java Heap memory is a runtime area where all class instances and arrays get their memory. It is created at the JVM start-up. Heap memory is shared among all JVM threads, and the garbage collector reclaims the heap memory for objects that are no longer referenced, making space available for new objects.</p>
+<p>记忆：<br>Runtime area for class instances and arrays, created at JVM start-up, shared among all JVM threads. Garbage collector reclaims memory for unreferenced objects, freeing space for new ones.</p>
+<h1 id="Do-you-know-memory-leak"><a href="#Do-you-know-memory-leak" class="headerlink" title="Do you know memory leak?"></a>Do you know memory leak?</h1><p>A memory leak occurs when objects are no longer being used by the application but cannot be garbage collected because they are still referenced by other objects. This situation leads to unnecessary memory consumption, potentially exhausting the available memory, which can degrade performance or cause the application to crash. Effective memory management practices, such as nullifying references when objects are no longer needed and using weak references when appropriate, can help prevent memory leaks.</p>
+<p>记忆：<br>Memory leak: Occurs when unused objects can’t be garbage collected due to still being referenced, leading to unnecessary memory consumption and potential performance issues or crashes.</p>
+<p>How to solve: Effective management, like nullifying references or using weak references, helps prevent this.</p>
+<h1 id="What-is-garbage-collection-in-java"><a href="#What-is-garbage-collection-in-java" class="headerlink" title="What is garbage collection in java?"></a>What is garbage collection in java?</h1><p>Garbage collection in Java is a process by the Java Virtual Machine (JVM) to identify and dispose of objects that are no longer needed by a Java application, freeing up their resources and memory. This automatic memory management helps prevent memory leaks and ensures efficient use of memory, allowing developers to focus on application logic rather than manual memory management.</p>
+<p>记忆：Java Virtual Machine (JVM) to identify and dispose of objects that are no longer needed by a Java application, freeing up their resources and memory.</p>
+<h1 id="String-Pool"><a href="#String-Pool" class="headerlink" title="String Pool"></a>String Pool</h1><p>the String Pool is a special area in the Java heap memory used to store unique string literals. When a string is created using string literals, Java checks the String Pool first. If the string already exists, the same reference is returned, instead of creating a new object. This mechanism reduces memory usage and improves performance by reusing immutable string objects. However, when new strings are created using the <code>new</code> operator, they are not added to the String Pool.</p>
+<p>记忆：<br>String Pool: in heap memory, store string. </p>
+<h1 id="Difference-between-Equals-and"><a href="#Difference-between-Equals-and" class="headerlink" title="Difference between Equals and &#x3D;&#x3D;"></a>Difference between Equals and &#x3D;&#x3D;</h1><p>In Java, &#x3D;&#x3D; checks reference equality and .equals() checks value equality. For primitive types, &#x3D;&#x3D; directly compares values. For objects, .equals() compares memory locations by default unless .equals() is overridden.</p>
+<p><code>==</code> checks for reference equality. For primitives, it compares values; for objects, memory locations.<br><code>.equals()</code> checks value equality, comparing memory locations by default unless overridden.</p>
+<h1 id="What-is-OOP"><a href="#What-is-OOP" class="headerlink" title="What is OOP?"></a>What is OOP?</h1><p>Object-Oriented Programming (OOP) is a paradigm that uses objects and classes to encapsulate data and behavior. It emphasizes <strong>Abstraction</strong>, <strong>Encapsulation</strong>, <strong>Inheritance</strong>, and <strong>Polymorphism</strong> to promote modular and reusable code.</p>
+<ol>
+<li><p><strong>Abstraction</strong>: Abstraction is a process of hiding the implementation details and showing only functionality to the user. For example, a TV remote control hides the complexity of the internal circuitry, focusing only on the buttons needed to operate the TV. In Java, abstraction is implemented through abstract classes and interfaces.</p>
+</li>
+<li><p><strong>Encapsulation</strong>: Encapsulation is a process of Binding data and methods within a class. It uses access modifiers (public, private, protected, default) to restrict access to the object’s components. </p>
+</li>
+<li><p><strong>Inheritance</strong>: Using inheritance means deﬁning a parent-child relationship between classes, by doing so, you can reuse the code that is already deﬁned in the parent class. Code reusability is the biggest advantage of Inheritance. Java does not allow multiple inheritance through classes but it allows it through interfaces.</p>
+</li>
+<li><p><strong>Polymorphism</strong>: Poly means many and Morph means forms. Polymorphism is the process in which an object or function takes different forms. In Java, polymorphism is implemented through method overriding (runtime polymorphism) and method overloading (compile-time polymorphism).</p>
+</li>
+</ol>
+<h1 id="Polymorphism"><a href="#Polymorphism" class="headerlink" title="Polymorphism"></a>Polymorphism</h1><p>Poly means many and Morph means forms. Polymorphism is the process in which an object or function takes different forms. There are 2 types of Polymorphism :</p>
+<ul>
+<li>Compile Time Polymorphism (Method Overloading)</li>
+<li>Run Time Polymorphism (Method Overriding)</li>
+</ul>
+<h1 id="Polymorphism-Overriding-Vs-Overloading"><a href="#Polymorphism-Overriding-Vs-Overloading" class="headerlink" title="Polymorphism: Overriding Vs Overloading"></a>Polymorphism: Overriding Vs Overloading</h1><p><strong>Overloading</strong> is defining multiple methods with the same name but different parameters in the same class for compile-time polymorphism.<br><strong>Overriding</strong> is redefining a parent class method in a subclass with the same signature for runtime polymorphism.</p>
+<h1 id="What-are-different-access-modifiers-and-what-do-they-do"><a href="#What-are-different-access-modifiers-and-what-do-they-do" class="headerlink" title="What are different access modifiers and what do they do?"></a>What are different access modifiers and what do they do?</h1><p>Access modifiers determine the scope of access for classes, methods, and variables. There are four main types:</p>
+<ul>
+<li><strong><code>private</code></strong>: Accessible only within its own class.</li>
+<li><strong><code>default</code></strong>: Accessible within the same package.</li>
+<li><strong><code>protected</code></strong>: Accessible within the same package and by subclasses.</li>
+<li><strong><code>public</code></strong>: Accessible from any class.</li>
+</ul>
+<h1 id="What-is-Interface-and-what-is-abstract-class-What-are-the-differences-between-them"><a href="#What-is-Interface-and-what-is-abstract-class-What-are-the-differences-between-them" class="headerlink" title="What is Interface and what is abstract class? What are the differences between them?"></a>What is Interface and what is abstract class? What are the differences between them?</h1><p>An interface in Java defines a contract with abstract methods for classes to implement. </p>
+<p>An abstract class is a base class that cannot be instantiated, containing both abstract and concrete methods.</p>
+<p>The differences are:</p>
+<ul>
+<li><p>Abstract class can have both abstract and concrete methods but interface can only have abstract methods (Java eight onwards, it can have default and static methods as well)</p>
+</li>
+<li><p>Abstract class methods can have access modiﬁers other than public but interface methods are implicitly public and abstract</p>
+</li>
+<li><p>Abstract class can have ﬁnal, non-ﬁnal, static and non-static variables but interface variables are only static and ﬁnal - A subclass can extend only one abstract class but it can implement multiple interfaces</p>
+</li>
+<li><p>An Abstract class can extend one other class and can implement multiple interfaces but an interface can only extend other interfaces </p>
+</li>
+<li><p>the most difference for me I think is <strong>We can still extend only one class but can implement multiple interfaces.</strong></p>
+</li>
+</ul>
+<h2 id="What-to-choose-–-interface-or-abstract-class"><a href="#What-to-choose-–-interface-or-abstract-class" class="headerlink" title="What to choose – interface or abstract class"></a>What to choose – interface or abstract class</h2><ul>
+<li>When you want to provide default implementation to some of the common methods that can be used directly by the sub-classes then you can use abstract class because it can have concrete methods also, this is not the case with Interface because the child classes that are implementing this interface will have to provide implementation for all the methods that are declared in the interface</li>
+<li>If your contract keeps on changing then Interface will create problems because then you will have to provide implementation of those new methods in all the implementing classes, whereas with abstract class you can provide one default implementation to the new methods and only change those implementing classes that are actually going to use these new methods </li>
+<li>Most of the times, interfaces are a good choice. It is also one of the best practices, when you code in terms of interfaces.</li>
+</ul>
+<h1 id="why-hashtable-cannot-contain-null-key"><a href="#why-hashtable-cannot-contain-null-key" class="headerlink" title="why hashtable cannot contain null key"></a>why hashtable cannot contain null key</h1><p><code>Hashtable</code> cannot contain null keys because it uses the key’s hash code to store and retrieve entries, and calling <code>hashCode()</code> on a null key would result in a <code>NullPointerException</code>. Additionally, <code>HashMap</code> allows null key.</p>
+<h1 id="StringBuilder-and-StringBuffer"><a href="#StringBuilder-and-StringBuffer" class="headerlink" title="StringBuilder and StringBuffer"></a>StringBuilder and StringBuffer</h1><p><code>StringBuilder</code> is faster and not thread-safe, suitable for single-threaded environments. </p>
+<p><code>StringBuffer</code> is synchronized, making it thread-safe but slower. It is ideal for multi-threaded environments. </p>
+<p>Both <code>StringBuffer</code> and <code>StringBuilder</code> offer similar methods for string manipulation.</p>
+<h1 id="Error-vs-Exception-runtime"><a href="#Error-vs-Exception-runtime" class="headerlink" title="Error vs. Exception (runtime)"></a>Error vs. Exception (runtime)</h1><p><img src="/../../assets/CleanShot%202024-02-22%20at%2015.32.03@2x.jpg"></p>
+<ul>
+<li><p><strong>Errors:</strong> Indicate critical problems, usually outside the application’s control (e.g., <code>OutOfMemoryError</code>). Recovery is typically not possible.</p>
+</li>
+<li><p><strong>Exceptions:</strong> Represent potentially recoverable conditions.</p>
+<ul>
+<li><strong>Checked(compile time exception):</strong> Require explicit handling via try-catch or method throws declarations (e.g., <code>FileNotFoundException</code>).</li>
+<li><strong>Unchecked (runtime exception):</strong> Occur due to coding issues or unexpected runtime conditions (e.g., <code>NullPointerException</code>).</li>
+</ul>
+</li>
+</ul>
+<h1 id="Checked-unchecked-exception"><a href="#Checked-unchecked-exception" class="headerlink" title="Checked &#x2F; unchecked exception"></a>Checked &#x2F; unchecked exception</h1><ul>
+<li><p><strong>Checked exceptions</strong> are exceptions that must be either caught or declared in the method signature. These are also known as compile-time exceptions because the compiler checks at compile time to ensure that these exceptions are handled by the programmer. They are subclasses of <code>Exception</code> excluding <code>RuntimeException</code> and its subclasses. Examples include <code>IOException</code>, <code>SQLException</code>.</p>
+</li>
+<li><p><strong>Unchecked exceptions</strong> are exceptions that do not need to be explicitly handled or declared in the method signature. They are checked at runtime rather than at compile time. Unchecked exceptions are subclasses of <code>RuntimeException</code>, and the compiler does not enforce handling of these exceptions. Examples include <code>NullPointerException</code>, <code>ArrayIndexOutOfBoundsException</code>.</p>
+</li>
+</ul>
+<h1 id="handle-exception"><a href="#handle-exception" class="headerlink" title="handle exception"></a>handle exception</h1><p>try-catch block is used for exception handling. If you think that certain statements may throw an exception, surround them with try block.</p>
+<p>A try block is always followed by a catch block or ﬁnally or both.</p>
+<p>You cannot use the try block alone</p>
+<h1 id="How-do-you-deal-with-the-error"><a href="#How-do-you-deal-with-the-error" class="headerlink" title="How do you deal with the error?"></a>How do you deal with the error?</h1><ol>
+<li>Understand the error via the message and stack trace.</li>
+<li>Reproduce the error if necessary.</li>
+<li>Consult Java documentation for insights.</li>
+<li>Debug using tools like breakpoints and logging.</li>
+<li>Fix the error by modifying the code.</li>
+<li>Test to ensure the fix resolves the issue.</li>
+<li>Document the issue and solution for future reference.</li>
+</ol>
+<h1 id="how-do-you-deal-with-exceptions-in-your-project"><a href="#how-do-you-deal-with-exceptions-in-your-project" class="headerlink" title="how do you deal with exceptions in your project?"></a>how do you deal with exceptions in your project?</h1><p>In my project, we handle exceptions by:</p>
+<ol>
+<li>Using try-catch blocks for local handling.</li>
+<li>Declaring exceptions with the <code>throws</code> clause for caller-level handling.</li>
+<li>Creating custom exceptions for specific error scenarios.</li>
+<li>Implementing global exception handling for uniform application responses.</li>
+<li>Logging exceptions for debugging and audit trails.</li>
+<li>Employing try-with-resources for automatic resource management.</li>
+<li>Providing meaningful user feedback without exposing sensitive details.</li>
+</ol>
+<h1 id="Throw-vs-throws"><a href="#Throw-vs-throws" class="headerlink" title="Throw vs. throws"></a>Throw vs. throws</h1><ul>
+<li><strong><code>throw</code></strong>: Throws a single exception instance.</li>
+<li><strong><code>throws</code></strong>: Declares multiple potential exceptions in a method signature.</li>
+</ul>
+<p>The <code>throw</code> keyword explicitly throws a single exception within a code block or function, requiring an Exception class instance. In contrast, the <code>throws</code> keyword, used in method signatures, declares potential exceptions (checked or unchecked) that a method may throw, allowing for multiple exception types to be specified.</p>
+<h1 id="give-me-one-example-of-NullPointerException"><a href="#give-me-one-example-of-NullPointerException" class="headerlink" title="give me one example of NullPointerException"></a>give me one example of NullPointerException</h1><p>A <code>NullPointerException</code> in Java occurs when you try to use a reference that points to no location in memory (null) as though it were referencing an object.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">text</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">length</span> <span class="operator">=</span> text.length(); <span class="comment">// This line will throw a NullPointerException</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="avoid-NullPointerException"><a href="#avoid-NullPointerException" class="headerlink" title="avoid NullPointerException"></a>avoid NullPointerException</h1><p>To avoid NullPointerException: </p>
+<ol>
+<li>Check for null before using objects. </li>
+<li>Use Optional. Provide default values.</li>
+<li>Use annotations @NotNull and @Nullable. </li>
+<li>Return empty collections instead of null.</li>
+</ol>
+<h1 id="How-to-custom-an-Exception"><a href="#How-to-custom-an-Exception" class="headerlink" title="How to custom an Exception?"></a>How to custom an Exception?</h1><p>To create a custom exception, we extend the <code>Exception</code> class or one of its subclasses.</p>
+<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>JSON (JavaScript Object Notation) is a lightweight format for data exchange, easy for humans to read and write, and for machines to parse and generate. It’s widely used in web applications for data interchange between servers and clients.</p>
+<h1 id="What-is-the-purpose-of-serial-version-UID"><a href="#What-is-the-purpose-of-serial-version-UID" class="headerlink" title="What is the purpose of serial version UID"></a>What is the purpose of serial version UID</h1><p>The <code>serialVersionUID</code> is a unique identifier for Serializable classes. It ensures compatibility between versions of a Serializable class during serialization and deserialization, preventing <code>InvalidClassException</code>.</p>
+<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><p>JDBC is a Java API for database interaction, enabling Java programs to connect, query, and update databases in a database-independent manner.</p>
+<h1 id="Comparable-vs-Comparator"><a href="#Comparable-vs-Comparator" class="headerlink" title="Comparable vs. Comparator"></a>Comparable vs. Comparator</h1><p>Both of them are used to sort the collectioin of objects. </p>
+<ul>
+<li><code>Comparable</code> enables single sorting method; <code>Comparator</code> allows multiple.</li>
+<li><code>Comparable</code> is in <code>java.lang</code>; <code>Comparator</code> in <code>java.util</code>.</li>
+<li>Implementing <code>Comparable</code> requires class modification; <code>Comparator</code> does not.</li>
+<li><code>Comparable</code> uses <code>compareTo()</code> for sorting; <code>Comparator</code> uses <code>compare()</code>.</li>
+<li>Use <code>Collections.sort(list)</code> for <code>Comparable</code>; for <code>Comparator</code>, use <code>Collections.sort(list, comparator)</code>. </li>
+<li><code>Comparator</code> is necessary for sorting third-party or unmodifiable classes.</li>
+</ul>
+<h1 id="Git-command-you-used-in-the-project"><a href="#Git-command-you-used-in-the-project" class="headerlink" title="Git command you used in the project"></a>Git command you used in the project</h1><p>In my project, I frequently used several Git commands to manage source code and collaborate with my team effectively. The most common commands include:</p>
+<ul>
+<li><code>git clone</code>: Clone a repository.</li>
+<li><code>git branch</code>: Manage branches.</li>
+<li><code>git checkout</code>: Switch branches.</li>
+<li><code>git status</code>: Check status of changes.</li>
+<li><code>git add</code>: Stage changes.</li>
+<li><code>git commit</code>: Commit changes.</li>
+<li><code>git push</code>: Push changes to remote.</li>
+<li><code>git pull</code>: Update local repo from remote.</li>
+<li><code>git merge</code>: Merge branches.</li>
+</ul>
+<h1 id="Do-you-prefer-SVN-or-Git"><a href="#Do-you-prefer-SVN-or-Git" class="headerlink" title="Do you prefer SVN or Git?"></a>Do you prefer SVN or Git?</h1><p>I prefer Git for its distributed nature, superior branching and merging capabilities, and widespread adoption.</p>
+<h1 id="What-is-generic"><a href="#What-is-generic" class="headerlink" title="What is generic?"></a>What is generic?</h1><p>Generics in Java are a feature that allows classes, interfaces, and methods to operate on types specified by the programmer at compile time. This provides stronger type checks at compile time and eliminates the need for casting, which can make code safer and more readable. Generics also enable programmers to implement generic algorithms that work on collections of different types, while providing compile-time type safety.</p>
+<p>记忆：Generics: Enable classes, interfaces, and methods to work with specified types at compile time, enhancing type safety and readability. </p>
+<h1 id="example-and-advatanges-and-how-do-you-use-generics-in-your-project"><a href="#example-and-advatanges-and-how-do-you-use-generics-in-your-project" class="headerlink" title="example and advatanges and how do you use generics in your project?"></a>example and advatanges and how do you use generics in your project?</h1><p>Advantanges:</p>
+<ul>
+<li>Generics provide compile-time type safety that allows programmers to catch invalid types at compile time.</li>
+<li>When using Generics, there is no need of type-casting.</li>
+<li>By using generics, programmers can implement generic algorithms that work on collections of different types, can be customized and are type safe and easier to read.</li>
+</ul>
+<p>Concise: </p>
+<ol>
+<li><strong>Type Safety</strong>: Generics ensure type correctness at compile time.</li>
+<li><strong>No Casting</strong>: No need for type-casting.</li>
+<li><strong>Flexible Algorithms</strong>: Enables type-safe, readable algorithms for diverse data types.</li>
+</ol>
+<p>In my project, we use generics extensively to ensure type safety and reduce the need for type casting, which can lead to runtime errors. For example, we utilize generic collections like <code>List&lt;T&gt;</code>, <code>Map&lt;K, V&gt;</code>, and <code>Set&lt;T&gt;</code> to store elements of a specific type, ensuring compile-time type checking. This makes our code more readable and robust, as it prevents class cast exceptions that could occur at runtime.</p>
+<h1 id="Serialization-explation-and-example"><a href="#Serialization-explation-and-example" class="headerlink" title="Serialization, explation and example"></a>Serialization, explation and example</h1><p>Serialization is a mechanism to convert the state of an object into a byte stream. De-serialization is the reverse process that rebuilds the object from the byte stream. </p>
+<p>Example:</p>
+<h1 id="Explain-equals-and-hashcode-contract"><a href="#Explain-equals-and-hashcode-contract" class="headerlink" title="Explain equals and hashcode contract"></a>Explain equals and hashcode contract</h1><p>If two objects are equals according to equals() method, then their hashcode must be same but reverse is not true i.e. if two objects have same hashcode then they may&#x2F;may not be equals.</p>
+<p>解释：</p>
+<ul>
+<li>如果两个对象相等（即<code>equals()</code>方法返回<code>true</code>），那么它们的<code>hashCode()</code>方法也必须返回相同的整数值。</li>
+<li>如果两个对象的<code>hashCode()</code>返回不同的整数值，那么这两个对象通过<code>equals()</code>方法比较不应该是相等的。</li>
+<li>如果<code>hashCode()</code>相等，也不意味着equals相等，因为可能面临Hash conflict。</li>
+</ul>
+<p>这个契约的目的是确保基于哈希的集合的一致性和性能。如果相等的对象有不同的哈希码，那么这将违反哈希集合的基本原则，可能导致无法正确地检索对象。例如，在<code>HashMap</code>中，对象的哈希码用于决定对象存储的位置。如果两个键对象<code>equals()</code>相等但有不同的哈希码，那么它们可能被存储在哈希表的不同位置，这将导致无法通过一个键找到另一个键对应的值。</p>
+<h1 id="Why-need-to-implement-the-hashcode-when-implementing-equals"><a href="#Why-need-to-implement-the-hashcode-when-implementing-equals" class="headerlink" title="Why need to implement the hashcode() when implementing equals()?"></a>Why need to implement the hashcode() when implementing equals()?</h1><p>This is because we must maintain the general contract for the <code>hashCode</code> method, which states that equal objects must have equal hash codes. This ensures consistent behavior when objects are inserted into hash-based collections like <code>HashMap</code>, <code>HashSet</code>, and <code>Hashtable</code>. If <code>hashCode()</code> is not overridden, two equal objects might have different hash codes, which can lead to incorrect behavior in collections.</p>
+<h1 id="What-happens-if-hash-collision-occurs"><a href="#What-happens-if-hash-collision-occurs" class="headerlink" title="What happens if hash collision occurs?"></a>What happens if hash collision occurs?</h1><p>When a hash collision occurs, Java stores all elements with the same hash code in the same bucket but in separate structures (like linked lists or trees) to distinguish them. This way, despite sharing a hash code, each element can still be uniquely identified and accessed.</p>
+<h1 id="Have-you-ever-used-any-cache-in-your-project-Explain-how-it-works"><a href="#Have-you-ever-used-any-cache-in-your-project-Explain-how-it-works" class="headerlink" title="Have you ever used any cache in your project? Explain how it works"></a>Have you ever used any cache in your project? Explain how it works</h1><p>Yes, I’ve used caching. It stores frequently accessed data in memory for faster access. If data is in cache (cache hit), it’s returned from there. If not (cache miss), it’s fetched from the database, stored in cache, and returned.</p>
+<h1 id="Implement-a-singleton"><a href="#Implement-a-singleton" class="headerlink" title="Implement a singleton"></a>Implement a singleton</h1><h2 id="Eager-loaded-恶汉式"><a href="#Eager-loaded-恶汉式" class="headerlink" title="Eager loaded (恶汉式)"></a>Eager loaded (恶汉式)</h2><p>静态方法实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span> &#123;&#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Singleton</span> <span class="variable">instance</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;  </span><br><span class="line">        <span class="keyword">return</span> instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Main</span> &#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">        <span class="type">Singleton</span> <span class="variable">instance</span> <span class="operator">=</span> Singleton.getInstance();  </span><br><span class="line">        <span class="type">Singleton</span> <span class="variable">instance2</span> <span class="operator">=</span> Singleton.getInstance();  </span><br><span class="line">  </span><br><span class="line">        System.out.println(instance == instance2);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>static block 静态代码块实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span>&#123;&#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton instance;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">static</span>&#123;  </span><br><span class="line">        instance = <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;  </span><br><span class="line">        <span class="keyword">return</span> instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Main</span> &#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">        <span class="type">Singleton</span> <span class="variable">instance1</span> <span class="operator">=</span> Singleton.getInstance();  </span><br><span class="line">        <span class="type">Singleton</span> <span class="variable">instance2</span> <span class="operator">=</span> Singleton.getInstance();  </span><br><span class="line">  </span><br><span class="line">        System.out.println(instance1 == instance2);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Lazy-Loaded-（懒汉式"><a href="#Lazy-Loaded-（懒汉式" class="headerlink" title="Lazy-Loaded （懒汉式)"></a>Lazy-Loaded （懒汉式)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span> &#123;&#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">SingletonHolder</span> &#123;  </span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Singleton</span> <span class="variable">INSTANCE</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;  </span><br><span class="line">        <span class="keyword">return</span> SingletonHolder.INSTANCE;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Main</span> &#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">        <span class="type">Singleton</span> <span class="variable">instance1</span> <span class="operator">=</span> Singleton.getInstance();  </span><br><span class="line">        <span class="type">Singleton</span> <span class="variable">instance2</span> <span class="operator">=</span> Singleton.getInstance();  </span><br><span class="line">  </span><br><span class="line">        System.out.println(instance1 == instance2);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Do-you-know-about-the-Future"><a href="#Do-you-know-about-the-Future" class="headerlink" title="Do you know about the Future?"></a>Do you know about the Future?</h1><p>The <code>Future</code> interface in Java is used for asynchronous computation, offering methods to check completion (<code>isDone()</code>), wait for completion (<code>get()</code>), cancel the task (<code>cancel(boolean mayInterruptIfRunning)</code>), and check if the task was cancelled (<code>isCancelled()</code>). It enables efficient management of concurrent tasks in Java applications.</p>
+<h1 id="callable-future"><a href="#callable-future" class="headerlink" title="callable, future"></a>callable, future</h1><p>In Java 8, <code>Callable</code> is an interface that represents a task that returns a result. Unlike <code>Runnable</code>, which does not return a result, <code>Callable</code> can return a value and also throw a checked exception. You use a <code>Callable</code> in situations where you need to perform a task in a separate thread and then return the result of the task to the main thread.</p>
+<p>A <code>Future</code> represents the result of an asynchronous computation. When you submit a <code>Callable</code> task to an ExecutorService, you receive a <code>Future</code> object. With this <code>Future</code> object, you can check if the computation is complete, wait for its completion, and retrieve the result of the computation. The <code>get</code> method of <code>Future</code> blocks until the computation is complete and then returns the result of the computation. If the computation has already completed when <code>get</code> is called, it returns the result immediately.</p>
+<p>Concise:<br><code>Callable</code> is an interface for tasks returning a result, supporting checked exceptions. <code>Future</code> represents the result of an asynchronous computation, allowing to check completion, wait, and retrieve the computation’s outcome.</p>
+<h1 id="What-is-the-completablefuture"><a href="#What-is-the-completablefuture" class="headerlink" title="What is the completablefuture?"></a>What is the completablefuture?</h1><p><code>CompletableFuture</code> is like a more advanced version of <code>Future</code> that came out with Java 8. It lets you work with the result of asynchronous operations without getting stuck waiting for them. You can set up a chain of things to do once your operation finishes, like processing the result or handling errors, and all of this happens in a non-blocking way. It’s really handy for writing A-sync code.</p>
+<ol>
+<li><p><strong><code>runAsync(Runnable runnable)</code></strong>: This method is used for asynchronously executing tasks that don’t return a value. Imagine you just need to log something in the background without caring about the outcome.</p>
+</li>
+<li><p><strong><code>thenAccept(Consumer&lt;? super T&gt; action)</code></strong>: Once the <code>CompletableFuture</code> has completed and produced a result, this method allows you to consume (i.e., do something with) the result without returning a new value. For example, you might want to print out the result of an asynchronous computation once it’s available.</p>
+</li>
+<li><p><strong><code>thenCombine(CompletionStage&lt;? extends U&gt; other, BiFunction&lt;? super T,? super U,? extends V&gt; fn)</code></strong>: This method is used to combine the results of two asynchronous computations. When both <code>CompletableFutures</code> have completed, you can perform some operation using both of their results and return a new <code>CompletableFuture</code>. It’s like you and a friend each buy different ingredients for a meal, and once you’re both back, you cook a big dinner together.</p>
+</li>
+</ol>
+<h1 id="What-design-patterns-did-you-worked-on-before"><a href="#What-design-patterns-did-you-worked-on-before" class="headerlink" title="What design patterns did you worked on before?"></a>What design patterns did you worked on before?</h1><p>Singleton</p>
+<h1 id="What-situation-will-cause-OutOfMemory-How-to-avoid-OutOfMemory"><a href="#What-situation-will-cause-OutOfMemory-How-to-avoid-OutOfMemory" class="headerlink" title="What situation will cause OutOfMemory? &#x2F; How to avoid OutOfMemory?"></a>What situation will cause OutOfMemory? &#x2F; How to avoid OutOfMemory?</h1><p>OutOfMemoryError can occur due to:</p>
+<ol>
+<li>Creating too many objects.</li>
+<li>Memory leaks.</li>
+<li>Excessive class loading.</li>
+<li>Too many threads.</li>
+<li>Large arrays or collections.</li>
+<li>Improper use of native code.</li>
+</ol>
+<p>To avoid <code>OutOfMemoryError</code> in Java:</p>
+<ol>
+<li><strong>Increase Heap Size</strong>: Use JVM options <code>-Xms</code> and <code>-Xmx</code> to set the minimum and maximum heap size respectively.</li>
+<li><strong>Proper Object Management</strong>: Ensure objects are de-referenced when no longer needed so they can be garbage collected.</li>
+<li><strong>Use Profiling Tools</strong>: Tools like VisualVM and JProfiler can help identify memory leaks.</li>
+<li><strong>Avoid Large Objects</strong>: If possible, avoid creating large objects, especially long-lived ones.</li>
+<li><strong>Use Soft&#x2F;Weak References</strong>: They allow the referenced objects to be garbage-collected when necessary.</li>
+<li><strong>Optimize Data Structures</strong>: Use memory-efficient data structures and algorithms.</li>
+<li><strong>Stream Large Files</strong>: When dealing with large files, use streaming APIs.</li>
+<li><strong>Limit Thread Creation</strong>: Each thread consumes memory, so create threads judiciously.</li>
+</ol>
+<h1 id="OutOfMemory-vs-StackOverflow-error"><a href="#OutOfMemory-vs-StackOverflow-error" class="headerlink" title="OutOfMemory vs. StackOverflow error"></a>OutOfMemory vs. StackOverflow error</h1><p><code>OutOfMemory</code>: JVM can’t allocate memory for a new object.</p>
+<p><code>StackOverflow</code>: Program recurses too deeply, exceeding stack limit.</p>
+<h1 id="Deep-copy-vs-shallow-copy"><a href="#Deep-copy-vs-shallow-copy" class="headerlink" title="Deep copy vs. shallow copy"></a>Deep copy vs. shallow copy</h1><p><strong>A shallow copy</strong> creates a new object and inserts a reference to the original object into it.</p>
+<p><strong>A deep copy</strong> duplicates everything, creating fully independent objects, ensuring changes to the copy do not affect the original.</p>
+<h1 id="Create-a-thread-and-implement-multi-threads"><a href="#Create-a-thread-and-implement-multi-threads" class="headerlink" title="Create a thread and implement multi-threads"></a>Create a thread and implement multi-threads</h1><p>方法 1: Extending the <code>Thread</code> class.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ThreadExample</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Thread is running&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ThreadExample</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadExample</span>();</span><br><span class="line">        thread.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法 2: 1. Implementing the <code>Runnable</code> interface.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">RunnableExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Runnable</span> <span class="variable">runnable</span> <span class="operator">=</span> () -&gt; System.out.println(<span class="string">&quot;Thread is running&quot;</span>);</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(runnable);</span><br><span class="line">        thread.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法 3: 1. Implementing the <code>Callable</code> interface and using <code>FutureTask</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CallableExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        Callable&lt;String&gt; callable = () -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Thread is running.&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;result from callable&quot;</span>;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        FutureTask&lt;String&gt; futureTask = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(callable);</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(futureTask);</span><br><span class="line">        thread.start();</span><br><span class="line">        System.out.println(futureTask.get());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法4: Use <code>ExecutorService</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ExecutorService</span> <span class="variable">executorService</span> <span class="operator">=</span> Executors.newSingleThreadExecutor();</span><br><span class="line">        executorService.submit(() -&gt; System.out.println(<span class="string">&quot;Thread created by using ExecutorService.&quot;</span>));</span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="runnable-vs-callable"><a href="#runnable-vs-callable" class="headerlink" title="runnable vs callable"></a>runnable vs callable</h1><p><code>Runnable</code> cannot return a result or throw checked exceptions, while <code>Callable</code> can do both and its tasks can return a <code>Future</code> object.</p>
+<h1 id="run-and-start"><a href="#run-and-start" class="headerlink" title="run() and start()"></a>run() and start()</h1><p><code>start()</code> initiates a new thread, calling <code>run()</code> internally. <code>run()</code> executes in the current thread, without starting a new one.</p>
+<h1 id="Do-you-know-any-lock"><a href="#Do-you-know-any-lock" class="headerlink" title="Do you know any lock"></a>Do you know any lock</h1><p><code>ReentrantLock</code>, <code>ReentrantReadWriteLock</code>, and <code>StampedLock</code>.</p>
+<h1 id="ReentrantLock"><a href="#ReentrantLock" class="headerlink" title="ReentrantLock"></a>ReentrantLock</h1><p><code>ReentrantLock</code> is a tool that lets threads safely access the same resource multiple times. It offers more control compare to the basic <code>synchronized</code> approach, including options for timed waits and choosing if the lock should be fair to all threads.</p>
+<p>scenario:<br>For example, in a program where threads need to lock the same resource multiple times without getting stuck, or when you want to make sure a lock is always released correctly using a try-finally block.<br>imagine you’re transferring money from one account to another. Using a ReentrantLock is like having a special key to access both accounts safely. Only the person with the key (in this case, the transaction process) can check and move the money.</p>
+<h1 id="Talk-about-multithreading-you-used-in-your-project"><a href="#Talk-about-multithreading-you-used-in-your-project" class="headerlink" title="Talk about multithreading you used in your project"></a>Talk about multithreading you used in your project</h1><p>In a recent project, I implemented a file processing system where multiple threads were used to read, process, and write data concurrently. This was achieved using Java’s <code>ExecutorService</code> and <code>Future</code> for task submission and handling results. The use of multithreading significantly improved the system’s performance by fully utilizing the CPU and reducing the overall processing time.</p>
+<h1 id="difference-between-the-process-and-thread"><a href="#difference-between-the-process-and-thread" class="headerlink" title="difference between the process and thread"></a>difference between the process and thread</h1><p>A process is an independent program execution with its own memory space.  A thread is a lightweight process that shares the same memory space of its parent process but can execute independently.</p>
+<h1 id="Have-you-done-any-work-with-atomics"><a href="#Have-you-done-any-work-with-atomics" class="headerlink" title="Have you done any work with atomics?"></a>Have you done any work with atomics?</h1><p>Yes, I have used Java atomics like AtomicInteger and AtomicLong for thread-safe operations on single variables without synchronization</p>
+<h1 id="What-is-volatile-keyword-and-where-is-it-used"><a href="#What-is-volatile-keyword-and-where-is-it-used" class="headerlink" title="What is volatile keyword and where is it used?"></a>What is volatile keyword and where is it used?</h1><p>The <code>volatile</code> keyword in Java ensures a variable is directly read from and written to main memory, ensuring visibility of its changes across threads. It is used for variables that are accessed and modified by multiple threads, like flags, without requiring synchronization for visibility.</p>
+<h1 id="What-is-synchronized"><a href="#What-is-synchronized" class="headerlink" title="What is synchronized"></a>What is synchronized</h1><p>The <code>synchronized</code> keyword in Java ensures that a method or block can only be executed by one thread at a time, providing thread safety.</p>
+<h1 id="How-can-volatile-make-sure-the-thread-will-get-the-latest-result"><a href="#How-can-volatile-make-sure-the-thread-will-get-the-latest-result" class="headerlink" title="How can volatile make sure the thread will get the latest result?"></a>How can volatile make sure the thread will get the latest result?</h1><p>Because it reading from and writing directly to main memory, bypassing the thread cache.</p>
+<h1 id="How-does-thread-communicate-with-each-other-wait-and-notify"><a href="#How-does-thread-communicate-with-each-other-wait-and-notify" class="headerlink" title="How does thread communicate with each other? (wait and notify)"></a>How does thread communicate with each other? (wait and notify)</h1><p>The <strong>wait()</strong> method causes a thread to pause until another thread calls notify() or notifyAll() on the same object.<br>The <strong>notify()</strong> method wakes up a single waiting thread, while <strong>notifyAll()</strong> wakes up all waiting threads on the object’s monitor. </p>
+<p>This mechanism allows threads to coordinate based on condition changes or resource availability.</p>
+<h1 id="Producer-Consumer-Aysn-Mechanism"><a href="#Producer-Consumer-Aysn-Mechanism" class="headerlink" title="Producer &amp; Consumer Aysn Mechanism?"></a>Producer &amp; Consumer Aysn Mechanism?</h1><p>In Java, the Producer-Consumer pattern can be implemented using:</p>
+<ol>
+<li><p><strong><code>wait()</code> and <code>notify()</code></strong>: Producers and consumers synchronize on a shared object, using <code>wait()</code> to pause on full&#x2F;empty conditions and <code>notify()</code> to resume the opposite thread.</p>
+</li>
+<li><p><strong><code>BlockingQueue</code></strong>: A thread-safe collection that automatically manages synchronization, with producers using <code>put()</code> to add items (waiting if full) and consumers using <code>take()</code> to remove items (waiting if empty).</p>
+</li>
+</ol>
+<h1 id="What-is-the-deadlock"><a href="#What-is-the-deadlock" class="headerlink" title="What is the deadlock?"></a>What is the deadlock?</h1><p>Deadlock is a condition where two or more threads are waiting indefinitely for each other to release resources they need, resulting in none of the threads being able to proceed.</p>
+<h1 id="thread-join"><a href="#thread-join" class="headerlink" title="thread join()"></a>thread join()</h1><p>The join() method in Java allows the current thread to wait for another thread’s completion. </p>
+<h1 id="What-is-Asynchronized-in-multi-threading"><a href="#What-is-Asynchronized-in-multi-threading" class="headerlink" title="What is Asynchronized in multi-threading?"></a>What is Asynchronized in multi-threading?</h1><p>Asynchronized in multi-threading refers to executing tasks concurrently across multiple threads without one waiting for another, enhancing application performance by parallelizing operations.</p>
+<h1 id="Internal-data-structure-of-HashMap"><a href="#Internal-data-structure-of-HashMap" class="headerlink" title="Internal data structure of HashMap"></a>Internal data structure of HashMap</h1><p>The internal data structure of a <code>HashMap</code> in Java combines an array with linked lists or balanced trees for collision handling. Entries are stored in array slots (buckets) based on their keys’ hash codes. </p>
+<p>In case of collisions, entries are linked into a list or tree at the same array index. This setup allows efficient storage and retrieval, aiming for O(1) time complexity for <code>get</code> and <code>put</code> operations.</p>
+<h1 id="Java-hashmap-implementation-hashcode-chain-vs-red-black-tree"><a href="#Java-hashmap-implementation-hashcode-chain-vs-red-black-tree" class="headerlink" title="Java hashmap implementation (hashcode chain vs red black tree)"></a>Java hashmap implementation (hashcode chain vs red black tree)</h1><p>Java’s <code>HashMap</code> initially handles collisions using linked lists(hashcode chain). From Java 8, for buckets with more than 8 items, it switches to red-black trees, improving search from O(n) to O(log n) for high collision scenarios. </p>
+<h1 id="HashMap-and-TreeMap-and-Hashtable"><a href="#HashMap-and-TreeMap-and-Hashtable" class="headerlink" title="HashMap and TreeMap and Hashtable"></a>HashMap and TreeMap and Hashtable</h1><ul>
+<li><strong>HashMap</strong>: Unsynchronized, allows one null key and multiple null values, unordered.</li>
+<li><strong>TreeMap</strong>: Sorted by natural order or Comparator, no null keys if natural ordering is used, unsynchronized.</li>
+<li><strong>Hashtable</strong>: Synchronized, no null keys or values, slower, considered legacy.</li>
+</ul>
+<h1 id="When-using-HashMap-in-multi-threading-what-will-happen-How-to-avoid-it"><a href="#When-using-HashMap-in-multi-threading-what-will-happen-How-to-avoid-it" class="headerlink" title="When using HashMap in multi-threading, what will happen? How to avoid it?"></a>When using HashMap in multi-threading, what will happen? How to avoid it?</h1><p>In a multi-threaded environment, using HashMap can lead to data inconsistency and ConcurrentModificationException. To avoid this, use <code>ConcurrentHashMap</code> for better thread safety and performance.</p>
+<h1 id="What-is-race-condition"><a href="#What-is-race-condition" class="headerlink" title="What is race condition?"></a>What is race condition?</h1><p>A race condition occurs when multiple operations access shared data concurrently and the outcome depends on the order of execution, leading to unpredictable results.</p>
+<h1 id="Time-complexity-of-HashMap"><a href="#Time-complexity-of-HashMap" class="headerlink" title="Time complexity of HashMap"></a>Time complexity of HashMap</h1><p>Average time complexity for HashMap operations like get and put is O(1), but can degrade to O(n) in worst-case scenarios due to hash collisions.</p>
+<h1 id="How-does-ConcurrentHashMap-works"><a href="#How-does-ConcurrentHashMap-works" class="headerlink" title="How does ConcurrentHashMap works?"></a>How does ConcurrentHashMap works?</h1><p>It achieves its thread safety through a combination of fine-grained locking and lock-free mechanisms:</p>
+<ul>
+<li><strong>Lock-Free Reading</strong>: It allows concurrent read operations without locking, using volatile variables to ensure visibility.</li>
+<li><strong>Fine-Grained Locking for Writes</strong>: For write operations, it employs a fine-grained locking strategy. Instead of locking the whole map, it uses Compare-and-Swap (CAS) operations for updating nodes, reducing write contention.</li>
+<li><strong>Dynamic Tree Bins</strong>: To maintain efficient access times even in cases of high hash collisions, bins can dynamically transform from linked lists to balanced trees (red-black trees), keeping the worst-case access time at O(log n).</li>
+</ul>
+<h1 id="HashMap-vs-LinkedHashMap"><a href="#HashMap-vs-LinkedHashMap" class="headerlink" title="HashMap vs. LinkedHashMap"></a>HashMap vs. LinkedHashMap</h1><p><code>HashMap</code> offers no order for its entries, while <code>LinkedHashMap</code> maintains insertion order at a slight memory cost due to an internal doubly-linked list.</p>
+<h1 id="How-to-handle-concurrent-modification-exceptions"><a href="#How-to-handle-concurrent-modification-exceptions" class="headerlink" title="How to handle concurrent modification exceptions?"></a>How to handle concurrent modification exceptions?</h1><ol>
+<li>Use concurrent collections like <code>ConcurrentHashMap</code> or <code>CopyOnWriteArrayList</code>.</li>
+<li>Synchronize code blocks that modify collections.</li>
+<li>Use the iterator’s <code>remove()</code> method during iteration.</li>
+<li>For read-only iteration, use for-each loops or Streams API.</li>
+<li>Convert the collection to an array or make a copy for safe iteration.</li>
+</ol>
+<h1 id="How-do-you-deal-with-large-amout-of-data-works"><a href="#How-do-you-deal-with-large-amout-of-data-works" class="headerlink" title="How do you deal with large amout of data&#x2F;works?"></a>How do you deal with large amout of data&#x2F;works?</h1><p>To manage large data&#x2F;workloads:</p>
+<ol>
+<li><strong>Kafka</strong>: Handles high-throughput data streams for real-time processing.</li>
+<li><strong>Stored Procedures</strong>: Optimizes database interactions, reducing network latency.</li>
+<li><strong>ExecutorService</strong>: Manages concurrent tasks efficiently with thread pools.</li>
+<li><strong>Cache</strong>: Improves performance by storing frequently accessed data.</li>
+</ol>
+<h1 id="How-does-Java-code-compile-and-run-JVM"><a href="#How-does-Java-code-compile-and-run-JVM" class="headerlink" title="How does Java code compile and run? -&gt; JVM"></a>How does Java code compile and run? -&gt; JVM</h1><p>Java code is compiled into bytecode by the Java compiler, which is then run on the JVM. The JVM interprets or compiles the bytecode into machine code, enabling it to run on any platform that has a compatible JVM.</p>
+<h1 id="How-many-ways-to-traverse-a-list"><a href="#How-many-ways-to-traverse-a-list" class="headerlink" title="How many ways to traverse a list?"></a>How many ways to traverse a list?</h1><ol>
+<li>For loop</li>
+<li>Enhanced for loop (for-each loop)</li>
+<li>While loop with an iterator</li>
+<li>Stream API (Java eight and above)</li>
+</ol>
+<h1 id="List-some-immutable-objects-in-Java"><a href="#List-some-immutable-objects-in-Java" class="headerlink" title="List some immutable objects in Java"></a>List some immutable objects in Java</h1><ul>
+<li>String</li>
+<li>Integer</li>
+<li>Float</li>
+<li>Long</li>
+<li>Double</li>
+<li>Boolean</li>
+</ul>
+<h1 id="Composition-vs-Association"><a href="#Composition-vs-Association" class="headerlink" title="Composition vs. Association"></a>Composition vs. Association</h1><ul>
+<li><p><strong>Association</strong>: A relationship where one class uses or interacts with another, without implying ownership.</p>
+</li>
+<li><p><strong>Composition</strong>: A specific type of association where one class owns another class, controlling its lifecycle and implying a part-whole relationship.</p>
+</li>
+</ul>
+<h1 id="What-is-the-size-of-the-segment"><a href="#What-is-the-size-of-the-segment" class="headerlink" title="What is the size of the segment?"></a>What is the size of the segment?</h1><p>The size of a segment in Java’s memory model varies by JVM implementation and configuration, typically ranging from 1 to 32 MB in the G1 garbage collector.</p>
+<h1 id="How-to-make-class-immutable"><a href="#How-to-make-class-immutable" class="headerlink" title="How to make class immutable?"></a>How to make class immutable?</h1><p>To make a class immutable in Java:</p>
+<ol>
+<li>Declare the class as <code>final</code>.</li>
+<li>Mark all fields <code>private</code> and <code>final</code>.</li>
+<li>Do not provide setter methods.</li>
+<li>Perform deep copies of mutable fields in the constructor.</li>
+<li>Return copies of mutable objects in getter methods.</li>
+</ol>
+<h1 id="How-does-the-front-end-communicate-with-the-back-end"><a href="#How-does-the-front-end-communicate-with-the-back-end" class="headerlink" title="How does the front-end communicate with the back-end?"></a>How does the front-end communicate with the back-end?</h1><p>The front-end communicates with the back-end via HTTP requests and responses, using APIs to exchange data typically in JSON or XML format.</p>
+<h1 id="Talk-about-factory-design-pattern"><a href="#Talk-about-factory-design-pattern" class="headerlink" title="Talk about factory design pattern"></a>Talk about factory design pattern</h1><p>The Factory Design Pattern is a creational pattern that encapsulates object creation by allowing objects to be created without specifying the exact class type. It involves a factory method that returns objects of a superclass type but instantiated from one of several subclasses based on input parameters, promoting loose coupling and flexibility in object creation. The pattern includes interfaces or abstract classes as Products, their ConcreteProduct implementations, a Creator interface or abstract class, and ConcreteCreator classes that implement the factory method to instantiate and return specific products.</p>
+<h1 id="Talk-about-observer-design-pattern"><a href="#Talk-about-observer-design-pattern" class="headerlink" title="Talk about observer design pattern"></a>Talk about observer design pattern</h1><p>The Observer design pattern enables an object, known as the subject, to notify other objects, known as observers, of state changes. It is used for creating event-driven systems, allowing for loose coupling between the subject and its observers.</p>
+<h1 id="What-if-you-don’t-define-the-serialVersionUID-What-if-you-remove-it"><a href="#What-if-you-don’t-define-the-serialVersionUID-What-if-you-remove-it" class="headerlink" title="What if you don’t define the serialVersionUID? What if you remove it?"></a>What if you don’t define the serialVersionUID? What if you remove it?</h1><p>If you don’t define <code>serialVersionUID</code>, Java generates one at runtime based on class details. Removing it has the same effect. This can cause deserialization issues if the class changes, leading to <code>InvalidClassException</code>. Defining <code>serialVersionUID</code> explicitly ensures compatibility across class versions.</p>
+<h1 id="What-caused-memory-leak-How-to-detect-it"><a href="#What-caused-memory-leak-How-to-detect-it" class="headerlink" title="What caused memory leak? How to detect it?"></a>What caused memory leak? How to detect it?</h1><p>Memory leaks in Java are often caused by unreleased object references. Tools like VisualVM and Eclipse Memory Analyzer can help detect them by analyzing heap dumps and monitoring memory usage.</p>
+<h1 id="Map-vs-Flat-map"><a href="#Map-vs-Flat-map" class="headerlink" title="Map vs. Flat map"></a>Map vs. Flat map</h1><p><code>Map</code> transforms each stream element with a function. <code>Flat map</code> also transforms but then flattens the resulting streams into one.</p>
+<h1 id="sleep-vs-wait"><a href="#sleep-vs-wait" class="headerlink" title="sleep() vs. wait()"></a>sleep() vs. wait()</h1><p><code>sleep()</code> pauses a thread without releasing locks for a time. <code>wait()</code> pauses a thread, releases its locks, and waits for <code>notify()</code> or a timeout.</p>
+<h1 id="PreparedStatement"><a href="#PreparedStatement" class="headerlink" title="PreparedStatement"></a>PreparedStatement</h1><p><code>PreparedStatement</code> is a Java interface for executing SQL queries with parameters. It improves performance and security by allowing repeated execution of precompiled statements with dynamic values, preventing SQL injection.</p>
+<h1 id="why-string-is-immutable"><a href="#why-string-is-immutable" class="headerlink" title="why string is immutable?"></a>why string is immutable?</h1><p>参见PDF</p>
+<p>String is immutable for several reasons:</p>
+<ol>
+<li><p><strong>String Pool</strong>: Enables sharing of strings to save memory. Immutability ensures reference integrity, preventing unintended changes.</p>
+</li>
+<li><p><strong>Security</strong>: Protects critical data like network details and credentials from modification, enhancing application security.</p>
+</li>
+<li><p><strong>Multi-threading</strong>: Immutability makes strings thread-safe without needing synchronization, facilitating safer sharing across threads.</p>
+</li>
+<li><p><strong>Caching</strong>: Immutable strings have consistent hashcodes, ideal for caching and use as map keys, improving performance.</p>
+</li>
+<li><p><strong>Class Loaders</strong>: Ensures reliable class loading by preventing alteration of class identifiers, contributing to application security.</p>
+</li>
+</ol>
+<h1 id="JDK-and-JVM"><a href="#JDK-and-JVM" class="headerlink" title="JDK and JVM"></a>JDK and JVM</h1><p>JDK is a development environment for building Java apps, including JVM, compiler, and libraries. JVM runs Java bytecode across platforms.</p>
+<h1 id="object-lifecycle"><a href="#object-lifecycle" class="headerlink" title="object lifecycle"></a>object lifecycle</h1><ol>
+<li><strong>Creation</strong>: Objects are created with <code>new</code>, initializing them via constructors.</li>
+<li><strong>Use</strong>: Objects are utilized for their fields and methods.</li>
+<li><strong>Inaccessible</strong>: Objects without references become eligible for garbage collection.</li>
+<li><strong>Destruction</strong>: Garbage collection reclaims memory, destroying the object.</li>
+</ol>
+<h1 id="What-testing-framework-are-you-using-in-your-project"><a href="#What-testing-framework-are-you-using-in-your-project" class="headerlink" title="What testing framework are you using in your project?"></a>What testing framework are you using in your project?</h1><p>We are using JUnit for unit testing, Mockito for mocking dependencies, and TestNG for more complex test scenarios.</p>
+<h1 id="What-is-Mockito"><a href="#What-is-Mockito" class="headerlink" title="What is Mockito"></a>What is Mockito</h1><p>It is for creating and configuring mock objects in unit tests. It is use to simulate the behavior of real-world objects</p>
+<h1 id="What-is-the-limitation-of-Mockito"><a href="#What-is-the-limitation-of-Mockito" class="headerlink" title="What is the limitation of Mockito"></a>What is the limitation of Mockito</h1><p>Mockito cannot mock final classes or methods, private methods, and static methods directly. </p>
+<h1 id="Life-cycle-of-Junit-test"><a href="#Life-cycle-of-Junit-test" class="headerlink" title="Life cycle of Junit test"></a>Life cycle of Junit test</h1><p>@BeforeAll, @BeforeEach, @AfterEach and @AfterAll</p>
+<h1 id="mocking-vs-stubbing"><a href="#mocking-vs-stubbing" class="headerlink" title="mocking vs stubbing"></a>mocking vs stubbing</h1><p>Stubbing provides fixed responses from dependencies. </p>
+<p>Mocking also verifies interactions with those dependencies.</p>
+<h1 id="TestNG-vs-junit"><a href="#TestNG-vs-junit" class="headerlink" title="TestNG vs junit"></a>TestNG vs junit</h1><p>TestNG offers advanced features like execution order, parallel testing, and grouping, ideal for complex tests. </p>
+<p>JUnit is simpler, great for unit testing, and widely adopted. </p>
+<p>So, use TestNG for detailed control; use JUnit for straightforward scenarios.</p>
+<h1 id="Functional-test-Integrtion-test-Unit-test"><a href="#Functional-test-Integrtion-test-Unit-test" class="headerlink" title="Functional test &amp; Integrtion test &amp; Unit test"></a>Functional test &amp; Integrtion test &amp; Unit test</h1><p>Functional testing checks software matches requirements. Integration testing ensures parts work together. Unit testing verifies individual components.</p>
+<h1 id="Junit-how-to-write-a-test"><a href="#Junit-how-to-write-a-test" class="headerlink" title="Junit, how to write a test"></a>Junit, how to write a test</h1><ol>
+<li><strong>Add JUnit dependency</strong> in Maven</li>
+<li><strong>Create a test class</strong> in <code>src/test/java</code>.</li>
+<li><strong>Import JUnit</strong> with <code>import org.junit.jupiter.api.Test;</code>.</li>
+<li><strong>Write test methods</strong> annotated with <code>@Test</code>, use assertions like <code>assertEquals()</code> for validation.</li>
+<li><strong>Run the test</strong> using IDE or build tool.</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CalculatorTest</span> &#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testAdd</span><span class="params">()</span> &#123;</span><br><span class="line">        assertEquals(<span class="number">5</span>, <span class="keyword">new</span> <span class="title class_">Calculator</span>().add(<span class="number">2</span>, <span class="number">3</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="difference-between-a-relational-database-and-a-non-relational-database-nosql-vs-sql"><a href="#difference-between-a-relational-database-and-a-non-relational-database-nosql-vs-sql" class="headerlink" title="difference between a relational database and a non-relational database? nosql vs sql"></a>difference between a relational database and a non-relational database? nosql vs sql</h1><p>Relational databases are structured and use SQL. Non-relational (NoSQL) databases are flexible and store unstructured data.</p>
+<h1 id="How-do-you-debug-when-sql-queries-very-slow"><a href="#How-do-you-debug-when-sql-queries-very-slow" class="headerlink" title="How do you debug when sql queries very slow"></a>How do you debug when sql queries very slow</h1><ol>
+<li>Use the <strong>Slow Query Log</strong> to find slow queries.</li>
+<li>Apply <strong><code>EXPLAIN</code></strong> to analyze query execution plans.</li>
+<li>Optimize <strong>indexes</strong> based on the plan.</li>
+<li><strong>Refactor</strong> queries for efficiency.</li>
+<li>Ensure <strong>database statistics</strong> are up to date.</li>
+<li><strong>Profile</strong> application and database performance.</li>
+<li>Implement <strong>caching</strong> for common queries.</li>
+</ol>
+<p>i can do indexing &#x2F; sharding</p>
+<h1 id="LEFT-JOIN-RIGHT-JOIN"><a href="#LEFT-JOIN-RIGHT-JOIN" class="headerlink" title="LEFT JOIN &amp; RIGHT JOIN"></a>LEFT JOIN &amp; RIGHT JOIN</h1><p>A LEFT JOIN gives you everything from the first table plus any matches from the second table. If there’s no match, you still get the first table’s data with blanks for the second table.</p>
+<p>A RIGHT JOIN gives you everything from the second table plus any matches from the first table. If there’s no match, you still get the second table’s data with blanks for the first table.</p>
+<h1 id="Cassandra"><a href="#Cassandra" class="headerlink" title="Cassandra"></a>Cassandra</h1><p>Cassandra is a distributed NoSQL database designed for handling large amounts of data across many commodity servers</p>
+<h2 id="Which-was-better-for-horizontally-scaling"><a href="#Which-was-better-for-horizontally-scaling" class="headerlink" title="Which was better for horizontally scaling?"></a>Which was better for horizontally scaling?</h2><p>nosql database</p>
+<h1 id="How-to-populate-the-cache-redisTemplate"><a href="#How-to-populate-the-cache-redisTemplate" class="headerlink" title="How to populate the cache? -&gt; redisTemplate"></a>How to populate the cache? -&gt; redisTemplate</h1><p>To populate a cache using <code>redisTemplate</code> in Java, you would typically perform the following steps:</p>
+<ol>
+<li>Autowire the <code>RedisTemplate&lt;String, Object&gt;</code> bean into your class.</li>
+<li>Use the <code>opsForValue().set(key, value)</code> method to store data in Redis.</li>
+</ol>
+<p>Example code snippet:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> RedisTemplate&lt;String, Object&gt; redisTemplate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">cacheData</span><span class="params">(String key, Object value)</span> &#123;</span><br><span class="line">    redisTemplate.opsForValue().set(key, value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This method will store the <code>value</code> object associated with the <code>key</code> in Redis, effectively populating the cache.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/java-interview/spring/" rel="prev" title="Java面试——Spring Concepts">
+                  <i class="fa fa-angle-left"></i> Java面试——Spring Concepts
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/java-interview/leetcode/" rel="next" title="Java面试——Leetcode代码库">
+                  Java面试——Leetcode代码库 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">iTvX</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

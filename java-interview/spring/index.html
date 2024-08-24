@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Why do you use Spring Boot? &#x2F; Benefits of Spring Boot&#x2F; diffrenece of Spring and Spring bootSpring is a powerful framework for building Java applications, providing features like dependency i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面试——Spring Concepts">
+<meta property="og:url" content="http://example.com/java-interview/spring/index.html">
+<meta property="og:site_name" content="Think Less, Do More">
+<meta property="og:description" content="Why do you use Spring Boot? &#x2F; Benefits of Spring Boot&#x2F; diffrenece of Spring and Spring bootSpring is a powerful framework for building Java applications, providing features like dependency i">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/2024-03-18%20at%2017.32.04@2x.jpg">
+<meta property="og:image" content="http://example.com/assets/2024-03-18%20at%2017.36.25@2x.jpg">
+<meta property="og:image" content="http://example.com/assets/2024-03-18%20at%2017.37.18@2x.jpg">
+<meta property="article:published_time" content="2024-03-02T20:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-24T19:26:01.733Z">
+<meta property="article:author" content="iTvX">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/assets/2024-03-18%20at%2017.32.04@2x.jpg">
+
+
+<link rel="canonical" href="http://example.com/java-interview/spring/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/java-interview/spring/","path":"/java-interview/spring/","title":"Java面试——Spring Concepts"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Java面试——Spring Concepts | Think Less, Do More</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Think Less, Do More</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-do-you-use-Spring-Boot-Benefits-of-Spring-Boot-diffrenece-of-Spring-and-Spring-boot"><span class="nav-number">1.</span> <span class="nav-text">Why do you use Spring Boot? &#x2F; Benefits of Spring Boot&#x2F; diffrenece of Spring and Spring boot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Command-to-run-a-spring-boot-application"><span class="nav-number">2.</span> <span class="nav-text">Command to run a spring boot application</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#For-Spring-Boot-how-do-I-use-another-server-such-as-WebLogic-instead-of-the-embedded-Tomcat-server"><span class="nav-number">3.</span> <span class="nav-text">For Spring Boot, how do I use another server such as WebLogic instead of the embedded Tomcat server?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-IOC"><span class="nav-number">4.</span> <span class="nav-text">What is the IOC?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-Dependency-Injection"><span class="nav-number">5.</span> <span class="nav-text">What is Dependency Injection?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Different-ways-of-Dependency-Injection"><span class="nav-number">6.</span> <span class="nav-text">Different ways of Dependency Injection</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#When-there-is-circular-dependency-use-which-type-of-Injection-Setter-based-Injection-vs-Constructor-based"><span class="nav-number">7.</span> <span class="nav-text">When there is circular dependency, use which type of Injection? &#x2F; Setter based Injection vs. Constructor based</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Constructor-based-injection-vs-Setter-based-injection-when-to-use-which"><span class="nav-number">8.</span> <span class="nav-text">Constructor based injection vs. Setter based injection, when to use which?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-are-the-differences-between-RequestParam-and-PathVariable"><span class="nav-number">9.</span> <span class="nav-text">What are the differences between @RequestParam and @PathVariable?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Authentication-vs-Authorization"><span class="nav-number">10.</span> <span class="nav-text">Authentication vs. Authorization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-JWT-and-why-we-need-it"><span class="nav-number">11.</span> <span class="nav-text">What is JWT and why we need it?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-does-JWT-work"><span class="nav-number">12.</span> <span class="nav-text">How does JWT work?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-AOP"><span class="nav-number">13.</span> <span class="nav-text">What is AOP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-MVC"><span class="nav-number">14.</span> <span class="nav-text">Spring MVC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-front-controller"><span class="nav-number">15.</span> <span class="nav-text">What is front controller?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-DispatcherServlet"><span class="nav-number">16.</span> <span class="nav-text">What is DispatcherServlet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cookies-vs-session"><span class="nav-number">17.</span> <span class="nav-text">cookies vs session</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-will-happen-after-click-the-URL"><span class="nav-number">18.</span> <span class="nav-text">What will happen after click the URL?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-Hibernate"><span class="nav-number">19.</span> <span class="nav-text">What is the Hibernate</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-ORM"><span class="nav-number">20.</span> <span class="nav-text">What is ORM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-JPA"><span class="nav-number">21.</span> <span class="nav-text">What is JPA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hibernate-cache-First-level-second-level"><span class="nav-number">22.</span> <span class="nav-text">Hibernate cache? First level second level?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-transactions"><span class="nav-number">23.</span> <span class="nav-text">What is transactions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-ACID"><span class="nav-number">24.</span> <span class="nav-text">What is ACID</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-JDBC"><span class="nav-number">25.</span> <span class="nav-text">Spring JDBC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-Batch"><span class="nav-number">26.</span> <span class="nav-text">Spring Batch</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-difference-between-compnent-service-controller-Configuration"><span class="nav-number">27.</span> <span class="nav-text">What is the difference between @compnent, @service, @controller, @Configuration</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Exception-handle-in-Spring"><span class="nav-number">28.</span> <span class="nav-text">Exception handle in Spring</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REST-vs-RESTful"><span class="nav-number">29.</span> <span class="nav-text">REST vs. RESTful</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#graphql-vs-restapi"><span class="nav-number">30.</span> <span class="nav-text">graphql vs restapi</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Difference-between-Controller-and-RESTController"><span class="nav-number">31.</span> <span class="nav-text">Difference between @Controller and @RESTController</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-are-HTTP-request-methods"><span class="nav-number">32.</span> <span class="nav-text">What are HTTP request methods?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Http-status-code"><span class="nav-number">33.</span> <span class="nav-text">Http status code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#post-vs-get"><span class="nav-number">34.</span> <span class="nav-text">post vs get</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#post-vs-put"><span class="nav-number">35.</span> <span class="nav-text">post vs put</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#put-and-patch"><span class="nav-number">36.</span> <span class="nav-text">put and patch</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#what-is-API"><span class="nav-number">37.</span> <span class="nav-text">what is API?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-does-the-RestTemplate-work"><span class="nav-number">38.</span> <span class="nav-text">How does the RestTemplate work?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RestTemplate-vs-Kafka"><span class="nav-number">39.</span> <span class="nav-text">RestTemplate vs. Kafka</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-do-you-deal-with-the-response-get-from-REST-api-How-to-convert-JSON-Java-Object"><span class="nav-number">40.</span> <span class="nav-text">How do you deal with the response get from REST api? &#x2F; How to convert JSON -&gt; Java Object?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-Annotation-did-you-use-in-your-project"><span class="nav-number">41.</span> <span class="nav-text">Spring Annotation did you use in your project?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-would-you-do-if-an-API-response-time-is-500ms"><span class="nav-number">42.</span> <span class="nav-text">What would you do if an API response time is 500ms</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-Bean"><span class="nav-number">43.</span> <span class="nav-text">What is Bean?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-let-Spring-create-instance-for-you"><span class="nav-number">44.</span> <span class="nav-text">How to let Spring create instance for you?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-Scope-of-a-Bean"><span class="nav-number">45.</span> <span class="nav-text">What is the Scope of a Bean?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-bean-annotation-bean-life-cycle"><span class="nav-number">46.</span> <span class="nav-text">Spring bean annotation, bean life cycle</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Difference-between-Component-and-Bean"><span class="nav-number">47.</span> <span class="nav-text">Difference between @Component and @Bean</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Component-Scan"><span class="nav-number">48.</span> <span class="nav-text">Component Scan</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ApplicationContext-vs-BeanFactory"><span class="nav-number">49.</span> <span class="nav-text">ApplicationContext vs. BeanFactory</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-inject-bean-when-there-are-two-beans-with-same-type"><span class="nav-number">50.</span> <span class="nav-text">How to inject bean when there are two beans with same type?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-cache"><span class="nav-number">51.</span> <span class="nav-text">Spring cache</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SOAP-vs-REST"><span class="nav-number">52.</span> <span class="nav-text">SOAP vs. REST</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Consume-web-service-in-Java"><span class="nav-number">53.</span> <span class="nav-text">Consume web service in Java</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RestTemplate-for-RESTful-Services"><span class="nav-number">53.1.</span> <span class="nav-text">RestTemplate for RESTful Services</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebServiceTemplate-for-SOAP-Services"><span class="nav-number">53.2.</span> <span class="nav-text">WebServiceTemplate for SOAP Services</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Controller-vs-RestController-what-did-you-put-in-a-controller-annotations-Follow-up-why-did-you-put-some-keywords-like-add-or-get-in-your-url-is-it-ok-to-put-id-or-quantity-in-the-url-How-about-username-or-password"><span class="nav-number">54.</span> <span class="nav-text">Controller vs. RestController, what did you put in a controller, annotations. Follow up: why did you put some keywords like add or get in your url, is it ok to put id or quantity in the url? How about username or password?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Explain-the-procedure-of-how-you-implement-a-web-service"><span class="nav-number">55.</span> <span class="nav-text">Explain the procedure of how you implement a web service</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Different-types-of-request-mapping-methods"><span class="nav-number">56.</span> <span class="nav-text">Different types of request mapping methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-do-you-implement-transaction"><span class="nav-number">57.</span> <span class="nav-text">How do you implement transaction?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#When-designing-a-public-API-what-needs-to-be-considered"><span class="nav-number">58.</span> <span class="nav-text">When designing a public API, what needs to be considered?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-DevTools"><span class="nav-number">59.</span> <span class="nav-text">What is DevTools?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-does-service-communicate-with-each-other"><span class="nav-number">60.</span> <span class="nav-text">How does service communicate with each other?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#security-protocol"><span class="nav-number">61.</span> <span class="nav-text">security protocol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-the-security-part-used-for"><span class="nav-number">62.</span> <span class="nav-text">What is the security part used for?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-make-sure-the-security-of-user-request"><span class="nav-number">63.</span> <span class="nav-text">How to make sure the security of user request?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-make-sure-of-different-user-security"><span class="nav-number">64.</span> <span class="nav-text">How to make sure of different user security?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-implement-security"><span class="nav-number">65.</span> <span class="nav-text">How to implement security?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-record-logs"><span class="nav-number">66.</span> <span class="nav-text">How to record logs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-splunk"><span class="nav-number">67.</span> <span class="nav-text">What is splunk</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-handle-controller-exceptions"><span class="nav-number">68.</span> <span class="nav-text">How to handle controller exceptions?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-validation"><span class="nav-number">69.</span> <span class="nav-text">Spring validation?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-does-SpringBootApplication-mean"><span class="nav-number">70.</span> <span class="nav-text">What does @SpringBootApplication mean?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-routing"><span class="nav-number">71.</span> <span class="nav-text">What is routing?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-do-you-create-a-rest-controller"><span class="nav-number">71.1.</span> <span class="nav-text">How do you create a rest controller?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-service-discovery"><span class="nav-number">72.</span> <span class="nav-text">What is service discovery?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ways-to-connect-to-database"><span class="nav-number">73.</span> <span class="nav-text">Ways to connect to database</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-autoconfiguration"><span class="nav-number">74.</span> <span class="nav-text">spring autoconfiguration</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Actuator"><span class="nav-number">75.</span> <span class="nav-text">Actuator</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#design-pattern-of-circuit-breaker"><span class="nav-number">76.</span> <span class="nav-text">design pattern of circuit breaker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kafka"><span class="nav-number">77.</span> <span class="nav-text">kafka</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#make-two-consumers-consume-one-partition-in-Kafka"><span class="nav-number">78.</span> <span class="nav-text">make two consumers consume one partition in Kafka?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-use-docker-in-the-Spring-Boot"><span class="nav-number">79.</span> <span class="nav-text">How to use docker in the Spring Boot?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kubernets-k8s-vs-docker"><span class="nav-number">80.</span> <span class="nav-text">kubernets&#x2F;k8s vs docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kubernetes-k8s"><span class="nav-number">81.</span> <span class="nav-text">kubernetes&#x2F; k8s</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">iTvX</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/java-interview/spring/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="iTvX">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Think Less, Do More">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Java面试——Spring Concepts | Think Less, Do More">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java面试——Spring Concepts
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-03-02 12:00:00" itemprop="dateCreated datePublished" datetime="2024-03-02T12:00:00-08:00">2024-03-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-08-24 12:26:01" itemprop="dateModified" datetime="2024-08-24T12:26:01-07:00">2024-08-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java-Interview/" itemprop="url" rel="index"><span itemprop="name">Java Interview</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="Why-do-you-use-Spring-Boot-Benefits-of-Spring-Boot-diffrenece-of-Spring-and-Spring-boot"><a href="#Why-do-you-use-Spring-Boot-Benefits-of-Spring-Boot-diffrenece-of-Spring-and-Spring-boot" class="headerlink" title="Why do you use Spring Boot? &#x2F; Benefits of Spring Boot&#x2F; diffrenece of Spring and Spring boot"></a>Why do you use Spring Boot? &#x2F; Benefits of Spring Boot&#x2F; diffrenece of Spring and Spring boot</h1><p>Spring is a powerful framework for building Java applications, providing features like dependency injection and aspect-oriented programming. However, it requires more manual configuration to get started.</p>
+<p>Spring Boot, building on Spring, simplifies this process. It basically sets things up for you by guessing what you need based on what you’re trying to do, and it even has its own server ready to go. So, with Spring Boot, you spend less time on setup and more on actually building your app</p>
+<h1 id="Command-to-run-a-spring-boot-application"><a href="#Command-to-run-a-spring-boot-application" class="headerlink" title="Command to run a spring boot application"></a>Command to run a spring boot application</h1><p>use the command &#96;mvn spring-boot:run</p>
+<h1 id="For-Spring-Boot-how-do-I-use-another-server-such-as-WebLogic-instead-of-the-embedded-Tomcat-server"><a href="#For-Spring-Boot-how-do-I-use-another-server-such-as-WebLogic-instead-of-the-embedded-Tomcat-server" class="headerlink" title="For Spring Boot, how do I use another server such as WebLogic instead of the embedded Tomcat server?"></a>For Spring Boot, how do I use another server such as WebLogic instead of the embedded Tomcat server?</h1><p>To use WebLogic instead of the embedded Tomcat server in Spring Boot, follow these steps:</p>
+<ol>
+<li><p>Exclude the Tomcat starter from your <code>pom.xml</code> or <code>build.gradle</code> file. For Maven, add:</p>
+</li>
+<li><p>Add your WebLogic dependencies to your build file. </p>
+</li>
+<li><p>Create a WAR file instead of a JAR file. Ensure your application class extends <code>SpringBootServletInitializer</code> and overrides the <code>configure</code> method, which allows Spring Boot to run in a servlet container.</p>
+</li>
+<li><p>Deploy the WAR file to your WebLogic server. You can do this through the WebLogic administration console or by using the WebLogic deployment tools.</p>
+</li>
+</ol>
+<h1 id="What-is-the-IOC"><a href="#What-is-the-IOC" class="headerlink" title="What is the IOC?"></a>What is the IOC?</h1><p>Inversion of Control (IOC) is a principle where the control of object creation and lifecycle is transferred to a container or framework, enabling loose coupling and easier management of components.</p>
+<h1 id="What-is-Dependency-Injection"><a href="#What-is-Dependency-Injection" class="headerlink" title="What is Dependency Injection?"></a>What is Dependency Injection?</h1><p>Dependency Injection is a design pattern used to implement IoC (Inversion of Control), where the creation and binding of the dependencies are not done by the class itself but by an external entity. It allows a class’s dependencies to be injected at runtime rather than the class constructing them itself, promoting loose coupling and making the code more modular, easier to test, and maintain.<br><code>@Autowired</code> is an annotation in Spring Framework that is used for dependency injection</p>
+<h1 id="Different-ways-of-Dependency-Injection"><a href="#Different-ways-of-Dependency-Injection" class="headerlink" title="Different ways of Dependency Injection"></a>Different ways of Dependency Injection</h1><p>Dependency Injection (DI) in Java can be performed in several ways:</p>
+<ol>
+<li><strong>Constructor Injection</strong>: Dependencies are provided through a class constructor.</li>
+<li><strong>Setter Injection</strong>: Dependencies are set through setter methods.</li>
+<li><strong>Field Injection</strong>: Dependencies are injected directly into the class fields.</li>
+<li><strong>Method Injection</strong>: Dependencies are provided through a method other than a setter method.</li>
+</ol>
+<h1 id="When-there-is-circular-dependency-use-which-type-of-Injection-Setter-based-Injection-vs-Constructor-based"><a href="#When-there-is-circular-dependency-use-which-type-of-Injection-Setter-based-Injection-vs-Constructor-based" class="headerlink" title="When there is circular dependency, use which type of Injection? &#x2F; Setter based Injection vs. Constructor based"></a>When there is circular dependency, use which type of Injection? &#x2F; Setter based Injection vs. Constructor based</h1><p>Use Setter Injection or Field Injection to resolve circular dependencies in Spring. This allows Spring to first instantiate all beans and then set the dependencies, breaking the cycle.</p>
+<h1 id="Constructor-based-injection-vs-Setter-based-injection-when-to-use-which"><a href="#Constructor-based-injection-vs-Setter-based-injection-when-to-use-which" class="headerlink" title="Constructor based injection vs. Setter based injection, when to use which?"></a>Constructor based injection vs. Setter based injection, when to use which?</h1><p>Constructor-based injection is ideal when:</p>
+<ol>
+<li>Ensuring mandatory dependencies are provided when creating an instance.</li>
+<li>Creating immutable objects.</li>
+<li>Working with dependencies that are required for the object’s functionality.</li>
+</ol>
+<p>Setter-based injection is preferable when:</p>
+<ol>
+<li>Dealing with optional dependencies.</li>
+<li>Changing dependencies at runtime or for configuration purposes.</li>
+<li>Working in frameworks that require default constructors.</li>
+</ol>
+<h1 id="What-are-the-differences-between-RequestParam-and-PathVariable"><a href="#What-are-the-differences-between-RequestParam-and-PathVariable" class="headerlink" title="What are the differences between @RequestParam and @PathVariable?"></a>What are the differences between @RequestParam and @PathVariable?</h1><p><code>@RequestParam</code> extracts query parameters from the URL and are formatted as key-value pairs. It’s commonly used for optional parameters or when dealing with form submissions.</p>
+<p><code>@PathVariable</code> extracts values from the URL path. It’s typically to identify specific resources.</p>
+<h1 id="Authentication-vs-Authorization"><a href="#Authentication-vs-Authorization" class="headerlink" title="Authentication vs. Authorization"></a>Authentication vs. Authorization</h1><p>Authentication verifies user identity; authorization determines access rights post-authentication.</p>
+<h1 id="What-is-JWT-and-why-we-need-it"><a href="#What-is-JWT-and-why-we-need-it" class="headerlink" title="What is JWT and why we need it?"></a>What is JWT and why we need it?</h1><p>JWT, short for JSON Web Token, is a secure way to share info between two parties as a JSON object. It’s made up of three parts: a header, payload, and signature. It used primarily for authentication and authorization.</p>
+<h1 id="How-does-JWT-work"><a href="#How-does-JWT-work" class="headerlink" title="How does JWT work?"></a>How does JWT work?</h1><p>When you log in, the server gives you a special token, a JWT, which is like a secure ID card. Your browser keeps this token. Each time you ask the server to do something, your browser shows this token to prove who you are. The server checks the token to make sure it’s legit and then lets you go ahead with what you want to do. It’s a quick and secure way to handle logging in and keeping track of who’s who.</p>
+<h1 id="What-is-AOP"><a href="#What-is-AOP" class="headerlink" title="What is AOP"></a>What is AOP</h1><p>Aspect-Oriented Programming (AOP) is a programming paradigm that aims to increase modularity by separating cross-cutting concerns like logging and security, using concepts like aspects, advice, join points, and pointcuts.</p>
+<p>To use AOP in Spring Boot, you can follow these steps:</p>
+<ol>
+<li>Add the Spring AOP dependency in your <code>pom.xml</code> or <code>build.gradle</code> file.</li>
+<li>Define an Aspect class annotated with <code>@Aspect</code>.</li>
+<li>Inside the Aspect class, define a method and annotate it with <code>@Before</code>, <code>@After</code>, <code>@Around</code>, <code>@AfterReturning</code>, or <code>@AfterThrowing</code> to specify when the advice should be executed in relation to the target method execution.</li>
+<li>Use the <code>execution</code> expression within these annotations to define the pointcut, specifying which methods your advice should apply to.</li>
+</ol>
+<p>Logging:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LoggingAspect</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Before(&quot;execution(* com.yourpackage..*.*(..))&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">logBeforeAllMethods</span><span class="params">(JoinPoint joinPoint)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Before executing method:&quot;</span> + joinPoint.getSignature().toShortString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Spring-MVC"><a href="#Spring-MVC" class="headerlink" title="Spring MVC"></a>Spring MVC</h1><p>Spring MVC is a module in the Spring Framework for building web applications using the Model-View-Controller pattern, emphasizing separation of concerns and ease of development through Dependency Injection and Inversion of Control.</p>
+<h1 id="What-is-front-controller"><a href="#What-is-front-controller" class="headerlink" title="What is front controller?"></a>What is front controller?</h1><p>The Front Controller is a design pattern where a single controller manages all requests in Java web apps, directing them to the right handlers.</p>
+<p>The Front Controller in Spring Boot is implemented by the <code>DispatcherServlet</code>, that routes HTTP requests to appropriate handlers, manages control flow, and facilitates view rendering.</p>
+<h1 id="What-is-DispatcherServlet"><a href="#What-is-DispatcherServlet" class="headerlink" title="What is DispatcherServlet"></a>What is DispatcherServlet</h1><p>The <code>DispatcherServlet</code> is a front controller in Spring MVC that routes HTTP requests to appropriate handlers, manages control flow, and facilitates view rendering.</p>
+<ol>
+<li>Tomcat receives the Http Request, and passes the request to DispatcherServlet for processing.</li>
+<li>DispatcherServlet queries the HandlerMapper according to the received request.</li>
+<li>HandlerMapper finds the corresponding Controller and its method based on the request, and returns the dispatcherServlet.</li>
+<li>dispatcherServlet calls the corresponding method of Controller. The method will call service, repository and database.</li>
+<li>The return result (ModelAndView) is handed over to the Controller. A view name and a number of key-value pairs constitute the Model.</li>
+<li>dispatcherServlet gets the view name and calls view Resolver.</li>
+<li>View Resolver gets the corresponding view template, such as list-customers.jsp.</li>
+<li>The data in the view template is filled with the data in the model. Then call the View engine to render the view template and generate the HTML.</li>
+<li>The HTML is sent to the browser for display, and the response is given to the browser.</li>
+</ol>
+<p>In summary, the DispatcherServlet acts as the central controller, coordinating the flow between the HandlerMapper, Controller, ViewResolver and View components to handle HTTP requests, invoke business logic, and render the final HTML response back to the client’s web browser.</p>
+<h1 id="cookies-vs-session"><a href="#cookies-vs-session" class="headerlink" title="cookies vs session"></a>cookies vs session</h1><p>Cookies store data client-side; sessions store data server-side, linked by a session ID in a cookie.</p>
+<h1 id="What-will-happen-after-click-the-URL"><a href="#What-will-happen-after-click-the-URL" class="headerlink" title="What will happen after click the URL?"></a>What will happen after click the URL?</h1><p>After clicking a URL in a Spring Boot application:</p>
+<ol>
+<li>The request is sent to the server.</li>
+<li><code>DispatcherServlet</code> catches the request.</li>
+<li>It identifies the controller via <code>HandlerMapping</code>.</li>
+<li>The controller method is executed.</li>
+<li>Business logic may be processed.</li>
+<li>Data is populated into a model.</li>
+<li><code>ViewResolver</code> selects the view.</li>
+<li>View is rendered and sent back as a response.</li>
+</ol>
+<h1 id="What-is-the-Hibernate"><a href="#What-is-the-Hibernate" class="headerlink" title="What is the Hibernate"></a>What is the Hibernate</h1><p>Hibernate is ORM tool. It is like a bridge for Java applications that makes it easier to talk to databases. It’s a tool that automatically handles the tedious task of converting Java objects into database commands and back, saving developers a lot of time and effort.</p>
+<h1 id="What-is-ORM"><a href="#What-is-ORM" class="headerlink" title="What is ORM"></a>What is ORM</h1><p>ORM is like an interface that defines how to map between objects in code and database tables. Hibernate is a specific implementation of this ORM concept, providing the actual mechanisms and tools to perform the mapping.</p>
+<p>ORM, or Object-Relational Mapping, is a technique that allows developers to manage database data using object-oriented programming languages. It automates the <strong>mapping between objects in code and the tables in a relational database</strong>, simplifying data manipulation and retrieval.</p>
+<h1 id="What-is-JPA"><a href="#What-is-JPA" class="headerlink" title="What is JPA"></a>What is JPA</h1><p>JPA is a specification for accessing, persisting, and managing data between Java objects and a relational database. Hibernate is an implementation of the JPA specification.</p>
+<h1 id="Hibernate-cache-First-level-second-level"><a href="#Hibernate-cache-First-level-second-level" class="headerlink" title="Hibernate cache? First level second level?"></a>Hibernate cache? First level second level?</h1><p>in Hibernate, we’ve got two caches: the First Level Cache and the Second Level Cache. The First Level is like your session’s personal memory. It automatically remembers data for you during your session, so you don’t keep asking the database for the same thing over and over. Then, there’s the Second Level Cache, which is like a shared memory space for all sessions. It’s not on by default; you have to turn it on. This one helps because data that one session fetches can be reused by others, saving even more trips to the database.</p>
+<h1 id="What-is-transactions"><a href="#What-is-transactions" class="headerlink" title="What is transactions"></a>What is transactions</h1><p>A transaction is a set of operations executed as a single unit to ensure data integrity and consistency.</p>
+<p>With some ACID properties: Atomicity, Consistency, Isolation, and Durability.</p>
+<h1 id="What-is-ACID"><a href="#What-is-ACID" class="headerlink" title="What is ACID"></a>What is ACID</h1><p>ACID stands for Atomicity, Consistency, Isolation, and Durability. It is a set of properties that guarantee that database transactions are processed reliably.</p>
+<h1 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h1><p>Spring JDBC is a module of the Spring Framework that simplifies database access by reducing repetitive JDBC code through a template-based approach.</p>
+<h1 id="Spring-Batch"><a href="#Spring-Batch" class="headerlink" title="Spring Batch"></a>Spring Batch</h1><p>Spring Batch is a framework for developing batch processing applications in Java, offering features like transaction management, chunk processing, and restart capabilities. It is part of the Spring ecosystem, enhancing scalability and maintainability.</p>
+<h1 id="What-is-the-difference-between-compnent-service-controller-Configuration"><a href="#What-is-the-difference-between-compnent-service-controller-Configuration" class="headerlink" title="What is the difference between @compnent, @service, @controller, @Configuration"></a>What is the difference between @compnent, @service, @controller, @Configuration</h1><p><code>@Component</code> is a generic annotation for any Spring-managed component. <code>@Service</code> indicates a class is part of the service layer. <code>@Controller</code> marks a class as a web controller, handling HTTP requests. The difference is in their specific use within an application’s architecture. <code>@Configuration</code> is a Spring annotation that denotes a class as a source of bean definitions.</p>
+<h1 id="Exception-handle-in-Spring"><a href="#Exception-handle-in-Spring" class="headerlink" title="Exception handle in Spring"></a>Exception handle in Spring</h1><p>In Spring, use <code>@ControllerAdvice</code> for global exception handling and <code>@ExceptionHandler</code> for specific exceptions. For REST, extend <code>ResponseEntityExceptionHandler</code> for global handling with customized responses.</p>
+<h1 id="REST-vs-RESTful"><a href="#REST-vs-RESTful" class="headerlink" title="REST vs. RESTful"></a>REST vs. RESTful</h1><p>REST is an architectural style for networked applications using stateless communication and standard HTTP methods. RESTful describes services or APIs that implement this style.</p>
+<h1 id="graphql-vs-restapi"><a href="#graphql-vs-restapi" class="headerlink" title="graphql vs restapi"></a>graphql vs restapi</h1><p>GraphQL enables specific data queries and aggregation in one request, while REST API uses fixed endpoints for predefined data structures, often requiring multiple requests for complex data.</p>
+<h1 id="Difference-between-Controller-and-RESTController"><a href="#Difference-between-Controller-and-RESTController" class="headerlink" title="Difference between @Controller and @RESTController"></a>Difference between @Controller and @RESTController</h1><p><code>@Controller</code> is a Spring annotation that indicates the class is a Spring MVC controller. It’s used for traditional web applications where the controller methods return a view.</p>
+<p><code>@RestController</code> combines <code>@Controller</code> and <code>@ResponseBody</code> annotations, indicating that every method returns a domain object instead of a view. It is for RESTful services, returning data directly.</p>
+<h1 id="What-are-HTTP-request-methods"><a href="#What-are-HTTP-request-methods" class="headerlink" title="What are HTTP request methods?"></a>What are HTTP request methods?</h1><p>HTTP request methods are commands that are used by clients (such as web browsers or applications) to communicate with web servers. Each HTTP request method specifies the type of action the client wants the server to perform on a given resource.</p>
+<h1 id="Http-status-code"><a href="#Http-status-code" class="headerlink" title="Http status code"></a>Http status code</h1><p>HTTP status codes are like responses from a server telling you how your web request went.</p>
+<ul>
+<li><p><strong>200 OK</strong>: Successful request.</p>
+</li>
+<li><p><strong>201 Created</strong>: Resource created.</p>
+</li>
+<li><p><strong>204 No Content</strong>: Successful, no content returned.</p>
+</li>
+<li><p><strong>400 Bad Request</strong>: Invalid request syntax.</p>
+</li>
+<li><p><strong>401 Unauthorized</strong>: Authentication required or failed.</p>
+</li>
+<li><p><strong>403 Forbidden</strong>: Access denied.</p>
+</li>
+<li><p><strong>404 Not Found</strong>: Resource not found.</p>
+</li>
+<li><p><strong>500 Internal Server Error</strong>: Generic server error.</p>
+</li>
+<li><p><strong>503 Service Unavailable</strong>: Server temporarily unavailable.</p>
+</li>
+</ul>
+<h1 id="post-vs-get"><a href="#post-vs-get" class="headerlink" title="post vs get"></a>post vs get</h1><p>GET retrieves data, using URL parameters, without changing the state. POST submits data for processing, using the request body, potentially changing the state.</p>
+<h1 id="post-vs-put"><a href="#post-vs-put" class="headerlink" title="post vs put"></a>post vs put</h1><p><code>PUT</code> is for updating or creating a resource at a specific URL, and is idempotent. <code>POST</code> is for creating a new resource, with the server determining the new URL, and is not idempotent.</p>
+<h1 id="put-and-patch"><a href="#put-and-patch" class="headerlink" title="put and patch"></a>put and patch</h1><ul>
+<li><code>PUT</code> or <code>PATCH</code> is used to update an existing resource. <code>PUT</code> replaces the entire resource, while <code>PATCH</code> partially updates it.</li>
+</ul>
+<h1 id="what-is-API"><a href="#what-is-API" class="headerlink" title="what is API?"></a>what is API?</h1><p>APIpplication Programming Interface) is a set of web endpoints that use HTTP methods to communicate between clients and servers</p>
+<h1 id="How-does-the-RestTemplate-work"><a href="#How-does-the-RestTemplate-work" class="headerlink" title="How does the RestTemplate work?"></a>How does the RestTemplate work?</h1><p><code>RestTemplate</code> is a tool in Spring for sending HTTP requests easily. You basically set up what you want to send, like the URL and data, and then use methods like <code>getForObject</code> or <code>postForObject</code> to make the call. It automatically turns the response into a Java object for you. It also helps handle errors smoothly and lets you customize it with different settings if needed.</p>
+<h1 id="RestTemplate-vs-Kafka"><a href="#RestTemplate-vs-Kafka" class="headerlink" title="RestTemplate vs. Kafka"></a>RestTemplate vs. Kafka</h1><p>RestTemplate is used for synchronous call while Kafka is used for A-synchronous call</p>
+<p>RestTemplate is used for synchronous HTTP requests in a client-server architecture, while Kafka is used for asynchronous, high-volume message processing and streaming in a distributed system architecture.</p>
+<h1 id="How-do-you-deal-with-the-response-get-from-REST-api-How-to-convert-JSON-Java-Object"><a href="#How-do-you-deal-with-the-response-get-from-REST-api-How-to-convert-JSON-Java-Object" class="headerlink" title="How do you deal with the response get from REST api? &#x2F; How to convert JSON -&gt; Java Object?"></a>How do you deal with the response get from REST api? &#x2F; How to convert JSON -&gt; Java Object?</h1><ol>
+<li>Use <code>RestTemplate</code> or <code>WebClient</code> to make the request.</li>
+<li>Map the response to a model class.</li>
+<li>Process or use the data as needed.</li>
+</ol>
+<h1 id="Spring-Annotation-did-you-use-in-your-project"><a href="#Spring-Annotation-did-you-use-in-your-project" class="headerlink" title="Spring Annotation did you use in your project?"></a>Spring Annotation did you use in your project?</h1><p>In my project, we extensively used:</p>
+<ul>
+<li><code>@SpringBootApplication</code> for application entry points.</li>
+<li><code>@RestController</code> and <code>@RequestMapping</code> for RESTful services.</li>
+<li><code>@Autowired</code> for dependency injection.</li>
+<li><code>@Service</code>, <code>@Repository</code>, and <code>@Component</code> for layer specific components.</li>
+<li><code>@Configuration</code> and <code>@Bean</code> for configuration.</li>
+<li><code>@Value</code> for property injection.</li>
+<li><code>@Profile</code> for environment-based configuration.</li>
+<li><code>@Transactional</code> for transaction management.</li>
+<li><code>@Async</code> and <code>@Scheduled</code> for asynchronous operations and scheduling tasks.</li>
+</ul>
+<h1 id="What-would-you-do-if-an-API-response-time-is-500ms"><a href="#What-would-you-do-if-an-API-response-time-is-500ms" class="headerlink" title="What would you do if an API response time is 500ms"></a>What would you do if an API response time is 500ms</h1><p>To reduce an API response time of 500ms:</p>
+<ol>
+<li><strong>Caching</strong>: Implement caching for frequently accessed data.</li>
+<li><strong>Database Optimization</strong>: Optimize queries and use indexing.</li>
+<li><strong>Asynchronous Processing</strong>: Use async processing for non-critical operations.</li>
+<li><strong>Load Balancing</strong>: Distribute traffic across multiple servers.</li>
+<li><strong>Code Optimization</strong>: Streamline and optimize the API code.</li>
+<li><strong>Monitoring</strong>: Continuously monitor and adjust based on performance metrics.</li>
+</ol>
+<h1 id="What-is-Bean"><a href="#What-is-Bean" class="headerlink" title="What is Bean?"></a>What is Bean?</h1><p>Bean is an object managed by the Spring IoC container</p>
+<ul>
+<li>create bean<ul>
+<li>use @bean</li>
+<li>use xml</li>
+</ul>
+</li>
+</ul>
+<h1 id="How-to-let-Spring-create-instance-for-you"><a href="#How-to-let-Spring-create-instance-for-you" class="headerlink" title="How to let Spring create instance for you?"></a>How to let Spring create instance for you?</h1><p>Use the <code>@Component</code> annotation for Spring to auto-detect and create instances, or define beans with <code>@Bean</code> in a configuration class. Inject instances using <code>@Autowired</code>.</p>
+<h1 id="What-is-the-Scope-of-a-Bean"><a href="#What-is-the-Scope-of-a-Bean" class="headerlink" title="What is the Scope of a Bean?"></a>What is the Scope of a Bean?</h1><ol>
+<li><strong>Singleton</strong>: One instance per container.</li>
+<li><strong>Prototype</strong>: New instance on each request.</li>
+<li><strong>Request</strong>: One per HTTP request.</li>
+<li><strong>Session</strong>: One per HTTP session.</li>
+<li><strong>GlobalSession</strong>: One per global session.</li>
+<li><strong>WebSocket</strong>: One per WebSocket.</li>
+</ol>
+<h1 id="Spring-bean-annotation-bean-life-cycle"><a href="#Spring-bean-annotation-bean-life-cycle" class="headerlink" title="Spring bean annotation, bean life cycle"></a>Spring bean annotation, bean life cycle</h1><p>Spring Bean annotations (<code>@Component</code>, <code>@Repository</code>, <code>@Service</code>, <code>@Controller</code>) define classes as Spring-managed components.</p>
+<p>The Bean Lifecycle in Spring involves:</p>
+<ol>
+<li><strong>Instantiation</strong>: Creating a bean instance.</li>
+<li><strong>Populate properties</strong>: Injecting properties and dependencies.</li>
+<li><strong>Initialization</strong>: Custom initialization methods or lifecycle callbacks like <code>InitializingBean</code>‘s <code>afterPropertiesSet</code>.</li>
+<li><strong>Use</strong>: The bean is now ready for use within the application.</li>
+<li><strong>Destroy</strong>: Cleanup before the bean is destroyed, using methods defined by <code>DisposableBean</code> or custom destroy methods.</li>
+</ol>
+<h1 id="Difference-between-Component-and-Bean"><a href="#Difference-between-Component-and-Bean" class="headerlink" title="Difference between @Component and @Bean"></a>Difference between @Component and @Bean</h1><p><code>@Component</code> is used at the class level for automatic bean registration</p>
+<p><code>@Bean</code> is used at the method level within a <code>@Configuration</code> annotated class to explicitly register and configure beans.”</p>
+<h1 id="Component-Scan"><a href="#Component-Scan" class="headerlink" title="Component Scan"></a>Component Scan</h1><p>Component Scan in Spring Boot automatically detects and registers beans marked with annotations like <code>@Component</code>, <code>@Service</code>, <code>@Repository</code>, or <code>@Controller</code>, within the package of the main application class and its subpackages. This feature facilitates automatic dependency injection without manual bean registration.</p>
+<h1 id="ApplicationContext-vs-BeanFactory"><a href="#ApplicationContext-vs-BeanFactory" class="headerlink" title="ApplicationContext vs. BeanFactory"></a>ApplicationContext vs. BeanFactory</h1><p><code>ApplicationContext</code> extends <code>BeanFactory</code>, adding enhanced features like internationalization, event propagation, and AOP. It eagerly loads beans, whereas The <code>BeanFactory</code> loads beans lazily and is a simpler container that focuses on basic dependency injection.</p>
+<h1 id="How-to-inject-bean-when-there-are-two-beans-with-same-type"><a href="#How-to-inject-bean-when-there-are-two-beans-with-same-type" class="headerlink" title="How to inject bean when there are two beans with same type?"></a>How to inject bean when there are two beans with same type?</h1><p>Use <code>@Autowired</code> and <code>@Qualifier(&quot;beanName&quot;)</code> to inject a specific bean among multiple of the same type.</p>
+<h1 id="Spring-cache"><a href="#Spring-cache" class="headerlink" title="Spring cache"></a>Spring cache</h1><p>Spring Cache is an abstraction in the Spring framework for transparent cache management, improving performance by reducing database hits. It supports multiple cache stores and provides annotations (@Cacheable, @CacheEvict, @CachePut) for easy cache behavior management at the method level.</p>
+<h1 id="SOAP-vs-REST"><a href="#SOAP-vs-REST" class="headerlink" title="SOAP vs. REST"></a>SOAP vs. REST</h1><p>SOAP is a protocol that is XML-based, making it heavier and more verbose, which can lead to larger message sizes and potentially slower processing. It’s designed to handle complex operations and can support stateful interactions if needed. SOAP provides built-in error handling and is considered more secure, which makes it suitable for enterprise-level applications where security and transactional reliability are critical.</p>
+<p>On the other hand, REST is an architectural style that typically uses JSON, making it lighter and more efficient for web use. RESTful services are stateless, meaning each request from client to server must contain all the information needed to understand and complete the request. This statelessness simplifies the server architecture and improves scalability and performance. REST is more flexible in terms of formats and easier to work with for web developers, making it popular for web services and APIs.</p>
+<p>SOAP is XML based, heavy weighted and carry status while REST is JSON based, light weighted and stateless.</p>
+<h1 id="Consume-web-service-in-Java"><a href="#Consume-web-service-in-Java" class="headerlink" title="Consume web service in Java"></a>Consume web service in Java</h1><p>In Spring, use <code>RestTemplate</code>&#x2F;<code>WebClient</code> for REST and <code>WebServiceTemplate</code> for SOAP.</p>
+<h2 id="RestTemplate-for-RESTful-Services"><a href="#RestTemplate-for-RESTful-Services" class="headerlink" title="RestTemplate for RESTful Services"></a>RestTemplate for RESTful Services</h2><ul>
+<li><strong>Configuration</strong>: Define <code>RestTemplate</code> as a Spring bean for easy autowiring.</li>
+<li><strong>Usage</strong>: Inject <code>RestTemplate</code> via autowiring and use its methods (<code>getForObject()</code>, <code>postForObject()</code>, etc.) to interact with RESTful services, handling HTTP requests and parsing responses automatically.</li>
+</ul>
+<h2 id="WebServiceTemplate-for-SOAP-Services"><a href="#WebServiceTemplate-for-SOAP-Services" class="headerlink" title="WebServiceTemplate for SOAP Services"></a>WebServiceTemplate for SOAP Services</h2><ul>
+<li><strong>Configuration</strong>: Similar to <code>RestTemplate</code>, define <code>WebServiceTemplate</code> as a bean.</li>
+<li><strong>Usage</strong>: Autowire <code>WebServiceTemplate</code> in your service class. It’s used to send and receive SOAP messages, leveraging methods like <code>marshalSendAndReceive</code> to interact with SOAP endpoints, handling XML request and response marshalling.</li>
+</ul>
+<h1 id="Controller-vs-RestController-what-did-you-put-in-a-controller-annotations-Follow-up-why-did-you-put-some-keywords-like-add-or-get-in-your-url-is-it-ok-to-put-id-or-quantity-in-the-url-How-about-username-or-password"><a href="#Controller-vs-RestController-what-did-you-put-in-a-controller-annotations-Follow-up-why-did-you-put-some-keywords-like-add-or-get-in-your-url-is-it-ok-to-put-id-or-quantity-in-the-url-How-about-username-or-password" class="headerlink" title="Controller vs. RestController, what did you put in a controller, annotations. Follow up: why did you put some keywords like add or get in your url, is it ok to put id or quantity in the url? How about username or password?"></a>Controller vs. RestController, what did you put in a controller, annotations. Follow up: why did you put some keywords like add or get in your url, is it ok to put id or quantity in the url? How about username or password?</h1><p><code>@Controller</code> is for Spring MVC web pages, returns views. <code>@RestController</code> combines <code>@Controller</code> and <code>@ResponseBody</code>, directly returns data, typically for REST APIs.</p>
+<p>while it’s technically possible to include action words like “add” or “get” in URLs, it’s not recommended in RESTful API design because it focuses on actions rather than resources. REST principles favor using HTTP methods (GET, POST, PUT, DELETE) to denote actions on resources, making APIs more intuitive and aligned with web standards.</p>
+<p>Including identifiers like ID or quantity in the URL is acceptable and common in RESTful API design, especially as path variables (e.g., <code>/items/123</code> to get an item with ID 123).</p>
+<p>However, sensitive information like usernames or passwords should not be included in the URL. URLs can be logged or cached by web servers and browsers, making sensitive information vulnerable to exposure. For transmitting sensitive data, use other methods such as HTTP headers, cookies, or the body of POST requests with secure HTTPS connections.</p>
+<h1 id="Explain-the-procedure-of-how-you-implement-a-web-service"><a href="#Explain-the-procedure-of-how-you-implement-a-web-service" class="headerlink" title="Explain the procedure of how you implement a web service"></a>Explain the procedure of how you implement a web service</h1><ol>
+<li><p><strong>Create a Spring Boot project</strong> using Spring Initializr with dependencies like Spring Web.</p>
+</li>
+<li><p><strong>Define domain models</strong> with necessary JPA annotations if interacting with a database.</p>
+</li>
+<li><p><strong>Implement repository interfaces</strong> for database operations by extending <code>JpaRepository</code> or <code>CrudRepository</code>.</p>
+</li>
+<li><p><strong>Develop a service layer</strong> to handle business logic using the repositories.</p>
+</li>
+<li><p><strong>Create a <code>RestController</code></strong> with methods annotated with <code>@GetMapping</code>, <code>@PostMapping</code>, <code>@PutMapping</code>, and <code>@DeleteMapping</code> to handle HTTP requests.</p>
+</li>
+<li><p><strong>Configure <code>application.properties</code></strong> for server and database settings.</p>
+</li>
+<li><p><strong>Run the application</strong> with Spring Boot’s embedded server.</p>
+</li>
+<li><p><strong>Test</strong> the web service using tools like Postman or Swagger.</p>
+</li>
+</ol>
+<h1 id="Different-types-of-request-mapping-methods"><a href="#Different-types-of-request-mapping-methods" class="headerlink" title="Different types of request mapping methods"></a>Different types of request mapping methods</h1><ol>
+<li><p><code>@GetMapping</code>: For GET requests.</p>
+</li>
+<li><p><code>@PostMapping</code>: For POST requests.</p>
+</li>
+<li><p><code>@PutMapping</code>: For PUT requests.</p>
+</li>
+<li><p><code>@DeleteMapping</code>: For DELETE requests.</p>
+</li>
+<li><p><code>@PatchMapping</code>: For PATCH requests.</p>
+</li>
+</ol>
+<h1 id="How-do-you-implement-transaction"><a href="#How-do-you-implement-transaction" class="headerlink" title="How do you implement transaction?"></a>How do you implement transaction?</h1><p>to be done</p>
+<p>Use the <code>@Transactional</code> annotation on methods or classes to implement transactions in Spring Boot. Customize transaction behavior with attributes like <code>propagation</code>, <code>isolation</code>, <code>timeout</code>, and <code>readOnly</code>.</p>
+<h1 id="When-designing-a-public-API-what-needs-to-be-considered"><a href="#When-designing-a-public-API-what-needs-to-be-considered" class="headerlink" title="When designing a public API, what needs to be considered?"></a>When designing a public API, what needs to be considered?</h1><ol>
+<li><p><strong>Consistency:</strong> Uniform naming, parameter order, and error handling.</p>
+</li>
+<li><p><strong>Simplicity:</strong> Expose minimal necessary endpoints.</p>
+</li>
+<li><p><strong>Documentation:</strong> Clear, comprehensive with examples.</p>
+</li>
+<li><p><strong>Versioning:</strong> Implement for backward compatibility.</p>
+</li>
+<li><p><strong>Security:</strong> Secure access and data.</p>
+</li>
+<li><p><strong>Performance:</strong> Optimize for speed and efficiency.</p>
+</li>
+<li><p><strong>Error Handling:</strong> Meaningful messages and standard HTTP codes.</p>
+</li>
+<li><p><strong>Scalability:</strong> Plan for growing request volumes.</p>
+</li>
+<li><p><strong>Deprecation Policy:</strong> Clear policy for phasing out old versions.</p>
+</li>
+<li><p><strong>Feedback Loop:</strong> Encourage user feedback for improvements.</p>
+</li>
+</ol>
+<h1 id="What-is-DevTools"><a href="#What-is-DevTools" class="headerlink" title="What is DevTools?"></a>What is DevTools?</h1><p>DevTools facilitates rapid development by enabling automatic application restarts and live reload features, reducing the need for manual server restarts upon changes.</p>
+<h1 id="How-does-service-communicate-with-each-other"><a href="#How-does-service-communicate-with-each-other" class="headerlink" title="How does service communicate with each other?"></a>How does service communicate with each other?</h1><p>Services communicate with each other primarily through REST APIs, where they use HTTP requests to exchange data in formats like JSON or XML. Alternatively, they can use messaging systems like Kafka for asynchronous communication. SOAP-based web services are also used in legacy systems.</p>
+<h1 id="security-protocol"><a href="#security-protocol" class="headerlink" title="security protocol"></a>security protocol</h1><p>Java security protocols include SSL&#x2F;TLS, JAAS, JCA, and HTTPS.</p>
+<h1 id="What-is-the-security-part-used-for"><a href="#What-is-the-security-part-used-for" class="headerlink" title="What is the security part used for?"></a>What is the security part used for?</h1><p>Spring Boot uses Spring Security for authentication, authorization, and protection against common vulnerabilities like CSRF, session fixation, and clickjacking. It offers a robust security framework for Java applications.</p>
+<h1 id="How-to-make-sure-the-security-of-user-request"><a href="#How-to-make-sure-the-security-of-user-request" class="headerlink" title="How to make sure the security of user request?"></a>How to make sure the security of user request?</h1><ol>
+<li><p>Use HTTPS for encrypted data transit.</p>
+</li>
+<li><p>Validate user input to prevent injection attacks.</p>
+</li>
+<li><p>Implement strong authentication and authorization mechanisms.</p>
+</li>
+<li><p>Secure APIs with keys and rate limiting.</p>
+</li>
+<li><p>Apply Content Security Policy (CSP) to block XSS attacks.</p>
+</li>
+<li><p>Utilize HTTP security headers for additional protection.</p>
+</li>
+<li><p>Manage sessions securely and enforce session timeouts.</p>
+</li>
+<li><p>Encrypt sensitive data at rest and manage keys safely.</p>
+</li>
+<li><p>Regularly update dependencies to fix vulnerabilities.</p>
+</li>
+<li><p>Enable logging and monitoring for detecting suspicious activities.</p>
+</li>
+</ol>
+<h1 id="How-to-make-sure-of-different-user-security"><a href="#How-to-make-sure-of-different-user-security" class="headerlink" title="How to make sure of different user security?"></a>How to make sure of different user security?</h1><ol>
+<li><p><strong>Add Spring Security dependency</strong> to your project.</p>
+</li>
+<li><p><strong>Extend <code>WebSecurityConfigurerAdapter</code></strong> to create a security configuration class.</p>
+</li>
+<li><p><strong>Define user roles and authorities</strong> for differentiated access.</p>
+</li>
+<li><p><strong>Implement <code>UserDetailsService</code></strong> to load user details from a data source.</p>
+</li>
+<li><p><strong>Configure password encoding</strong> using <code>BCryptPasswordEncoder</code>.</p>
+</li>
+<li><p><strong>Override <code>configure(HttpSecurity http)</code></strong> to set URL access rules based on user roles.</p>
+</li>
+<li><p><strong>Use annotations like <code>@PreAuthorize</code></strong> for method-level security.</p>
+</li>
+<li><p><strong>Enable session management</strong> for secure session handling.</p>
+</li>
+<li><p><strong>Handle exceptions</strong> for authentication and access denials.</p>
+</li>
+<li><p><strong>Ensure CSRF protection</strong> is enabled and configure HTTPS for secure data transmission.</p>
+</li>
+</ol>
+<h1 id="How-to-implement-security"><a href="#How-to-implement-security" class="headerlink" title="How to implement security?"></a>How to implement security?</h1><ol>
+<li>Adding the Spring Security starter dependency.</li>
+<li>Extending <code>WebSecurityConfigurerAdapter</code> and configuring HTTP security to define access rules and authentication methods.</li>
+<li>Using <code>AuthenticationManagerBuilder</code> to set up authentication providers, like in-memory authentication, JDBC authentication, or LDAP authentication.</li>
+<li>Optionally customizing <code>UserDetailsService</code> for user-specific security data.</li>
+<li>Enabling method-level security with annotations like <code>@PreAuthorize</code>.</li>
+<li>Configuring CSRF protection and HTTPS to secure the application further.</li>
+</ol>
+<h1 id="How-to-record-logs"><a href="#How-to-record-logs" class="headerlink" title="How to record logs"></a>How to record logs</h1><p>Java Logs: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.logging.log4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.apache.logging.log4j.LogManager;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOGGER</span> <span class="operator">=</span> LogManager.getLogger(MyClass.class);</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        LOGGER.info(<span class="string">&quot;This is an info message&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>AOP:</p>
+<p>you first add AOP dependencies to your project. Then, create an Aspect class annotated with <code>@Aspect</code> and define pointcuts to specify the join points where logging should be applied, such as methods within a specific package. Inside this class, implement advice methods (like <code>@Before</code>, <code>@After</code>, or <code>@Around</code>) that contain the logging logic. Enable AspectJ auto-proxy in your configuration to process these aspects. Finally, integrate a logging framework to capture and manage the logs generated by your aspect.</p>
+<h1 id="What-is-splunk"><a href="#What-is-splunk" class="headerlink" title="What is splunk"></a>What is splunk</h1><p>Splunk is a software that helps you collect and analyze lots of computer-generated data, like log files, making it easy to find information, monitor how systems are running, and analyze data, all presented through charts, reports, and dashboards.</p>
+<p>how to use it:</p>
+<ol>
+<li><strong>Install Splunk</strong>: Choose between Splunk Enterprise or Splunk Cloud.</li>
+<li><strong>Add Data</strong>: Collect data from sources like logs, metrics, and events.</li>
+<li><strong>Search &amp; Analyze</strong>: Use Splunk’s search language to query and analyze data.</li>
+<li><strong>Create Dashboards</strong>: Build dashboards with charts and graphs for insights.</li>
+<li><strong>Set Alerts &amp; Reports</strong>: Configure alerts for events and generate reports.</li>
+<li><strong>Optimize</strong>: Refine searches, dashboards, and alerts as needed.</li>
+</ol>
+<h1 id="How-to-handle-controller-exceptions"><a href="#How-to-handle-controller-exceptions" class="headerlink" title="How to handle controller exceptions?"></a>How to handle controller exceptions?</h1><p>You can handle controller exceptions primarily through the <code>@ExceptionHandler</code> annotation for handling exceptions locally within a controller, and <code>@ControllerAdvice</code> or <code>@RestControllerAdvice</code> for global exception handling across all controllers. These mechanisms allow for centralized error handling, enabling cleaner and more maintainable code.</p>
+<h1 id="Spring-validation"><a href="#Spring-validation" class="headerlink" title="Spring validation?"></a>Spring validation?</h1><p>Spring Validation is a mechanism in the Spring Framework for validating Java bean properties using the Validator interface or annotations like @NotNull. It ensures data meets business rules before processing or persistence, separating validation from business logic for cleaner code.</p>
+<h1 id="What-does-SpringBootApplication-mean"><a href="#What-does-SpringBootApplication-mean" class="headerlink" title="What does @SpringBootApplication mean?"></a>What does @SpringBootApplication mean?</h1><p><code>@SpringBootApplication</code> combines <code>@Configuration</code>, <code>@EnableAutoConfiguration</code>, and <code>@ComponentScan</code>, marking a class as a Spring Boot application’s main configuration.</p>
+<h1 id="What-is-routing"><a href="#What-is-routing" class="headerlink" title="What is routing?"></a>What is routing?</h1><p>Routing is the process of directing network traffic or web requests to the appropriate destination or handler.</p>
+<h2 id="How-do-you-create-a-rest-controller"><a href="#How-do-you-create-a-rest-controller" class="headerlink" title="How do you create a rest controller?"></a>How do you create a rest controller?</h2><p>Annotate a class with <code>@RestController</code> and define methods with <code>@GetMapping</code>, <code>@PostMapping</code>, etc., for HTTP requests.</p>
+<h1 id="What-is-service-discovery"><a href="#What-is-service-discovery" class="headerlink" title="What is service discovery?"></a>What is service discovery?</h1><p>Service discovery is a mechanism that automatically finds and connects services in a microservices architecture, using tools like Eureka, Consul, and Zookeeper.</p>
+<h1 id="Ways-to-connect-to-database"><a href="#Ways-to-connect-to-database" class="headerlink" title="Ways to connect to database"></a>Ways to connect to database</h1><ol>
+<li><p>JDBC</p>
+</li>
+<li><p>JPA</p>
+</li>
+<li><p>Hibernate</p>
+</li>
+<li><p>Spring Data JPA</p>
+</li>
+<li><p>MyBatis</p>
+</li>
+</ol>
+<h1 id="spring-autoconfiguration"><a href="#spring-autoconfiguration" class="headerlink" title="spring autoconfiguration"></a>spring autoconfiguration</h1><p>Autoconfiguration in Spring Boot is a feature that automatically configures beans and other dependencies based on the classpath.</p>
+<h1 id="Actuator"><a href="#Actuator" class="headerlink" title="Actuator"></a>Actuator</h1><p>Spring Boot Actuator provides built-in endpoints for monitoring and managing Spring Boot applications, such as health checks and metrics.</p>
+<h1 id="design-pattern-of-circuit-breaker"><a href="#design-pattern-of-circuit-breaker" class="headerlink" title="design pattern of circuit breaker"></a>design pattern of circuit breaker</h1><p>The Circuit Breaker pattern prevents your system from repeatedly trying to execute an operation that’s likely to fail.  It has three states: Closed (normal operations), Half-Open (tests if the service is back to normal) and Open (blocks calls to the service to allow it to recover).</p>
+<h1 id="kafka"><a href="#kafka" class="headerlink" title="kafka"></a>kafka</h1><ul>
+<li>what is Kafka? </li>
+<li><strong>topic</strong>: It’s like database table. Kafka uses the concept of topics to organize related messages. </li>
+<li><strong>partitions</strong>: Topics are broken down into a number of partitions. </li>
+<li><strong>The offset</strong>:  is an integer value that Kafka adds to each message as it is written into a partition. Each message in a given partition has a unique offset.</li>
+<li><strong>broker</strong>: A broker in Kafka is a server that stores messages and facilitates their distribution and replication within a Kafka cluster.</li>
+<li>consumer: Applications that read data from Kafka topics are known as consumers.</li>
+<li>producer: Applications that send data into topics are known as Kafka producers.</li>
+<li><strong>Source Connector</strong>: Imports data into Kafka. <strong>Sink Connector</strong>: Exports data from Kafka.</li>
+</ul>
+<h1 id="make-two-consumers-consume-one-partition-in-Kafka"><a href="#make-two-consumers-consume-one-partition-in-Kafka" class="headerlink" title="make two consumers consume one partition in Kafka?"></a>make two consumers consume one partition in Kafka?</h1><p>No, this is impossible. Unless we use differnt consumer group. </p>
+<h1 id="How-to-use-docker-in-the-Spring-Boot"><a href="#How-to-use-docker-in-the-Spring-Boot" class="headerlink" title="How to use docker in the Spring Boot?"></a>How to use docker in the Spring Boot?</h1><ol>
+<li><p>Create <code>Dockerfile</code>:</p>
+</li>
+<li><p>Build jar: <code>mvn package</code></p>
+</li>
+<li><p>Build image: <code>docker build -t myapp .</code></p>
+</li>
+<li><p>Run container: <code>docker run -p 8080:8080 myapp</code></p>
+</li>
+</ol>
+<h1 id="kubernets-k8s-vs-docker"><a href="#kubernets-k8s-vs-docker" class="headerlink" title="kubernets&#x2F;k8s vs docker"></a>kubernets&#x2F;k8s vs docker</h1><p>Docker lets you create and run small, lightweight versions of your app. Kubernetes helps you manage those versions across many computers.</p>
+<p>Docker is a containerization platform that packages and runs applications in containers, while Kubernetes is a container orchestration system that manages and scales containerized applications across multiple hosts.</p>
+<h1 id="kubernetes-k8s"><a href="#kubernetes-k8s" class="headerlink" title="kubernetes&#x2F; k8s"></a>kubernetes&#x2F; k8s</h1><ul>
+<li>what is pod<br>A Pod in Kubernetes is a group of one or more containers, sharing storage and network, running together on a cluster.</li>
+</ul>
+<p><img src="/../../assets/2024-03-18%20at%2017.32.04@2x.jpg"></p>
+<p>Control Plane or master node<br><img src="/../../assets/2024-03-18%20at%2017.36.25@2x.jpg"></p>
+<p><img src="/../../assets/2024-03-18%20at%2017.37.18@2x.jpg"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/hobbies/rime/" rel="prev" title="Rime输入法折腾记">
+                  <i class="fa fa-angle-left"></i> Rime输入法折腾记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/java-interview/java-general/" rel="next" title="Java面试——Java Concepts">
+                  Java面试——Java Concepts <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">iTvX</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
