@@ -32,27 +32,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java面试——Kotlin</title>
-    <url>//java-interview/kotlin/</url>
-    <content><![CDATA[<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>在构造方法使用<code>var</code>&#x2F;<code>val</code>&#x2F;以及不使用的区别：</p>
-<ul>
-<li><code>var</code> 相当于同时自动生成 getter 和 setter 方法;</li>
-<li><code>val</code> 只自动生成 getter 方法;</li>
-<li>不写的话,就没有自动生成的 getter 和 setter。</li>
-</ul>
-<p>注意，Kotlin的构造方法是直接在class后面写括号，这点和Java不同。也可以给构造函数写default参数，比如下面这样：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>(<span class="keyword">val</span> name: String = <span class="string">&quot;&quot;</span>, <span class="keyword">val</span> age: <span class="built_in">Int</span> = <span class="number">18</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> person = Person()</span><br><span class="line"></span><br><span class="line">    println(person.name)</span><br><span class="line">    println(person.age)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里<code>class Person</code>后面就是构造函数的参数了，只要再写一个<code>=</code>就是设置default参数，这样下次创建对象的时候，即使是空的，也可以get到default的参数。</p>
-]]></content>
-      <categories>
-        <category>Java Interview</category>
-      </categories>
-      <tags>
-        <tag>kotlin</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java面试——Java Concepts</title>
     <url>//java-interview/java-general/</url>
     <content><![CDATA[<h1 id="CI-CD-save-time"><a href="#CI-CD-save-time" class="headerlink" title="CI&#x2F;CD save time"></a>CI&#x2F;CD save time</h1><p>In a recent project, we improved our CI&#x2F;CD pipeline by implementing Docker layer which make Docker reuses the cached layers instead of rebuilding them, speeding up the build process. Also, we optimized our Maven dependencies, like using Maven Dependency Plugin to analyze and identify unused or redundant dependencies in our projects wihch result in less memory usage during the build process.</p>
@@ -659,6 +638,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Java面试——Kotlin</title>
+    <url>//java-interview/kotlin/</url>
+    <content><![CDATA[<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>在构造方法使用<code>var</code>&#x2F;<code>val</code>&#x2F;以及不使用的区别：</p>
+<ul>
+<li><code>var</code> 相当于同时自动生成 getter 和 setter 方法;</li>
+<li><code>val</code> 只自动生成 getter 方法;</li>
+<li>不写的话,就没有自动生成的 getter 和 setter。</li>
+</ul>
+<p>注意，Kotlin的构造方法是直接在class后面写括号，这点和Java不同。也可以给构造函数写default参数，比如下面这样：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>(<span class="keyword">val</span> name: String = <span class="string">&quot;&quot;</span>, <span class="keyword">val</span> age: <span class="built_in">Int</span> = <span class="number">18</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> person = Person()</span><br><span class="line"></span><br><span class="line">    println(person.name)</span><br><span class="line">    println(person.age)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里<code>class Person</code>后面就是构造函数的参数了，只要再写一个<code>=</code>就是设置default参数，这样下次创建对象的时候，即使是空的，也可以get到default的参数。</p>
+]]></content>
+      <categories>
+        <category>Java Interview</category>
+      </categories>
+      <tags>
+        <tag>kotlin</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java面试——Spring Concepts</title>
     <url>//java-interview/spring/</url>
     <content><![CDATA[<h1 id="Why-do-you-use-Spring-Boot-Benefits-of-Spring-Boot-diffrenece-of-Spring-and-Spring-boot"><a href="#Why-do-you-use-Spring-Boot-Benefits-of-Spring-Boot-diffrenece-of-Spring-and-Spring-boot" class="headerlink" title="Why do you use Spring Boot? &#x2F; Benefits of Spring Boot&#x2F; diffrenece of Spring and Spring boot"></a>Why do you use Spring Boot? &#x2F; Benefits of Spring Boot&#x2F; diffrenece of Spring and Spring boot</h1><p>Spring is a powerful framework for building Java applications, providing features like dependency injection and aspect-oriented programming. However, it requires more manual configuration to get started.</p>
@@ -1089,151 +1089,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git用法总结</title>
-    <url>//tech-stack/git/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>tech-stack</category>
-      </categories>
-      <tags>
-        <tag>WSL2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS检查最近变动文件的方法</title>
-    <url>//macos/track-macos-recent-file-activity/</url>
-    <content><![CDATA[<p>用HoudahSpot或者mac的自带finder（但是测试自带finder查找的文件远远少于HoudahSpot，原因未知），查找项目为<strong>Date Added</strong></p>
-<p>然后在Location区域排除掉不需要查找的文件夹，即可找到最新在mac变动的文件。</p>
-<p>参考配置如下：<br><img src="/../../../assets/2024-03-07%20at%2023.59.19@2x.jpg"></p>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-      <tags>
-        <tag>houdahspot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS隐藏Dock栏</title>
-    <url>//macos/hide-mac-dock/</url>
-    <content><![CDATA[<p>通过以下步骤，你可以临时改变Dock的行为和外观，包括隐藏Dock、延长其出现的等待时间，以及减小其图标的尺寸，使其即便是进行手势操作时也难以被看到。</p>
-<h3 id="第一步：隐藏Dock"><a href="#第一步：隐藏Dock" class="headerlink" title="第一步：隐藏Dock"></a>第一步：隐藏Dock</h3><ul>
-<li>快捷键 <code>Option + Command + D</code> 可以切换Dock的自动隐藏和显示。这是一个快速的方式来隐藏Dock，让桌面看起来更整洁。</li>
-</ul>
-<h3 id="第二步：延长Dock显示的等待时间"><a href="#第二步：延长Dock显示的等待时间" class="headerlink" title="第二步：延长Dock显示的等待时间"></a>第二步：延长Dock显示的等待时间</h3><ul>
-<li>为了在极长的时间内鼠标悬停时Dock不出现，你可以设置一个很长的延迟时间。以下命令将Dock的自动显示延迟设置为1000秒。这意味着，在鼠标移至屏幕边缘（根据Dock位置设置，通常是底部）后，需要等待约16分钟40秒，Dock才会显示出来。</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.Dock autohide-delay -float 1000 &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure>
-
-<p>要还原Dock显示的延迟时间到默认设置，使用以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults delete com.apple.Dock autohide-delay &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure>
-
-<h3 id="第三步：缩小Dock图标的尺寸"><a href="#第三步：缩小Dock图标的尺寸" class="headerlink" title="第三步：缩小Dock图标的尺寸"></a>第三步：缩小Dock图标的尺寸</h3><p>如果你想要让Dock图标变得极其微小，甚至在使用四指上滑手势时也难以察觉其存在，可以通过以下命令设置Dock图标的尺寸为1像素：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock tilesize -float 1; killall Dock</span><br></pre></td></tr></table></figure>
-
-<p>若要撤销图标尺寸的更改，恢复到默认大小，可以使用以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults delete com.apple.dock tilesize; killall Dock</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>macOS快照恢复</title>
-    <url>//macos/mac-snapshot-recovery/</url>
-    <content><![CDATA[<p>打快照</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil snapshot</span><br></pre></td></tr></table></figure>
-
-<p>列出所有快照</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil listlocalsnapshots /</span><br></pre></td></tr></table></figure>
-
-<p>删除一个快照的方法</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots 这个地方使用快照的日期</span><br></pre></td></tr></table></figure>
-
-<p>删除所有快照</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots /</span><br></pre></td></tr></table></figure>
-
-<p>恢复快照的方法，就是进入macOS启动设置页面，选择time machine进行恢复，然后选择相应的快照，即可几秒内将系统完整的恢复到上一个快照的状态，其间录入的指纹有可能丢失。</p>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>利用Prallels完美绕过监控的一些感悟</title>
-    <url>//macos/parallels-monitoring-bypass-tips/</url>
-    <content><![CDATA[<h1 id="第一，设置双鼠标"><a href="#第一，设置双鼠标" class="headerlink" title="第一，设置双鼠标"></a>第一，设置双鼠标</h1><p>双鼠标很重要，如果没有设置双鼠标，那么每次调整宿主机窗口的时候，鼠标会移动的最边缘部分，这样子就会被发现。所以，设置双鼠标的话，虚拟机里面一个鼠标，host里面一个鼠标，这才是我们想要达到的效果。</p>
-<p>但实际操作来看，操作两个鼠标会很麻烦，因此，我们只需要做到将虚拟机中的鼠标每次进行释放，然后这个时候就可以操作host的窗口了。</p>
-<p>方法如下：<br><a href="https://kb.parallels.com/122903">https://kb.parallels.com/122903</a></p>
-<h2 id="For-Windows-virtual-machines"><a href="#For-Windows-virtual-machines" class="headerlink" title="For Windows virtual machines"></a>For Windows virtual machines</h2><ol>
-<li><p>Shut Down virtual machine.</p>
-</li>
-<li><p>Open Virtual Machine <a href="http://kb.parallels.com/en/117287" title="http://kb.parallels.com/en/117287">configuration</a>.</p>
-</li>
-<li><p>Go to <strong>Hardware &gt; Boot Order &gt;</strong> and paste in <strong>Boot Flags</strong> box:</p>
-<p> <code>video.hw_pointer=0</code></p>
-</li>
-</ol>
-<p><strong>Note:</strong> The above solution will work fine when using a virtual machine for simple tasks such as document processing, but heavier usage (like games or 3D software) may work unreliably.</p>
-<h2 id="For-macOS-virtual-machines"><a href="#For-macOS-virtual-machines" class="headerlink" title="For macOS virtual machines"></a>For macOS virtual machines</h2><p>Click Apple logo &gt; <strong>System Preferences</strong> &gt; <strong>Accessibility</strong> &gt; <strong>Display</strong> &gt; <strong>Cursor</strong> and move the <strong>Cursor size</strong> slider slightly to the right.</p>
-<p><strong>Note:</strong> Due to technical limitations imposed by macOS, this solution may result in the performance degradation as well as visual artefacts. If this happens, there are no workarounds to mitigate it.</p>
-<h2 id="For-Linux-virtual-machines"><a href="#For-Linux-virtual-machines" class="headerlink" title="For Linux virtual machines"></a>For Linux virtual machines</h2><p>Due to technical limitations, the only way to achieve this in Linux virtual machines is to <a href="https://kb.parallels.com/117044">uninstall Parallels Tools</a>.</p>
-<h1 id="第二，取消numslock映射"><a href="#第二，取消numslock映射" class="headerlink" title="第二，取消numslock映射"></a>第二，取消numslock映射</h1><p>每次释放鼠标或者进入parallels会映射一个numslock，因此需要取消这个功能。详情参考文档：<br><a href="https://kb.parallels.com/122898">https://kb.parallels.com/122898</a></p>
-<p>You can change the key used for the synchronization or disable this feature executing the following commands in <strong>Terminal ( Finder &gt; &#x2F;Applications&#x2F;Utilities&#x2F;Terminal)</strong>:</p>
-<p><strong>Quit Parallels Desktop before executing commands</strong>. Otherwise changes will not take affect.</p>
-<ul>
-<li><p>to disable the synchronization of <strong>numeric pad</strong> state:</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults write &#x27;com.parallels.Parallels Desktop&#x27; &#x27;HID Host Hook.LED Sync&#x27; -int 0</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>to make Parallels Desktop use and send <strong>NumLock</strong> button for the synchronization:</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults write &#x27;com.parallels.Parallels Desktop&#x27; &#x27;HID Host Hook.LED Sync&#x27; -int 1</span><br></pre></td></tr></table></figure>
-<p>  <strong>Please note</strong> that Numlock is used by default.</p>
-</li>
-<li><p>to make Parallels Desktop use and send <strong>ScrollLock</strong> button for the synchronization:</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults write &#x27;com.parallels.Parallels Desktop&#x27; &#x27;HID Host Hook.LED Sync&#x27; -int 2</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>to make Parallels Desktop use and send <strong>CapsLock</strong> button for the synchronization:</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults write &#x27;com.parallels.Parallels Desktop&#x27; &#x27;HID Host Hook.LED Sync&#x27; -int 3</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>to discard all changes, please use the following command:</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults delete &#x27;com.parallels.Parallels Desktop&#x27; &#x27;HID Host Hook.LED Sync&#x27;</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-      <tags>
-        <tag>parallels</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决macOS应用程序损坏无法打开</title>
-    <url>//macos/fix-app-damage/</url>
-    <content><![CDATA[<p>在终端输入：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">xattr -cr /Applications/AppName.app</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>将Brainwaves（神奇脑波）的音乐提取出来</title>
-    <url>//macos/extract-brainwaves-music/</url>
-    <content><![CDATA[<p>在付费了永久版的神奇脑波之后（付费的是中文版，然后也给了英文版的使用），从App Store下载英文版的神奇脑波，名字叫作Brainwaves。</p>
-<p>他们公司名叫做iMobLife，认真搜索一下就能搜到这个app，然后在下面的文件可以找到音乐源文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/Users/(yourUserName)/Library/Containers/Brainwaves/Data/Documents/DownloadedMusic</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-      <tags>
-        <tag>Brainwaves</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java面试——Leetcode代码库</title>
     <url>//java-interview/leetcode/</url>
     <content><![CDATA[<h1 id="1-1"><a href="#1-1" class="headerlink" title="1.1"></a>1.1</h1><h2 id="3-Longest-Substring-Without-Repeating-Characters"><a href="#3-Longest-Substring-Without-Repeating-Characters" class="headerlink" title="3. Longest Substring Without Repeating Characters"></a><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">3. Longest Substring Without Repeating Characters</a></h2><p>背诵：<code>i</code>每次跳转到出现<strong>上一轮重复字母</strong>的<code>index + 1</code>上去，所以，map存的是出现重复字母上一轮的<code>index + 1</code></p>
@@ -1518,6 +1373,158 @@
       </tags>
   </entry>
   <entry>
+    <title>macOS隐藏Dock栏</title>
+    <url>//macos/hide-mac-dock/</url>
+    <content><![CDATA[<p>通过以下步骤，你可以临时改变Dock的行为和外观，包括隐藏Dock、延长其出现的等待时间，以及减小其图标的尺寸，使其即便是进行手势操作时也难以被看到。</p>
+<h3 id="第一步：隐藏Dock"><a href="#第一步：隐藏Dock" class="headerlink" title="第一步：隐藏Dock"></a>第一步：隐藏Dock</h3><ul>
+<li>快捷键 <code>Option + Command + D</code> 可以切换Dock的自动隐藏和显示。这是一个快速的方式来隐藏Dock，让桌面看起来更整洁。</li>
+</ul>
+<h3 id="第二步：延长Dock显示的等待时间"><a href="#第二步：延长Dock显示的等待时间" class="headerlink" title="第二步：延长Dock显示的等待时间"></a>第二步：延长Dock显示的等待时间</h3><ul>
+<li>为了在极长的时间内鼠标悬停时Dock不出现，你可以设置一个很长的延迟时间。以下命令将Dock的自动显示延迟设置为1000秒。这意味着，在鼠标移至屏幕边缘（根据Dock位置设置，通常是底部）后，需要等待约16分钟40秒，Dock才会显示出来。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.Dock autohide-delay -float 1000 &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure>
+
+<p>要还原Dock显示的延迟时间到默认设置，使用以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults delete com.apple.Dock autohide-delay &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三步：缩小Dock图标的尺寸"><a href="#第三步：缩小Dock图标的尺寸" class="headerlink" title="第三步：缩小Dock图标的尺寸"></a>第三步：缩小Dock图标的尺寸</h3><p>如果你想要让Dock图标变得极其微小，甚至在使用四指上滑手势时也难以察觉其存在，可以通过以下命令设置Dock图标的尺寸为1像素：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock tilesize -float 1; killall Dock</span><br></pre></td></tr></table></figure>
+
+<p>若要撤销图标尺寸的更改，恢复到默认大小，可以使用以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults delete com.apple.dock tilesize; killall Dock</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>利用Prallels完美绕过监控的一些感悟</title>
+    <url>//macos/parallels-monitoring-bypass-tips/</url>
+    <content><![CDATA[<h1 id="第一，设置双鼠标"><a href="#第一，设置双鼠标" class="headerlink" title="第一，设置双鼠标"></a>第一，设置双鼠标</h1><p>双鼠标很重要，如果没有设置双鼠标，那么每次调整宿主机窗口的时候，鼠标会移动的最边缘部分，这样子就会被发现。所以，设置双鼠标的话，虚拟机里面一个鼠标，host里面一个鼠标，这才是我们想要达到的效果。</p>
+<p>但实际操作来看，操作两个鼠标会很麻烦，因此，我们只需要做到将虚拟机中的鼠标每次进行释放，然后这个时候就可以操作host的窗口了。</p>
+<p>方法如下：<br><a href="https://kb.parallels.com/122903">https://kb.parallels.com/122903</a></p>
+<h2 id="For-Windows-virtual-machines"><a href="#For-Windows-virtual-machines" class="headerlink" title="For Windows virtual machines"></a>For Windows virtual machines</h2><ol>
+<li><p>Shut Down virtual machine.</p>
+</li>
+<li><p>Open Virtual Machine <a href="http://kb.parallels.com/en/117287" title="http://kb.parallels.com/en/117287">configuration</a>.</p>
+</li>
+<li><p>Go to <strong>Hardware &gt; Boot Order &gt;</strong> and paste in <strong>Boot Flags</strong> box:</p>
+<p> <code>video.hw_pointer=0</code></p>
+</li>
+</ol>
+<p><strong>Note:</strong> The above solution will work fine when using a virtual machine for simple tasks such as document processing, but heavier usage (like games or 3D software) may work unreliably.</p>
+<h2 id="For-macOS-virtual-machines"><a href="#For-macOS-virtual-machines" class="headerlink" title="For macOS virtual machines"></a>For macOS virtual machines</h2><p>Click Apple logo &gt; <strong>System Preferences</strong> &gt; <strong>Accessibility</strong> &gt; <strong>Display</strong> &gt; <strong>Cursor</strong> and move the <strong>Cursor size</strong> slider slightly to the right.</p>
+<p><strong>Note:</strong> Due to technical limitations imposed by macOS, this solution may result in the performance degradation as well as visual artefacts. If this happens, there are no workarounds to mitigate it.</p>
+<h2 id="For-Linux-virtual-machines"><a href="#For-Linux-virtual-machines" class="headerlink" title="For Linux virtual machines"></a>For Linux virtual machines</h2><p>Due to technical limitations, the only way to achieve this in Linux virtual machines is to <a href="https://kb.parallels.com/117044">uninstall Parallels Tools</a>.</p>
+<h1 id="第二，取消numslock映射"><a href="#第二，取消numslock映射" class="headerlink" title="第二，取消numslock映射"></a>第二，取消numslock映射</h1><p>每次释放鼠标或者进入parallels会映射一个numslock，因此需要取消这个功能。详情参考文档：<br><a href="https://kb.parallels.com/122898">https://kb.parallels.com/122898</a></p>
+<p>You can change the key used for the synchronization or disable this feature executing the following commands in <strong>Terminal ( Finder &gt; &#x2F;Applications&#x2F;Utilities&#x2F;Terminal)</strong>:</p>
+<p><strong>Quit Parallels Desktop before executing commands</strong>. Otherwise changes will not take affect.</p>
+<ul>
+<li><p>to disable the synchronization of <strong>numeric pad</strong> state:</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults write &#x27;com.parallels.Parallels Desktop&#x27; &#x27;HID Host Hook.LED Sync&#x27; -int 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>to make Parallels Desktop use and send <strong>NumLock</strong> button for the synchronization:</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults write &#x27;com.parallels.Parallels Desktop&#x27; &#x27;HID Host Hook.LED Sync&#x27; -int 1</span><br></pre></td></tr></table></figure>
+<p>  <strong>Please note</strong> that Numlock is used by default.</p>
+</li>
+<li><p>to make Parallels Desktop use and send <strong>ScrollLock</strong> button for the synchronization:</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults write &#x27;com.parallels.Parallels Desktop&#x27; &#x27;HID Host Hook.LED Sync&#x27; -int 2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>to make Parallels Desktop use and send <strong>CapsLock</strong> button for the synchronization:</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults write &#x27;com.parallels.Parallels Desktop&#x27; &#x27;HID Host Hook.LED Sync&#x27; -int 3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>to discard all changes, please use the following command:</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">defaults delete &#x27;com.parallels.Parallels Desktop&#x27; &#x27;HID Host Hook.LED Sync&#x27;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>parallels</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS快照恢复</title>
+    <url>//macos/mac-snapshot-recovery/</url>
+    <content><![CDATA[<p>打快照</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil snapshot</span><br></pre></td></tr></table></figure>
+
+<p>列出所有快照</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil listlocalsnapshots /</span><br></pre></td></tr></table></figure>
+
+<p>删除一个快照的方法</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots 这个地方使用快照的日期</span><br></pre></td></tr></table></figure>
+
+<p>删除所有快照</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots /</span><br></pre></td></tr></table></figure>
+
+<p>恢复快照的方法，就是进入macOS启动设置页面，选择time machine进行恢复，然后选择相应的快照，即可几秒内将系统完整的恢复到上一个快照的状态，其间录入的指纹有可能丢失。</p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>将Brainwaves（神奇脑波）的音乐提取出来</title>
+    <url>//macos/extract-brainwaves-music/</url>
+    <content><![CDATA[<p>在付费了永久版的神奇脑波之后（付费的是中文版，然后也给了英文版的使用），从App Store下载英文版的神奇脑波，名字叫作Brainwaves。</p>
+<p>他们公司名叫做iMobLife，认真搜索一下就能搜到这个app，然后在下面的文件可以找到音乐源文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/Users/(yourUserName)/Library/Containers/Brainwaves/Data/Documents/DownloadedMusic</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>Brainwaves</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决macOS应用程序损坏无法打开</title>
+    <url>//macos/fix-app-damage/</url>
+    <content><![CDATA[<p>在终端输入：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">xattr -cr /Applications/AppName.app</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>macOS检查最近变动文件的方法</title>
+    <url>//macos/track-macos-recent-file-activity/</url>
+    <content><![CDATA[<p>用HoudahSpot或者mac的自带finder（但是测试自带finder查找的文件远远少于HoudahSpot，原因未知），查找项目为<strong>Date Added</strong></p>
+<p>然后在Location区域排除掉不需要查找的文件夹，即可找到最新在mac变动的文件。</p>
+<p>参考配置如下：<br><img src="/../../../assets/2024-03-07%20at%2023.59.19@2x.jpg"></p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>houdahspot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>隐藏Skype在macOS dock栏的显示</title>
+    <url>//macos/hide-skype-dock/</url>
+    <content><![CDATA[<p>Sonoma测试下有效：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write /Applications/Skype.app/Contents/Info LSUIElement 1</span><br></pre></td></tr></table></figure>
+
+<p>经过测试，<strong>发现即使手动修改Info.plist，加上<code>LSUIElement</code>为<code>true</code>也无法起作用</strong>，会显示程序出现错误。原因不明，可能是因为手动修改后，无法取得系统信任。</p>
+<p>推测对于其他软件也可以起到相同的隐藏dock的作用。</p>
+<p><strong>已知问题</strong>：<br>虽然确实可以在dock隐藏，但是每次都需要重新登录skype，原因不明。</p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>skype</tag>
+        <tag>dock</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Iterator 学习</title>
     <url>//work/iterator</url>
     <content><![CDATA[<h3 id="理解-Java-中的-Iterator"><a href="#理解-Java-中的-Iterator" class="headerlink" title="理解 Java 中的 Iterator"></a>理解 Java 中的 Iterator</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>在 Java 集合框架中，<code>Iterator</code> 是一个基本的接口，用于遍历集合元素，如 <code>List</code> 和 <code>Set</code>。它提供了 <code>next()</code>、<code>hasNext()</code> 和 <code>remove()</code> 等方法，支持单向遍历并安全修改集合。</p>
@@ -1549,21 +1556,14 @@
       </tags>
   </entry>
   <entry>
-    <title>隐藏Skype在macOS dock栏的显示</title>
-    <url>//macos/hide-skype-dock/</url>
-    <content><![CDATA[<p>Sonoma测试下有效：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write /Applications/Skype.app/Contents/Info LSUIElement 1</span><br></pre></td></tr></table></figure>
-
-<p>经过测试，<strong>发现即使手动修改Info.plist，加上<code>LSUIElement</code>为<code>true</code>也无法起作用</strong>，会显示程序出现错误。原因不明，可能是因为手动修改后，无法取得系统信任。</p>
-<p>推测对于其他软件也可以起到相同的隐藏dock的作用。</p>
-<p><strong>已知问题</strong>：<br>虽然确实可以在dock隐藏，但是每次都需要重新登录skype，原因不明。</p>
-]]></content>
+    <title>git用法总结</title>
+    <url>//tech-stack/git/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>macOS</category>
+        <category>tech-stack</category>
       </categories>
       <tags>
-        <tag>skype</tag>
-        <tag>dock</tag>
+        <tag>WSL2</tag>
       </tags>
   </entry>
 </search>
