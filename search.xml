@@ -32,6 +32,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Java面试——Kotlin</title>
+    <url>//java-interview/kotlin/</url>
+    <content><![CDATA[<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>在构造方法使用<code>var</code>&#x2F;<code>val</code>&#x2F;以及不使用的区别：</p>
+<ul>
+<li><code>var</code> 相当于同时自动生成 getter 和 setter 方法;</li>
+<li><code>val</code> 只自动生成 getter 方法;</li>
+<li>不写的话,就没有自动生成的 getter 和 setter。</li>
+</ul>
+<p>注意，Kotlin的构造方法是直接在class后面写括号，这点和Java不同。也可以给构造函数写default参数，比如下面这样：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>(<span class="keyword">val</span> name: String = <span class="string">&quot;&quot;</span>, <span class="keyword">val</span> age: <span class="built_in">Int</span> = <span class="number">18</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> person = Person()</span><br><span class="line"></span><br><span class="line">    println(person.name)</span><br><span class="line">    println(person.age)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里<code>class Person</code>后面就是构造函数的参数了，只要再写一个<code>=</code>就是设置default参数，这样下次创建对象的时候，即使是空的，也可以get到default的参数。</p>
+]]></content>
+      <categories>
+        <category>Java Interview</category>
+      </categories>
+      <tags>
+        <tag>kotlin</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java面试——Java Concepts</title>
     <url>//java-interview/java-general/</url>
     <content><![CDATA[<h1 id="CI-CD-save-time"><a href="#CI-CD-save-time" class="headerlink" title="CI&#x2F;CD save time"></a>CI&#x2F;CD save time</h1><p>In a recent project, we improved our CI&#x2F;CD pipeline by implementing Docker layer which make Docker reuses the cached layers instead of rebuilding them, speeding up the build process. Also, we optimized our Maven dependencies, like using Maven Dependency Plugin to analyze and identify unused or redundant dependencies in our projects wihch result in less memory usage during the build process.</p>
@@ -638,27 +659,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java面试——Kotlin</title>
-    <url>//java-interview/kotlin/</url>
-    <content><![CDATA[<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>在构造方法使用<code>var</code>&#x2F;<code>val</code>&#x2F;以及不使用的区别：</p>
-<ul>
-<li><code>var</code> 相当于同时自动生成 getter 和 setter 方法;</li>
-<li><code>val</code> 只自动生成 getter 方法;</li>
-<li>不写的话,就没有自动生成的 getter 和 setter。</li>
-</ul>
-<p>注意，Kotlin的构造方法是直接在class后面写括号，这点和Java不同。也可以给构造函数写default参数，比如下面这样：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>(<span class="keyword">val</span> name: String = <span class="string">&quot;&quot;</span>, <span class="keyword">val</span> age: <span class="built_in">Int</span> = <span class="number">18</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> person = Person()</span><br><span class="line"></span><br><span class="line">    println(person.name)</span><br><span class="line">    println(person.age)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里<code>class Person</code>后面就是构造函数的参数了，只要再写一个<code>=</code>就是设置default参数，这样下次创建对象的时候，即使是空的，也可以get到default的参数。</p>
-]]></content>
-      <categories>
-        <category>Java Interview</category>
-      </categories>
-      <tags>
-        <tag>kotlin</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java面试——Spring Concepts</title>
     <url>//java-interview/spring/</url>
     <content><![CDATA[<h1 id="Why-do-you-use-Spring-Boot-Benefits-of-Spring-Boot-diffrenece-of-Spring-and-Spring-boot"><a href="#Why-do-you-use-Spring-Boot-Benefits-of-Spring-Boot-diffrenece-of-Spring-and-Spring-boot" class="headerlink" title="Why do you use Spring Boot? &#x2F; Benefits of Spring Boot&#x2F; diffrenece of Spring and Spring boot"></a>Why do you use Spring Boot? &#x2F; Benefits of Spring Boot&#x2F; diffrenece of Spring and Spring boot</h1><p>Spring is a powerful framework for building Java applications, providing features like dependency injection and aspect-oriented programming. However, it requires more manual configuration to get started.</p>
@@ -1049,21 +1049,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 10 LTSC</title>
-    <url>//windows/ltsc/</url>
-    <content><![CDATA[<p>原帖地址：<br><a href="https://www.reddit.com/r/Piracy/comments/ztd2mr/whats_the_preferred_method_for_getting_windows_10/">https://www.reddit.com/r/Piracy/comments/ztd2mr/whats_the_preferred_method_for_getting_windows_10/</a></p>
-<blockquote>
-<p>Download LTSC from <a href="https://massgrave.dev/genuine-installation-media.html">Here</a><br>Then get latest MAS from <a href="https://github.com/massgravel/Microsoft-Activation-Scripts/releases">Here</a><br>And activate your genuine LTSC.</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>ltsc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WSL2备份</title>
     <url>//windows/wsl2-backup/</url>
     <content><![CDATA[<p>查看WSL运行状态：</p>
@@ -1086,6 +1071,32 @@
       </categories>
       <tags>
         <tag>WSL2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git用法总结</title>
+    <url>//tech-stack/git/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>tech-stack</category>
+      </categories>
+      <tags>
+        <tag>WSL2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 10 LTSC</title>
+    <url>//windows/ltsc/</url>
+    <content><![CDATA[<p>原帖地址：<br><a href="https://www.reddit.com/r/Piracy/comments/ztd2mr/whats_the_preferred_method_for_getting_windows_10/">https://www.reddit.com/r/Piracy/comments/ztd2mr/whats_the_preferred_method_for_getting_windows_10/</a></p>
+<blockquote>
+<p>Download LTSC from <a href="https://massgrave.dev/genuine-installation-media.html">Here</a><br>Then get latest MAS from <a href="https://github.com/massgravel/Microsoft-Activation-Scripts/releases">Here</a><br>And activate your genuine LTSC.</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>ltsc</tag>
       </tags>
   </entry>
   <entry>
@@ -1401,6 +1412,41 @@
       </categories>
   </entry>
   <entry>
+    <title>macOS检查最近变动文件的方法</title>
+    <url>//macos/track-macos-recent-file-activity/</url>
+    <content><![CDATA[<p>用HoudahSpot或者mac的自带finder（但是测试自带finder查找的文件远远少于HoudahSpot，原因未知），查找项目为<strong>Date Added</strong></p>
+<p>然后在Location区域排除掉不需要查找的文件夹，即可找到最新在mac变动的文件。</p>
+<p>参考配置如下：<br><img src="/../../../assets/2024-03-07%20at%2023.59.19@2x.jpg"></p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+      <tags>
+        <tag>houdahspot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS快照恢复</title>
+    <url>//macos/mac-snapshot-recovery/</url>
+    <content><![CDATA[<p>打快照</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil snapshot</span><br></pre></td></tr></table></figure>
+
+<p>列出所有快照</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil listlocalsnapshots /</span><br></pre></td></tr></table></figure>
+
+<p>删除一个快照的方法</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots 这个地方使用快照的日期</span><br></pre></td></tr></table></figure>
+
+<p>删除所有快照</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots /</span><br></pre></td></tr></table></figure>
+
+<p>恢复快照的方法，就是进入macOS启动设置页面，选择time machine进行恢复，然后选择相应的快照，即可几秒内将系统完整的恢复到上一个快照的状态，其间录入的指纹有可能丢失。</p>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>利用Prallels完美绕过监控的一些感悟</title>
     <url>//macos/parallels-monitoring-bypass-tips/</url>
     <content><![CDATA[<h1 id="第一，设置双鼠标"><a href="#第一，设置双鼠标" class="headerlink" title="第一，设置双鼠标"></a>第一，设置双鼠标</h1><p>双鼠标很重要，如果没有设置双鼠标，那么每次调整宿主机窗口的时候，鼠标会移动的最边缘部分，这样子就会被发现。所以，设置双鼠标的话，虚拟机里面一个鼠标，host里面一个鼠标，这才是我们想要达到的效果。</p>
@@ -1448,27 +1494,6 @@
       </tags>
   </entry>
   <entry>
-    <title>macOS快照恢复</title>
-    <url>//macos/mac-snapshot-recovery/</url>
-    <content><![CDATA[<p>打快照</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil snapshot</span><br></pre></td></tr></table></figure>
-
-<p>列出所有快照</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil listlocalsnapshots /</span><br></pre></td></tr></table></figure>
-
-<p>删除一个快照的方法</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots 这个地方使用快照的日期</span><br></pre></td></tr></table></figure>
-
-<p>删除所有快照</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tmutil deletelocalsnapshots /</span><br></pre></td></tr></table></figure>
-
-<p>恢复快照的方法，就是进入macOS启动设置页面，选择time machine进行恢复，然后选择相应的快照，即可几秒内将系统完整的恢复到上一个快照的状态，其间录入的指纹有可能丢失。</p>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>将Brainwaves（神奇脑波）的音乐提取出来</title>
     <url>//macos/extract-brainwaves-music/</url>
     <content><![CDATA[<p>在付费了永久版的神奇脑波之后（付费的是中文版，然后也给了英文版的使用），从App Store下载英文版的神奇脑波，名字叫作Brainwaves。</p>
@@ -1480,30 +1505,6 @@
       </categories>
       <tags>
         <tag>Brainwaves</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决macOS应用程序损坏无法打开</title>
-    <url>//macos/fix-app-damage/</url>
-    <content><![CDATA[<p>在终端输入：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">xattr -cr /Applications/AppName.app</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>macOS检查最近变动文件的方法</title>
-    <url>//macos/track-macos-recent-file-activity/</url>
-    <content><![CDATA[<p>用HoudahSpot或者mac的自带finder（但是测试自带finder查找的文件远远少于HoudahSpot，原因未知），查找项目为<strong>Date Added</strong></p>
-<p>然后在Location区域排除掉不需要查找的文件夹，即可找到最新在mac变动的文件。</p>
-<p>参考配置如下：<br><img src="/../../../assets/2024-03-07%20at%2023.59.19@2x.jpg"></p>
-]]></content>
-      <categories>
-        <category>macOS</category>
-      </categories>
-      <tags>
-        <tag>houdahspot</tag>
       </tags>
   </entry>
   <entry>
@@ -1523,6 +1524,16 @@
         <tag>skype</tag>
         <tag>dock</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>解决macOS应用程序损坏无法打开</title>
+    <url>//macos/fix-app-damage/</url>
+    <content><![CDATA[<p>在终端输入：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">xattr -cr /Applications/AppName.app</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>macOS</category>
+      </categories>
   </entry>
   <entry>
     <title>Iterator 学习</title>
@@ -1553,17 +1564,6 @@
       <tags>
         <tag>java</tag>
         <tag>工作总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git用法总结</title>
-    <url>//tech-stack/git/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>tech-stack</category>
-      </categories>
-      <tags>
-        <tag>WSL2</tag>
       </tags>
   </entry>
 </search>
